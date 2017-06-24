@@ -3,5 +3,5 @@ test:
   encoding: utf8
   pool: 5
   timeout: 10000
-  database: property_db_test
-  username: root
+  database: circle_test
+  username: ubuntu
