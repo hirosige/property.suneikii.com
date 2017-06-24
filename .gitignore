@@ -5,3 +5,4 @@ log
 !log/.keep
 .idea
 ruby
+config/database.yml
