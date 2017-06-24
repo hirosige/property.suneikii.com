@@ -4,6 +4,8 @@ machine:
   ruby:
     version:
       2.3.4
+  environment:
+    REDIS_URL: redis://localhost:6379
 dependencies:
   override:
     - bundle install:
@@ -15,5 +17,7 @@ database:
     - bundle exec rake db:create db:schema:load RAILS_ENV=test
     - bundle exec rake db:migrate RAILS_ENV=test
 test:
+  pre:
+    - sudo service redis-server start
   override:
     - bundle exec rspec spec/
