@@ -16,7 +16,7 @@ RSpec.describe "UseTerms", type: :request do
   describe "GET /use_terms" do
     it "works! (now write some real specs)" do
       get admin_settings_use_terms_path
-      expect(response).to have_http_status(302)
+      expect(response).to have_http_status(200)
     end
   end
 end
