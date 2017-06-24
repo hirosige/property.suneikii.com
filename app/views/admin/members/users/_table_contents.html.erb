@@ -1,0 +1,57 @@
+<div class="table-responsive">
+  <table class="table table-striped jambo_table bulk_action">
+    <thead>
+    <tr class="headings">
+      <th>
+        <input type="checkbox" id="check-all" class="flat">
+      </th>
+      <th class="column-title"><%= t('admin.users.items.id') %></th>
+      <th class="column-title"><%= t('admin.users.items.email') %></th>
+      <th class="column-title"><%= t('admin.users.items.login_ct') %></th>
+      <th class="column-title"><%= t('admin.users.items.current_ip') %></th>
+      <th class="column-title"><%= t('admin.users.items.role') %></th>
+      <th class="column-title"><%= t('admin.users.items.created_at') %></th>
+      <th class="column-title"><%= t('admin.users.items.updated_at') %></th>
+      <th class="column-title"><%= t('admin.users.items.ban_status') %></th>
+      <th class="column-title"><%= t('admin.users.items.reference') %></th>
+      <th class="column-title"><%= t('admin.users.items.from_where') %></th>
+      <th class="column-title"><%= t('admin.users.items.control_del') %></th>
+      </th>
+      <th class="bulk-actions" colspan="12">
+        <a class="antoo" style="color:#fff; font-weight:500;"><%= t('admin.elements.buttons.bulc_action') %> ( <span class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
+      </th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% users.each do |user| %>
+        <tr class="even pointer">
+          <td class="a-center">
+            <input type="checkbox" class="flat" name="table_records">
+          </td>
+          <td><%= user.id %></td>
+          <td><%= user.email %> <%= user.your_id_sign %></td>
+          <td><%= user.sign_in_count %></td>
+          <td><%= user.current_sign_in_ip %></td>
+          <td><label class="label label-success"><%= user.role.name unless user.role.nil? %></label></td>
+          <td><%= user.created_at.strftime("%Y年%m月%d日 %H:%M:%S") %></td>
+          <td><%= user.updated_at.strftime("%Y年%m月%d日 %H:%M:%S") %></td>
+          <td>
+            <ul class="list-group">
+              <li class="list-group-item">
+                　
+                <div class="material-switch pull-right">
+                  <input id="someSwitchOptionDanger_<%= user.id %>" name="someSwitchOption001_<%= user.id %>" data-id="<%= user.id %>" type="checkbox" <%= user.blacklisted? %> />
+                  <label for="someSwitchOptionDanger_<%= user.id %>" class="label-danger"></label>
+                </div>
+              </li>
+            </ul>
+          </td>
+          <td><%= user.who_are_you %></td>
+          <td><label class="label label-primary"><%= OmniAuth::Utils.camelize(user.provider) %></label></td>
+          <td><%= set_button_delete('', [:admin, :members, user]) %></td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>

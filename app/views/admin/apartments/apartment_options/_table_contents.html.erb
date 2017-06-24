@@ -1,0 +1,34 @@
+<div class="table-responsive">
+  <table class="table table-striped jambo_table bulk_action">
+    <thead>
+    <tr class="headings">
+      <th>
+        <input type="checkbox" id="check-all" class="flat">
+      </th>
+      <th class="column-title"><%= t('admin.apartments.items.name') %></th>
+      <th class="column-title"><%= t('admin.apartments.items.created_at') %></th>
+      <th class="column-title"><%= t('admin.apartments.items.updated_at') %></th>
+      <th class="column-title no-link last" colspan="3"><span class="nobr"><%= t('admin.apartments.items.controls') %></span></th>
+      <th class="bulk-actions" colspan="12">
+        <a class="antoo" style="color:#fff; font-weight:500;"><%= t('admin.elements.buttons.bulc_action') %> ( <span class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
+      </th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% @apartment_options.each do |apartment_option| %>
+        <tr class="even pointer">
+          <td class="a-center">
+            <input type="checkbox" class="flat" name="table_records">
+          </td>
+          <td> <%= apartment_option.name %></td>
+          <td> <%= apartment_option.formatted_created_date %></td>
+          <td> <%= apartment_option.formatted_updated_date %></td>
+          <td> <%= set_button_show('', [:admin, :apartments, apartment_option]) %></td>
+          <td> <%= set_button_edit('', edit_admin_apartments_apartment_option_path(apartment_option)) %></td>
+          <td> <%= set_button_delete('', [:admin, :apartments, apartment_option]) %></td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>

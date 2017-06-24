@@ -1,0 +1,423 @@
+<div class="right_col" role="main" xmlns="http://www.w3.org/1999/html">
+  <div class="">
+
+    <%= render :partial => 'admin/shared/page_title', :locals => {title: t('admin.orders.title'), description: t('admin.orders.description')} %>
+    <div class="clearfix"></div>
+
+    <div class="row">
+      <div class="col-md-7 col-xs-12">
+        <div class="x_panel">
+          <div class="x_title">
+            <h2>Order Details <small>different form elements</small></h2>
+            <ul class="nav navbar-right panel_toolbox">
+              <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="#">Settings 1</a>
+                  </li>
+                  <li><a href="#">Settings 2</a>
+                  </li>
+                </ul>
+              </li>
+              <li><a class="close-link"><i class="fa fa-close"></i></a>
+              </li>
+            </ul>
+            <div class="clearfix"></div>
+          </div>
+          <div class="x_content">
+
+            <br>
+            <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal2">
+              商品を選ぶ
+            </button><br><br>
+
+            <div class="row">
+              <div id="goods_table" class="col-xs-12">
+                <div class='table-responsive'>
+                  <table id="goods_list" class='table table-striped jambo_table bulk_action'>
+                    <thead>
+                    <tr class='headings'>
+                      <th class='column-title'>画像</th>
+                      <th class='column-title'>商品名</th>
+                      <th class='column-title'>個数</th>
+                      <th class='column-title'>単価</th>
+                      <th class='column-title'>合計</th>
+                      <th class='column-title'>削除</th>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <br />
+            <%= render 'form' %>
+          </div>
+        </div>
+
+        <div class="x_panel">
+          <div class="x_title">
+            <h2>Inline Activities <small>Sessions</small></h2>
+            <ul class="nav navbar-right panel_toolbox">
+              <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="#">Settings 1</a>
+                  </li>
+                  <li><a href="#">Settings 2</a>
+                  </li>
+                </ul>
+              </li>
+              <li><a class="close-link"><i class="fa fa-close"></i></a>
+              </li>
+            </ul>
+            <div class="clearfix"></div>
+          </div>
+          <div class="x_content">
+            <div class="col-sm-12">
+              <div class="form-inline">
+                <%= form_tag(post_admin_dealings_order_path(@order.id), :method => :post) do %>
+                    <div class="form-group">
+                      <%= text_field :timeline, :message, :class => 'form-control' %>
+                    </div>
+                    <%= submit_tag "Post", :class => 'btn btn btn-info' %>
+                <% end %>
+              </div>
+              <hr>
+            </div>
+
+            <ul class="list-unstyled timeline">
+              <% @order.timeline_messages.order(posted_at: :desc).each do |timeline_message| %>
+                  <li>
+                    <div class="block">
+                      <div class="tags">
+                        <a href="" class="tag">
+                          <span>Post</span>
+                        </a>
+                      </div>
+                      <div class="block_content">
+                        <h2 class="title">
+                          <a><%= timeline_message.user.email unless timeline_message.user.nil? %> posted about this order</a>
+                        </h2>
+                        <div class="byline">
+                          <label class="label label-primary">
+                            <%= timeline_message.posted_at %>
+                          </label> by
+                          <label class="label label-success">
+                            <%= timeline_message.user.email unless timeline_message.user.nil? %>
+                          </label>
+                        </div>
+                        <p class="excerpt">
+                          <div class="well"><%= timeline_message.message %></div>
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal -->
+      <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">商品検索</h4>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <input type="text" style="font-family: FontAwesome; font-style: normal; font-weight: normal; text-decoration: inherit;" placeholder="&#xF002; 商品名で検索" id="modal-search" class="form-control" />
+              </div>
+              <div id="modal-contents">
+              </div>
+            </div>
+            <div class="modal-footer">
+              <div id="buttons">
+
+              </div>
+              <button type="button" class="btn btn-default" data-dismiss="modal">キャンセル</button>
+              <button type="button" id="test" class="btn btn-primary">商品を追加する</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-5 col-xs-12">
+        <div class="x_panel">
+          <div class="x_title">
+            <h2>Customer</h2>
+            <ul class="nav navbar-right panel_toolbox">
+              <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="#">Settings 1</a>
+                  </li>
+                  <li><a href="#">Settings 2</a>
+                  </li>
+                </ul>
+              </li>
+              <li><a class="close-link"><i class="fa fa-close"></i></a>
+              </li>
+            </ul>
+            <div class="clearfix"></div>
+          </div>
+          <div class="x_content">
+            <label class="label label-primary">Customer info</label>
+            <hr>
+            <label class="label label-primary">Shipping Address</label>
+            <hr>
+            <label class="label label-primary">Billing Address</label>
+          </div>
+        </div>
+
+        <div class="x_panel">
+          <div class="x_title">
+            <h2>Tags</h2>
+            <ul class="nav navbar-right panel_toolbox">
+              <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="#">Settings 1</a>
+                  </li>
+                  <li><a href="#">Settings 2</a>
+                  </li>
+                </ul>
+              </li>
+              <li><a class="close-link"><i class="fa fa-close"></i></a>
+              </li>
+            </ul>
+            <div class="clearfix"></div>
+          </div>
+          <div class="x_content">
+            <%= form_for [:admin, :dealings, @order], :html => {:class => 'form-horizontal form-label-left'}  do |f| %>
+                <% if @order.errors.any? %>
+                    <div id="error_explanation">
+                      <h2><%= "#{pluralize(@order.errors.count, "error")} prohibited this order from being saved:" %></h2>
+                      <ul>
+                        <% @order.errors.full_messages.each do |message| %>
+                            <li><%= message %></li>
+                        <% end %>
+                      </ul>
+                    </div>
+                <% end %>
+
+                <div class="form-group">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12">Input Tags</label>
+                  <div class="col-md-9 col-sm-9 col-xs-12">
+                    <%= f.label :kind_list, "", :class => 'sr-only' %><br>
+                    <%= text_field_tag 'order[kind_list]', @order.kind_list.join(','),
+                                       :id => 'tags_1',
+                                       :class => 'tags form-control col-md-7 col-xs-12',
+                                       :value => @order.kind_list.join(',')
+                    %>
+                 </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                    <%= f.submit 'Add Tags', :class => 'btn btn-success' do %>
+                        test
+                    <% end %>
+                  </div>
+                </div>
+
+                <hr>
+
+            <% end %>
+            <% @order.kinds.each do |kind| %>
+              <label class="label label-success"><%= kind.name %></label>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="custom_notifications" class="custom-notifications dsp_none">
+  <ul class="list-unstyled notifications clearfix" data-tabbed_notifications="notif-group">
+  </ul>
+  <div class="clearfix"></div>
+  <div id="notif-group" class="tabbed_notifications"></div>
+</div>
+
+<script>
+  autosize($('.resizable_textarea'));
+</script>
+
+<script type="text/javascript">
+  $(function() {
+    'use strict';
+    var countriesArray = $.map(countries, function(value, key) {
+      return {
+        value: value,
+        data: key
+      };
+    });
+    // Initialize autocomplete with custom appendTo:
+    $('#autocomplete-custom-append').autocomplete({
+      lookup: countriesArray,
+      appendTo: '#autocomplete-container'
+    });
+  });
+</script>
+
+<!-- select2 -->
+<script>
+  $(document).ready(function() {
+    $(".select2_single").select2({
+      placeholder: "Select a state",
+      allowClear: true
+    });
+    $(".select2_group").select2({});
+    $(".select2_multiple").select2({
+      maximumSelectionLength: 4,
+      placeholder: "With Max Selection limit 4",
+      allowClear: true
+    });
+  });
+</script>
+<!-- /select2 -->
+<!-- input tags -->
+<script>
+  function onAddTag(tag) {
+    alert("Added a tag: " + tag);
+  }
+
+  function onRemoveTag(tag) {
+    alert("Removed a tag: " + tag);
+  }
+
+  function onChangeTag(input, tag) {
+    alert("Changed a tag: " + tag);
+  }
+
+  $(function() {
+    $('#tags_1').tagsInput({
+      width: 'auto'
+    });
+  });
+</script>
+<!-- /input tags -->
+<!-- form validation -->
+<script type="text/javascript">
+  $(document).ready(function() {
+    $.listen('parsley:field:validate', function() {
+      validateFront();
+    });
+    $('#demo-form .btn').on('click', function() {
+      $('#demo-form').parsley().validate();
+      validateFront();
+    });
+    var validateFront = function() {
+      if (true === $('#demo-form').parsley().isValid()) {
+        $('.bs-callout-info').removeClass('hidden');
+        $('.bs-callout-warning').addClass('hidden');
+      } else {
+        $('.bs-callout-info').addClass('hidden');
+        $('.bs-callout-warning').removeClass('hidden');
+      }
+    };
+  });
+
+  $(document).ready(function() {
+    $.listen('parsley:field:validate', function() {
+      validateFront();
+    });
+    $('#demo-form2 .btn').on('click', function() {
+      $('#demo-form2').parsley().validate();
+      validateFront();
+    });
+    var validateFront = function() {
+      if (true === $('#demo-form2').parsley().isValid()) {
+        $('.bs-callout-info').removeClass('hidden');
+        $('.bs-callout-warning').addClass('hidden');
+      } else {
+        $('.bs-callout-info').addClass('hidden');
+        $('.bs-callout-warning').removeClass('hidden');
+      }
+    };
+  });
+  try {
+    hljs.initHighlightingOnLoad();
+  } catch (err) {}
+</script>
+<!-- /form validation -->
+<!-- editor -->
+<script>
+  $(document).ready(function() {
+    $('.xcxc').click(function() {
+      $('#descr').val($('#editor').html());
+    });
+  });
+
+  $(function() {
+    function initToolbarBootstrapBindings() {
+      var fonts = ['Serif', 'Sans', 'Arial', 'Arial Black', 'Courier',
+            'Courier New', 'Comic Sans MS', 'Helvetica', 'Impact', 'Lucida Grande', 'Lucida Sans', 'Tahoma', 'Times',
+            'Times New Roman', 'Verdana'
+          ],
+          fontTarget = $('[title=Font]').siblings('.dropdown-menu');
+      $.each(fonts, function(idx, fontName) {
+        fontTarget.append($('<li><a data-edit="fontName ' + fontName + '" style="font-family:\'' + fontName + '\'">' + fontName + '</a></li>'));
+      });
+      $('a[title]').tooltip({
+        container: 'body'
+      });
+      $('.dropdown-menu input').click(function() {
+        return false;
+      })
+          .change(function() {
+            $(this).parent('.dropdown-menu').siblings('.dropdown-toggle').dropdown('toggle');
+          })
+          .keydown('esc', function() {
+            this.value = '';
+            $(this).change();
+          });
+
+      $('[data-role=magic-overlay]').each(function() {
+        var overlay = $(this),
+            target = $(overlay.data('target'));
+        overlay.css('opacity', 0).css('position', 'absolute').offset(target.offset()).width(target.outerWidth()).height(target.outerHeight());
+      });
+      if ("onwebkitspeechchange" in document.createElement("input")) {
+        var editorOffset = $('#editor').offset();
+        $('#voiceBtn').css('position', 'absolute').offset({
+          top: editorOffset.top,
+          left: editorOffset.left + $('#editor').innerWidth() - 35
+        });
+      } else {
+        $('#voiceBtn').hide();
+      }
+    };
+
+    function showErrorAlert(reason, detail) {
+      var msg = '';
+      if (reason === 'unsupported-file-type') {
+        msg = "Unsupported format " + detail;
+      } else {
+        console.log("error uploading file", reason, detail);
+      }
+      $('<div class="alert"> <button type="button" class="close" data-dismiss="alert">&times;</button>' +
+          '<strong>File upload error</strong> ' + msg + ' </div>').prependTo('#alerts');
+    };
+    initToolbarBootstrapBindings();
+    $('#editor').wysiwyg({
+      fileUploadError: showErrorAlert
+    });
+    window.prettyPrint && prettyPrint();
+  });
+</script>

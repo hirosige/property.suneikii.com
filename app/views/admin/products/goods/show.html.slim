@@ -1,0 +1,52 @@
+- provide(:title, t('admin.goods.title'))
+p
+  strong
+    | Name:
+  = @good.name
+p
+  strong
+    | Size:
+  = @good.size.name
+p
+  strong
+    | Stock:
+  = @good.stock
+p
+  strong
+    | Price:
+  = @good.price
+p
+  strong
+    | Ingredient:
+  = @good.ingredient.name
+p
+  strong
+    | Description:
+  = @good.description
+p
+  strong
+    | Tenant name:
+  = @good.tenant_name
+p
+  strong
+    | Category:
+  = @good.goods_category.name
+p
+  strong
+    | Keyword:
+  = @good.keyword
+p
+  strong
+    | Gender:
+  = @good.gender.name
+p
+  strong
+    | Memo:
+  = @good.memo
+p
+  strong
+    | Picture:
+  = image_tag @good.photo.url(:medium)
+= link_to 'Edit', edit_admin_products_good_path(@good)
+|  | 
+= link_to 'Back', admin_products_goods_path

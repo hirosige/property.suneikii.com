@@ -1,0 +1,12 @@
+en:
+  admin:
+    colors:
+      title:                 "Colors"
+      description:           "Input Any"
+      items:
+        name:                "Color Name"
+        controls:            "Controls"
+      buttons:
+        search:              "Search"
+        add:                 "Add Color"
+        csv_export:          "Export Colors"

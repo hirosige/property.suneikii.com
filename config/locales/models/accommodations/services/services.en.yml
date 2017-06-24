@@ -1,0 +1,17 @@
+en:
+  admin:
+    services:
+      title:                 "Services"
+      modify_page_title:     "Services Add/Modify"
+      description:           ""
+      items:
+        name:                "Service Name"
+        created_at:          "Created at"
+        updated_at:          "Updated at"
+        controls:            "Controls"
+      buttons:
+        search:              "Search"
+        add:                 "Add Service"
+        exec:                "Add/Modify"
+        csv_export:          "Export Services"
+

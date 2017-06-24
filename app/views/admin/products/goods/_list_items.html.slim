@@ -1,0 +1,26 @@
+- @goods.each do |good|
+  tr
+    td
+      = good.name
+    td
+      = good.size.name
+    td
+      = good.stock
+    td
+      = good.price
+    td
+      = good.shopper.shop_name unless good.shopper.nil?
+    td
+      = good.goods_category.name
+    td
+      = good.keyword
+    - if good.photo.url(:thumb) == '/photos/thumb/missing.png'
+      td 画像なし
+    - else
+      td.thumbnail = image_tag good.photo.url(:thumb)
+    td
+      = set_button_show('', [:admin, :products, good])
+    td
+      = set_button_edit('', edit_admin_products_good_path(good))
+    td
+      = set_button_delete('', [:admin, :products, good])

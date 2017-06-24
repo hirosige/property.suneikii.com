@@ -1,0 +1,9 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @shop_status.name
+
+= link_to 'Edit', edit_admin_tenants_shop_status_path(@shop_status)
+'|
+= link_to 'Back', admin_tenants_shop_statuses_path

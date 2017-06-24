@@ -1,0 +1,25 @@
+ja:
+  admin:
+    rooms:
+      title:                 "客室一覧"
+      modify_page_title:     "客室 追加/修正画面"
+      description:           ""
+      items:
+        name:                "部屋名"
+        room_number:         "部屋番号"
+        class_name:          "クラス"
+        description:         "部屋の説明"
+        sales_description:   "セールスポイント"
+        area:                "広さ"
+        qty:                 "部屋の空き数"
+        checkin_time:        "チェックイン開始時間"
+        checkout_time:       "チェックアウト開始時間"
+        how_many_ppl:        "定員"
+        created_at:          "作成日"
+        updated_at:          "更新日"
+        controls:            "操作"
+      buttons:
+        search:              "検索"
+        add:                 "部屋追加"
+        exec:                "追加/修正"
+        csv_export:          "客室データ エクスポート"

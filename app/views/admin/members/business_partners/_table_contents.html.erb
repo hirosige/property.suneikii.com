@@ -1,0 +1,51 @@
+<div class="table-responsive">
+  <table class="table table-striped jambo_table bulk_action">
+    <thead>
+    <tr class="headings">
+      <th>
+        <input type="checkbox" id="check-all" class="flat">
+      </th>
+      <th class="column-title"><%= t('admin.business_partners.items.name') %></th>
+      <th class="column-title"><%= t('admin.business_partners.items.email') %></th>
+      <th class="column-title"><%= t('admin.business_partners.items.birthday') %></th>
+      <th class="column-title"><%= t('admin.business_partners.items.gender') %></th>
+      <th class="column-title"><%= t('admin.business_partners.items.zip_code') %></th>
+      <th class="column-title"><%= t('admin.business_partners.items.address') %></th>
+      <th class="column-title"><%= t('admin.business_partners.items.tel1') %></th>
+      <th class="column-title"><%= t('admin.business_partners.items.tel2') %></th>
+      <th class="column-title"><%= t('admin.business_partners.items.memo') %></th>
+      <th class="column-title"><%= t('admin.business_partners.items.user_info') %></th>
+      <th class="column-title no-link last" colspan="3"><span class="nobr"><%= t('admin.business_partners.items.controls') %></span>
+      </th>
+      <th class="bulk-actions" colspan="13">
+        <a class="antoo" style="color:#fff; font-weight:500;"><%= t('admin.elements.buttons.bulc_action') %> ( <span class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
+      </th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% business_partners.each do |business_partner| %>
+        <tr class="even pointer">
+          <td class="a-center">
+            <input type="checkbox" class="flat" name="table_records">
+          </td>
+          <td><%= business_partner.first_name %>
+          <td><%= business_partner.last_name %>
+          <td><%= business_partner.birthday %>
+          <td><%= business_partner.gender_id %>
+          <td><%= business_partner.zip_code %>
+          <td><%= business_partner.address %>
+          <td><%= business_partner.tel1 %>
+          <td><%= business_partner.tel2 %>
+          <td><%= business_partner.memo %>
+          <td><%= business_partner.user_id %>
+          <td><%= set_button_show('', [:admin, :members, business_partner]) %>
+          <td><%= set_button_edit('', edit_admin_members_business_partner_path(business_partner)) %>
+          <td><%= set_button_delete('', [:admin, :members, business_partner]) %>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+
+
+</div>

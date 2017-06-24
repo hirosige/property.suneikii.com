@@ -1,0 +1,18 @@
+en:
+  admin:
+    use_terms:
+      title:                 "Terms of Use"
+      modify_page_title:     "Terms of Use Add/Modify"
+      description:           ""
+      items:
+        title:               "Title"
+        description:         "Description"
+        created_at:          "Created at"
+        updated_at:          "Updated at"
+        controls:            "Controls"
+      buttons:
+        search:              "Search"
+        add:                 "Add Term of Use"
+        exec:                "Add/Modify"
+        csv_export:          "Export Terms of Use"
+

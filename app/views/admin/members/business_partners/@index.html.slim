@@ -1,0 +1,37 @@
+=headerlize('Listing business_partners')
+
+=render 'pagination'
+br
+table class=set_table_slim
+  thead
+    tr
+      th First name
+      th Last name
+      th Birthday
+      th Gender
+      th Zip code
+      th Address
+      th Tel1
+      th Tel2
+      th Memo
+      th User
+      th colspan=3 Controls
+
+  tbody
+    - @business_partners.each do |business_partner|
+      tr
+        td = business_partner.first_name
+        td = business_partner.last_name
+        td = business_partner.birthday
+        td = business_partner.gender_id
+        td = business_partner.zip_code
+        td = business_partner.address
+        td = business_partner.tel1
+        td = business_partner.tel2
+        td = business_partner.memo
+        td = business_partner.user_id
+        td = set_button_show('', [:admin, :members, business_partner])
+        td = set_button_edit('', edit_admin_members_business_partner_path(business_partner))
+        td = set_button_delete('', [:admin, :members, business_partner])
+=render 'pagination'
+br

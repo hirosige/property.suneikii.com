@@ -1,0 +1,24 @@
+<% @users.each do |user| %>
+<tr>
+  <td><%= user.id %></td>
+  <td><%= user.email %> <%= user.your_id_sign %></td>
+  <td><%= user.sign_in_count %></td>
+  <td><%= user.current_sign_in_ip %></td>
+  <td><%= user.role.name unless user.role.nil? %></td>
+  <td><%= user.created_at.strftime("%Y年%m月%d日 %H:%M:%S") %></td>
+  <td><%= user.updated_at.strftime("%Y年%m月%d日 %H:%M:%S") %></td>
+  <td>
+    <ul class="list-group">
+      <li class="list-group-item">
+        　
+      <div class="material-switch pull-right">
+        <input id="someSwitchOptionDanger_<%= user.id %>" name="someSwitchOption001_<%= user.id %>" data-id="<%= user.id %>" type="checkbox" <%= user.blacklisted? %> />
+        <label for="someSwitchOptionDanger_<%= user.id %>" class="label-danger"></label>
+      </div>
+      </li>
+    </ul>
+  </td>
+  <td><%= user.who_are_you %></td>
+  <td><%= set_button_delete('', [:admin, :members, user]) %></td>
+</tr>
+<% end %>

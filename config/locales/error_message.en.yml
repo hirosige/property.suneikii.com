@@ -1,0 +1,12 @@
+en:
+  activerecord:
+    models:
+    attributes:
+      apartment_option_installations:
+        apartment_option: 'test'
+    errors:
+      models:
+        apartment_option_installation:
+          attributes:
+            apartment_option_id:
+              blank: '設備を選択してください'

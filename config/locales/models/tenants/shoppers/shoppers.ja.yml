@@ -1,0 +1,22 @@
+ja:
+  admin:
+    shoppers:
+      title:                  "店舗一覧"
+      description:            "何か設定して下さい"
+      items:
+        shop_name:              "店舗名"
+        representative_name:    "担当者名"
+        zip_code:               "郵便番号"
+        address:                "住所"
+        tel1:                   "電話番号1"
+        tel2:                   "電話番号2"
+        mail_address:           "メールアドレス"
+        shop_status:            "出店ステータス"
+        account_number:         "口座番号"
+        memo:                   "メモ"
+        user_info:              "ユーザ情報"
+        controls:               "操作"
+      buttons:
+        search:                 "検索"
+        add:                    "店舗追加"
+        csv_export:             "店舗データ エクスポート"

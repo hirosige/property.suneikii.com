@@ -1,0 +1,30 @@
+<% provide(:title, t('admin.courses.title')) %>
+
+<div class="right_col" role="main">
+  <div class="">
+
+    <%= render :partial => 'admin/shared/page_title', :locals => {title: t('admin.courses.title'), description: t('admin.courses.description')} %>
+
+    <div class="clearfix"></div>
+    <div class="row">
+      <div class="clearfix"></div>
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <%= render 'layouts/admin_menus/foods_sub_tab' %>
+
+        <div class="x_panel">
+          <%= render :partial => 'admin/shared/table_title', :locals => {title: "#{@restaurant.name}の#{t('admin.courses.title')}", description: t('admin.courses.description')} %>
+          <div class="x_content">
+
+            <%= render 'pagination' %>
+            <%= render :partial => 'table_contents', :locals => {courses: @courses} %>
+            <%= render 'pagination' %>
+
+            <br>
+            <%= set_button_new(t('admin.courses.buttons.add'), new_admin_foods_restaurant_course_path) %>
+            <%= set_button_csv(t('admin.courses.buttons.csv_export'), admin_foods_restaurant_courses_path(format: 'csv')) %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

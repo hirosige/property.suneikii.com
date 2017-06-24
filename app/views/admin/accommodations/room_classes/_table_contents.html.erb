@@ -1,0 +1,41 @@
+<div class="table-responsive">
+  <table class="table table-striped jambo_table bulk_action">
+    <thead>
+    <tr class="headings">
+      <th>
+        <input type="checkbox" id="check-all" class="flat">
+      </th>
+      <th class="column-title"><%= t('admin.room_classes.items.name') %></th>
+      <th class="column-title"><%= t('admin.room_classes.items.image') %></th>
+      <th class="column-title"><%= t('admin.room_classes.items.accessories') %></th>
+      <th class="column-title"><%= t('admin.room_classes.items.services') %></th>
+      <th class="column-title"><%= t('admin.room_classes.items.created_at') %></th>
+      <th class="column-title"><%= t('admin.room_classes.items.updated_at') %></th>
+      <th class="column-title no-link last" colspan="3"><span class="nobr"><%= t('admin.room_classes.items.controls') %></span></th>
+      <th class="bulk-actions" colspan="12">
+        <a class="antoo" style="color:#fff; font-weight:500;"><%= t('admin.elements.buttons.bulc_action') %> ( <span class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
+      </th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% @room_classes.each do |room_class| %>
+        <tr class="even pointer">
+          <td class="a-center">
+            <input type="checkbox" class="flat" name="table_records">
+          </td>
+          <td> <%= room_class.name %></td>
+          <td> <%= room_class.print_image %></td>
+          <td> <%= room_class.accessory_list %></td>
+          <td> <%= room_class.service_list %></td>
+          <td> <%= room_class.formatted_created_date %></td>
+          <td> <%= room_class.formatted_updated_date %></td>
+          <td> <%= set_button_show('', [:admin, :accommodations, room_class]) %></td>
+          <td> <%= set_button_edit('', edit_admin_accommodations_room_class_path(room_class)) %></td>
+          <td> <%= set_button_delete('', [:admin, :accommodations, room_class]) %></td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+
+</div>

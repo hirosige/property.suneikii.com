@@ -1,0 +1,19 @@
+ja:
+  admin:
+    room_classes:
+      title:                 "客室クラス一覧"
+      modify_page_title:     "客室クラス 追加/修正画面"
+      description:           ""
+      items:
+        name:                "クラス名"
+        image:               "画像"
+        accessories:         "備品リスト"
+        services:            "サービスリスト"
+        created_at:          "作成日"
+        updated_at:          "更新日"
+        controls:            "操作"
+      buttons:
+        search:              "検索"
+        add:                 "クラス追加"
+        exec:                "追加/修正"
+        csv_export:          "客室クラスデータ エクスポート"

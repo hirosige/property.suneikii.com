@@ -1,0 +1,23 @@
+= form_for([:admin, :products, @size]) do |f|
+  - if @size.errors.any?
+    .panel.panel-danger
+      .panel-heading
+        = pluralize(@size.errors.count, "件")
+        |  のエラーがあります
+      .panel-body
+        ul
+          - @size.errors.full_messages.each do |message|
+            li
+              = message
+  fieldset.form-group
+    label[for="name"]
+      | サイズ名称
+    = f.text_field :name, :class => 'form-control' ,:placeholder => 'サイズ名称', autofocus: true
+    br
+    .bs-example.bs-example-tooltip[data-example-id="static-tooltips"]
+      .tooltip.bottom[role="tooltip"]
+        .tooltip-arrow
+        .tooltip-inner
+          |  Tooltip on the bottom 
+  .actions
+    = f.submit "サイズ追加", :class => 'w120 form-control btn btn-info'

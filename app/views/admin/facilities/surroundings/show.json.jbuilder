@@ -1,0 +1,1 @@
+json.partial! "surroundings/surrounding", surrounding: @surrounding

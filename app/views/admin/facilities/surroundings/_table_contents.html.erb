@@ -1,0 +1,21 @@
+<div class="table-responsive">
+
+  <div style="position: relative; float: left; right: -50%">
+    <% @surroundings.each.with_index(1) { |surrounding, index|  %>
+      <% if index % 2 != 0 %>
+            <%= render :partial => 'card', :locals => {surrounding: surrounding} %>
+      <% end %>
+    <% } %>
+  </div>
+
+  <div style="position: relative; float: right; right: 50%">
+    <% @surroundings.each.with_index(1) { |surrounding, index|  %>
+        <% if index % 2 == 0 %>
+            <%= render :partial => 'card', :locals => {surrounding: surrounding} %>
+        <% end %>
+    <% } %>
+  </div>
+
+  <div style="clear: both;"></div>
+
+</div>

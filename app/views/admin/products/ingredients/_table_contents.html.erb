@@ -1,0 +1,20 @@
+<div class="table-responsive">
+  <table class="table table-striped jambo_table bulk_action">
+    <thead>
+    <tr class="headings">
+      <th>
+        <input type="checkbox" id="check-all" class="flat">
+      </th>
+      <th class="column-title"><%= t('admin.ingredients.items.name') %></th>
+      <th class="column-title no-link last" colspan="3"><span class="nobr"><%= t('admin.ingredients.items.controls') %></span></th>
+      <th class="bulk-actions" colspan="4">
+        <a class="antoo" style="color:#fff; font-weight:500;"><%= t('admin.elements.buttons.bulc_action') %> ( <span class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
+      </th>
+    </tr>
+    </thead>
+
+    <tbody class="ingredient-index">
+    <%= render 'index', locals: { ingredients: @ingredients } %>
+    </tbody>
+  </table>
+</div>

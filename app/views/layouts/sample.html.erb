@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= content_for?(:title) ? yield(:title) : "GentelellaOnRails" %> </title>
+
+  <%= render 'layouts/partials/assets' %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body class="nav-md">
+  <div class="container body">
+    <div class="main_container">
+      <% flash.each do |key, value| %>
+          <div align="center" id="flash" class="alert alert-<%= key %>"><%= value %></div>
+      <% end %>
+
+      <%= render "layouts/partials/sidenav" %>
+      <%= render "layouts/partials/topnav" %>
+
+      <%= yield %>
+
+      <%= render "layouts/partials/footer" %>
+    </div>
+    <%= javascript_include_tag 'footermanifest', 'data-turbolinks-track' => true %>
+  </div>
+</body>
+</html>

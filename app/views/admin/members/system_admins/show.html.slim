@@ -1,0 +1,34 @@
+p#notice = notice
+
+p
+  strong First name:
+  = @system_admin.first_name
+p
+  strong Last name:
+  = @system_admin.last_name
+p
+  strong Birthday:
+  = @system_admin.birthday
+p
+  strong Gender:
+  = @system_admin.gender_id
+p
+  strong Zip code:
+  = @system_admin.zip_code
+p
+  strong Address:
+  = @system_admin.address
+p
+  strong Tel1:
+  = @system_admin.tel1
+p
+  strong Tel2:
+  = @system_admin.tel2
+p
+  strong Memo:
+  = @system_admin.memo
+p
+  strong User:
+  = @system_admin.user_id
+
+= link_to 'Edit', edit_admin_members_system_admin_path(@system_admin)

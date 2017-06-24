@@ -1,0 +1,17 @@
+en:
+  admin:
+    apartment_options:
+      title:                 "設備一覧"
+      detail_page_title:     "設備詳細"
+      modify_page_title:     "設備 追加/修正画面"
+      description:           ""
+      items:
+        name:                "設備名"
+        created_at:          "作成日"
+        updated_at:          "更新日"
+        controls:            "操作"
+      buttons:
+        search:              "検索"
+        add:                 "設備追加"
+        exec:                "追加/修正"
+        csv_export:          "設備データ エクスポート"

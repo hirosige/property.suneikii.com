@@ -1,0 +1,7 @@
+= form_for([:admin, :products, @goods_category]) do |f|
+  fieldset.form-group
+    label[for="name"]
+      | カテゴリ名称
+    = f.text_field :name, :class => 'form-control' ,:placeholder => 'カテゴリ名称', autofocus: true
+  .actions
+    = f.submit "カテゴリ追加", :class => 'w120 form-control btn btn-info'

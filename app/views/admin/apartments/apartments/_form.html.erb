@@ -1,0 +1,529 @@
+<div class="right_col" role="main" xmlns="http://www.w3.org/1999/html">
+  <div class="">
+
+    <%= render :partial => 'admin/shared/page_title', :locals => {title: t('admin.apartments.title'), description: t('admin.apartments.description')} %>
+    <div class="clearfix"></div>
+
+
+
+    <div class="row">
+      <% if @apartment.errors.any? %>
+          <div id="error_explanation" style="border: 1px #ff855f solid; padding: 20px; margin: 20px; width: 800px; border-radius: 10px; background: rgba(255,127,128,0.5)">
+            <h2 style="text-decoration: underline; color: #ff0000;"><%= "#{pluralize(@apartment.errors.count, "")} つエラーがあります、ご確認下さい:" %></h2>
+            <ul>
+              <% @apartment.errors.full_messages.each do |message| %>
+                  <li style="color: #ff0000;"><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+      <% end %>
+
+      <div class="col-md-12 col-xs-12">
+        <div class="x_panel">
+          <div class="x_title">
+            <h2><%= t('admin.apartments.modify_page_title') %></h2>
+            <ul class="nav navbar-right panel_toolbox">
+              <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="#">Settings 1</a>
+                  </li>
+                  <li><a href="#">Settings 2</a>
+                  </li>
+                </ul>
+              </li>
+              <li><a class="close-link"><i class="fa fa-close"></i></a>
+              </li>
+            </ul>
+            <div class="clearfix"></div>
+          </div>
+          <div class="x_content">
+
+            <br />
+            <%= form_for [:admin, :apartments, @apartment], :html => {:class => 'form-horizontal form-label-left'}  do |f| %>
+
+
+                <div style="float: left; width: 50%;">
+
+                  <div class="form-group">
+                    <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.apartments.items.area') %></label>
+                    <div class="col-md-8 col-sm-6 col-xs-12">
+                      <%= f.text_field :area_id, :required => 'required', :class => 'form-control col-md-2 col-xs-12' %>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.apartments.items.rent_fee') %></label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <%= f.text_field :rent_fee, :required => 'required', :class => 'form-control col-md-7 col-xs-12' %>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.apartments.items.deposit') %></label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <%= f.text_field :deposit, :required => 'required', :class => 'form-control col-md-7 col-xs-12' %>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.apartments.items.utility_fee') %></label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <%= f.text_field :utility_fee, :required => 'required', :class => 'form-control col-md-7 col-xs-12' %>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.apartments.items.address') %></label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <%= f.text_field :address, :required => 'required', :class => 'form-control col-md-7 col-xs-12' %>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.apartments.items.room_type') %></label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <%= f.text_field :room_type_id, :required => 'required', :class => 'form-control col-md-7 col-xs-12' %>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.apartments.items.photo') %></label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <%= f.file_field :photo, :class => 'form-control col-md-7 col-xs-12' %>
+                    </div>
+                  </div>
+                  <% unless @apartment.photo.blank? %>
+                      <div class="form-group">
+                        <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.apartments.items.uploaded_photo') %></label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <%= image_tag @apartment.photo_url(:middle), :style => 'border: 1px #ddd solid; border-radius: 10px;' %>
+                        </div>
+                      </div>
+                  <% end %>
+
+                  <div class="form-group">
+                    <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.apartments.items.provider') %></label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <%= f.text_field :provider_id, :required => 'required', :class => 'form-control col-md-7 col-xs-12' %>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div style="float: right; width: 50%;">
+
+                  <div class="form-group">
+                    <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.apartments.items.name') %></label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <%= f.text_field :name, :required => 'required', :class => 'form-control col-md-7 col-xs-12' %>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.apartments.items.security_deposit') %></label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <%= f.text_field :security_deposit, :required => 'required', :class => 'form-control col-md-7 col-xs-12' %>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.apartments.items.transportation') %></label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <%= f.text_field :transportation, :required => 'required', :class => 'form-control col-md-7 col-xs-12' %>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.apartments.items.key_money') %></label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <%= f.text_field :key_money, :required => 'required', :class => 'form-control col-md-7 col-xs-12' %>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.apartments.items.since_when') %></label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <%= f.text_field :since_when, :required => 'required', :class => 'form-control col-md-7 col-xs-12' %>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.apartments.items.space') %></label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <%= f.text_field :space, :required => 'required', :class => 'form-control col-md-7 col-xs-12' %>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.apartments.items.recommendations') %></label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <%= f.text_field :recommendations, :required => 'required', :class => 'form-control col-md-7 col-xs-12' %>
+                    </div>
+                  </div>
+
+
+
+                </div>
+
+                <script>
+                    $(function() {
+                        var create_static_img_url = function(lat, lng) {
+                            return '<img src="//maps.googleapis.com/maps/api/staticmap?center=' + lat + ',' + lng + '&markers=color:red%7Clabel:C%7C' + lat + ',' + lng + '&zoom=17&size=800x500&maptype=roadmap">'
+                        };
+
+                        $('#exampleModal').on('show.bs.modal', function (e) {
+                            $('#decide_address').hide();
+                            $('#complete').hide();
+                        });
+
+                        $('#exampleModal').on('shown.bs.modal', function (e) {
+
+                            if($('#apartment_apartment_info_attributes_latitude').val() != '') {
+                                lat = $('#apartment_apartment_info_attributes_latitude').val();
+                            } else {
+                                lat = 34.6937378;
+                            }
+
+                            if($('#apartment_apartment_info_attributes_longitude').val() != '') {
+                                lng = $('#apartment_apartment_info_attributes_longitude').val();
+                            } else {
+                                lng = 135.50216509999996;
+                            }
+
+                            init(lat, lng, zoom)
+                        });
+
+                        $('#decide_address').on('click', function() {
+                            console.log(lat);
+                            $('#map').empty();
+                            $('#map').html(create_static_img_url(lat, lng))
+                            $('#decide_address').hide();
+                            $('#complete').show();
+                        });
+
+                        $('#complete').on('click', function() {
+                            $('#apartment_apartment_info_attributes_latitude').val(lat);
+                            $('#apartment_apartment_info_attributes_longitude').val(lng);
+
+                            var geocoder = new google.maps.Geocoder;
+
+                            geocodeLatLng(geocoder, map);
+
+                            $('#exampleModal').modal('hide')
+                        });
+
+                        $('#submit').on('click', function() {
+                            var geocoder = new google.maps.Geocoder;
+                            geocodeAddress(geocoder, map);
+                        });
+
+                        var map;
+                        var lat;
+                        var lng;
+                        var zoom = 17;
+
+                        var init = function(lat, lng, zoom) {
+
+                            // 初期設定用
+                            var latlng = new google.maps.LatLng(lat, lng);//画面を開いた際に中心として表示させる緯度・経度、今回は大阪
+                            var opts = {
+                                zoom: zoom,//ズームレベル
+                                mapTypeId: google.maps.MapTypeId.ROADMAP,//マップの種類
+                                center: latlng//この記述で前述の緯度・経度が指定される
+                            };
+
+                            //body内の<div id="map">にmapを描画
+                            map = new google.maps.Map($('#map').get(0), opts);
+
+                            var marker = new google.maps.Marker({
+                                position: latlng,
+                                map: map,
+                                title: 'Hello World!'
+                            });
+
+                            infowindow = new google.maps.InfoWindow();
+                            var service = new google.maps.places.PlacesService(map);
+                            service.nearbySearch({
+                                location: latlng,
+                                radius: 500,
+                                type: ['store']
+                            }, callback);
+
+                            //クリックイベントに「clickEvent」処理を紐付ける
+                            google.maps.event.addListener(map, 'click', clickEvent);
+                            google.maps.event.addListener(map, 'zoom_changed', zoomChange);
+                        };
+
+                        var clickEvent = function(event){
+                            $('#decide_address').show();
+
+                            lat = event.latLng.lat();
+                            lng = event.latLng.lng();
+
+                            init(lat, lng, zoom);
+                        };
+
+                        var zoomChange = function(event) {
+                            zoom = map.getZoom();
+                        };
+
+                        var geocodeLatLng = function(geocoder, map) {
+                            var latlng = {lat: lat, lng: lng};
+
+                            geocoder.geocode({'location': latlng}, function (results, status) {
+                                if (status === 'OK') {
+                                    if (results[1]) {
+                                        $('#apartment_address').val(results[1].formatted_address);
+                                    } else {
+                                        window.alert('No results found');
+                                    }
+                                } else {
+                                    window.alert('Geocoder failed due to: ' + status);
+                                }
+                            });
+                        };
+
+                        var geocodeAddress = function(geocoder, resultsMap) {
+                            var address = document.getElementById('address').value;
+                            geocoder.geocode({'address': address}, function(results, status) {
+                                if (status === 'OK') {
+                                    resultsMap.setCenter(results[0].geometry.location);
+//                                    var marker = new google.maps.Marker({
+//                                        map: resultsMap,
+//                                        position: results[0].geometry.location
+//                                    });
+                                } else {
+                                    alert('Geocode was not successful for the following reason: ' + status);
+                                }
+                            });
+                        };
+
+                        var callback = function(results, status) {
+                            if (status === google.maps.places.PlacesServiceStatus.OK) {
+                                for (var i = 0; i < results.length; i++) {
+                                    createMarker(results[i]);
+                                }
+                            }
+                        };
+
+                        var createMarker = function(place) {
+                            var placeLoc = place.geometry.location;
+                            var marker = new google.maps.Marker({
+                                map: map,
+                                position: place.geometry.location,
+                                icon: BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)
+                            });
+
+                            google.maps.event.addListener(marker, 'click', function() {
+                                infowindow.setContent(place.name);
+                                infowindow.open(map, this);
+                            });
+                        }
+
+                        init(lat, lng, zoom)
+                    });
+                </script>
+
+                <div style="clear: both;">
+
+                  <hr>
+
+                  <%= f.fields_for :apartment_info do |ai| %>
+                      <div class="form-group">
+                        <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">Remarks</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <%= ai.text_field :remarks, :required => 'required', :class => 'form-control col-md-7 col-xs-12' %>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">緯度</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <%= ai.text_field :latitude, :required => 'required', :class => 'form-control col-md-7 col-xs-12' %>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">経度</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <%= ai.text_field :longitude, :required => 'required', :class => 'form-control col-md-7 col-xs-12' %>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"></label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                            グーグルマップで取得
+                          </button>
+                        </div>
+                      </div>
+
+                      <!-- Button trigger modal -->
+
+
+                      <!-- Modal -->
+                      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h3 class="modal-title" id="exampleModalLabel">グーグルマップで位置情報を登録</h3>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div id="modal-body" class="modal-body">
+
+                              <div id="floating-panel">
+                                <input id="address" type="textbox" value="Sydney, NSW">
+                                <input id="submit" type="button" value="検索">
+                              </div><br>
+
+                              <div id="map" style='width: 100%; height: 500px; margin: auto; border: 1px #2A3F54 solid; border-radius: 5px;'></div>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" id="close" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+                              <button type="button" id="decide_address" class="btn btn-primary">ここに決める</button>
+                              <button type="button" id="complete" class="btn btn-primary">完了</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">リフォーム</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <%= ai.radio_button :reconstructed_or_not, :reconstructed %> リフォーム済み &nbsp;
+                          <%= ai.radio_button :reconstructed_or_not, :not_reconstructed %> 未リフォーム
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">改修工事</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <%= ai.radio_button :renovated_or_not, :renovated %> 改修済み &nbsp;
+                          <%= ai.radio_button :renovated_or_not, :not_renovated %> 未改修
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">駐車場</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <%= ai.radio_button :car_park_or_not, :can_park_car %> 駐車場あり &nbsp;
+                          <%= ai.radio_button :car_park_or_not, :cannot_park_car %> 駐車場なし
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">駐輪場</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <%= ai.radio_button :bicycle_park_or_not, :can_park_bicycle %> 駐輪場あり &nbsp;
+                          <%= ai.radio_button :bicycle_park_or_not, :cannot_park_bicycle %> 駐輪場なし
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">バイク駐輪場</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <%= ai.radio_button :bike_park_or_not, :can_park_bike %> バイク駐輪場あり &nbsp;
+                          <%= ai.radio_button :bike_park_or_not, :cannot_park_bike %> バイク駐輪場なし
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">ペット持ち込み</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <%= ai.radio_button :can_have_pet_or_not, :can_have_pet %> ペット可 &nbsp;
+                          <%= ai.radio_button :can_have_pet_or_not, :cannot_have_pet %> ペット不可
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">階建 / 階</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <%= ai.number_field :floors, :required => 'required', :class => 'form-control col-md-7 col-xs-12' %>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">建物構造</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <%= ai.text_field :made_of, :required => 'required', :class => 'form-control col-md-7 col-xs-12' %>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">契約期間</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <%= ai.number_field :contact_span, :required => 'required', :class => 'form-control col-md-7 col-xs-12' %>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">条件等</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <%= ai.text_field :conditions, :required => 'required', :class => 'form-control col-md-7 col-xs-12' %>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">更新料</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <%= ai.text_field :update_fee, :required => 'required', :class => 'form-control col-md-7 col-xs-12' %>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">次回更新予定日</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <%= ai.text_field :updating_on, :required => 'required', :class => 'form-control col-md-7 col-xs-12' %>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">物件番号</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <%= ai.text_field :management_id, :required => 'required', :class => 'form-control col-md-7 col-xs-12' %>
+                        </div>
+                      </div>
+
+                <%  end %>
+
+                  <hr>
+
+                  <div class="form-group">
+                    <div id="ingredients" class="form-group">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.room_classes.items.accessories') %></label>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <%= f.fields_for :apartment_option_installations do |builder| %>
+                            <%= render 'apartment_option_installation_fields', f: builder %>
+                        <% end %>
+                        <div id="links">
+                          <br>
+                          <%= link_to_add_association "Add Accessories", f, :apartment_option_installations, :class => 'btn btn-xs btn-primary' %><br/>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                      <button type="submit" class="btn btn-primary">
+                        <%= t('admin.apartments.buttons.exec') %>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+            <% end %>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

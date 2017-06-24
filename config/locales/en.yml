@@ -1,0 +1,100 @@
+en:
+  site_name: "ABC"
+  provider_name: "ABC Corp"
+  provider_website: "http://google.com"
+  admin_page: "Admin Page"
+  home: "Home"
+  pagination:
+    count: "hits"
+
+  sidemenu_1:
+    title:                   "Category"
+    items:
+      item_1:                "Seasons"
+      item_2:                "Events"
+      item_3:                "Animals"
+      item_4:                "Fairy Tales"
+      item_5:                "Jobs"
+      item_6:                "Small Goods"
+  sidemenu_2:
+    title:                   "Contents"
+    items:
+      item_1:                "Concepts"
+      item_2:                "Billing System"
+      item_3:                "How to buy ?"
+      item_4:                "How to pay ?"
+      item_5:                "Logistics"
+      item_6:                "Blog"
+
+  footer:
+    items:
+      item_1:                "Home"
+      item_2:                "Certificates"
+      item_3:                "Privacy"
+      item_4:                "Recruit"
+      item_5:                "Location"
+      item_6:                "Q & A"
+
+  helpers:
+    select:
+      prompt:                "Please select any"
+
+  activerecord:
+    errors:
+      models:
+        size:
+          attributes:
+            name:
+              blank:         "Please input any"
+        gender:
+          attributes:
+            name:
+              blank:         "Please input any"
+        ingredient:
+          attributes:
+            name:
+              blank:         "Please input any"
+        color:
+          attributes:
+            name:
+              blank:         "Please input any"
+        goods_category:
+          attributes:
+            name:
+              blank:         "Please input any"
+
+  views:
+    pagination:
+      first:                 "<<"
+      last:                  ">>"
+      previous:              "<"
+      next:                  ">"
+      truncate:              "..."
+  date:
+    formats:
+      # Use the strftime parameters for formats.
+      # When no format has been given, it uses default.
+      # You can provide other formats here if you like!
+      default: "%Y-%m-%d"
+      short: "%b %d"
+      long: "%B %d, %Y"
+
+    day_names: [Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday]
+    abbr_day_names: [Sun, Mon, Tue, Wed, Thu, Fri, Sat]
+
+    # Don't forget the nil at the beginning; there's no such thing as a 0th month
+    month_names: [~, January, February, March, April, May, June, July, August, September, October, November, December]
+    abbr_month_names: [~, Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec]
+    # Used in date_select and datetime_select.
+    order:
+      - year
+      - month
+      - day
+
+  time:
+    formats:
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      short: "%d %b %H:%M"
+      long: "%B %d, %Y %H:%M"
+    am: "am"
+    pm: "pm"

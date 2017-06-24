@@ -1,0 +1,44 @@
+/*
+ * This is a manifest file that'll be compiled into application, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+  ** * require fonts/css/font-awesome.min
+ *
+ */
+
+@import "bootstrap-sprockets"; // no problem
+@import "bootstrap"; // no problem
+@import "font-awesome"; // no problem
+@import "css/animate.min"; // no problem
+@import "css/custom"; // no problem
+@import "css/ion.rangeSlider"; // no problem
+@import "css/ion.rangeSlider.skinFlat"; // no problem
+@import "css/floatexamples"; // no problem
+@import "css/normalize"; // no problem
+@import "pace"; // no problem
+@import "css/nprogress";
+
+@import "css/calendar/fullcalendar"; // no problem
+@import "css/colorpicker/bootstrap-colorpicker.min";
+@import "css/datatables/css/jquery.dataTables";
+@import "css/datatables/css/jquery.dataTables_themeroller";
+@import "css/datatables/tools/css/dataTables.tableTools";
+@import "css/editor/index";
+@import "css/editor/external/google-code-prettify/prettify"; // no problem
+@import "css/icheck/flat/green"; // no problem
+@import "css/maps/jquery-jvectormap-2.0.3";
+@import "css/notify/pnotify.custom.min";
+@import "css/progressbar/bootstrap-progressbar-3.3.0";
+@import "css/select/select2.min.css"; // no problem
+@import "css/icheck/flat/_all"; // no problem
+@import "css/switchery/switchery.min"; // no problem
+@import "css/social/bootstrap-social"; // no problem
+
+@import 'bootstrap-datetimepicker';

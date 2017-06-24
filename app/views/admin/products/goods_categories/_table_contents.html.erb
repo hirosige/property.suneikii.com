@@ -1,0 +1,30 @@
+<div class="table-responsive">
+  <table class="table table-striped jambo_table bulk_action">
+    <thead>
+    <tr class="headings">
+      <th>
+        <input type="checkbox" id="check-all" class="flat">
+      </th>
+      <th class="column-title"><%= t('admin.goods_categories.items.name') %></th>
+      <th class="column-title no-link last" colspan="3"><span class="nobr"><%= t('admin.goods_categories.items.controls') %></span></th>
+      <th class="bulk-actions" colspan="4">
+        <a class="antoo" style="color:#fff; font-weight:500;"><%= t('admin.elements.buttons.bulc_action') %> ( <span class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
+      </th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% goods_categories.each do |goods_category| %>
+        <tr class="even pointer">
+          <td class="a-center">
+            <input type="checkbox" class="flat" name="table_records">
+          </td>
+          <td><%= goods_category.name %></td>
+          <td><%= set_button_show('', [:admin, :products, goods_category]) %></td>
+          <td><%= set_button_edit('', edit_admin_products_goods_category_path(goods_category)) %></td>
+          <td><%= set_button_delete('', [:admin, :products, goods_category]) %></td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>

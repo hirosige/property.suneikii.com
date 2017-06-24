@@ -1,0 +1,95 @@
+th:
+  site_name: "Lawinta"
+  provider_name: "ABC Corp"
+  admin_page: "管理画面"
+  home: "ホーム"
+  pagination:
+    count: "件"
+
+  sidemenu_1:
+    title:                   "カテゴリ"
+    items:
+      item_1:                "季節もの"
+      item_2:                "イベントもの"
+      item_3:                "動物・昆虫もの"
+      item_4:                "おとぎ話・童話もの"
+      item_5:                "職業もの"
+      item_6:                "小物"
+  sidemenu_2:
+    title:                   "コンテンツ"
+    items:
+      item_1:                "ショップコンセプト"
+      item_2:                "料金体系"
+      item_3:                "ご利用ガイド"
+      item_4:                "お支払い方法について"
+      item_5:                "配送方法・送料について"
+      item_6:                "スタッフBlog"
+
+  footer:
+    items:
+      item_1:                "ホーム"
+      item_2:                "特定商取引法に基づく"
+      item_3:                "プライバシー"
+      item_4:                "リクルート"
+      item_5:                "所在地"
+      item_6:                "Q & A"
+
+  helpers:
+    select:
+      prompt:                "何か選択してください"
+
+  activerecord:
+    errors:
+      models:
+        size:
+          attributes:
+            name:
+              blank:         "何か入力して下さい"
+        gender:
+          attributes:
+            name:
+              blank:         "何か入力して下さい"
+        ingredient:
+          attributes:
+            name:
+              blank:         "何か入力して下さい"
+        color:
+          attributes:
+            name:
+              blank:         "何か入力して下さい"
+        goods_category:
+          attributes:
+            name:
+              blank:         "何か入力して下さい"
+
+  views:
+    pagination:
+      first:                 "最初へ"
+      last:                  "最後へ"
+      previous:              "前のページ"
+      next:                  "次のページ"
+      truncate:              "〜"
+  date:
+    formats:
+      default: "%Y/%m/%d"
+      short: "%m/%d"
+      long: "%Y年%m月%d日(%a)"
+
+    day_names: [日曜日, 月曜日, 火曜日, 水曜日, 木曜日, 金曜日, 土曜日]
+    abbr_day_names: [日, 月, 火, 水, 木, 金, 土]
+
+    month_names: [~, 1月, 2月, 3月, 4月, 5月, 6月, 7月, 8月, 9月, 10月, 11月, 12月]
+    abbr_month_names: [~, 1月, 2月, 3月, 4月, 5月, 6月, 7月, 8月, 9月, 10月, 11月, 12月]
+
+    order:
+      - :year
+      - :month
+      - :day
+
+  time:
+    formats:
+      default: "%Y/%m/%d %H:%M:%S"
+      short: "%y/%m/%d %H:%M"
+      long: "%Y年%m月%d日(%a) %H時%M分%S秒 %Z"
+    am: "午前"
+    pm: "午後"

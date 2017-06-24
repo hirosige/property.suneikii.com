@@ -1,0 +1,21 @@
+=headerlize('Listing shop_statuses')
+
+.row
+  .col-xs-6
+    table class=set_table_slim
+      thead
+        tr
+          th Name
+          th colspan=3 Controls
+
+      tbody
+        - @shop_statuses.each do |shop_status|
+          tr
+            td = shop_status.name
+            td = set_button_show('', [:admin, :tenants, shop_status])
+            td = set_button_edit('', edit_admin_tenants_shop_status_path(shop_status))
+            td = set_button_delete('', [:admin, :tenants, shop_status])
+
+    br
+
+    = set_button_new('New Shop status', new_admin_tenants_shop_status_path)

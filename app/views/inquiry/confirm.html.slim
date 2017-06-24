@@ -1,0 +1,43 @@
+br
+br
+br
+br
+br
+br
+br
+br
+br
+.container.marketing
+  .row
+    .col-xs-1
+    .col-xs-8
+      .page-header
+        h3
+          | お問い合わせ確認フォーム
+      = form_for @inquiry, :url => inquiry_thanks_path do |f|
+        table
+          tr
+            th.col-xs-4
+              | 名前
+            td
+              |
+              = f.hidden_field :name
+              |
+              = @inquiry.name
+          tr
+            th メールアドレス
+            td
+              |
+              = f.hidden_field :email
+              |
+              = @inquiry.email
+          tr
+            th お問い合わせ内容
+            td
+              |
+              = f.hidden_field :message
+              |
+              = simple_format(@inquiry.message)
+        br
+        = f.submit '送信', :class => 'btn btn-primary', data: { disable_with: '送信中...'}
+br

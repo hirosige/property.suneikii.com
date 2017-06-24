@@ -1,0 +1,77 @@
+<div class="table-responsive">
+  <table class="table table-striped jambo_table bulk_action">
+    <thead>
+    <tr class="headings">
+      <th>
+        <input type="checkbox" id="check-all" class="flat">
+      </th>
+
+      <th class="column-title"><%= t('admin.apartments.items.area') %></th>
+      <th class="column-title"><%= t('admin.apartments.items.name') %></th>
+      <th class="column-title"><%= t('admin.apartments.items.address') %></th>
+      <th class="column-title"><%= t('admin.apartments.items.since_when') %></th>
+      <th class="column-title"><%= t('admin.apartments.items.room_type') %></th>
+      <th class="column-title"><%= t('admin.apartments.items.photo') %></th>
+      <th class="column-title"><%= t('admin.apartments.items.status.title') %></th>
+      <th class="column-title"><%= t('admin.apartment_info.items.property_status.title') %></th>
+      <th class="column-title"><%= t('admin.apartment_info.items.availability.title') %></th>
+      <th class="column-title"><%= t('admin.apartments.items.provider') %></th>
+      <th class="column-title"><%= t('admin.apartments.items.created_at') %></th>
+      <th class="column-title"><%= t('admin.apartments.items.updated_at') %></th>
+      <th class="column-title no-link last" colspan="3"><span class="nobr"><%= t('admin.apartments.items.controls') %></span></th>
+      <th class="bulk-actions" colspan="12">
+        <a class="antoo" style="color:#fff; font-weight:500;"><%= t('admin.elements.buttons.bulc_action') %> ( <span class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
+      </th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% @apartments.each do |apartment| %>
+        <tr class="even pointer">
+          <td class="a-center">
+            <input type="checkbox" class="flat" name="table_records">
+          </td>
+          <td> <%= apartment.area_id %></td>
+          <td> <%= apartment.name %></td>
+          <td> <%= apartment.address %></td>
+          <td> <%= apartment.since_when %></td>
+          <td> <%= apartment.room_type_id %></td>
+          <td> <%= image_tag apartment.photo_url(:thumb), :style => 'border: 1px #ddd solid; border-radius: 10px;' %></td>
+          <td>
+            <%=
+              if apartment.publish?
+                link_to "非公開にする", decline_admin_apartments_apartment_path(apartment), :class => 'btn btn-danger btn-xs'
+              else
+                link_to "公開する", publish_admin_apartments_apartment_path(apartment), :class => 'btn btn-primary btn-xs'
+              end
+            %>
+          </td>
+          <td>
+            <%=
+              if apartment.apartment_info.vacant?
+                link_to "満員にする", occupy_admin_apartments_apartment_path(apartment), :class => 'btn btn-danger btn-xs'
+              else
+                link_to "空きにする", clean_admin_apartments_apartment_path(apartment), :class => 'btn btn-primary btn-xs'
+              end
+            %>
+          </td>
+          <td>
+            <%=
+              if apartment.apartment_info.now_available?
+                link_to "準備中にする", disable_admin_apartments_apartment_path(apartment), :class => 'btn btn-danger btn-xs'
+              else
+                link_to "即時入居可能にする", enable_admin_apartments_apartment_path(apartment), :class => 'btn btn-primary btn-xs'
+              end
+            %>
+          </td>
+          <td> <%= apartment.provider_id %></td>
+          <td> <%= apartment.formatted_created_date %></td>
+          <td> <%= apartment.formatted_updated_date %></td>
+          <td> <%= set_button_show('', [:admin, :apartments, apartment]) %></td>
+          <td> <%= set_button_edit('', edit_admin_apartments_apartment_path(apartment)) %></td>
+          <td> <%= set_button_delete('', [:admin, :apartments, apartment]) %></td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>

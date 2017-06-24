@@ -1,0 +1,32 @@
+<% provide(:title, t('admin.ingredients.title')) %>
+
+<div class="right_col" role="main">
+  <div class="">
+
+    <%= render :partial => 'admin/shared/page_title', :locals => {title: t('admin.ingredients.title'), description: t('admin.ingredients.description')} %>
+
+    <div class="clearfix"></div>
+    <div class="row">
+      <div class="clearfix"></div>
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <%= render 'layouts/admin_menus/goods_sub_tab' %>
+
+        <div class="x_panel">
+          <%= render :partial => 'admin/shared/table_title', :locals => {title: t('admin.ingredients.title'), description: t('admin.ingredients.description')} %>
+          <div class="x_content">
+
+            <%= render 'pagination' %>
+            <%= render :partial => 'table_contents', :locals => {ingredients: @ingredients} %>
+            <%= render 'pagination' %>
+
+            <br>
+            <%= set_button_new(t('admin.ingredients.buttons.add'), new_admin_products_good_path) %>
+            <%= set_button_csv(t('admin.ingredients.buttons.csv_export'), admin_products_goods_path(format: 'csv')) %>
+            <%= link_to t('admin.ingredients.buttons.add'), new_admin_products_ingredient_path, :class => set_button('info', 'sm', true), remote: true %>
+            <div id="ingredient-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

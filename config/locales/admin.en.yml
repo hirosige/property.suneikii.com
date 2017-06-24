@@ -1,0 +1,43 @@
+en:
+  admin:
+    greeting: "Welcome,"
+    page_title: "Admin"
+    sidemenu_1:
+      title: "Home"
+
+    sidemenu_2:
+      title: "Site"
+
+    sidemenu_3:
+      title: "Dealings"
+
+    sidemenu_4:
+      title: "Products"
+
+    sidemenu_5:
+      title: "Users"
+
+    sidemenu_6:
+      title: "Shoppers"
+
+    sidemenu_7:
+      title: "Reports"
+
+    sidemenu_8:
+      title: "Accommodations"
+
+    sidemenu_9:
+      title: "Restaurants"
+
+    sidemenu_10:
+      title: "Apartments"
+
+    sidemenu_11:
+      title: "Facilities"
+
+    elements:
+      search:
+        keyword:  "Search for..."
+        button:   "Go!"
+      buttons:
+        bulc_action: "Bulc Actions"

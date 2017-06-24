@@ -1,0 +1,6 @@
+h4
+   span.label.label-default
+      = list_data.total_count
+      | #{t('pagination.count')}
+   | #{list_data.current_page} / #{list_data.total_pages}
+= paginate(list_data, outer_window: 4)

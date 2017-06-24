@@ -1,0 +1,99 @@
+<% provide(:title, t('admin.orders.title')) %>
+
+<div class="right_col" role="main">
+  <div class="">
+    <%= render :partial => 'admin/shared/page_title', :locals => {title: t('admin.orders.title'), description: t('admin.orders.description')} %>
+
+    <div class="clearfix"></div>
+    <div class="row">
+      <div class="clearfix"></div>
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <%= render 'layouts/admin_menus/dealings_sub_tab' %>
+
+        <div class="x_panel">
+          <%= render :partial => 'admin/shared/table_title', :locals => {title: t('admin.orders.title'), description: t('admin.orders.description')} %>
+          <div class="x_content">
+
+            <%= render 'pagination' %>
+            <%= render :partial => 'table_contents', :locals => {orders: @orders} %>
+            <%= render 'pagination' %>
+
+            <br>
+            <div class="row">
+              <div id="goods_table" class="col-xs-6">
+                <div class='table-responsive'>
+                  <table id="goods_list" class='table table-striped jambo_table bulk_action'>
+                    <thead>
+                    <tr class='headings'>
+                      <th class='column-title'>画像</th>
+                      <th class='column-title'>商品名</th>
+                      <th class='column-title'>個数</th>
+                      <th class='column-title'>単価</th>
+                      <th class='column-title'>合計</th>
+                      <th class='column-title'>削除</th>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <br>
+            <%= set_button_new(t('admin.orders.buttons.add'), new_admin_dealings_order_path) %>
+            <%= set_button_csv(t('admin.orders.buttons.csv_export'), admin_dealings_orders_path(format: 'csv')) %>
+            <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal2">
+              商品を選ぶ
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                  </div>
+                  <div class="modal-body">
+                    Delete ?
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" id="deleting" class="btn btn-danger">Delete</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">商品検索</h4>
+                  </div>
+                  <div class="modal-body">
+                    <div class="form-group">
+                      <input type="text" style="font-family: FontAwesome; font-style: normal; font-weight: normal; text-decoration: inherit;" placeholder="&#xF002; 商品名で検索" id="modal-search" class="form-control" />
+                    </div>
+                    <div id="modal-contents">
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <div id="buttons">
+
+                    </div>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">キャンセル</button>
+                    <button type="button" id="test" class="btn btn-primary">商品を追加する</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

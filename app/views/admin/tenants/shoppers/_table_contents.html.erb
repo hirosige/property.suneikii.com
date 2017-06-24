@@ -1,0 +1,51 @@
+<div class="table-responsive">
+  <table class="table table-striped jambo_table bulk_action">
+    <thead>
+    <tr class="headings">
+      <th>
+        <input type="checkbox" id="check-all" class="flat">
+      </th>
+      <th class="column-title"><%= t('admin.shoppers.items.shop_name') %></th>
+      <th class="column-title"><%= t('admin.shoppers.items.representative_name') %></th>
+      <th class="column-title"><%= t('admin.shoppers.items.zip_code') %></th>
+      <th class="column-title"><%= t('admin.shoppers.items.address') %></th>
+      <th class="column-title"><%= t('admin.shoppers.items.tel1') %></th>
+      <th class="column-title"><%= t('admin.shoppers.items.tel2') %></th>
+      <th class="column-title"><%= t('admin.shoppers.items.mail_address') %></th>
+      <th class="column-title"><%= t('admin.shoppers.items.shop_status') %></th>
+      <th class="column-title"><%= t('admin.shoppers.items.account_number') %></th>
+      <th class="column-title"><%= t('admin.shoppers.items.memo') %></th>
+      <th class="column-title"><%= t('admin.shoppers.items.user_info') %></th>
+      <th class="column-title no-link last" colspan="3"><span class="nobr"><%= t('admin.shoppers.items.controls') %></span>
+      </th>
+      <th class="bulk-actions" colspan="14">
+        <a class="antoo" style="color:#fff; font-weight:500;"><%= t('admin.elements.buttons.bulc_action') %> ( <span class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
+      </th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% shoppers.each do |shopper| %>
+        <tr class="even pointer">
+          <td class="a-center">
+            <input type="checkbox" class="flat" name="table_records">
+          </td>
+          <td><%= shopper.shop_name %></td>
+          <td><%= shopper.representative_name %></td>
+          <td><%= shopper.zip_code %></td>
+          <td><%= shopper.address %></td>
+          <td><%= shopper.tel1 %></td>
+          <td><%= shopper.tel2 %></td>
+          <td><%= shopper.mail_address %></td>
+          <td><%= shopper.shop_status.name unless shopper.shop_status.nil? %></td>
+          <td><%= shopper.account_number %></td>
+          <td><%= shopper.memo %></td>
+          <td><%= shopper.user_id %></td>
+          <td><%= set_button_show('', [:admin, :tenants, shopper]) %></td>
+          <td><%= set_button_edit('', edit_admin_tenants_shopper_path(shopper)) %></td>
+          <td><%= set_button_delete('', [:admin, :tenants, shopper]) %></td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>

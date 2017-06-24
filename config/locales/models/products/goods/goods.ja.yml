@@ -1,0 +1,25 @@
+ja:
+  admin:
+    goods:
+      title:                 "商品一覧"
+      description:           "何か設定して下さい"
+      items:
+        name:                "商品名称"
+        size:                "サイズ"
+        color:               "色"
+        stock:               "在庫"
+        price:               "価格"
+        ingredient_name:     "素材"
+        description:         "説明文"
+        tenant_name:         "テナント名"
+        goods_category_name: "カテゴリ"
+        keyword:             "検索用キーワード"
+        gender_name:         "性別"
+        memo:                "自由記入枠"
+        photo:               "写真"
+        public_status:       "公開"
+        controls:            "操作"
+      buttons:
+        search:              "検索"
+        add:                 "商品追加"
+        csv_export:          "商品データ エクスポート"

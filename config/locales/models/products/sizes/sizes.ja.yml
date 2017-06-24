@@ -1,0 +1,12 @@
+ja:
+  admin:
+    sizes:
+      title:        "サイズ一覧"
+      description:  "何か設定して下さい"
+      items:
+        name:         "サイズ名称"
+        controls:     "操作"
+      buttons:
+        search:       "検索"
+        add:          "サイズ追加"
+        csv_export:   "サイズデータ エクスポート"

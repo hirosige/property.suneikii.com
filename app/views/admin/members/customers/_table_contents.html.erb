@@ -1,0 +1,49 @@
+<div class="table-responsive">
+  <table class="table table-striped jambo_table bulk_action">
+    <thead>
+    <tr class="headings">
+      <th>
+        <input type="checkbox" id="check-all" class="flat">
+      </th>
+      <th class="column-title"><%= t('admin.customers.items.name') %></th>
+      <th class="column-title"><%= t('admin.customers.items.email') %></th>
+      <th class="column-title"><%= t('admin.customers.items.birthday') %></th>
+      <th class="column-title"><%= t('admin.customers.items.gender') %></th>
+      <th class="column-title"><%= t('admin.customers.items.zip_code') %></th>
+      <th class="column-title"><%= t('admin.customers.items.address') %></th>
+      <th class="column-title"><%= t('admin.customers.items.tel1') %></th>
+      <th class="column-title"><%= t('admin.customers.items.tel2') %></th>
+      <th class="column-title"><%= t('admin.customers.items.memo') %></th>
+      <th class="column-title"><%= t('admin.customers.items.user_info') %></th>
+      <th class="column-title no-link last" colspan="3"><span class="nobr"><%= t('admin.customers.items.controls') %></span>
+      </th>
+      <th class="bulk-actions" colspan="13">
+        <a class="antoo" style="color:#fff; font-weight:500;"><%= t('admin.elements.buttons.bulc_action') %> ( <span class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
+      </th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% customers.each do |customer| %>
+        <tr class="even pointer">
+          <td class="a-center">
+            <input type="checkbox" class="flat" name="table_records">
+          </td>
+          <td><%= customer.full_name %></td>
+          <td><%= customer.user.email %></td>
+          <td><%= customer.formatted_birthday %></td>
+          <td><%= customer.gender %></td>
+          <td><%= customer.zip_code %></td>
+          <td><%= customer.address %></td>
+          <td><%= customer.tel1 %></td>
+          <td><%= customer.tel2 %></td>
+          <td><%= customer.memo %></td>
+          <td><%= set_button_show(t('admin.customers.items.user_info'), admin_members_user_path(customer.user_id)) %></td>
+          <td><%= set_button_show('', [:admin, :members, customer]) %></td>
+          <td><%= set_button_edit('', edit_admin_members_customer_path(customer)) %></td>
+          <td><%= set_button_delete('', [:admin, :members, customer]) %></td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>

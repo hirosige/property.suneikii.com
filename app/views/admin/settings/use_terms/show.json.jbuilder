@@ -1,0 +1,1 @@
+json.partial! "use_terms/use_term", use_term: @use_term

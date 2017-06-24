@@ -1,0 +1,35 @@
+<div class="table-responsive">
+  <table class="table table-striped jambo_table bulk_action">
+    <thead>
+    <tr class="headings">
+      <th>
+        <input type="checkbox" id="check-all" class="flat">
+      </th>
+      <th class="column-title"><%= t('admin.distributors.items.name') %></th>
+      <th class="column-title"><%= t('admin.distributors.items.tel') %></th>
+      <th class="column-title"><%= t('admin.distributors.items.address') %></th>
+      <th class="column-title no-link last" colspan="3"><span class="nobr"><%= t('admin.distributors.items.controls') %></span>
+      </th>
+      <th class="bulk-actions" colspan="13">
+        <a class="antoo" style="color:#fff; font-weight:500;"><%= t('admin.elements.buttons.bulc_action') %> ( <span class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
+      </th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% distributors.each do |distributor| %>
+        <tr class="even pointer">
+          <td class="a-center">
+            <input type="checkbox" class="flat" name="table_records">
+          </td>
+          <td><%= distributor.name %></td>
+          <td><%= distributor.tel %></td>
+          <td><%= distributor.address %></td>
+          <td><%= set_button_show('', [:admin, :tenants, distributor]) %></td>
+          <td><%= set_button_edit('', edit_admin_tenants_distributor_path(distributor)) %></td>
+          <td><%= set_button_delete('', [:admin, :tenants, distributor]) %></td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>

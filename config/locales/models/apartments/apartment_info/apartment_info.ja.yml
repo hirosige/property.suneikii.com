@@ -1,0 +1,24 @@
+ja:
+  admin:
+    apartment_info:
+      title:                 "アパート一覧"
+      detail_page_title:     "アパート詳細"
+      modify_page_title:     "備品 追加/修正画面"
+      description:           ""
+      items:
+        property_status:
+          title:               "現況"
+          vacant:              "空き"
+          occupy:              "満員"
+        availability:
+          title:               "入居可能状況"
+          now_available:       "即時入居可能"
+          preparing:           "準備中"
+        created_at:          "作成日"
+        updated_at:          "更新日"
+        controls:            "操作"
+      buttons:
+        search:              "検索"
+        add:                 "アパート追加"
+        exec:                "追加/修正"
+        csv_export:          "アパートデータ エクスポート"

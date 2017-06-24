@@ -1,0 +1,29 @@
+- name: install mysql
+  yum: name={{item}} state=latest
+  with_items: "{{mysql_packages}}"
+  ignore_errors: True
+
+- name: create directory for mysql
+  file: path=/etc/my.cnf. state=directory owner=root group=root mode=0755
+
+- name: Make sure a service is running
+  systemd: state=started name=mariadb enabled=yes
+
+- name: configure my.cnf
+  template: src=my.cnf dest=/etc/my.cnf
+  notify: restart mysql
+
+- name: Create user for aga
+  mysql_user: name=property_admin password=password priv=*.*:ALL state=present
+
+- name: Remove db for development
+  mysql_db: name=property_db state=absent
+
+- name: Remove db for test
+  mysql_db: name=property_db_test state=absent
+
+- name: Create db for development
+  mysql_db: name=property_db state=present
+
+- name: Create db for test
+  mysql_db: name=property_db_test state=present

@@ -1,0 +1,24 @@
+= headerlize('カテゴリ一覧')
+= render 'pagination'
+br
+.row
+  .col-xs-4
+    table.table.table-condensed.table-hover.table-bordered.table-striped
+      thead
+        tr
+          th
+            | カテゴリ名称
+          th
+            | Controls
+      tbody
+        - @goods_categories.each do |goods_category|
+          tr
+            td
+              = goods_category.name
+            td
+              = set_button_show('', [:admin, :products, goods_category])
+              = set_button_edit('', edit_admin_products_goods_category_path(goods_category))
+              = set_button_delete('', [:admin, :products, goods_category])
+    = render 'pagination'
+    br
+    = set_button_new('カテゴリ追加', new_admin_products_goods_category_path)

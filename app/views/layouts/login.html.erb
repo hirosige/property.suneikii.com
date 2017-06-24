@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= content_for?(:title) ? yield(:title) : "GentelellaOnRails" %></title>
+  <%= render "layouts/partials/assets" %>
+</head>
+
+<body style="background:#F7F7F7;">
+  <%= yield %>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<nav class="navbar navbar-inverse navbar-fluid">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#">
+				<%= image_tag("site_logo.png", :alt => 'Brand', :width => '20', :height => '20') %>
+			</a>
+			<a class="navbar-brand" href="#"><%= t('site_name') %> 管理画面</a>
+		</div>
+
+		<div class="collapse navbar-collapse">
+			<ul class="nav navbar-nav">
+				<li class="active">
+					<%= link_to root_path do %>
+							<i class="glyphicon glyphicon-home"> ホーム</i>
+					<% end %>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>

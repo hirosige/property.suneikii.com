@@ -1,0 +1,51 @@
+<div class="table-responsive">
+  <table id="order_list" class="table table-striped jambo_table bulk_action">
+    <thead>
+    <tr class="headings">
+      <th>
+        <input type="checkbox" id="check-all" class="flat">
+      </th>
+      <th class="column-title"><%= t('admin.orders.items.id') %></th>
+      <th class="column-title"><%= t('admin.orders.items.order_date') %></th>
+      <th class="column-title"><%= t('admin.orders.items.user_id') %></th>
+      <th class="column-title"><%= t('admin.orders.items.payment_status') %></th>
+      <th class="column-title"><%= t('admin.orders.items.fulfillment_status') %></th>
+      <th class="column-title"><%= t('admin.orders.items.total_amount') %></th>
+      <th class="column-title no-link last" colspan="3"><span class="nobr"><%= t('admin.orders.items.controls') %></span>
+      </th>
+      <th class="bulk-actions" colspan="14">
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="antoo dropdown-toggle"　 data-toggle="dropdown" role="button" aria-expanded="false" style="color:#fff; font-weight:500;"><%= t('admin.elements.buttons.bulc_action') %> ( <span class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">
+                Launch demo modal
+              </button>
+            <!--<li><button id="deleting" class="btn btn-xs btn-danger">Bulc Delete</button>-->
+            </li>
+          </ul>
+        </li>
+      </th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% orders.each do |order| %>
+        <tr class="even pointer" data-href="<%= admin_dealings_order_path(order.id) %>">
+          <td class="a-center">
+            <input type="checkbox" class="flat" id="table_records_<%= order.id %>" name="table_records" data-ids="<%= order.id %>">
+          </td>
+          <td class=" "><%= order.id %></td>
+          <td class=" "><%= order.order_date %></td>
+          <td class=" "><%= order.user.email unless order.user.nil? %></td>
+          <td class=" "><label class="label label-primary"><%= order.payment_status %></label></td>
+          <td class=" "><label class="label label-primary"><%= order.fulfillment_status %></label></td>
+          <td class=" "><%= order.total_amount %></td>
+          <td> <%= set_button_show('', [:admin, :dealings, order]) %></td>
+          <td> <%= set_button_edit('', edit_admin_dealings_order_path(order)) %></td>
+          <td> <%= set_button_delete('', [:admin, :dealings, order]) %></td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+
+</div>

@@ -1,0 +1,17 @@
+<ul class="nav nav-tabs">
+    <li role="presentation" class="<%= activate_sub_menu(controller, "users") %>" >
+      <%= link_to t('admin.users.title'), admin_members_users_path %>
+    </li>
+    <li role="presentation" class="<%= activate_sub_menu(controller, "customers") %>" >
+      <%= link_to t('admin.customers.title'), admin_members_customers_path %>
+    </li>
+    <li role="presentation" class="<%= activate_sub_menu(controller, "business_partners") %>" >
+      <%= link_to t('admin.business_partners.title'), admin_members_bps_path %>
+    </li>
+    <li role="presentation" class="<%= activate_sub_menu(controller, "system_admins") %>" >
+      <%= link_to t('admin.system_admins.title'), admin_members_system_admins_path %>
+    </li>
+    <li role="presentation" class="<%= activate_sub_menu(controller, "roles") %>" >
+      <%= link_to t('admin.roles.title'), admin_members_roles_path %>
+    </li>
+</ul>

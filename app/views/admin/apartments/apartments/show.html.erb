@@ -1,0 +1,110 @@
+<% provide(:title, t('admin.apartments.title')) %>
+
+<div class="right_col" role="main">
+  <div class="">
+
+    <%= render :partial => 'admin/shared/page_title', :locals => {title: t('admin.apartments.detail_page_title'), description: t('admin.apartments.description')} %>
+
+    <div class="clearfix"></div>
+    <div class="row">
+      <div class="clearfix"></div>
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <%= render 'layouts/admin_menus/apartments_sub_tab' %>
+
+        <div class="x_panel">
+          <%= render :partial => 'admin/shared/table_title', :locals => {title: t('admin.apartments.title'), description: t('admin.apartments.description')} %>
+          <div class="x_content">
+            <div class="table-responsive">
+              <table class="table table-striped jambo_table bulk_action">
+                <thead>
+                  <tr class="headings">
+                    <th class="column-title" colspan="2">項目</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr class="headings">
+                    <th class="column-title"><%= t('admin.apartments.items.area') %></th>
+                    <td> <%= @apartment.area_id %></td>
+                  </tr>
+                  <tr class="headings">
+                    <th class="column-title"><%= t('admin.apartments.items.name') %></th>
+                    <td> <%= @apartment.name %></td>
+                  </tr>
+                  <tr class="headings">
+                    <th class="column-title"><%= t('admin.apartments.items.rent_fee') %></th>
+                    <td> <%= @apartment.rent_fee %></td>
+                  </tr>
+                  <tr class="headings">
+                    <th class="column-title"><%= t('admin.apartments.items.security_deposit') %></th>
+                    <td> <%= @apartment.security_deposit %></td>
+                  </tr>
+                  <tr class="headings">
+                    <th class="column-title"><%= t('admin.apartments.items.deposit') %></th>
+                    <td> <%= @apartment.deposit %></td>
+                  </tr>
+                  <tr class="headings">
+                    <th class="column-title"><%= t('admin.apartments.items.transportation') %></th>
+                    <td> <%= @apartment.transportation %></td>
+                  </tr>
+                  <tr class="headings">
+                    <th class="column-title"><%= t('admin.apartments.items.utility_fee') %></th>
+                    <td> <%= @apartment.utility_fee %></td>
+                  </tr>
+                  <tr class="headings">
+                    <th class="column-title"><%= t('admin.apartments.items.key_money') %></th>
+                    <td> <%= @apartment.key_money %></td>
+                  </tr>
+                  <tr class="headings">
+                    <th class="column-title"><%= t('admin.apartments.items.address') %></th>
+                    <td> <%= @apartment.address %></td>
+                  </tr>
+                  <tr class="headings">
+                    <th class="column-title"><%= t('admin.apartments.items.since_when') %></th>
+                    <td> <%= @apartment.since_when %></td>
+                  </tr>
+                  <tr class="headings">
+                    <th class="column-title"><%= t('admin.apartments.items.room_type') %></th>
+                    <td> <%= @apartment.room_type_id %></td>
+                  </tr>
+                  <tr class="headings">
+                    <th class="column-title"><%= t('admin.apartments.items.space') %></th>
+                    <td> <%= @apartment.space %></td>
+                  </tr>
+                  <tr class="headings">
+                    <th class="column-title"><%= t('admin.apartments.items.photo') %></th>
+                    <td> <%= image_tag @apartment.photo_url(:middle), :style => 'border: 1px #ddd solid; border-radius: 10px;' %></td>
+                  </tr>
+                  <tr class="headings">
+                    <th class="column-title"><%= t('admin.apartments.items.recommendations') %></th>
+                    <td> <%= @apartment.recommendations %></td>
+                  </tr>
+                  <tr class="headings">
+                    <th class="column-title"><%= t('admin.apartments.items.status.title') %></th>
+                    <td> <%= @apartment.decollated_status %></td>
+                  </tr>
+                  <tr class="headings">
+                    <th class="column-title"><%= t('admin.apartments.items.provider') %></th>
+                    <td> <%= @apartment.provider_id %></td>
+                  </tr>
+                  <tr class="headings">
+                    <th class="column-title"><%= t('admin.apartments.items.created_at') %></th>
+                    <td> <%= @apartment.formatted_created_date %></td>
+                  </tr>
+                  <tr class="headings">
+                    <th class="column-title"><%= t('admin.apartments.items.updated_at') %></th>
+                    <td> <%= @apartment.formatted_updated_date %></td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <%= link_to 'Edit', edit_admin_apartments_apartment_path(@apartment) %>
+              |
+              <%= link_to 'Back', admin_apartments_apartments_path %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

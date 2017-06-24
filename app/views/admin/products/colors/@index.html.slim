@@ -1,0 +1,25 @@
+=headerlize t('admin.colors.title')
+
+.row
+  .col-xs-6
+    = render 'pagination'
+    br
+    table class=set_table_slim
+      thead
+        tr
+          th = t('admin.colors.items.name')
+          th colspan=3 = t('admin.colors.items.controls')
+
+      tbody
+        - @colors.each do |color|
+          tr
+            td = color.name
+            td = set_button_show('', [:admin, :products, color])
+            td = set_button_edit('', edit_admin_products_color_path(color))
+            td = set_button_delete('', [:admin, :products, color])
+
+    = render 'pagination'
+    br
+
+    = set_button_new('色追加', new_admin_products_color_path)
+    = set_button_csv('CSV形式でダウンロード', admin_products_colors_path(format: 'csv'))

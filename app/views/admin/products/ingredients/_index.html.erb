@@ -1,0 +1,11 @@
+<% @ingredients.each do |ingredient| %>
+  <tr class="even pointer">
+    <td class="a-center">
+      <input type="checkbox" class="flat" name="table_records">
+    </td>
+    <td><%= ingredient.name %></td>
+    <td><%= link_to '', [:admin, :products, ingredient], :class => "glyphicon glyphicon-search"  %></td>
+    <td><%= link_to '', edit_admin_products_ingredient_path(ingredient), :class => "glyphicon glyphicon-pencil" %></td>
+    <td><%= link_to '', [:admin, :products, ingredient], method: :delete, data: { confirm: 'Are you sure?' }, :class => "glyphicon glyphicon-remove" %></td>
+  </tr>
+<% end %>

@@ -1,0 +1,30 @@
+<% provide(:title, t('admin.services.title')) %>
+
+<div class="right_col" role="main">
+  <div class="">
+
+    <%= render :partial => 'admin/shared/page_title', :locals => {title: t('admin.services.title'), description: t('admin.services.description')} %>
+
+    <div class="clearfix"></div>
+    <div class="row">
+      <div class="clearfix"></div>
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <%= render 'layouts/admin_menus/accommodations_sub_tab' %>
+
+        <div class="x_panel">
+          <%= render :partial => 'admin/shared/table_title', :locals => {title: t('admin.services.title'), description: t('admin.services.description')} %>
+          <div class="x_content">
+
+            <%= render 'pagination' %>
+            <%= render :partial => 'table_contents', :locals => {goods: @services} %>
+            <%= render 'pagination' %>
+
+            <br>
+            <%= set_button_new(t('admin.services.buttons.add'), new_admin_accommodations_service_path) %>
+            <%= set_button_csv(t('admin.services.buttons.csv_export'), admin_accommodations_services_path(format: 'csv')) %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

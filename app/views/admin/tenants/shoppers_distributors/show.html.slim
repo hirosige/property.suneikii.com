@@ -1,0 +1,10 @@
+p
+  strong Shopper:
+  = @shoppers_distributor.shopper_id
+p
+  strong Distributor:
+  = @shoppers_distributor.distributor_id
+
+= link_to 'Edit', edit_admin_tenants_shoppers_distributor_path(@shoppers_distributor)
+'|
+= link_to 'Back', admin_tenants_shoppers_distributors_path

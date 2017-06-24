@@ -1,0 +1,39 @@
+h1 Listing orders
+
+table
+  thead
+    tr
+      th Order
+      th Order date
+      th User
+      th Payment Status
+      th Fulfillment Status
+      th Total amount
+      th Shipping cost
+      th Tax
+      th Note
+      th Timeline
+      th
+      th
+      th
+
+  tbody
+    - @orders.each do |order|
+      tr
+        td = order.order_id
+        td = order.order_date
+        td = order.user_id
+        td = order.payment_status
+        td = order.fulfillment_status
+        td = order.total_amount
+        td = order.shipping_cost
+        td = order.tax
+        td = order.note
+        td = order.timeline_id
+        td = link_to 'Show', order
+        td = link_to 'Edit', edit_order_path(order)
+        td = link_to 'Destroy', order, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Order', new_order_path

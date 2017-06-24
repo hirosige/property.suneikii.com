@@ -1,0 +1,25 @@
+- @users.title(t('admin.users.title'))
+
+= @users.header(t('admin.users.title'))
+
+= @users.set_paginate
+br
+
+table class=@users.set_table
+  thead
+    tr
+      th = t('admin.users.items.id')
+      th = t('admin.users.items.email')
+      th = t('admin.users.items.login_ct')
+      th = t('admin.users.items.current_ip')
+      th = t('admin.users.items.role')
+      th = t('admin.users.items.created_at')
+      th = t('admin.users.items.updated_at')
+      th = t('admin.users.items.ban_status')
+      th = t('admin.users.items.reference')
+      th = t('admin.users.items.control_del')
+
+  tbody
+    = render 'list_items'
+= @users.set_paginate
+br

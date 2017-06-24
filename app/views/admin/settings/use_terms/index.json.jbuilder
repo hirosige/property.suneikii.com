@@ -1,0 +1,1 @@
+json.array! @use_terms, partial: 'use_terms/use_term', as: :use_term

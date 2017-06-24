@@ -1,0 +1,21 @@
+h1 Listing accessories
+
+table
+  thead
+    tr
+      th Name
+      th
+      th
+      th
+
+  tbody
+    - @accessories.each do |accessory|
+      tr
+        td = accessory.name
+        td = link_to 'Show', accessory
+        td = link_to 'Edit', edit_accessory_path(accessory)
+        td = link_to 'Destroy', accessory, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Accessory', new_accessory_path

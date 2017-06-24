@@ -1,0 +1,26 @@
+en:
+  admin:
+    users:
+      title:  "Users"
+      description: "Input Any"
+      items:
+        id:          "ID"
+        email:       "E-Mail Address"
+        login_ct:    "Login Count"
+        current_ip:  "Current IP"
+        role:        "Role"
+        created_at:  "Created at"
+        updated_at:  "Updated at"
+        ban_status:  "Banned?"
+        reference:   "Reference"
+        from_where:  "From Where?"
+        control_del: "Delete"
+      buttons:
+        customer_before:       "Input Customer"
+        customer_after:        "Show Customer"
+        bp_before:             "Input Bp"
+        bp_after:              "Show Bp"
+        representative_before: "Input Representative"
+        representative_after:  "Show Represetative"
+        system_admin_before:   "Input System Admin"
+        system_admin_after:    "Show System Admin"

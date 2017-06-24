@@ -1,0 +1,54 @@
+  <div class="col-md-3 left_col">
+    <div class="left_col scroll-view">
+
+      <% hash = Digest::MD5.hexdigest(current_user.email) if signed_in? %>
+
+      <div class="navbar nav_title" style="border: 0;">
+        <a href="index.html" class="site_title"><i class="fa fa-s15"></i> <span><%= t('site_name') %> Shop</span></a>
+      </div>
+      <div class="clearfix"></div>
+
+      <div class="profile">
+        <div class="profile_pic">
+          <%= image_tag "https://www.gravatar.com/avatar/#{hash}", :class => "img-circle profile_img"  %>
+        </div>
+        <div class="profile_info">
+          <span>Welcome,</span>
+          <h2></h2>
+        </div>
+      </div>
+      <br /><br />
+
+      <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+
+        <div class="menu_section">
+          <h3>General</h3>
+          <ul class="nav side-menu">
+            <%= render partial: 'layouts/partials/front_sub_bar/home' %>
+            <%= render partial: 'layouts/partials/front_sub_bar/category_sub' %>
+          </ul>
+        </div>
+        <div class="menu_section">
+          <h3>Etc</h3>
+          <ul class="nav side-menu">
+            <%= render partial: 'layouts/partials/front_sub_bar/privacy_terms' %>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sidebar-footer hidden-small">
+        <a data-toggle="tooltip" data-placement="top" title="Settings">
+          <span class="glyphicon glyphicon-cog fa-spin" aria-hidden="true"></span>
+        </a>
+        <a data-toggle="tooltip" data-placement="top" title="FullScreen">
+          <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+        </a>
+        <a data-toggle="tooltip" data-placement="top" title="Lock">
+          <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+        </a>
+        <a href="<%= destroy_user_session_path %>" data-toggle="tooltip" data-method="delete" data-placement="top" title="Logout">
+          <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+        </a>
+      </div>
+    </div>
+  </div>

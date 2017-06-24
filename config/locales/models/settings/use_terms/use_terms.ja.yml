@@ -1,0 +1,17 @@
+ja:
+  admin:
+    use_terms:
+      title:                 "利用規約一覧"
+      modify_page_title:     "利用規約 追加/修正画面"
+      description:           ""
+      items:
+        title:               "利用規約タイトル"
+        description:         "記述"
+        created_at:          "作成日"
+        updated_at:          "更新日"
+        controls:            "操作"
+      buttons:
+        search:              "検索"
+        add:                 "利用規約 追加"
+        exec:                "追加/修正"
+        csv_export:          "利用規約データ エクスポート"

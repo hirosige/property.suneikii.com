@@ -1,0 +1,16 @@
+- provide(:title, t('admin.users.title'))
+
+= @user.id
+br
+= @user.email
+br
+= @user.sign_in_count
+br
+= @user.current_sign_in_ip
+br
+= @user.role.name unless @user.role.nil?
+br
+= @user.created_at.strftime("%Y年%m月%d日 %H:%M:%S")
+br
+= @user.updated_at.strftime("%Y年%m月%d日 %H:%M:%S")
+br

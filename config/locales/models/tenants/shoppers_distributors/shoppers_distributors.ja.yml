@@ -1,0 +1,13 @@
+ja:
+  admin:
+    shoppers_distributors:
+      title:               "利用可能・配送業者一覧"
+      description:         "何か設定して下さい"
+      items:
+        shop_name:           "店舗名"
+        distributor_name:    "配送業者名"
+        controls:            "操作"
+      buttons:
+        search:              "検索"
+        add:                 "店舗・配送業者紐付け"
+        csv_export:          "店舗・配送業者紐付けデータ エクスポート"

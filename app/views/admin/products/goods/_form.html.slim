@@ -1,0 +1,62 @@
+= form_for([:admin, :products, @good]) do |f|
+  - if @good.errors.any?
+    #error_explanation
+      h2
+        = pluralize(@good.errors.count, "error")
+        |  prohibited this good from being saved:
+      ul
+        - @good.errors.full_messages.each do |message|
+          li
+            = message
+  fieldset.form-group
+    label[for="name"]
+      | カテゴリ名称
+    = f.text_field :name, :class => 'form-control' ,:placeholder => 'カテゴリ名称', autofocus: true
+  fieldset.form-group
+    label[for="size"]
+      | サイズ
+    = f.collection_select :size_id, Size.all, :id, :name, {prompt: "Select any"}, {class: "form-control"}
+  fieldset.form-group
+    label[for="color"]
+      | 色
+    = f.collection_select :color_id, Color.all, :id, :name, {prompt: "Select any"}, {class: "form-control"}
+  fieldset.form-group
+    label[for="stock"]
+      | 在庫数
+    = f.text_field :stock, :class => 'form-control' ,:placeholder => '在庫数', autofocus: true
+  fieldset.form-group
+    label[for="price"]
+      | 価格
+    = f.text_field :price, :class => 'form-control' ,:placeholder => '価格', autofocus: true
+  fieldset.form-group
+    label[for="ingredient"]
+      | 材質
+    = f.collection_select :ingredient_id, Ingredient.all, :id, :name, {prompt: "Select any"}, {class: "form-control"}
+  fieldset.form-group
+    label[for="description"]
+      | 説明文
+    = f.text_field :description, :class => 'form-control' ,:placeholder => '説明文', autofocus: true
+  fieldset.form-group
+    label[for="shopper_id"]
+      | 店舗名
+    = f.collection_select :shopper_id, Shopper.all, :id, :shop_name, {prompt: "Select any"}, {class: "form-control"}
+  fieldset.form-group
+    label[for="category"]
+      | カテゴリ
+    = f.collection_select :goods_category_id, GoodsCategory.all, :id, :name, {prompt: "Select any"}, {class: "form-control"}
+  fieldset.form-group
+    label[for="keyword"]
+      | 検索ワード
+    = f.text_field :keyword, :class => 'form-control' ,:placeholder => '検索ワード', autofocus: true
+  fieldset.form-group
+    label[for="gender"]
+      | 性別
+    = f.collection_select :gender_id, Gender.all, :id, :name, {prompt: "Select any"}, {class: "form-control"}
+  fieldset.form-group
+    label[for="memo"]
+      | 備考
+    = f.text_field :memo, :class => 'form-control' ,:placeholder => '備考', autofocus: true
+  .field
+    = f.file_field :photo
+  .actions
+    = f.submit "商品追加", :class => 'w120 form-control btn btn-info'

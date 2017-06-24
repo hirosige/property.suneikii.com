@@ -1,0 +1,30 @@
+<% provide(:title, t('admin.surroundings.title')) %>
+
+<div class="right_col" role="main">
+  <div class="">
+
+    <%= render :partial => 'admin/shared/page_title', :locals => {title: t('admin.surroundings.title'), description: t('admin.surroundings.description')} %>
+
+    <div class="clearfix"></div>
+    <div class="row">
+      <div class="clearfix"></div>
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <%= render 'layouts/admin_menus/facilities_sub_tab' %>
+
+        <div class="x_panel">
+          <%= render :partial => 'admin/shared/table_title', :locals => {title: t('admin.surroundings.title'), description: t('admin.surroundings.description')} %>
+          <div class="x_content">
+
+            <%= render 'pagination' %>
+            <%= render :partial => 'table_contents', :locals => {apartments: @surrondings} %>
+            <%= render 'pagination' %>
+
+            <br>
+            <%= set_button_new(t('admin.surroundings.buttons.add'), new_admin_facilities_surrounding_path) %>
+            <%= set_button_csv(t('admin.surroundings.buttons.csv_export'), admin_facilities_surroundings_path(format: 'csv')) %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

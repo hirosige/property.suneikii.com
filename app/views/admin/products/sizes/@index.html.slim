@@ -1,0 +1,26 @@
+= headerlize('サイズ一覧')
+
+= render 'pagination'
+br
+.row
+  .col-xs-4
+
+    table class=set_table_slim
+      thead
+      tr
+        th サイズ名称
+        th 操作
+
+      tbody
+      - @sizes.each do |size|
+          tr
+            td= size.name
+            td
+              = set_button_show('', [:admin, :products, size])
+              = set_button_edit('', edit_admin_products_size_path(size))
+              = set_button_delete('', [:admin, :products, size])
+
+    = render 'pagination'
+    br
+
+    = set_button_new('サイズ追加', new_admin_products_size_path)

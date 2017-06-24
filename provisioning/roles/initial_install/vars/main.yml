@@ -1,0 +1,16 @@
+---
+ prerequisites: [
+      "gcc",
+      "gcc-c++",
+      "openssl-devel",
+      "readline-devel",
+      "zlib-devel",
+      "sqlite-devel",
+      "mysql-devel",
+      "postgresql-devel",
+      "MySQL-python",
+      "libjpeg-devel",
+      "libpng-devel",
+      "ImageMagick",
+      "ImageMagick-devel"
+ ]

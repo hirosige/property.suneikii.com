@@ -1,0 +1,12 @@
+en:
+  admin:
+    goods_categories:
+      title: "Goods Categories"
+      description: "Input Any"
+      items:
+        name:                "Categroy Name"
+        controls:            "Controls"
+      buttons:
+        search:              "Search"
+        add:                 "Add Category"
+        csv_export:          "Export Categories"

@@ -1,0 +1,30 @@
+<% provide(:title, t('admin.colors.title')) %>
+
+<div class="right_col" role="main">
+  <div class="">
+
+    <%= render :partial => 'admin/shared/page_title', :locals => {title: t('admin.colors.title'), description: t('admin.colors.description')} %>
+
+    <div class="clearfix"></div>
+    <div class="row">
+      <div class="clearfix"></div>
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <%= render 'layouts/admin_menus/goods_sub_tab' %>
+
+        <div class="x_panel">
+          <%= render :partial => 'admin/shared/table_title', :locals => {title: t('admin.colors.title'), description: t('admin.colors.description')} %>
+          <div class="x_content">
+
+            <%= render 'pagination' %>
+            <%= render :partial => 'table_contents', :locals => {colors: @colors} %>
+            <%= render 'pagination' %>
+
+            <br>
+            <%= set_button_new(t('admin.colors.buttons.add'), new_admin_products_color_path) %>
+            <%= set_button_csv(t('admin.colors.buttons.csv_export'), admin_products_colors_path(format: 'csv')) %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

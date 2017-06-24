@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= content_for?(:title) ? yield(:title) : "GentelellaOnRails" %> </title>
+  <%= render "layouts/partials/assets" %>
+</head>
+
+<body class="nav-md">
+<div class="container body">
+  <% flash.each do |key, value| %>
+      <div align="center" id="flash" class="alert alert-<%= key %>"><%= value %></div>
+  <% end %>
+
+  <%= yield %>
+
+  <%= javascript_include_tag 'footermanifest', 'data-turbolinks-track' => true %>
+</div>
+</body>
+</html>

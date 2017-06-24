@@ -1,0 +1,7 @@
+.bundle
+.vagrant
+tmp
+log
+!log/.keep
+.idea
+ruby

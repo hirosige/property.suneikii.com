@@ -1,0 +1,10 @@
+<div class="nested-fields form-inline">
+  <%= f.text_area :title, :required => 'required', :class => 'form-control', :style => 'margin-bottom: 10px; width: 400px;' %>
+
+  <% del_class = set_button('danger', 'xs', true) + get_glyph_icon(:trash) %>
+  <%= link_to_remove_association(
+           "",                  # <= button_caption
+           f,                   # <= form_object
+           :class => del_class  # <= button_style_class
+       ) %>
+</div>

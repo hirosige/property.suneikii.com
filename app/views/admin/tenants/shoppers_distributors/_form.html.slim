@@ -1,0 +1,17 @@
+= form_for [:admin, :tenants, @shoppers_distributor] do |f|
+  - if @shoppers_distributor.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@shoppers_distributor.errors.count, "error")} prohibited this shoppers_distributor from being saved:"
+      ul
+        - @shoppers_distributor.errors.full_messages.each do |message|
+          li = message
+
+  fieldset.form-group
+    label for="shopper_id"
+    = f.collection_select :shopper_id, Shopper.all, :id, :shop_name, {prompt: "Select any"}, {class: "form-control"}
+
+  fieldset.form-group
+    label for="distributor_id"
+    = f.collection_select :distributor_id, Distributor.all, :id, :name, {prompt: "Select any"}, {class: "form-control"}
+
+  .actions = f.submit

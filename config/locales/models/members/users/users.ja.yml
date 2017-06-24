@@ -1,0 +1,26 @@
+ja:
+  admin:
+    users:
+      title:    "ユーザ一覧"
+      description: "何か設定して下さい"
+      items:
+        id:          "ID"
+        email:       "Eメール"
+        login_ct:    "ログイン回数"
+        current_ip:  "現在の接続IP"
+        role:        "権限"
+        created_at:  "作成日"
+        updated_at:  "更新日"
+        ban_status:  "利用禁止"
+        reference:   "顧客情報閲覧/入力"
+        from_where:  "プロバイダー"
+        control_del: "削除"
+      buttons:
+        customer_before:       "顧客情報入力"
+        customer_after:        "顧客情報閲覧"
+        bp_before:             "バイト情報入力"
+        bp_after:              "バイト情報閲覧"
+        representative_before: "テナント情報入力"
+        representative_after:  "テナント情報閲覧"
+        system_admin_before:   "システム管理者情報入力"
+        system_admin_after:    "システム管理者情報閲覧"

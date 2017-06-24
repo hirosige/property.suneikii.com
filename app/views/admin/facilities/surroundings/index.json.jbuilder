@@ -1,0 +1,1 @@
+json.array! @surroundings, partial: 'surroundings/surrounding', as: :surrounding

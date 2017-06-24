@@ -1,0 +1,8 @@
+en:
+  admin:
+    roles:
+      title:        "Roles"
+      description:  "Input Any"
+      items:
+        id:           "Role ID"
+        name:         "Role Name"

@@ -1,0 +1,18 @@
+en:
+  admin:
+    accessories:
+      title:                 "Accessories"
+      detail_page_title:     "Accessories Detail"
+      modify_page_title:     "Accessories Add/Modify"
+      description:           ""
+      items:
+        name:                "Accessory Name"
+        created_at:          "Created at"
+        updated_at:          "Updated at"
+        controls:            "Controls"
+      buttons:
+        search:              "Search"
+        add:                 "Add Accessory"
+        exec:                "Add/Modify"
+        csv_export:          "Export Accessories"
+

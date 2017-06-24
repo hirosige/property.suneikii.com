@@ -1,0 +1,30 @@
+<% provide(:title, t('admin.use_terms.title')) %>
+
+<div class="right_col" role="main">
+  <div class="">
+
+    <%= render :partial => 'admin/shared/page_title', :locals => {title: t('admin.use_terms.title'), description: t('admin.use_terms.description')} %>
+
+    <div class="clearfix"></div>
+    <div class="row">
+      <div class="clearfix"></div>
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <%= render 'layouts/admin_menus/settings_sub_tab' %>
+
+        <div class="x_panel">
+          <%= render :partial => 'admin/shared/table_title', :locals => {title: t('admin.use_terms.title'), description: t('admin.use_terms.description')} %>
+          <div class="x_content">
+
+            <%= render 'pagination' %>
+            <%= render :partial => 'table_contents', :locals => {use_terms: @use_terms} %>
+            <%= render 'pagination' %>
+
+            <br>
+            <%= set_button_new(t('admin.use_terms.buttons.add'), new_admin_settings_use_term_path) %>
+            <%= set_button_csv(t('admin.use_terms.buttons.csv_export'), admin_settings_use_terms_path(format: 'csv')) %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

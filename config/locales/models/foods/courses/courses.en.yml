@@ -1,0 +1,24 @@
+en:
+  admin:
+    courses:
+      title:             "Courses"
+      modify_page_title: "Course Add/Modify"
+      description:       ""
+      items:
+        title:             "Title"
+        photo:             "Photo"
+        start_date:        "Start Date"
+        end_date:          "End Date"
+        start_time:        "Start Time"
+        end_time:          "End Time"
+        price:             "Price"
+        list:              "List"
+        created_at:        "Created at"
+        updated_at:        "Updated at"
+        controls:          "Controls"
+      buttons:
+        search:            "Search"
+        add:               "Add Course"
+        exec:              "Add/Modify"
+        csv_export:        "Export Courses"
+

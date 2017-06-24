@@ -1,0 +1,35 @@
+- provide(:title, t('admin.goods.title'))
+.page-header
+  h3
+    = t('admin.goods.title')
+    span.badge
+      = @goods.total_count
+= render 'search'
+= render 'pagination'
+br
+table.table.table-condensed.table-hover.table-bordered.table-striped
+  thead
+    tr
+      th
+        = sort_link @search, :name,  t('admin.goods.items.name')
+      th
+        = sort_link @search, :size,  t('admin.goods.items.size')
+      th
+        = sort_link @search, :stock, t('admin.goods.items.stock')
+      th
+        = sort_link @search, :price, t('admin.goods.items.price')
+      th
+        = sort_link @search, :tenant_name, t('admin.goods.items.tenant_name')
+      th
+        = t('admin.goods.items.goods_category_name')
+      th
+        = sort_link @search, :keyword, t('admin.goods.items.keyword')
+      th
+        = t('admin.goods.items.photo')
+      th[colspan="3"]
+        = t('admin.goods.items.controls')
+  tbody
+    = render 'list_items'
+= render 'pagination'
+br
+= set_button_new(t('admin.goods.buttons.add'), new_admin_products_good_path)

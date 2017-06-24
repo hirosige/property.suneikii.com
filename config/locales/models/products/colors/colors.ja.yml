@@ -1,0 +1,12 @@
+ja:
+  admin:
+    colors:
+      title:                 "色一覧"
+      description:           "何か設定して下さい"
+      items:
+        name:                "色名称"
+        controls:            "操作"
+      buttons:
+        search:              "検索"
+        add:                 "色追加"
+        csv_export:          "色データ エクスポート"

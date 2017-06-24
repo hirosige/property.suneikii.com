@@ -1,0 +1,13 @@
+= form_for [:admin, :tenants, @shop_status] do |f|
+  - if @shop_status.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@shop_status.errors.count, "error")} prohibited this shop_status from being saved:"
+      ul
+        - @shop_status.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :name
+    = f.text_field :name
+
+  .actions = f.submit

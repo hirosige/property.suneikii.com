@@ -1,0 +1,13 @@
+<ul class="nav nav-tabs">
+  <li role="presentation" class="<%= activate_sub_menu(controller, "restaurants") %>" >
+    <%= link_to t('admin.restaurants.title'), admin_foods_restaurants_path %>
+  </li>
+  <% unless params[:restaurant_id].nil? %>
+      <li role="presentation" class="<%= activate_sub_menu(controller, "menus") %>" >
+        <%= link_to "#{(@restaurant.name).truncate(10)} の #{t('admin.menus.title')}", admin_foods_restaurant_menus_path(params[:restaurant_id]) %>
+      </li>
+      <li role="presentation" class="<%= activate_sub_menu(controller, "courses") %>" >
+        <%= link_to "#{(@restaurant.name).truncate(10)} の #{t('admin.courses.title')}", admin_foods_restaurant_courses_path(params[:restaurant_id]) %>
+      </li>
+  <% end %>
+</ul>

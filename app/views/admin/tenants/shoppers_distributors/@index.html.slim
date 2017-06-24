@@ -1,0 +1,33 @@
+=headerlize('Listing shoppers_distributors')
+
+- @before_name = ''
+
+table class=set_table_slim
+  thead
+    tr
+      th Shopper
+      th Distributor
+      th colspan=3 Controls
+
+  tbody
+    - @shoppers_distributors.each do |shoppers_distributor|
+
+      tr
+        - unless @before_name == shoppers_distributor.shopper.shop_name
+          - @before_name = shoppers_distributor.shopper.shop_name
+          td rowspan=shoppers_distributor.shoppers_count
+            h3
+              .label.label-default
+                = shoppers_distributor.shopper.shop_name
+        td = set_glyph_icon(:arrow_right)
+        td
+          h4
+            .label.label-success
+              = shoppers_distributor.distributor.name
+        td = set_button_show('', [:admin, :tenants, shoppers_distributor])
+        td = set_button_edit('', edit_admin_tenants_shoppers_distributor_path(shoppers_distributor))
+        td = set_button_delete('', [:admin, :tenants, shoppers_distributor])
+
+br
+
+= set_button_new('New Shoppers distributor', new_admin_tenants_shoppers_distributor_path)

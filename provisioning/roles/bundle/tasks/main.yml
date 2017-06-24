@@ -1,0 +1,5 @@
+- name: bundle install
+  bundler:
+    state: present
+    gemfile: /vagrant/Gemfile
+  become: no

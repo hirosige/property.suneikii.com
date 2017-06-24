@@ -1,0 +1,51 @@
+<% provide(:title, t('admin.surroundings.title')) %>
+
+<div class="right_col" role="main">
+  <div class="">
+
+    <%= render :partial => 'admin/shared/page_title', :locals => {title: t('admin.surroundings.detail_page_title'), description: t('admin.surroundings.description')} %>
+
+    <div class="clearfix"></div>
+    <div class="row">
+      <div class="clearfix"></div>
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <%= render 'layouts/admin_menus/apartments_sub_tab' %>
+
+        <div class="x_panel">
+          <%= render :partial => 'admin/shared/table_title', :locals => {title: t('admin.surroundings.title'), description: t('admin.surroundings.description')} %>
+          <div class="x_content">
+            <div class="table-responsive">
+              <table class="table table-striped jambo_table bulk_action">
+                <thead>
+                  <tr class="headings">
+                    <th class="column-title" colspan="2">項目</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr class="headings">
+                    <th class="column-title"><%= t('admin.surroundings.items.name') %></th>
+                    <td> <%= @surrounding.name %></td>
+                  </tr>
+                  <tr class="headings">
+                    <th class="column-title"><%= t('admin.surroundings.items.latitude') %></th>
+                    <td> <%= @surrounding.latitude %></td>
+                  </tr>
+                  <tr class="headings">
+                    <th class="column-title"><%= t('admin.surroundings.items.longitude') %></th>
+                    <td> <%= @surrounding.longitude %></td>
+                  </tr>
+
+                </tbody>
+              </table>
+
+              <%= link_to 'Edit', edit_admin_facilities_surrounding_path(@surrounding) %>
+              |
+              <%= link_to 'Back', admin_facilities_surroundings_path %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

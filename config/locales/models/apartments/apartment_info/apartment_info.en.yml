@@ -1,0 +1,35 @@
+en:
+  admin:
+    apartment_info:
+      title:                 "アパート一覧"
+      detail_page_title:     "アパート詳細"
+      modify_page_title:     "備品 追加/修正画面"
+      description:           ""
+      items:
+        area:                "エリア"
+        name:                "アパート名"
+        rent_fee:            "賃料"
+        security_deposit:    "敷金"
+        deposit:             "礼金"
+        transportation:      "交通"
+        utility_fee:         "管理費"
+        key_money:           "礼金"
+        address:             "所在地"
+        since_when:          "築年月"
+        room_type:           "間取り"
+        space:               "専有面積"
+        photo:               "写真"
+        recommendations:     "ポイント"
+        status:
+          title:               "公開/非公開"
+          public:              "公開"
+          secret:              "非公開"
+        provider:            "管理元"
+        created_at:          "作成日"
+        updated_at:          "更新日"
+        controls:            "操作"
+      buttons:
+        search:              "検索"
+        add:                 "アパート追加"
+        exec:                "追加/修正"
+        csv_export:          "アパートデータ エクスポート"

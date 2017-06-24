@@ -1,0 +1,31 @@
+<div class="table-responsive">
+  <table class="table table-striped jambo_table bulk_action">
+    <thead>
+    <tr class="headings">
+      <th>
+        <input type="checkbox" id="check-all" class="flat">
+      </th>
+      <th class="column-title"><%= t('admin.roles.items.id') %></th>
+      <th class="column-title"><%= t('admin.roles.items.name') %></th>
+      </th>
+      <th class="bulk-actions" colspan="13">
+        <a class="antoo" style="color:#fff; font-weight:500;"><%= t('admin.elements.buttons.bulc_action') %> ( <span class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
+      </th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% roles.each do |role| %>
+        <tr class="even pointer">
+          <td class="a-center">
+            <input type="checkbox" class="flat" name="table_records">
+          </td>
+          <td><%= role.id %></td>
+          <td><%= role.name %></td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+
+
+</div>

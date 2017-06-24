@@ -1,0 +1,8 @@
+ja:
+  admin:
+    roles:
+      title:        "権限一覧"
+      description:  "何か設定して下さい"
+      items:
+        id:           "権限ID"
+        name:         "権限名称"

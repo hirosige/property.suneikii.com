@@ -1,0 +1,41 @@
+=headerlize('Listing shoppers')
+
+=render 'pagination'
+br
+table class=set_table_slim
+  thead
+    tr
+      th Shop name
+      th Representative name
+      th Zip code
+      th Address
+      th Tel1
+      th Tel2
+      th Mail address
+      th Shop status
+      th Account number
+      th Memo
+      th User
+      th colspan=3 Controls
+
+  tbody
+    - @shoppers.each do |shopper|
+      tr
+        td = shopper.shop_name
+        td = shopper.representative_name
+        td = shopper.zip_code
+        td = shopper.address
+        td = shopper.tel1
+        td = shopper.tel2
+        td = shopper.mail_address
+        td = shopper.shop_status.name unless shopper.shop_status.nil?
+        td = shopper.account_number
+        td = shopper.memo
+        td = shopper.user_id
+        td = set_button_show('', [:admin, :tenants, shopper])
+        td = set_button_edit('', edit_admin_tenants_shopper_path(shopper))
+        td = set_button_delete('', [:admin, :tenants, shopper])
+=render 'pagination'
+br
+
+= set_button_new('New Shopper', new_admin_tenants_shopper_path)

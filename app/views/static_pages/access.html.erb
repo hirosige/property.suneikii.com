@@ -1,0 +1,101 @@
+<% provide(:title, "Home") %>
+
+<!-- Carousel
+================================================== -->
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <img class="first-slide" src="http://www.landowner.jp/hotel-nagasaki/image/jquery/img/5.jpg" alt="First slide">
+      <div class="container">
+        <div class="carousel-caption">
+
+        </div>
+      </div>
+    </div>
+    <div class="item">
+      <img class="second-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Second slide">
+      <div class="container">
+        <div class="carousel-caption">
+
+        </div>
+      </div>
+    </div>
+    <div class="item">
+      <img class="third-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Third slide">
+      <div class="container">
+        <div class="carousel-caption">
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div><!-- /.carousel -->
+
+<div class="container marketing">
+
+  <!-- Three columns of text below the carousel -->
+  <div class="row">
+
+    <div class="img-center">
+      <div class="panel panel-primary">
+        <div class="panel-heading">Access</div>
+      </div>
+
+      <div class="thumbnail">
+        <div style='width: 800px;'>
+          <div id="map" style='width: 800px; height: 400px;'></div>
+        </div>
+
+        <script type="text/javascript">
+          handler = Gmaps.build('Google');
+          handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+            markers = handler.addMarkers(<%=raw @hash.to_json %>);
+            handler.bounds.extendWith(markers);
+            handler.fitMapToBounds();
+
+            handler.getMap().setZoom(15)
+          });
+        </script>
+      </div><!-- /.col-lg-4 -->
+
+      <table>
+        <thead>
+        <tr>
+          <th>Items</th>
+          <th>Details</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>Tel</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>Address</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>Website URL</td>
+          <td>2</td>
+        </tr>
+        </tbody>
+      </table><br><br>
+
+    </div>
+  </div><!-- /.row -->
+
+</div>

@@ -1,0 +1,38 @@
+
+p
+  strong Shop name:
+  = @shopper.shop_name
+p
+  strong Representative name:
+  = @shopper.representative_name
+p
+  strong Zip code:
+  = @shopper.zip_code
+p
+  strong Address:
+  = @shopper.address
+p
+  strong Tel1:
+  = @shopper.tel1
+p
+  strong Tel2:
+  = @shopper.tel2
+p
+  strong Mail address:
+  = @shopper.mail_address
+p
+  strong Shop status:
+  = @shopper.shop_status_id
+p
+  strong Account number:
+  = @shopper.account_number
+p
+  strong Memo:
+  = @shopper.memo
+p
+  strong User:
+  = @shopper.user_id
+
+= link_to 'Edit', edit_admin_tenants_shopper_path(@shopper)
+'|
+= link_to 'Back', admin_tenants_shoppers_path

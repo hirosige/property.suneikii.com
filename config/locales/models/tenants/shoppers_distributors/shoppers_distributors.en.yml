@@ -1,0 +1,13 @@
+en:
+  admin:
+    shoppers_distributors:
+      title:               "Distributor Options"
+      description:         "Input Any"
+      items:
+        shop_name:           "Shop Name"
+        distributor_name:    "Distributor Name"
+        controls:            "Controls"
+      buttons:
+        search:              "Search"
+        add:                 "Add Shop-Distributors Connection"
+        csv_export:          "Export Shop-Distributors Connections"

@@ -1,0 +1,27 @@
+<% @users.title(t('admin.users.title')) %>
+
+<div class="right_col" role="main">
+  <div class="">
+
+    <%= render :partial => 'admin/shared/page_title', :locals => {title: t('admin.users.title'), description: t('admin.users.description')} %>
+
+    <div class="clearfix"></div>
+    <div class="row">
+      <div class="clearfix"></div>
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <%= render 'layouts/admin_menus/users_sub_tab' %>
+
+        <div class="x_panel">
+          <%= render :partial => 'admin/shared/table_title', :locals => {title: t('admin.users.title'), description: t('admin.users.description')} %>
+          <div class="x_content">
+
+            <%= render 'pagination' %>
+            <%= render :partial => 'table_contents', :locals => {users: @users} %>
+            <%= render 'pagination' %>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

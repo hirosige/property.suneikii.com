@@ -1,0 +1,12 @@
+ja:
+  admin:
+    ingredients:
+      title:        "素材一覧"
+      description:  "何か設定して下さい"
+      items:
+        name:         "素材名称"
+        controls:     "操作"
+      buttons:
+        search:       "検索"
+        add:          "素材追加"
+        csv_export:   "素材データ エクスポート"

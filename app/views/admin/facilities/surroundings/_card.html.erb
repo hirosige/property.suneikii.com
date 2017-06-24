@@ -1,0 +1,38 @@
+<div style="margin: 20px;">
+  <div style="
+  background: rgba(52, 73, 94, 0.94);
+      border: 1px solid #ddd;
+      width: 800px;
+      padding: 5px 15px;
+      font-size: 1.2em;
+      color: #ECF0F1;
+  ">
+    <div style="float: left;">
+      <%= surrounding.name %>
+    </div>
+    <div style="float: right;">
+      <%= set_button_show('', [:admin, :facilities, surrounding]) %>
+      <%= set_button_edit('', edit_admin_facilities_surrounding_path(surrounding)) %>
+      <%= set_button_delete('', [:admin, :facilities, surrounding]) %>
+    </div>
+    <div style="clear: both;"></div>
+  </div>
+  <div style="
+  width: 800px;
+      background: #fff;
+      border: 1px solid #ddd;
+      padding: 15px 15px;
+      height: 220px;
+  ">
+    <div style="float: left;">
+      <%= image_tag surrounding.photo_url(:middle), :class => 'thumbnail' %>
+    </div>
+    <div style="float: right;">
+      <%= t('admin.surroundings.items.created_at') %> : <%= surrounding.formatted_created_date %><br>
+      <%= t('admin.surroundings.items.updated_at') %> : <%= surrounding.formatted_updated_date %><br>
+      <%= t('admin.surroundings.items.latitude') %>   : <%= surrounding.latitude %><br>
+      <%= t('admin.surroundings.items.longitude') %>   : <%= surrounding.longitude %><br>
+    </div>
+    <div style="clear: both;"></div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<% provide(:title, t('admin.shoppers.title')) %>
+
+<div class="right_col" role="main">
+  <div class="">
+
+    <%= render :partial => 'admin/shared/page_title', :locals => {title: t('admin.shoppers.title'), description: t('admin.shoppers.description')} %>
+
+    <div class="clearfix"></div>
+    <div class="row">
+      <div class="clearfix"></div>
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <%= render 'layouts/admin_menus/tenants_sub_tab' %>
+
+        <div class="x_panel">
+          <%= render :partial => 'admin/shared/table_title', :locals => {title: t('admin.shoppers.title'), description: t('admin.shoppers.description')} %>
+          <div class="x_content">
+
+            <%= render 'pagination' %>
+            <%= render :partial => 'table_contents', :locals => {shoppers: @shoppers} %>
+            <%= render 'pagination' %>
+
+            <br>
+            <%= set_button_new(t('admin.shoppers.buttons.add'), new_admin_tenants_shopper_path) %>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+en:
+  admin:
+    customers:
+      title:        "Customers"
+      description:  "Input Any"
+      items:
+        name:    "Full Name"
+        email:        "E-mail"
+        birthday:     "Birthday"
+        gender:       "Gender"
+        zip_code:     "Zip Code"
+        address:      "Address"
+        tel1:         "Tel 1"
+        tel2:         "Tel 2"
+        memo:         "Memo"
+        user_info:    "User Info"
+        controls:     "Controls"
+      buttons:
+        user_info:    "User Info"

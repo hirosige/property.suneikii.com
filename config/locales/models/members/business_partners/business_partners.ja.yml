@@ -1,0 +1,19 @@
+ja:
+  admin:
+    business_partners:
+      title:           "BP一覧"
+      description:     "何か設定して下さい"
+      items:
+        name:            "氏名"
+        email:           "Eメール"
+        birthday:        "誕生日"
+        gender:          "性別"
+        zip_code:        "郵便番号"
+        address:         "住所"
+        tel1:            "電話番号1"
+        tel2:            "電話番号2"
+        memo:            "メモ"
+        user_info:       "ユーザ情報"
+        controls:        "操作"
+      buttons:
+        user_info:       "ユーザ情報"

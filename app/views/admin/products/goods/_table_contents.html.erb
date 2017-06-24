@@ -1,0 +1,52 @@
+<div class="table-responsive">
+  <table class="table table-striped jambo_table bulk_action">
+    <thead>
+    <tr class="headings">
+      <th>
+        <input type="checkbox" id="check-all" class="flat">
+      </th>
+      <th class="column-title"><%= sort_link @search, :name,  t('admin.goods.items.name') %></th>
+      <th class="column-title"><%= sort_link @search, :size,  t('admin.goods.items.size') %></th>
+      <th class="column-title"><%= sort_link @search, :stock, t('admin.goods.items.stock') %></th>
+      <th class="column-title"><%= sort_link @search, :price, t('admin.goods.items.price') %></th>
+      <th class="column-title"><%= sort_link @search, :tenant_name, t('admin.goods.items.tenant_name') %></th>
+      <th class="column-title"><%= t('admin.goods.items.goods_category_name') %></th>
+      <th class="column-title"><%= sort_link @search, :keyword, t('admin.goods.items.keyword') %></th>
+      <th class="column-title"><%= t('admin.goods.items.photo') %></th>
+      <th class="column-title"><%= t('admin.goods.items.public_status') %></th>
+      <th class="column-title no-link last" colspan="3"><span class="nobr"><%= t('admin.goods.items.controls') %></span></th>
+      <th class="bulk-actions" colspan="12">
+        <a class="antoo" style="color:#fff; font-weight:500;"><%= t('admin.elements.buttons.bulc_action') %> ( <span class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
+      </th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% goods.each do |good| %>
+        <tr class="even pointer">
+          <td class="a-center">
+            <input type="checkbox" class="flat" name="table_records">
+          </td>
+          <td> <%= good.name %></td>
+          <td> <%= good.size.name unless good.size.nil? %></td>
+          <td> <%= good.stock %></td>
+          <td> <%= good.price %></td>
+          <td> <%= good.shopper.shop_name unless good.shopper.nil? %></td>
+          <td> <%= good.goods_category.name unless good.goods_category.nil? %></td>
+          <td> <%= good.keyword %></td>
+          <% if good.photo.url(:thumb) == '/photos/thumb/missing.png' %>
+            <td>画像なし</td>
+          <% else %>
+            <td class="thumbnail"><%= image_tag good.photo.url(:thumb) %></td>
+          <% end %>
+          <td> <%= good.status %></td>
+          <td> <%= set_button_show('', [:admin, :products, good]) %></td>
+          <td> <%= set_button_edit('', edit_admin_products_color_path(good)) %></td>
+          <td> <%= set_button_delete('', [:admin, :products, good]) %></td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+
+
+</div>

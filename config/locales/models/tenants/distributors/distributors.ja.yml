@@ -1,0 +1,14 @@
+ja:
+  admin:
+    distributors:
+      title:        "配送業者一覧"
+      description:  "何か設定して下さい"
+      items:
+        name:         "配送業者名"
+        tel:          "電話番号"
+        address:      "住所"
+        controls:     "操作"
+      buttons:
+        search:       "検索"
+        add:          "配送業者追加"
+        csv_export:   "配送業者データ エクスポート"

@@ -1,0 +1,43 @@
+ja:
+  admin:
+    greeting: "ようこそ、"
+    page_title: "管理画面"
+    sidemenu_1:
+      title: "ホーム"
+
+    sidemenu_2:
+      title: "サイト管理"
+
+    sidemenu_3:
+      title: "受注管理"
+
+    sidemenu_4:
+      title: "商品管理"
+
+    sidemenu_5:
+      title: "メンバー管理"
+
+    sidemenu_6:
+      title: "店舗・業者管理"
+
+    sidemenu_7:
+      title: "レポート"
+
+    sidemenu_8:
+      title: "宿泊管理"
+
+    sidemenu_9:
+      title: "レストラン管理"
+
+    sidemenu_10:
+      title: "アパート管理"
+
+    sidemenu_11:
+      title: "施設管理"
+
+    elements:
+      search:
+        keyword:  "キーワード"
+        button:   "検索"
+      buttons:
+        bulc_action: "一括操作"

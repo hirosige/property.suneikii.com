@@ -1,0 +1,21 @@
+en:
+  admin:
+    surroundings:
+      title:                 "周辺施設一覧"
+      detail_page_title:     "周辺施設詳細"
+      modify_page_title:     "周辺施設 追加/修正画面"
+      description:           ""
+      items:
+        name:                "施設名"
+        latitude:            "緯度"
+        longitude:           "経度"
+        photo:               "写真"
+        uploaded_photo:      "アップロード済み画像"
+        created_at:          "作成日"
+        updated_at:          "更新日"
+        controls:            "操作"
+      buttons:
+        search:              "検索"
+        add:                 "アパート追加"
+        exec:                "追加/修正"
+        csv_export:          "アパートデータ エクスポート"

@@ -1,0 +1,26 @@
+<div class="col-xs-12 table">
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Product</th>
+      <th>Serial #</th>
+      <th style="width: 59%">Description</th>
+      <th>Price</th>
+      <th>Qty</th>
+      <th>Subtotal</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% items.get_goods.each_with_index do |item, i| %>
+        <tr class="even pointer">
+          <td><%= item.get_name %></td>
+          <td><%= item.get_id %></td>
+          <td></td>
+          <td><%= "$#{item.get_price}" %></td>
+          <td><%= item.get_count %></td>
+          <td><%= item.get_price * item.get_count unless item.get_price.nil? %></td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>

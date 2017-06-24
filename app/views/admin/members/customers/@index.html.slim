@@ -1,0 +1,37 @@
+= @customers.header('Listing customers')
+
+= @customers.set_paginate
+br
+  table class=@customers.set_table_slim
+    thead
+      tr
+        th 氏名
+        th Eメールアドレス
+        th 誕生日
+        th 性別
+        th 郵便番号
+        th 住所
+        th 電話番号1
+        th 電話番号2
+        th メモ
+        th ログインID
+        th colspan=3 Controls
+
+    tbody
+      - @customers.each do |customer|
+        tr
+          td = customer.full_name
+          td = customer.user.email
+          td = customer.formatted_birthday
+          td = customer.gender
+          td = customer.zip_code
+          td = customer.address
+          td = customer.tel1
+          td = customer.tel2
+          td = customer.memo
+          td = set_button_show(' User Info', admin_members_user_path(customer.user_id))
+          td = set_button_show('', [:admin, :members, customer])
+          td = set_button_edit('', edit_admin_members_customer_path(customer))
+          td = set_button_delete('', [:admin, :members, customer])
+
+= @customers.set_paginate

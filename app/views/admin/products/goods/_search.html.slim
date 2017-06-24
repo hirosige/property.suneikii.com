@@ -1,0 +1,23 @@
+.row
+  .col-xs-6
+    #accordion.panel-group
+      .panel.panel-default
+        .panel-heading
+          h4.panel-title
+            a[data-toggle="collapse" data-parent="#accordion" href="#collapseOne"]
+              = t('admin.goods.buttons.search')
+              span.glyphicon.glyphicon-collapse-up.pull-right
+        #collapseOne.panel-collapse.collapse
+          .panel-body
+            .panel.panel-default
+              .panel-body
+                = @sql
+            br
+            fieldset.form-group
+              = search_form_for [:admin, :products, @search] do |f|
+                label[for="name_cont"]
+                  = t('admin.goods.items.name')
+                = f.text_field :name_cont, :class => 'w500 form-control'
+                br
+                div
+                  = f.submit t('admin.goods.buttons.search'), :class => 'btn btn-info'
