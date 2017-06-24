@@ -1,9 +1,17 @@
 machine:
+  timezone:
+    Asia/Tokyo
   ruby:
-    version: 2.2.2
-
-deployment:
-  staging:
-    branch: master
-    heroku:
-      appname: suneikii
+    version:
+      2.3.4
+dependencies:
+  override:
+    - bundle install:
+        timeout: 180
+database:
+  override:
+    - bundle exec rake db:create db:schema:load RAILS_ENV=test
+    - bundle exec rake db:migrate RAILS_ENV=test
+test:
+  override:
+    - bundle exec rspec spec/
