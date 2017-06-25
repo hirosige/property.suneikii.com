@@ -33,6 +33,7 @@ class Apartment < ActiveRecord::Base
 
   accepts_nested_attributes_for :apartment_info
   accepts_nested_attributes_for :apartment_option_installations, allow_destroy: true
+  accepts_nested_attributes_for :apartment_surroundings, allow_destroy: true
   mount_uploader :photo, ImageUploader
 
   state_machine :status, :initial => :secret do

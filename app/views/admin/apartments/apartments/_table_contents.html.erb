@@ -8,7 +8,6 @@
 
       <th class="column-title"><%= t('admin.apartments.items.area') %></th>
       <th class="column-title"><%= t('admin.apartments.items.name') %></th>
-      <th class="column-title"><%= t('admin.apartments.items.address') %></th>
       <th class="column-title"><%= t('admin.apartments.items.since_when') %></th>
       <th class="column-title"><%= t('admin.apartments.items.room_type') %></th>
       <th class="column-title"><%= t('admin.apartments.items.photo') %></th>
@@ -33,7 +32,6 @@
           </td>
           <td> <%= apartment.area_id %></td>
           <td> <%= apartment.name %></td>
-          <td> <%= apartment.address %></td>
           <td> <%= apartment.since_when %></td>
           <td> <%= apartment.room_type_id %></td>
           <td> <%= image_tag apartment.photo_url(:thumb), :style => 'border: 1px #ddd solid; border-radius: 10px;' %></td>

@@ -112,6 +112,23 @@
                       </ul>
                     </td>
                   </tr>
+                  <tr class="headings">
+                    <th class="column-title">周辺施設リスト</th>
+                    <td>
+                      <ul style="margin-left: -40px;">
+                        <% @apartment.surroundings.each do |surrounding| %>
+                            <% labels = %w{primary default info success warning danger} %>
+                            <% random_color_id = Random.new.rand(0..labels.size-1) %>
+
+                            <li style="list-style: none; margin: 4px;">
+                            <span class="label label-<%= labels[random_color_id] %>">
+                              <%= surrounding.name %>
+                            </span>
+                            </li>
+                        <% end %>
+                      </ul>
+                    </td>
+                  </tr>
                 </tbody>
               </table>
 

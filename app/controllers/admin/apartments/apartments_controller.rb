@@ -14,6 +14,7 @@ class Admin::Apartments::ApartmentsController < AdminController
     @apartment = Apartment.new
     @apartment.build_apartment_info
     @apartment.apartment_option_installations.build
+    @apartment.apartment_surroundings.build
 
     @places = Array.new
     @places.push({
@@ -36,7 +37,6 @@ class Admin::Apartments::ApartmentsController < AdminController
 
   def create
     @apartment = Apartment.new(apartment_params)
-    p apartment_params
 
     respond_to do |format|
       if @apartment.save
@@ -50,7 +50,6 @@ class Admin::Apartments::ApartmentsController < AdminController
   end
 
   def update
-    p params
     respond_to do |format|
       if @apartment.update(apartment_params)
         format.html { redirect_to [:admin, :apartments, @apartment], flash: { :success => "#{@apartment.name}を更新しました。" } }
@@ -157,6 +156,13 @@ class Admin::Apartments::ApartmentsController < AdminController
               apartment_options_attributes:[
                   :name
               ]
+          ],
+          apartment_surroundings_attributes: [
+              :id,
+              :apartment_id,
+              :surrounding_id,
+              :distance,
+              :_destroy
           ]
       )
     end

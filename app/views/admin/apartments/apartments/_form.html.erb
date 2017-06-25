@@ -494,16 +494,34 @@
 
                   <hr>
 
-                  <div class="form-group">
-                    <div id="ingredients" class="form-group">
-                      <label class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.room_classes.items.accessories') %></label>
-                      <div class="col-md-6 col-sm-6 col-xs-12">
-                        <%= f.fields_for :apartment_option_installations do |builder| %>
-                            <%= render 'apartment_option_installation_fields', f: builder %>
-                        <% end %>
-                        <div id="links">
-                          <br>
-                          <%= link_to_add_association "Add Accessories", f, :apartment_option_installations, :class => 'btn btn-xs btn-primary' %><br/>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <div id="ingredients" class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">設備</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <%= f.fields_for :apartment_option_installations do |builder| %>
+                              <%= render 'apartment_option_installation_fields', f: builder %>
+                          <% end %>
+                          <div id="links">
+                            <br>
+                            <%= link_to_add_association "Add Accessories", f, :apartment_option_installations, :class => 'btn btn-xs btn-primary' %><br/>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <div id="ingredients" class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">周辺施設</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <%= f.fields_for :apartment_surroundings do |builder| %>
+                              <%= render 'apartment_surrounding_fields', f: builder %>
+                          <% end %>
+                          <div id="links">
+                            <br>
+                            <%= link_to_add_association "Add Surroundings", f, :apartment_surroundings, :class => 'btn btn-xs btn-primary' %><br/>
+                          </div>
                         </div>
                       </div>
                     </div>
