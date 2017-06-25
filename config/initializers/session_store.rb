@@ -1,3 +1,20 @@
 # Be sure to restart your server when you modify this file.
 
-Rails.application.config.session_store :redis_store, servers: "redis://localhost:68746/0/cache", key: '_snk_property_session'
+case Rails.env
+  when 'development' then
+    Rails.application.config.session_store :redis_store,
+                                           servers: "redis://localhost:6379/0/cache",
+                                           key: '_snk_property_session'
+  when 'staging' then
+    Rails.application.config.session_store :redis_store,
+                                           servers: "#{ENV['REDIS_URL']}/0/cache",
+                                           key: '_snk_property_session'
+  when 'production' then
+    Rails.application.config.session_store :redis_store,
+                                           servers: "#{ENV['REDIS_URL']}/0/cache",
+                                           key: '_snk_property_session'
+  else
+    Raise 'いやはや何か問題ですぞ'
+end
+
+

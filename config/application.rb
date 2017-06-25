@@ -16,6 +16,16 @@ module SnkProperty
     config.assets.paths << Rails.root.join('vendor', 'assets', 'components', 'gentelella', 'production')
     # config.active_record.raise_in_transactional_callbacks = true
     config.quiet_assets = true
-    config.cache_store = :redis_store, "redis://localhost:68746/0/cache", { expires_in: 90.minutes}
+
+    case Rails.env
+      when 'development' then
+        config.cache_store = :redis_store, "redis://localhost:6379/0/cache", { expires_in: 90.minutes}
+      when 'staging' then
+        config.cache_store = :redis_store, "#{ENV['REDIS_URL']}/0/cache",    { expires_in: 90.minutes}
+      when 'production' then
+        config.cache_store = :redis_store, "#{ENV['REDIS_URL']}/0/cache",    { expires_in: 90.minutes}
+      else
+        Raise 'いやはや何か問題ですぞ'
+    end
   end
 end
