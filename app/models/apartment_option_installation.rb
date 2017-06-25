@@ -13,6 +13,5 @@ class ApartmentOptionInstallation < ActiveRecord::Base
   belongs_to :apartment
   belongs_to :apartment_option
 
-  validates :apartment_id, presence: true
   validates :apartment_option_id, presence: true
 end
