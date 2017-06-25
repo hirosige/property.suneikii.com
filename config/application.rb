@@ -24,6 +24,8 @@ module SnkProperty
         config.cache_store = :redis_store, "#{ENV['REDIS_URL']}/0/cache",    { expires_in: 90.minutes}
       when 'production' then
         config.cache_store = :redis_store, "#{ENV['REDIS_URL']}/0/cache",    { expires_in: 90.minutes}
+      when 'test' then
+        config.cache_store = :redis_store, "redis://localhost:6379/0/cache", { expires_in: 90.minutes}
       else
         raise 'いやはや何か問題ですぞ'
     end
