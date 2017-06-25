@@ -14,7 +14,7 @@ case Rails.env
                                            servers: "#{ENV['REDIS_URL']}/0/cache",
                                            key: '_snk_property_session'
   else
-    Raise 'いやはや何か問題ですぞ'
+    raise 'いやはや何か問題ですぞ'
 end
 
 

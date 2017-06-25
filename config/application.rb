@@ -25,7 +25,7 @@ module SnkProperty
       when 'production' then
         config.cache_store = :redis_store, "#{ENV['REDIS_URL']}/0/cache",    { expires_in: 90.minutes}
       else
-        Raise 'いやはや何か問題ですぞ'
+        raise 'いやはや何か問題ですぞ'
     end
   end
 end
