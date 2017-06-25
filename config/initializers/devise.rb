@@ -77,7 +77,32 @@ Devise.setup do |config|
   config.omniauth :instagram,  '9bdcc2ae1e27485dbbffa9559f074596',                 'fa9e704262254b6a8450a2145540e064'
   config.omniauth :flickr,     '4d8897eb2430d59c0490194e941eed12',                 'fcb40aed3b880ad4'
   config.omniauth :foursquare, 'OO4HGMNX3KPMUGUKWVIMQASOCCMQU1C4PKHBQXCT52JBQDGU', 'IEFC5TWZT2VNMTMZHDUTPJ3OIQHQX23CPXIVXS3V4Y0OADPJ'
-  config.omniauth :github,     '902f29eca40612cb71a9',                             'cba6e100ccb78d80b06180d8b870696924e8cf90', scope: 'user:email'
+
+  case Rails.env
+    when 'development' then
+      config.omniauth :github,
+                      '902f29eca40612cb71a9',
+                      'cba6e100ccb78d80b06180d8b870696924e8cf90',
+                      scope: 'user:email'
+    when 'staging' then
+      config.omniauth :github,
+                      '902f29eca40612cb71a9',
+                      'cba6e100ccb78d80b06180d8b870696924e8cf90',
+                      scope: 'user:email'
+    when 'production' then
+      config.omniauth :github,
+                      '3de5c7982f110dab25d6',
+                      '92f0e77bc192fd95b59fbdb0822c60f895d22ff3',
+                      scope: 'user:email'
+    when 'test' then
+      config.omniauth :github,
+                      '902f29eca40612cb71a9',
+                      'cba6e100ccb78d80b06180d8b870696924e8cf90',
+                      scope: 'user:email'
+    else
+      raise 'いやはや何か問題ですぞ'
+  end
+
 
   # ==> Warden configuration
   # config.warden do |manager|
