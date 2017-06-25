@@ -19,6 +19,7 @@
             <%= render :partial => 'table_contents', :locals => {apartment_options: @apartment_options} %>
             <%= render 'pagination' %>
 
+            test
             <br>
             <%= set_button_new(t('admin.apartment_options.buttons.add'), new_admin_apartments_apartment_option_path) %>
             <%= set_button_csv(t('admin.apartment_options.buttons.csv_export'), admin_apartments_apartment_options_path(format: 'csv')) %>
