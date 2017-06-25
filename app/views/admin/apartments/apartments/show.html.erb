@@ -95,6 +95,23 @@
                     <th class="column-title"><%= t('admin.apartments.items.updated_at') %></th>
                     <td> <%= @apartment.formatted_updated_date %></td>
                   </tr>
+                  <tr class="headings">
+                    <th class="column-title">設備リスト</th>
+                    <td>
+                      <ul style="margin-left: -40px;">
+                        <% @apartment.apartment_options.each do |apartment_option| %>
+                            <% labels = %w{primary default info success warning danger} %>
+                            <% random_color_id = Random.new.rand(0..labels.size-1) %>
+
+                          <li style="list-style: none; margin: 4px;">
+                            <span class="label label-<%= labels[random_color_id] %>">
+                              <%= apartment_option.name %>
+                            </span>
+                          </li>
+                        <% end %>
+                      </ul>
+                    </td>
+                  </tr>
                 </tbody>
               </table>
 
