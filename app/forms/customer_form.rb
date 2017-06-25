@@ -4,7 +4,7 @@ class CustomerForm < Reform::Form
   property :first_name
 
   validation do
-    require(:first_name).filled
+    required(:first_name).filled
   end
 
 end
