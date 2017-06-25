@@ -58,7 +58,7 @@ gem 'fog-aws'
 
 gem 'config'
 gem 'meta-tags'
-gem 'reform', git: 'https://github.com/apotonick/reform.git'
+gem 'reform'
 gem 'reform-rails'
 gem "dry-validation"
 gem 'state_machine'

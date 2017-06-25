@@ -6,15 +6,6 @@ GIT
       activerecord (>= 3.2, < 6.0)
       rake (>= 10.4, < 13.0)
 
-GIT
-  remote: https://github.com/apotonick/reform.git
-  revision: 0753ac23c0aafc38421aa15d6b1f020f753cc652
-  specs:
-    reform (2.3.0.rc1)
-      disposable (>= 0.4.2, < 0.5.0)
-      representable (>= 2.4.0, < 3.1.0)
-      uber (< 0.2.0)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -452,6 +443,9 @@ GEM
     redis-store (1.3.0)
       redis (>= 2.2)
     ref (2.0.0)
+    reform (2.2.4)
+      disposable (>= 0.4.1)
+      representable (>= 2.4.0, < 3.1.0)
     reform-rails (0.1.7)
       activemodel (>= 3.2)
       reform (>= 2.2.0)
@@ -650,7 +644,7 @@ DEPENDENCIES
   ransack (= 1.6.6)
   recaptcha
   redis-rails
-  reform!
+  reform
   reform-rails
   rmagick
   rspec-rails

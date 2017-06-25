@@ -22,7 +22,7 @@ class Admin::Members::CustomersController < AdminController
   end
 
   def create
-    @customer_form = CustomerForm.new(Customer.new)
+    @customer_form = Customer.new
 
     respond_to do |format|
       if @customer_form.validate(customer_params)
@@ -37,7 +37,7 @@ class Admin::Members::CustomersController < AdminController
   end
 
   def update
-    @customer_form = CustomerForm.new(@customer)
+    @customer_form = @customer
     respond_to do |format|
       if @customer_form.validate(params[:customer])
         @customer.update(customer_params)
