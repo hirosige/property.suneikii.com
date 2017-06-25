@@ -28,6 +28,7 @@ class Admin::Facilities::SurroundingsController < AdminController
   def create
     @surrounding = Surrounding.new(surrounding_params)
 
+    p @surrounding
     respond_to do |format|
       if @surrounding.save
         format.html { redirect_to [:admin, :facilities, @surrounding], notice: 'Surrounding was successfully created.' }

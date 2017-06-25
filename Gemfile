@@ -40,6 +40,7 @@ gem "recaptcha", require: "recaptcha/rails"
 gem 'gmaps4rails'
 gem 'geocoder'
 gem 'carrierwave'
+gem 'fog'
 gem 'rmagick'
 gem 'mini_magick'
 
