@@ -66,6 +66,7 @@ gem 'state_machine'
 gem 'state_machines-activerecord'
 gem 'cocoon'
 gem 'acts-as-taggable-on'
+gem 'mobylette'
 
 group :development, :test do
   gem 'byebug'
