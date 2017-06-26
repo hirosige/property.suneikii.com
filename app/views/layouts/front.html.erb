@@ -5,127 +5,68 @@
 
   <%= render 'layouts/partials/front_assets' %>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
 </head>
 
-<body style="background-color: #fb887c">
-<div class="navbar-wrapper">
-  <div class="container">
-
-    <nav class="navbar navbar-inverse navbar-static-top">
-      <div class="container">
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="<%= access_path %>">Access</a></li>
-            <li><a href="#about">Floor Map</a></li>
-            <li><a href="/inquiry">Contact</a></li>
-          </ul>
-          <form class="navbar-form navbar-right" role="search">
-            <div class="btn-group">
-              <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Language <span class="caret"></span>
-              </button>
-              <ul class="dropdown-menu">
-                <% I18n.available_locales.reject{|l| l == I18n.locale}.each do |locale| %>
-                    <li>
-                      <%= link_to(locale_caption(locale), i18n_url_for(params.merge(locale: locale))) %>
-                    </li>
-                <% end %>
-              </ul>
-            </div>
-            <button type="button" class="btn btn-warning navbar-btn active" style="position: fixed;">予約する</button>
-          </form>
+<body style="background-color: #fff;">
+<header style="background: #fff;
+               height: 200px;
+               margin: 0 auto;
+               text-align: center;">
+  <div class="row" style="color: rgb(228, 000, 127);">
+    <div class="col-md-3"></div>
+    <div class="col-md-1">
+      <div style="color: #fff; margin-top: 50px;">
+        <div style="width: 80px;
+                    height: 80px;
+                    border: 2px rgb(085, 000, 037) solid;
+                    line-height: 90px;
+                    border-radius: 50%;
+                    background: rgb(126, 000, 67);">
+          <i class="fa fa-home" aria-hidden="true" style="font-size: 3em;"></i>
         </div>
       </div>
-      <div class="container">
-        <div class="navbar-header" style="margin: 0 auto; display: table; table-layout: fixed; float:none;">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="<%= root_path %>">Lawinta Hotel</a>
+    </div>
+    <div class="col-md-1">
+      <div style="text-align: left;
+          font-size: 3em;
+          color: rgb(228, 000, 127);
+          line-height: 40px;
+          display: inline-block;
+          margin-top: 50px;">
+        SNK<br>
+        Property
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div style="">
+        <div style="display: inline-block;
+                    margin-top: 50px;
+                    text-align: left;
+                    padding-top: 40px;">
+          物件数No.1の<br>
+          不動産・住宅情報サイトライフルホームズ
         </div>
       </div>
-      <div class="container">
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="dropdown active">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                Accommodations <span class="caret"></span>
-              </a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li role="separator" class="divider"></li>
-                <li class="dropdown-header">Nav header</li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                Restaurants <span class="caret"></span>
-              </a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li role="separator" class="divider"></li>
-                <li class="dropdown-header">Nav header</li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                Events <span class="caret"></span>
-              </a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li role="separator" class="divider"></li>
-                <li class="dropdown-header">Nav header</li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                Site Seeings <span class="caret"></span>
-              </a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li role="separator" class="divider"></li>
-                <li class="dropdown-header">Nav header</li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
+    </div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
   </div>
-</div>
+
+</header>
 
 <%= yield %>
 
-  <div class="container">
-    <footer class="container-fluid" style="
-      text-align: left;
-      padding: 10px;
-      background: #101010;
-      color: #FFFFFF;
+    <div style="
+        text-align: left;
+        padding: 10px;
+        background: rgb(126, 000, 67);
+        color: #FFFFFF;
+        width: 100%;
+        height: 200px;
+        font-size: 1.2em;
     ">
-      <small>© 2017 Lawinta Hotel All Rights Reserved.</small>
-    </footer>
-  </div>
+      <small style="bottom: 0;">© 2017 SNK Property Powered by Suneikii.com All Rights Reserved.</small>
+    </div>
 </body>
 </html>
