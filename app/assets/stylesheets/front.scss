@@ -15,4 +15,5 @@
 
 @import "bootstrap-sprockets"; // no problem
 @import "bootstrap"; // no problem
-@import "carousel";
+@import "variables";
+@import "partials/*";

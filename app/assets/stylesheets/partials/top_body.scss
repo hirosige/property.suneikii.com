@@ -1,0 +1,35 @@
+//$main_color: rgb(3, 18, 126);
+//$main_deep_color: rgb(19, 2, 85);
+//$main_light_color: rgb(1, 49, 228);
+//$white: #fff;
+
+.top-body__base {
+  background: $main_color;
+  min-height: 500px;
+  margin-bottom: 20px;
+}
+
+.top-body__title {
+  padding-top: 50px;
+  font-size: 4em;
+  color: $white;
+  text-align: center;
+}
+
+.top-body__buttons {
+  text-align: center;
+}
+
+.top-body__categories {
+  background: $white;
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+  line-height: 230px;
+  color: $main_light_color;
+  font-size: 4em;
+  margin-top: 30px;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-bottom: 30px;
+}

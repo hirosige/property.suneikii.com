@@ -224,7 +224,7 @@ Rails.application.routes.draw do
    scope "(:locale)", :locale => /#{I18n.available_locales.map(&:to_s).join('|')}/ do
 
       # Front Pages
-      namespace :front do
+      scope module: 'front' do
          resources :products, shallow: true, :only => [:index, :show] do
            member do
              get 'add_cart'
@@ -235,6 +235,8 @@ Rails.application.routes.draw do
              get 'kill'
            end
          end
+
+         resources :apartments, shallow: true, :only => [:index, :show]
       end
 
       # Administrator Pages
@@ -322,15 +324,15 @@ Rails.application.routes.draw do
       end
 
       # Front Pages
-      root 'static_pages#home'
-      get  'help' => 'static_pages#help'
-      get  'retail_law' => 'static_pages#retail_law'
-      get  'privacy' => 'static_pages#privacy'
-      get  'layout_sample' => 'static_pages#layout_sample'
-      get  'recruit' => 'static_pages#privacy'
-      get  'location' => 'static_pages#location'
-      get  'access' => 'static_pages#access'
-      get  'floor_map' => 'static_pages#floor_map'
+      root 'front/top#home'
+      get  'help'            => 'static_pages#help'
+      get  'retail_law'      => 'static_pages#retail_law'
+      get  'privacy'         => 'static_pages#privacy'
+      get  'layout_sample'   => 'static_pages#layout_sample'
+      get  'recruit'         => 'static_pages#privacy'
+      get  'location'        => 'static_pages#location'
+      get  'access'          => 'static_pages#access'
+      get  'floor_map'       => 'static_pages#floor_map'
 
       # Inquiry
       get  'inquiry'         => 'inquiry#index'

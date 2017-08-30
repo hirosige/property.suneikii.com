@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= content_for?(:title) ? yield(:title) : "SNK Property" %> </title>
+
+  <%= render 'layouts/partials/front_assets' %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body class="main">
+
+  <%= render 'layouts/partials/front_top_header' %>
+  <%= yield %>
+  <%= render 'layouts/partials/front_top_footer' %>
+
+</body>
+</html>

@@ -6,8 +6,6 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-  layout 'front'
-
   # rescue_from ActiveRecord::RecordNotFound, with: :render_404
   # rescue_from ActionController::RoutingError, with: :render_404
 

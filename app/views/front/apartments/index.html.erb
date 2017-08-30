@@ -1,0 +1,167 @@
+<div class="header-info">
+  <div class="container">
+    さいたま市西区の土地 物件一覧ページ。面積（坪数）や価格（坪単価）で絞り込み、簡単に比較・資料請求。西区で土地（売地）の購入・分譲地探しなら
+  </div>
+</div>
+<div class="breadcrumb">
+  <div class="container">
+    <span class="bread">
+        不動産・住宅情報サイト SNK-Property
+    </span>
+    <span class="bread">
+        土地
+    </span> >
+    <span class="bread">
+        関東
+    </span> >
+    <span class="bread">
+        埼玉県
+    </span> >
+    <span class="bread">
+        さいたま市
+    </span> >
+    <span class="bread">
+        西区の土地 物件一覧
+    </span>
+  </div>
+</div>
+
+<div class="container main">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="explanation-search">
+        検索条件の設定・変更
+      </div>
+
+      <div class="sideplane__base">
+        <div class="sideplane-title">
+          <div class="sideplane-title__caption">
+            選択中の地域 / 路線・駅
+          </div>
+        </div>
+        <div class="description-body">
+          <div class="comming_soon">Comming Soon</div>
+        </div>
+      </div>
+
+      <div class="sideplane__base">
+        <div class="sideplane-title">
+          <div class="sideplane-title__caption">
+            物件種別
+          </div>
+        </div>
+        <div class="description-body">
+          <div class="comming_soon">Comming Soon</div>
+        </div>
+      </div>
+
+      <div class="sideplane__base">
+        <div class="sideplane-title">
+          <div class="sideplane-title__caption">
+            物件の条件
+          </div>
+        </div>
+        <div class="description-body">
+          <div class="comming_soon">Comming Soon</div>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-md-8">
+      <div class="mini-news">
+        <a class="mini-news--link" href="#">「Suneikii」は「SNK-Property」に生まれ変わりました</a>
+      </div>
+
+      <div class="main-title__base">
+        <div class="main-title--left">
+          <div class="main-title__caption">
+            バンコクの物件一覧
+          </div>
+        </div>
+        <div class="main-title--right">
+          <button class="main-title__btn">
+            <i class="fa fa-envelope"></i> この条件で新着メールを受取る
+          </button>
+          <button class="main-title__btn">
+            <i class="fa fa-save"></i> この条件を保存する
+          </button>
+        </div>
+        <div class="main--title-clearfix"></div>
+      </div>
+
+      <% @apartments.each do |apartment| %>
+          <div class="mainplane__base">
+            <div class="mainplane__title">
+              <soan class="mainplane__category">土地</soan>
+              <soan class="mainplane__type">分譲</soan>
+              <a href="#" class="mainplane__title--link"><%= apartment.name %></a>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <div class="mainplane__photo">
+                  <img class="photo-thumnail" src="https://images.homify.com/c_fill,f_auto,q_auto:eco,w_440/v1444216064/p/photo/image/977954/iwajyuku_002.jpg">
+                </div>
+              </div>
+              <div class="col-md-8">
+                <table class="mainplane__table">
+                  <tbody>
+                  <tr>
+                    <th>交通 / 所在地</th>
+                    <td colspan="3">
+                      <%= apartment.transportation %><br>
+                      <%= apartment.address %>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>現況</th>
+                    <td><%= apartment.apartment_info.availability %></td>
+                    <th>建築条件</th>
+                    <td><%= apartment.apartment_info.conditions %></td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="mainplane__sub-info">
+              <div class="mainplane__sub-info__title">
+                掲載物件への不動産会社コメント
+              </div>
+              <div class="mainplane__sub-info__body">
+                お気軽にご連絡下さい
+              </div>
+              <table class="mainplane__sub-info__table">
+                <thead>
+                <th>価格</th>
+                <th>土地面積</th>
+                <th>坪（坪単価）</th>
+                <th>建ぺい率/容積率</th>
+                <th>画像</th>
+                <th>お気に入り</th>
+                <th>詳細</th>
+                </thead>
+                <tbody>
+                <td class="price"><%= apartment.rent_fee %> 万円</td>
+                <td><%= apartment.space %></td>
+                <td>66.39坪（15万円）</td>
+                <td>60% / 200%</td>
+                <td>6枚</td>
+                <td>
+                  <button class="mainplane__btn">
+                    <i class="fa fa-save"></i> お気に入りへ
+                  </button>
+                </td>
+                <td>
+                  <button class="mainplane__btn">
+                    <i class="fa fa-save"></i> 詳細
+                  </button>
+                </td>
+                </tbody>
+              </table>
+            </div>
+          </div>
+      <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>

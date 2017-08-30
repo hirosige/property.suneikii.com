@@ -1,4 +1,4 @@
-class Front::ProductsController < ApplicationController
+class Front::ProductsController < FrontController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
   def index
