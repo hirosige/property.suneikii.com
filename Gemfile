@@ -67,6 +67,7 @@ gem 'state_machines-activerecord'
 gem 'cocoon'
 gem 'acts-as-taggable-on'
 gem 'mobylette'
+gem 'swiper-rails'
 
 group :development, :test do
   gem 'byebug'

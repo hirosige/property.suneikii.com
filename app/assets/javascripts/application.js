@@ -69,4 +69,5 @@
 //= require js/textarea/autosize.min.js
 //= require js/autocomplete/countries.js
 //= require js/autocomplete/jquery.autocomplete.js
+//= require swiper
 //= require_tree ./pages
