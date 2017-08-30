@@ -13,8 +13,9 @@
  *
  */
 
-@import "bootstrap-sprockets"; // no problem
-@import "bootstrap"; // no problem
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
 @import "variables";
 @import "swiper";
 @import "partials/*";

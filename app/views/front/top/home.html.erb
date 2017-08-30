@@ -1,21 +1,12 @@
 <% provide(:title, "Home") %>
 
-<div class="container">
-  <div class="top-body__base">
-    <div class="row">
-      <div class="top-body__title">
-        物件を探す
-      </div>
-    </div>
+<div class="top-body__base">
+  <div class="top-body__title">
+    物件を探す
+  </div>
 
-    <hr>
-
-    <div class="row">
-      <div class="top-body__buttons">
-        <%= link_to 'アパート', apartments_path, :class => 'btn top-body__categories' %>
-        <%= link_to '土地', apartments_path, :class => 'btn top-body__categories' %>
-      </div>
-    </div>
+  <div class="top-body__buttons">
+    <%= link_to 'アパート', apartments_path, :class => 'btn top-body__categories' %>
+    <%= link_to '土地', apartments_path, :class => 'btn top-body__categories' %>
   </div>
 </div>
-

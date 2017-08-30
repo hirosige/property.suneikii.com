@@ -6,7 +6,8 @@
 .top-body__base {
   background: $main_color;
   min-height: 500px;
-  margin-bottom: 20px;
+  border-top: 1px $white solid;
+  border-bottom: 1px $white solid;
 }
 
 .top-body__title {
