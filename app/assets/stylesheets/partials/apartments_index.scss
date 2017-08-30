@@ -153,9 +153,9 @@
 }
 
 .mainplane__photo {
-  margin-left: 20px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
   border: 1px #444 solid;
+  margin: 20px;
 }
 
 .mainplane__photo:hover {
@@ -169,8 +169,7 @@
 }
 
 .mainplane__table {
-  margin-bottom: 10px;
-  margin-right: 20px;
+  margin: 20px;
 }
 
 .mainplane__table th {
