@@ -31,6 +31,9 @@
 class ApartmentInfo < ActiveRecord::Base
   belongs_to :apartment
 
+  scope :available, -> { where(availability: :now_available) }
+  scope :vacant,    -> { where(property_status: :vacant) }
+
   enum reconstructed_or_not: {
       reconstructed:     10,
       not_reconstructed: 20

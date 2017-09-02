@@ -7,11 +7,18 @@
   background-color: $white;
 }
 
+.flex-container {
+  display: flex;
+  min-height: 200px;
+  justify-content: space-between;
+  align-content: center;
+  flex-flow: wrap;
+}
+
 .top-header {
   background: $white;
   height: 200px;
   margin: 0 auto;
-  text-align: center;
 }
 
 .top-header__row {
@@ -22,18 +29,18 @@
 .top-header__icon-body {
   color: $white;
   margin-top: 50px;
-  margin-left: 10px;
-  margin-right: 10px;
 }
 
 .top-header__icon-img {
+  display: table-cell;
   width: 80px;
   height: 80px;
   border: 2px $main_deep_color solid;
-  line-height: 90px;
   border-radius: 50%;
   background: $main_color;
   font-size: 3.0em;
+  text-align: center;
+  vertical-align: middle;
 }
 
 .top-header__title {
@@ -60,19 +67,30 @@
 }
 
 .top-header__social-body {
+  display: flex;
   color: $white;
   margin-top: 70px;
-  margin-left: 10px;
-  margin-right: 10px;
 }
 
 .top-header__social-icon {
-  display: inline-block;
+  display: table-cell;
   width: 50px;
   height: 50px;
   border: 2px $main_deep_color solid;
-  line-height: 55px;
   border-radius: 50%;
   background: $main_color;
   font-size: 2.0em;
+  text-align: center;
+  vertical-align: middle;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.top-header__login--signed-in {
+  float: right;
+  margin-top: 5px;
+  margin-right: 20px;
+  display: inline-block;
+  font-size: 0.5em;
+  height: 20px;
 }

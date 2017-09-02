@@ -72,15 +72,16 @@ body {
   display: inline-block;
   font-size: 0.5em;
   height: 20px;
-  line-height: 30px;
 }
 
 .control-box {
+  display: table;
   margin-top: 30px;
   background: #fff;
   height: 100px;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
   border: 1px #e7efef solid;
+  width: 100%;
 }
 
 .contents-header {
@@ -258,17 +259,28 @@ hr {
 }
 
 .control-box__btn {
-  position: relative;
-  font-size: 0.8em;
+  display: table-cell;
+  font-size: 1.2em;
   border: 0;
   box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.3);
   margin: 3px;
   vertical-align: middle;
   height: 50px;
-  width: 50px;
+  width: 200px;
   border-radius: 5px;
   background: #fff;
   color: rgb(000, 000, 228);
+}
+
+.control-box__login-info {
+  display: table-cell;
+  font-size: 0.8em;
+  border-left: 1px rgba(0, 0, 0, 0.6) dotted;
+  border-right: 1px rgba(0, 0, 0, 0.6) dotted;
+  vertical-align: middle;
+  padding-left: 10px;
+  color: rgb(000, 000, 228);
+  width: 100px;
 }
 
 .control-box__btn:hover {

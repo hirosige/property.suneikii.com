@@ -89,6 +89,8 @@
         <div class="main--title-clearfix"></div>
       </div>
 
+      <%= render 'pagination' %>
+
       <% @apartments.each do |apartment| %>
           <div class="mainplane__base">
             <div class="mainplane__title">
@@ -161,6 +163,8 @@
           </div>
       <% end %>
 
+      <%= render 'pagination' %>
+      <br>
       </div>
     </div>
   </div>

@@ -28,7 +28,6 @@
       <%= f.collection_select :role_id, Role.all, :id, :name, :prompt => true, :class => 'dropdown-menu' %>
     </fieldset>
 
-      <%= recaptcha_tags %>
 
     <div class="actions">
       <%= f.submit "Sign up" %>

@@ -1,19 +1,35 @@
 <div class="list-header">
   <div class="logo">SNK Properties</div>
   <div class="description"><a href="#">物件数No.1の不動産・住宅情報サイト SNK Properties</a></div>
-  <div class="btn btn-xs btn-default login_btn ">ログイン</div>
+  <% if user_signed_in? %>
+      <p class="top-header__login--signed-in">こんにちは、<%= current_user.email %>さん</p>
+  <% else %>
+      <div class="btn btn-xs btn-default login_btn">ログイン</div>
+  <% end %>
+
 </div>
 
 <div class="control-box">
-  <%= image_tag("snk_logo.jpg", :style => 'width: 100px;', :alt => 'logo') %>
-  <button class="control-box__btn" disabled>賃貸</button>
-  <button class="control-box__btn" disabled>新築</button>
-  <button class="control-box__btn" disabled>中古</button>
-  <button class="control-box__btn" disabled>新築</button>
-  <button class="control-box__btn" disabled>中古</button>
-  <button class="control-box__btn" disabled>土地</button>
-  <button class="control-box__btn" disabled>注文住宅</button>
-  <button class="control-box__btn" disabled>リフォーム</button>
-  <button class="control-box__btn" disabled>売却</button>
-  <button class="control-box__btn" disabled>引越し</button>
+    <%= image_tag("snk_logo.jpg", :style => 'width: 100px;', :alt => 'logo') %>
+    <button class="control-box__btn" onclick="location.href='<%= apartments_path %>'">
+      <i class="fa fa-building"></i>
+      アパート
+    </button>
+    <button class="control-box__btn" disabled>
+      <i class="fa fa-plus-square-o"></i>
+      土地
+    </button>
+    <button class="control-box__btn" disabled>
+      <i class="fa fa-building-o"></i>
+      コンドミニアム
+    </button>
+
+  <div class="control-box__login-info">
+    <p><%= session[:apartments_session_list].size %></p>
+    <p>最近見た物件</p>
+  </div>
+  <div class="control-box__login-info">
+    <p><%= session[:apartments_session_list].size %></p>
+    <p>お気に入り</p>
+  </div>
 </div>

@@ -36,6 +36,8 @@ class Apartment < ActiveRecord::Base
   accepts_nested_attributes_for :apartment_surroundings, allow_destroy: true
   mount_uploader :photo, ImageUploader
 
+  scope :published, -> { where(status: :public)}
+
   state_machine :status, :initial => :secret do
     state :secret
     state :private
@@ -49,4 +51,5 @@ class Apartment < ActiveRecord::Base
       transition :from => [:public], :to => :secret
     end
   end
+
 end
