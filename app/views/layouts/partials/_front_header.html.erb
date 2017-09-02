@@ -25,11 +25,11 @@
     </button>
 
   <div class="control-box__login-info">
-    <p><%= session[:apartments_session_list].size %></p>
+    <p><%= session[:apartments_session_list].size unless session[:apartments_session_list].nil? %></p>
     <p>最近見た物件</p>
   </div>
   <div class="control-box__login-info">
-    <p><%= session[:apartments_session_list].size %></p>
+    <p><%= session[:apartments_session_list].size unless session[:apartments_session_list].nil? %></p>
     <p>お気に入り</p>
   </div>
 </div>
