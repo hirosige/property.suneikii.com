@@ -10,7 +10,6 @@
 #
 
 class RoomClass < ActiveRecord::Base
-  mount_uploader :image, ImageUploader
   has_many :accessories, through: :room_accessories
   has_many :services,    through: :room_services
   has_many :room_accessories, dependent: :destroy
