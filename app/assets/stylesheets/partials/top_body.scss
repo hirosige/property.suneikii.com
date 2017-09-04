@@ -18,19 +18,28 @@
 }
 
 .top-body__buttons {
-  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .top-body__categories {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
   background: $white;
   height: 250px;
   width: 250px;
   border-radius: 50%;
-  line-height: 230px;
   color: $main_light_color;
   font-size: 4em;
-  margin-top: 30px;
-  margin-left: 50px;
-  margin-right: 50px;
-  margin-bottom: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.top-body__categories + .top-body__categories {
+  margin-left: 20px;
 }
