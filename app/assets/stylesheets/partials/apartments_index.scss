@@ -154,17 +154,34 @@
 }
 
 .mainplane__photo {
+  z-index: 1;
+  position: relative;
   text-align: center;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
   border: 1px #444 solid;
   margin: 20px;
+  border-radius: 10px;
 }
 
 .mainplane__photo:hover {
-  opacity: 0.8;
-  border: 2px rgb(000, 000, 228) solid;
+  opacity: 0.9;
   cursor: pointer;
+  border-radius: 10px;
 }
+
+//.mainplane__photo:hover::after {
+//  z-index: 3;
+//  position: absolute;
+//  content: 'Detail';
+//  width: 100px;
+//  height: 50px;
+//  border: 5px $main_color solid;
+//  background: $white;
+//  color: $main_color;
+//  font-size: 3rem;
+//  top: 40px;
+//  left: 50px;
+//}
 
 .photo-thumnail {
   text-align: center;

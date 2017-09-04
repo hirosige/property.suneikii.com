@@ -1,4 +1,4 @@
-class InquiryController < ApplicationController
+class InquiryController < FrontTopController
 
   def index
     @inquiry = Inquiry.new
