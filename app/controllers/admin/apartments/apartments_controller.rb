@@ -8,7 +8,8 @@ class Admin::Apartments::ApartmentsController < AdminController
             :country,
             :province,
             :district,
-            :subdistrict
+            :subdistrict,
+            :provider
         ).page(params[:page])
     )
   end

@@ -1,0 +1,79 @@
+<% provide(:title, t('admin.providers.title')) %>
+
+<div class="right_col" role="main">
+  <div class="">
+
+    <%= render :partial => 'admin/shared/page_title', :locals => {title: t('admin.providers.detail_page_title'), description: t('admin.providers.description')} %>
+
+    <div class="clearfix"></div>
+    <div class="row">
+      <div class="clearfix"></div>
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <%= render 'layouts/admin_menus/apartments_sub_tab' %>
+
+        <div class="x_panel">
+          <%= render :partial => 'admin/shared/table_title', :locals => {title: t('admin.providers.title'), description: t('admin.providers.description')} %>
+          <div class="x_content">
+            <div class="table-responsive">
+              <table class="table table-striped jambo_table bulk_action">
+                <thead>
+                  <tr class="headings">
+                    <th class="column-title" colspan="2">項目</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr class="headings">
+                    <th class="column-title"><%= t('admin.providers.items.name') %></th>
+                    <td> <%= @provider.name %></td>
+                  </tr>
+                  <tr class="headings">
+                    <th class="column-title"><%= t('admin.providers.items.photo') %></th>
+                    <td> <%= image_tag @provider.photo_url(:middle), :style => 'border: 1px #ddd solid; border-radius: 10px;' %></td>
+                  </tr>
+                  <tr class="headings">
+                    <th class="column-title"><%= t('admin.providers.items.introduction') %></th>
+                    <td> <%= @provider.introduction %></td>
+                  </tr>
+                  <tr class="headings">
+                    <th class="column-title"><%= t('admin.providers.items.site_url') %></th>
+                    <td> <%= @provider.site_url %></td>
+                  </tr>
+                  <tr class="headings">
+                    <th class="column-title"><%= t('admin.providers.items.address') %></th>
+                    <td> <%= @provider.address %></td>
+                  </tr>
+                  <tr class="headings">
+                    <th class="column-title"><%= t('admin.providers.items.tel') %></th>
+                    <td> <%= @provider.tel %></td>
+                  </tr>
+                  <tr class="headings">
+                    <th class="column-title"><%= t('admin.providers.items.fax') %></th>
+                    <td> <%= @provider.fax %></td>
+                  </tr>
+                  <tr class="headings">
+                    <th class="column-title"><%= t('admin.providers.items.certificate') %></th>
+                    <td> <%= @provider.certificate %></td>
+                  </tr>
+                  <tr class="headings">
+                    <th class="column-title"><%= t('admin.providers.items.working_time') %></th>
+                    <td> <%= @provider.working_time %></td>
+                  </tr>
+                  <tr class="headings">
+                    <th class="column-title"><%= t('admin.providers.items.holidays') %></th>
+                    <td> <%= @provider.holidays %></td>
+                  </tr>
+
+                </tbody>
+              </table>
+
+              <%= link_to 'Edit', edit_admin_providers_provider_path(@provider) %>
+              |
+              <%= link_to 'Back', admin_providers_providers_path %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

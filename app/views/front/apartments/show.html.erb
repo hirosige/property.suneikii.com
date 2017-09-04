@@ -249,7 +249,7 @@
         </div>
         <div class="provider-info">
           <div class="provider-info__title">
-            株式会社ABC バンコク支店&nbsp;
+            <%= @apartment.provider.name unless @apartment.provider.nil? %>&nbsp;
             <span class="provider-info__label">優良店認定</span>&nbsp;
             <a class="provider-info__url" href="#">会社情報</a>
           </div>
@@ -257,13 +257,13 @@
             <tbody>
             <tr>
               <th>所在地</th>
-              <td colspan="3">大阪府高槻市城北町２丁目２‐６</td>
+              <td colspan="3"><%= @apartment.provider.address unless @apartment.provider.nil? %></td>
             </tr>
             <tr>
               <th>営業時間</th>
-              <td>10:00～20:00</td>
+              <td><%= @apartment.provider.working_time unless @apartment.provider.nil? %></td>
               <th>定休日</th>
-              <td>年中無休</td>
+              <td><%= @apartment.provider.holidays unless @apartment.provider.nil? %></td>
             </tr>
             </tbody>
           </table>

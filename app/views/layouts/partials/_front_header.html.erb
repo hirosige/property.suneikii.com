@@ -28,13 +28,26 @@
 
     <div class="control-box__login-info">
       <p><i class="fa fa-search control-box__icon"></i></p>
-      <p class="control-box__counter"><%= session[:apartments_session_list].size unless session[:apartments_session_list].nil? %></p>
+      <p class="control-box__counter">
+        <% if session[:apartments_session_list].nil? %>
+            <%= 0 %>
+        <% else %>
+            <%= session[:apartments_session_list].size unless session[:apartments_session_list].nil? %>
+        <% end %>
+
+      </p>
       <p>最近見た物件</p>
     </div>
 
     <div class="control-box__login-info">
       <p><i class="fa fa-save control-box__icon"></i></p>
-      <p class="control-box__counter"><%= session[:apartments_session_list].size unless session[:apartments_session_list].nil? %></p>
+      <p class="control-box__counter">
+        <% if session[:apartments_session_list].nil? %>
+            <%= 0 %>
+        <% else %>
+            <%= session[:apartments_session_list].size unless session[:apartments_session_list].nil? %>
+        <% end %>
+      </p>
       <p>お気に入り</p>
     </div>
 

@@ -1,0 +1,26 @@
+en:
+  admin:
+    providers:
+      title:                 "Providers"
+      detail_page_title:     "Providers Detail"
+      modify_page_title:     "Providers Add/Modify"
+      description:           ""
+      items:
+        name:                "Provider Name"
+        photo:               "Photo"
+        introduction:        "Introduction"
+        site_url:            "Site URL"
+        address:             "Address"
+        tel:                 "TEL"
+        fax:                 "FAX"
+        certificate:         "Certificate"
+        working_time:        "Working Hours"
+        holidays:            "Holidays"
+        created_at:          "Created at"
+        updated_at:          "Updated at"
+        controls:            "Controls"
+      buttons:
+        search:              "Search"
+        add:                 "Add Provider"
+        exec:                "Add/Modify"
+        csv_export:          "Export Providers"

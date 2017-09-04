@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170903151521) do
+ActiveRecord::Schema.define(version: 20170904153718) do
 
   create_table "accessories", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -312,6 +312,21 @@ ActiveRecord::Schema.define(version: 20170903151521) do
     t.datetime "updated_at",                null: false
   end
 
+  create_table "providers", force: :cascade do |t|
+    t.string   "name",         limit: 255
+    t.string   "photo",        limit: 255
+    t.text     "introduction", limit: 65535
+    t.string   "site_url",     limit: 255
+    t.string   "address",      limit: 255
+    t.string   "tel",          limit: 255
+    t.string   "fax",          limit: 255
+    t.string   "certificate",  limit: 255
+    t.string   "working_time", limit: 255
+    t.string   "holidays",     limit: 255
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
   create_table "provinces", force: :cascade do |t|
     t.string   "name_ja",             limit: 255
     t.string   "name_th",             limit: 255
@@ -573,6 +588,7 @@ ActiveRecord::Schema.define(version: 20170903151521) do
     t.integer  "role_id",                limit: 4
     t.string   "uid",                    limit: 255
     t.string   "provider",               limit: 255
+    t.integer  "provider_id",            limit: 4
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

@@ -1,0 +1,26 @@
+ja:
+  admin:
+    providers:
+      title:                 "取り扱い不動産会社 一覧"
+      detail_page_title:     "取り扱い不動産会社 詳細"
+      modify_page_title:     "取り扱い不動産会社 追加/修正画面"
+      description:           ""
+      items:
+        name:                "取り扱い不動産会社名"
+        photo:               "写真"
+        introduction:        "紹介"
+        site_url:            "サイトURL"
+        address:             "住所"
+        tel:                 "電話番号"
+        fax:                 "ファックス番号"
+        certificate:         "証明書"
+        working_time:        "営業時間"
+        holidays:            "定休日"
+        created_at:          "作成日"
+        updated_at:          "更新日"
+        controls:            "操作"
+      buttons:
+        search:              "検索"
+        add:                 "取り扱い不動産会社 追加"
+        exec:                "追加/修正"
+        csv_export:          "取り扱い不動産会社データ エクスポート"

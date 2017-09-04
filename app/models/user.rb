@@ -23,6 +23,7 @@
 #  role_id                :integer
 #  uid                    :string(255)
 #  provider               :string(255)
+#  provider_id            :integer
 #
 # Indexes
 #
@@ -45,6 +46,7 @@ class User < ActiveRecord::Base
   has_one :business_partner
   has_one :system_admin
   belongs_to :role
+  belongs_to :realestate_provider
 
   def self.find_for_oauth(auth)
     user = User.where(uid: auth.uid, provider: auth.provider).first

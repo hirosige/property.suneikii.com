@@ -4,6 +4,7 @@ class Front::ApartmentsController < FrontController
   add_breadcrumb 'アパート', :apartments_path
 
   def index
+    session[:apartments_session_list] = []
     add_breadcrumb 'バンコクの物件一覧'
 
     @apartments = Front::ApartmentDecorator.decorate_collection(

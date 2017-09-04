@@ -65,7 +65,7 @@
               end
             %>
           </td>
-          <td> <%= apartment.provider_id %></td>
+          <td> <%= apartment.provider.name unless apartment.provider.nil? %></td>
           <td> <%= apartment.formatted_created_date %></td>
           <td> <%= apartment.formatted_updated_date %></td>
           <td> <%= set_button_show('', [:admin, :apartments, apartment]) %></td>

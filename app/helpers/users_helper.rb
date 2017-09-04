@@ -23,6 +23,7 @@
 #  role_id                :integer
 #  uid                    :string(255)
 #  provider               :string(255)
+#  provider_id            :integer
 #
 # Indexes
 #

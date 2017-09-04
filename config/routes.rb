@@ -244,7 +244,7 @@ Rails.application.routes.draw do
       end
 
       # Administrator Pages
-      get 'admin' => 'admin/products/goods#index'
+      get 'admin' => 'admin/apartments/apartments#index'
       namespace :admin do
         namespace :settings do
           resources :use_terms
@@ -319,6 +319,10 @@ Rails.application.routes.draw do
           resources :shop_statuses
           resources :distributors
           resources :shoppers_distributors
+        end
+
+        namespace :providers do
+          resources :providers
         end
 
         namespace :dealings do
