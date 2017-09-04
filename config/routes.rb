@@ -348,7 +348,7 @@ Rails.application.routes.draw do
       get  'inquiry'         => 'inquiry#index'
       post 'inquiry/confirm' => 'inquiry#confirm'
       post 'inquiry/thanks'  => 'inquiry#thanks'
-      # get '*path', controller: 'application', action: 'render_404'
+      get '*path', controller: 'application', action: 'render_404'
 
    end
 end

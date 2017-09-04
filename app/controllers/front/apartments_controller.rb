@@ -21,6 +21,10 @@ class Front::ApartmentsController < FrontController
   end
 
   def filtered_index
+    if Province.where(original_id: params[:province])[0].nil?
+      raise ActionController::RoutingError.new('Not Found')
+    end
+
     add_breadcrumb Province.where(original_id: params[:province])[0].name_ja, test_path(params[:province]) unless params[:province].nil?
     add_breadcrumb District.where(original_id: params[:district])[0].name_ja unless params[:district].nil?
     add_breadcrumb Subdistrict.where(original_id: params[:sub_district])[0].name_ja unless params[:sub_district].nil?

@@ -5,9 +5,8 @@
     <% if user_signed_in? %>
         <p class="top-header__login--signed-in">こんにちは、<%= current_user.email %>さん</p>
     <% else %>
-        <div class="btn btn-xs btn-default login_btn">ログイン</div>
+        <button class="btn btn-xs btn-default login_btn" onclick="location.href='<%= new_user_session_path %>'">ログイン</button>
     <% end %>
-
   </div>
 
   <div class="control-box">
@@ -45,9 +44,9 @@
 <div class="header-info">
   <div class="container">
     <% if params[:province].nil? %>
-        <%= params[:controller].split('/')[1] %> を検索
+        <%= params[:controller].split('/')[1].capitalize %> を検索
     <% else %>
-        <%= params[:province] unless params[:province].nil? %>の<%= params[:controller].split('/')[1] %>
+        <%= params[:province].capitalize unless params[:province].nil? %>の<%= params[:controller].split('/')[1].capitalize %>
     <% end %>
 
     物件一覧ページ。面積（坪数）や価格（坪単価）で絞り込み、簡単に比較・資料請求。
@@ -57,4 +56,10 @@
   <div class="container">
     <%= render_breadcrumbs separator: ' > ' %>
   </div>
+</div>
+
+<div id="page-top">
+  <button class="move-top-btn">
+    <i class="fa fa-chevron-up"></i>
+  </button>
 </div>

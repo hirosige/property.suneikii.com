@@ -7,9 +7,7 @@ $(function() {
     topBtn.hide();
     //スクロールが100に達したらボタン表示
     $(window).scroll(function () {
-        console.log('scroll!!!');
         if ($(this).scrollTop() > 100) {
-            console.log('yes scrolled over 100!!');
             topBtn.show();
         } else {
             topBtn.fadeOut();
