@@ -17,3 +17,8 @@
   font-size: 2rem;
   box-shadow: 3px 3px 3px rgba(0,0,0,1);
 }
+
+.move-top-btn:hover {
+  background: rgba($main_deep_color, 0.6);
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.8);
+}
