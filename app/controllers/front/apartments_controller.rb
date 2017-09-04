@@ -21,7 +21,9 @@ class Front::ApartmentsController < FrontController
   end
 
   def filtered_index
-    add_breadcrumb 'バンコクの物件一覧'
+    add_breadcrumb Province.where(original_id: params[:province])[0].name_ja, test_path(params[:province]) unless params[:province].nil?
+    add_breadcrumb District.where(original_id: params[:district])[0].name_ja unless params[:district].nil?
+    add_breadcrumb Subdistrict.where(original_id: params[:sub_district])[0].name_ja unless params[:sub_district].nil?
 
     province_id     = Province.where(original_id: params[:province])[0].id unless params[:province].nil?
     district_id     = District.where(original_id: params[:district])[0].id unless params[:district].nil?

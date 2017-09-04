@@ -238,9 +238,9 @@ Rails.application.routes.draw do
 
          resources :apartments, shallow: true, :only => [:index, :show]
 
-         get 'apartments/:province/city(.format)'                         => 'apartments#filtered_index'
-         get 'apartments/:province/city/:district(.format)'               => 'apartments#filtered_index'
-         get 'apartments/:province/city/:district/:sub_district(.format)' => 'apartments#filtered_index'
+         get 'apartments/:province/city'                         => 'apartments#filtered_index', as: 'test'
+         get 'apartments/:province/city/:district'               => 'apartments#filtered_index'
+         get 'apartments/:province/city/:district/:sub_district' => 'apartments#filtered_index'
       end
 
       # Administrator Pages

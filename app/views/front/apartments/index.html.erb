@@ -68,7 +68,7 @@
             <div class="mainplane__title">
               <soan class="mainplane__category">土地</soan>
               <soan class="mainplane__type">分譲</soan>
-              <a href="" class="mainplane__title--link"><%= apartment.name %></a>
+              <a href="<%= apartment_path(apartment.id) %>" class="mainplane__title--link"><%= apartment.name %></a>
             </div>
             <div class="row">
               <div class="col-lg-4 col-md-4 col-xs-12">
@@ -125,7 +125,7 @@
                   </button>
                 </td>
                 <td>
-                  <button class="mainplane__btn" onclick="location.href=''">
+                  <button class="mainplane__btn" onclick="location.href='<%= apartment_path(apartment.id) %>'">
                     <i class="fa fa-save"></i> 詳細
                   </button>
                 </td>
