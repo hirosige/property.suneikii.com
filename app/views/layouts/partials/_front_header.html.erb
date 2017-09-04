@@ -44,7 +44,13 @@
 
 <div class="header-info">
   <div class="container">
-    バンコクの土地 物件一覧ページ。面積（坪数）や価格（坪単価）で絞り込み、簡単に比較・資料請求。
+    <% if params[:province].nil? %>
+        <%= params[:controller].split('/')[1] %> を検索
+    <% else %>
+        <%= params[:province] unless params[:province].nil? %>の<%= params[:controller].split('/')[1] %>
+    <% end %>
+
+    物件一覧ページ。面積（坪数）や価格（坪単価）で絞り込み、簡単に比較・資料請求。
   </div>
 </div>
 <div class="breadcrumb">
