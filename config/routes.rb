@@ -237,6 +237,10 @@ Rails.application.routes.draw do
          end
 
          resources :apartments, shallow: true, :only => [:index, :show]
+
+         get 'apartments/:province/city(.format)'                         => 'apartments#filtered_index'
+         get 'apartments/:province/city/:district(.format)'               => 'apartments#filtered_index'
+         get 'apartments/:province/city/:district/:sub_district(.format)' => 'apartments#filtered_index'
       end
 
       # Administrator Pages
@@ -244,6 +248,12 @@ Rails.application.routes.draw do
       namespace :admin do
         namespace :settings do
           resources :use_terms
+        end
+
+        namespace :areas do
+          resources :countries, shallow: true, :only => [:index, :show]
+          resources :provinces, shallow: true, :only => [:index, :show]
+          resources :districts, shallow: true, :only => [:index, :show]
         end
 
         namespace :accommodations do

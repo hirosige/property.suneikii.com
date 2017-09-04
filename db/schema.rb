@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170619160502) do
+ActiveRecord::Schema.define(version: 20170903151521) do
 
   create_table "accessories", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -66,8 +66,16 @@ ActiveRecord::Schema.define(version: 20170619160502) do
     t.datetime "updated_at",               null: false
   end
 
+  create_table "apartment_thumbnails", force: :cascade do |t|
+    t.integer  "apartment_id", limit: 4
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.string   "image",        limit: 255
+  end
+
+  add_index "apartment_thumbnails", ["apartment_id"], name: "index_apartment_thumbnails_on_apartment_id", using: :btree
+
   create_table "apartments", force: :cascade do |t|
-    t.integer  "area_id",          limit: 4
     t.string   "name",             limit: 255
     t.integer  "rent_fee",         limit: 4
     t.integer  "security_deposit", limit: 4
@@ -85,6 +93,10 @@ ActiveRecord::Schema.define(version: 20170619160502) do
     t.integer  "provider_id",      limit: 4
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
+    t.integer  "country_id",       limit: 4
+    t.integer  "province_id",      limit: 4
+    t.integer  "district_id",      limit: 4
+    t.integer  "subdistrict_id",   limit: 4
   end
 
   create_table "business_partners", force: :cascade do |t|
@@ -106,6 +118,15 @@ ActiveRecord::Schema.define(version: 20170619160502) do
     t.string   "name",       limit: 255
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+  end
+
+  create_table "countries", force: :cascade do |t|
+    t.string   "name_ja",     limit: 255
+    t.string   "name_th",     limit: 255
+    t.string   "name_en",     limit: 255
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.string   "original_id", limit: 255
   end
 
   create_table "course_menus", force: :cascade do |t|
@@ -151,6 +172,19 @@ ActiveRecord::Schema.define(version: 20170619160502) do
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
+
+  create_table "districts", force: :cascade do |t|
+    t.string   "name_ja",              limit: 255
+    t.string   "name_th",              limit: 255
+    t.string   "name_en",              limit: 255
+    t.integer  "province_id",          limit: 4
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+    t.string   "original_id",          limit: 255
+    t.string   "province_original_id", limit: 255
+  end
+
+  add_index "districts", ["province_id"], name: "index_districts_on_province_id", using: :btree
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",           limit: 255, null: false
@@ -278,6 +312,19 @@ ActiveRecord::Schema.define(version: 20170619160502) do
     t.datetime "updated_at",                null: false
   end
 
+  create_table "provinces", force: :cascade do |t|
+    t.string   "name_ja",             limit: 255
+    t.string   "name_th",             limit: 255
+    t.string   "name_en",             limit: 255
+    t.integer  "country_id",          limit: 4
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.string   "original_id",         limit: 255
+    t.string   "country_original_id", limit: 255
+  end
+
+  add_index "provinces", ["country_id"], name: "index_provinces_on_country_id", using: :btree
+
   create_table "restaurants", force: :cascade do |t|
     t.string   "name",         limit: 255
     t.string   "phone_number", limit: 255
@@ -387,6 +434,19 @@ ActiveRecord::Schema.define(version: 20170619160502) do
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
+
+  create_table "subdistricts", force: :cascade do |t|
+    t.string   "name_ja",              limit: 255
+    t.string   "name_th",              limit: 255
+    t.string   "name_en",              limit: 255
+    t.integer  "district_id",          limit: 4
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+    t.string   "original_id",          limit: 255
+    t.string   "district_original_id", limit: 255
+  end
+
+  add_index "subdistricts", ["district_id"], name: "index_subdistricts_on_district_id", using: :btree
 
   create_table "surroundings", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -518,4 +578,8 @@ ActiveRecord::Schema.define(version: 20170619160502) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "apartment_thumbnails", "apartments"
+  add_foreign_key "districts", "provinces"
+  add_foreign_key "provinces", "countries"
+  add_foreign_key "subdistricts", "districts"
 end

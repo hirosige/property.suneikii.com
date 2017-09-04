@@ -1,31 +1,3 @@
-<div class="header-info">
-  <div class="container">
-    さいたま市西区の土地 物件一覧ページ。面積（坪数）や価格（坪単価）で絞り込み、簡単に比較・資料請求。西区で土地（売地）の購入・分譲地探しなら
-  </div>
-</div>
-<div class="breadcrumb">
-  <div class="container">
-    <span class="bread">
-        不動産・住宅情報サイト SNK-Property
-    </span>
-    <span class="bread">
-        土地
-    </span> >
-    <span class="bread">
-        関東
-    </span> >
-    <span class="bread">
-        埼玉県
-    </span> >
-    <span class="bread">
-        さいたま市
-    </span> >
-    <span class="bread">
-        西区の土地 物件一覧
-    </span>
-  </div>
-</div>
-
 <div class="container main">
   <div class="row">
     <div class="col-md-4">
@@ -96,15 +68,15 @@
             <div class="mainplane__title">
               <soan class="mainplane__category">土地</soan>
               <soan class="mainplane__type">分譲</soan>
-              <a href="<%= apartment_path(apartment.id) %>" class="mainplane__title--link"><%= apartment.name %></a>
+              <a href="" class="mainplane__title--link"><%= apartment.name %></a>
             </div>
             <div class="row">
-              <div class="col-md-5">
+              <div class="col-lg-4 col-md-4 col-xs-12">
                 <div class="mainplane__photo">
-                  <img class="photo-thumnail" src="https://images.homify.com/c_fill,f_auto,q_auto:eco,w_440/v1444216064/p/photo/image/977954/iwajyuku_002.jpg">
+                  <%= apartment.photo %>
                 </div>
               </div>
-              <div class="col-md-7">
+              <div class="col-lg-8 col-md-8 col-xs-12">
                 <table class="mainplane__table">
                   <tbody>
                   <tr>
@@ -153,7 +125,7 @@
                   </button>
                 </td>
                 <td>
-                  <button class="mainplane__btn">
+                  <button class="mainplane__btn" onclick="location.href=''">
                     <i class="fa fa-save"></i> 詳細
                   </button>
                 </td>

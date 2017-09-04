@@ -1,35 +1,54 @@
-<div class="list-header">
-  <div class="logo">SNK Properties</div>
-  <div class="description"><a href="#">物件数No.1の不動産・住宅情報サイト SNK Properties</a></div>
-  <% if user_signed_in? %>
-      <p class="top-header__login--signed-in">こんにちは、<%= current_user.email %>さん</p>
-  <% else %>
-      <div class="btn btn-xs btn-default login_btn">ログイン</div>
-  <% end %>
+<header>
+  <div class="list-header">
+    <div class="logo">SNK Properties</div>
+    <div class="description"><a href="#">物件数No.1の不動産・住宅情報サイト SNK Properties</a></div>
+    <% if user_signed_in? %>
+        <p class="top-header__login--signed-in">こんにちは、<%= current_user.email %>さん</p>
+    <% else %>
+        <div class="btn btn-xs btn-default login_btn">ログイン</div>
+    <% end %>
 
-</div>
-
-<div class="control-box">
-    <%= image_tag("snk_logo.jpg", :style => 'width: 100px;', :alt => 'logo') %>
-    <button class="control-box__btn" onclick="location.href='<%= apartments_path %>'">
-      <i class="fa fa-building"></i>
-      アパート
-    </button>
-    <button class="control-box__btn" disabled>
-      <i class="fa fa-plus-square-o"></i>
-      土地
-    </button>
-    <button class="control-box__btn" disabled>
-      <i class="fa fa-building-o"></i>
-      コンドミニアム
-    </button>
-
-  <div class="control-box__login-info">
-    <p><%= session[:apartments_session_list].size unless session[:apartments_session_list].nil? %></p>
-    <p>最近見た物件</p>
   </div>
-  <div class="control-box__login-info">
-    <p><%= session[:apartments_session_list].size unless session[:apartments_session_list].nil? %></p>
-    <p>お気に入り</p>
+
+  <div class="control-box">
+    <div class="control-box--left">
+      <%= image_tag("snk_logo.jpg", :style => 'width: 100px;', :alt => 'logo') %>
+      <button class="control-box__btn" onclick="location.href='<%= apartments_path %>'">
+        <i class="fa fa-building"></i>
+        アパート
+      </button>
+      <button class="control-box__btn" disabled>
+        <i class="fa fa-plus-square-o"></i>
+        土地
+      </button>
+      <button class="control-box__btn" disabled>
+        <i class="fa fa-building-o"></i>
+        コンドミニアム
+      </button>
+    </div>
+
+    <div class="control-box__login-info">
+      <p><i class="fa fa-search control-box__icon"></i></p>
+      <p class="control-box__counter"><%= session[:apartments_session_list].size unless session[:apartments_session_list].nil? %></p>
+      <p>最近見た物件</p>
+    </div>
+
+    <div class="control-box__login-info">
+      <p><i class="fa fa-save control-box__icon"></i></p>
+      <p class="control-box__counter"><%= session[:apartments_session_list].size unless session[:apartments_session_list].nil? %></p>
+      <p>お気に入り</p>
+    </div>
+
+  </div>
+</header>
+
+<div class="header-info">
+  <div class="container">
+    バンコクの土地 物件一覧ページ。面積（坪数）や価格（坪単価）で絞り込み、簡単に比較・資料請求。
+  </div>
+</div>
+<div class="breadcrumb">
+  <div class="container">
+    <%= render_breadcrumbs separator: ' > ' %>
   </div>
 </div>

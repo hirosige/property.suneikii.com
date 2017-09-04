@@ -15,5 +15,5 @@ class Surrounding < ActiveRecord::Base
   has_many :apartment_surroundings
   has_many :apartments, :through => :apartment_surroundings
 
-  mount_uploader :photo, ImageUploader
+  mount_uploader :photo, SurroundingThumbnailUploader
 end

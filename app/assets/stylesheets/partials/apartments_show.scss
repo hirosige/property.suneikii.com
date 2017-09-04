@@ -26,17 +26,6 @@ body {
   width: 50px;
 }
 
-.list-header {
-  z-index: 3;
-  top: 0;
-  background: rgba(000, 000, 228, 0.9);
-  width: 100%;;
-  height: 30px;
-  display: inline-block;
-  color: #fff;
-  position: fixed;
-}
-
 .logo {
   display: inline-block;
   font-size: 0.8em;
@@ -61,10 +50,6 @@ body {
   padding-left: 10px;
 }
 
-.description a:link {
-  color: #fff;
-}
-
 .login_btn {
   float: right;
   margin-top: 5px;
@@ -72,16 +57,6 @@ body {
   display: inline-block;
   font-size: 0.5em;
   height: 20px;
-}
-
-.control-box {
-  display: table;
-  margin-top: 30px;
-  background: #fff;
-  height: 100px;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
-  border: 1px #e7efef solid;
-  width: 100%;
 }
 
 .contents-header {
@@ -256,53 +231,6 @@ hr {
 
 .provider:hover {
   box-shadow: 1.2px 5px 1.2px rgba(0, 0, 0, 0.5);
-}
-
-.control-box__btn {
-  display: table-cell;
-  font-size: 1.2em;
-  border: 0;
-  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.3);
-  margin: 3px;
-  vertical-align: middle;
-  height: 50px;
-  width: 200px;
-  border-radius: 5px;
-  background: #fff;
-  color: rgb(000, 000, 228);
-}
-
-.control-box__login-info {
-  display: table-cell;
-  font-size: 0.8em;
-  border-left: 1px rgba(0, 0, 0, 0.6) dotted;
-  border-right: 1px rgba(0, 0, 0, 0.6) dotted;
-  vertical-align: middle;
-  padding-left: 10px;
-  color: rgb(000, 000, 228);
-  width: 100px;
-}
-
-.control-box__btn:hover {
-  background: rgba(0, 0, 0, 0.05);
-}
-
-.control-box__btn--prepare {
-  font-size: 3.5em;
-  z-index: 2;
-  border: 5px rgb(000, 000, 228) solid;
-  top: -8;
-  left: -5;
-  border-radius: 50%;
-  position: absolute;
-  background: #fff;
-  height: 60px;
-  width: 60px;
-}
-
-button:disabled {
-  cursor: not-allowed;
-  background-image: none;
 }
 
 .swiper-slide__title {

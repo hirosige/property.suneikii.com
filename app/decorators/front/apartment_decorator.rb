@@ -10,4 +10,12 @@ class Front::ApartmentDecorator < Draper::Decorator
   #     end
   #   end
 
+  def photo
+    if self.photo_url(:middle).nil?
+      h.image_tag("no_image.rf", :class => 'photo-thumnail')
+    else
+      "<img class='photo-thumnail' src='#{self.photo_url(:middle)}'>".html_safe
+    end
+  end
+
 end

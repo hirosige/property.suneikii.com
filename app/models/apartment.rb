@@ -3,7 +3,6 @@
 # Table name: apartments
 #
 #  id               :integer          not null, primary key
-#  area_id          :integer
 #  name             :string(255)
 #  rent_fee         :integer
 #  security_deposit :integer
@@ -21,6 +20,10 @@
 #  provider_id      :integer
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
+#  country_id       :integer
+#  province_id      :integer
+#  district_id      :integer
+#  subdistrict_id   :integer
 #
 
 class Apartment < ActiveRecord::Base
@@ -30,11 +33,18 @@ class Apartment < ActiveRecord::Base
 
   has_many :apartment_option_installations, dependent: :destroy
   has_many :apartment_options, through: :apartment_option_installations
+  has_many :apartment_thumbnails
+
+  belongs_to :country
+  belongs_to :province
+  belongs_to :district
+  belongs_to :subdistrict
 
   accepts_nested_attributes_for :apartment_info
   accepts_nested_attributes_for :apartment_option_installations, allow_destroy: true
   accepts_nested_attributes_for :apartment_surroundings, allow_destroy: true
-  mount_uploader :photo, ImageUploader
+  accepts_nested_attributes_for :apartment_thumbnails
+  mount_uploader :photo, ApartmentPhotoUploader
 
   scope :published, -> { where(status: :public)}
 

@@ -2,6 +2,23 @@
 //$main_deep_color: rgb(19, 2, 85);
 //$main_light_color: rgb(1, 49, 228);
 //$white: #fff;
+//$not_visit_in_blue: $white;
+//$visited_in_blue: #8fff7b;
+//$hover_in_blue: rgba(255,255,255,0.9);
+
+footer {
+  a:link {
+    color: $not_visit_in_blue;
+  }
+
+  a:visited {
+    color: $visited_in_blue;
+  }
+
+  a:hover {
+    color: $hover_in_blue;
+  }
+}
 
 .top-footer {
   text-align: left;

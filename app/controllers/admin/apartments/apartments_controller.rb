@@ -3,7 +3,13 @@ class Admin::Apartments::ApartmentsController < AdminController
 
   def index
     @apartments = ApartmentDecorator.decorate_collection(
-        Apartment.includes(:apartment_info).page(params[:page])
+        Apartment.includes(
+            :apartment_info,
+            :country,
+            :province,
+            :district,
+            :subdistrict
+        ).page(params[:page])
     )
   end
 
@@ -15,6 +21,8 @@ class Admin::Apartments::ApartmentsController < AdminController
     @apartment.build_apartment_info
     @apartment.apartment_option_installations.build
     @apartment.apartment_surroundings.build
+
+    3.times { @apartment.apartment_thumbnails.build}
 
     @places = Array.new
     @places.push({
@@ -30,6 +38,8 @@ class Admin::Apartments::ApartmentsController < AdminController
       marker.infowindow place[:description]
       marker.json({title: place[:title]})
     end
+
+
   end
 
   def edit
@@ -114,7 +124,10 @@ class Admin::Apartments::ApartmentsController < AdminController
 
     def apartment_params
       params.require(:apartment).permit(
-          :area_id,
+          :country_id,
+          :province_id,
+          :district_id,
+          :subdistrict_id,
           :name,
           :rent_fee,
           :security_deposit,
@@ -163,6 +176,9 @@ class Admin::Apartments::ApartmentsController < AdminController
               :surrounding_id,
               :distance,
               :_destroy
+          ],
+          apartment_thumbnails_attributes: [
+              :image
           ]
       )
     end

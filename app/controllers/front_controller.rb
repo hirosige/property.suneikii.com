@@ -8,7 +8,7 @@ class FrontController < ApplicationController
   before_action :set_locale
 
   layout 'properties_layout'
-  add_breadcrumb 'Home'
+  add_breadcrumb 'SNK Property Home', :root_path
 
   def track_visit_into_session
     controller_name = params[:controller].split('/')[1]

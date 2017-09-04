@@ -74,7 +74,7 @@
 
 .main-title__base {
   background: #fff;
-  height: 50px;
+  min-height: 50px;
   border-radius: 10px;
   border: 1px #bdc8ca solid;
   border-top: 8px rgb(000, 000, 228) solid;
@@ -154,6 +154,7 @@
 }
 
 .mainplane__photo {
+  text-align: center;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
   border: 1px #444 solid;
   margin: 20px;
@@ -166,11 +167,13 @@
 }
 
 .photo-thumnail {
+  text-align: center;
   width: 100%;
 }
 
 .mainplane__table {
   margin: 20px;
+  margin-left: 30px;
 }
 
 .mainplane__table th {

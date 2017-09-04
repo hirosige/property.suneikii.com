@@ -48,9 +48,52 @@
                 <div style="float: left; width: 50%;">
 
                   <div class="form-group">
-                    <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.apartments.items.area') %></label>
-                    <div class="col-md-8 col-sm-6 col-xs-12">
-                      <%= f.text_field :area_id, :required => 'required', :class => 'form-control col-md-2 col-xs-12' %>
+                    <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">物件エリア</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <div id="area_boxes">
+                        <%= f.collection_select(
+                                :country_id,                 # <= property_name
+                                Country.all,              # <= object_array
+                                :id,                      # <= value_data
+                                :name_ja,                 # <= text_item
+                                {prompt: "Select any"},   # <= default_message
+                                {class: "form-control"}   # <= style_class
+                            ) %>
+
+                        <% unless @apartment.province_id.nil? %>
+                          <%= f.collection_select(
+                                  :province_id,                 # <= property_name
+                                  Province.all,              # <= object_array
+                                  :id,                      # <= value_data
+                                  :name_ja,                 # <= text_item
+                                  {prompt: "Select any"},   # <= default_message
+                                  {class: "form-control"}   # <= style_class
+                              ) %>
+                        <% end %>
+
+                        <% unless @apartment.district_id.nil? %>
+                          <%= f.collection_select(
+                                  :district_id,                 # <= property_name
+                                  District.all,              # <= object_array
+                                  :id,                      # <= value_data
+                                  :name_ja,                 # <= text_item
+                                  {prompt: "Select any"},   # <= default_message
+                                  {class: "form-control"}   # <= style_class
+                              ) %>
+                        <% end %>
+
+                        <% unless @apartment.subdistrict_id.nil? %>
+                          <%= f.collection_select(
+                                  :subdistrict_id,                 # <= property_name
+                                  Subdistrict.all,              # <= object_array
+                                  :id,                      # <= value_data
+                                  :name_ja,                 # <= text_item
+                                  {prompt: "Select any"},   # <= default_message
+                                  {class: "form-control"}   # <= style_class
+                              ) %>
+                        <% end %>
+
+                      </div>
                     </div>
                   </div>
 
@@ -95,6 +138,16 @@
                       <%= f.file_field :photo, :class => 'form-control col-md-7 col-xs-12' %>
                     </div>
                   </div>
+
+                  <div class="form-group">
+                    <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.apartments.items.photo') %></label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <%= f.fields_for :apartment_thumbnails do |thumbnail| %>
+                        <%= thumbnail.file_field :image %>
+                      <% end %>
+                    </div>
+                  </div>
+
                   <% unless @apartment.photo.blank? %>
                       <div class="form-group">
                         <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.apartments.items.uploaded_photo') %></label>
