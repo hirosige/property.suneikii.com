@@ -6,6 +6,7 @@
         <input type="checkbox" id="check-all" class="flat">
       </th>
       <th class="column-title"><%= t('admin.users.items.id') %></th>
+      <th class="column-title"><%= t('admin.users.items.name') %></th>
       <th class="column-title"><%= t('admin.users.items.email') %></th>
       <th class="column-title"><%= t('admin.users.items.login_ct') %></th>
       <th class="column-title"><%= t('admin.users.items.current_ip') %></th>
@@ -30,6 +31,7 @@
             <input type="checkbox" class="flat" name="table_records">
           </td>
           <td><%= user.id %></td>
+          <td><%= user.name %></td>
           <td><%= user.email %> <%= user.your_id_sign %></td>
           <td><%= user.sign_in_count %></td>
           <td><%= user.current_sign_in_ip %></td>
@@ -48,7 +50,14 @@
             </ul>
           </td>
           <td><%= user.who_are_you %></td>
-          <td><label class="label label-primary"><%= OmniAuth::Utils.camelize(user.provider) %></label></td>
+          <td>
+            <% if user.provider.blank? %>
+                <label class="label label-primary"><%= "origin" %></label>
+            <% else %>
+                <label class="label label-primary"><%= OmniAuth::Utils.camelize(user.provider) %></label>
+            <% end %>
+
+          </td>
           <td><%= set_button_delete('', [:admin, :members, user]) %></td>
         </tr>
     <% end %>

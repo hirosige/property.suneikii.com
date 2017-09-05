@@ -214,11 +214,13 @@ Rails.application.routes.draw do
        :passwords          => 'app/passwords',
        :sessions           => 'app/sessions',
        :unlocks            => 'app/unlocks',
-       :confirmations      => 'app/confirmations'
+       :confirmations      => 'app/confirmations',
    }
 
    devise_scope :user do
       get 'eliminate' => 'app/sessions#destroy'
+      get '/user/input'     => 'app/omniauth_callbacks#input'
+      post '/user/complete' => 'app/omniauth_callbacks#complete'
    end
 
    scope "(:locale)", :locale => /#{I18n.available_locales.map(&:to_s).join('|')}/ do

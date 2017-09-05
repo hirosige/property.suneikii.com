@@ -24,6 +24,7 @@
 #  uid                    :string(255)
 #  provider               :string(255)
 #  provider_id            :integer
+#  name                   :string(255)
 #
 # Indexes
 #
@@ -48,6 +49,15 @@ class User < ActiveRecord::Base
   belongs_to :role
   belongs_to :realestate_provider
 
+  def self.has_oauth_user_exist(auth)
+    user = User.where(uid: auth.uid, provider: auth.provider).first
+    if user
+      true
+    else
+      false
+    end
+  end
+
   def self.find_for_oauth(auth)
     user = User.where(uid: auth.uid, provider: auth.provider).first
 
@@ -60,6 +70,20 @@ class User < ActiveRecord::Base
           role_id: 1
       )
     end
+
+    user
+  end
+
+  def self.create_oauth_user(auth, name)
+    p auth
+      user = User.create(
+          uid:      auth.uid,
+          name:     name,
+          provider: auth.provider,
+          email:    User.dummy_email(auth),
+          password: Devise.friendly_token[0, 20],
+          role_id: 1
+      )
 
     user
   end

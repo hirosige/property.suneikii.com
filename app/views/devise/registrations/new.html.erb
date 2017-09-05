@@ -6,28 +6,32 @@
     <%= devise_error_messages! %>
 
     <fieldset class="form-group">
-      <label for="email">Email address</label>
-      <%= f.email_field :email, :class => 'form-control' ,:placeholder => 'Enter email', autofocus: true %>
-      <small class="text-muted">何か書くところ</small>
+      <label for="email">Name</label>
+      <%= f.text_field :name, :class => 'form-control' ,:placeholder => 'Enter Name', autofocus: true %>
     </fieldset>
+
+    <fieldset class="form-group">
+      <label for="email">Email address</label>
+      <%= f.email_field :email, :class => 'form-control' ,:placeholder => 'Enter Email', autofocus: true %>
+    </fieldset>
+
     <fieldset class="form-group">
       <label for="password">Password</label>
       <% if @minimum_password_length %>
           <em>(<%= @minimum_password_length %> characters minimum)</em>
       <% end %><br />
-      <%= f.password_field :password, :class => 'form-control' ,:placeholder => 'Enter your password', autofocus: true, autocomplete: "off" %>
-      <small class="text-muted">何か書くところ</small>
+      <%= f.password_field :password, :class => 'form-control' ,:placeholder => 'Enter your Password', autofocus: true, autocomplete: "off" %>
     </fieldset>
+
     <fieldset class="form-group">
       <label for="password_confirmation">Password Confirmation</label>
-      <%= f.password_field :password_confirmation, :class => 'form-control' ,:placeholder => 'Enter password again', autofocus: true, autocomplete: "off" %>
-      <small class="text-muted">何か書くところ</small>
+      <%= f.password_field :password_confirmation, :class => 'form-control' ,:placeholder => 'Enter Password again', autofocus: true, autocomplete: "off" %>
     </fieldset>
+
     <fieldset class="form-group">
       <label for="ingredient">ユーザ権限</label>
       <%= f.collection_select :role_id, Role.all, :id, :name, :prompt => true, :class => 'dropdown-menu' %>
     </fieldset>
-
 
     <div class="actions">
       <%= f.submit "Sign up" %>

@@ -1,4 +1,5 @@
 class App::OmniauthCallbacksController < Devise::OmniauthCallbacksController
+  layout "login"
 
   def github
     callback_from :github
@@ -28,7 +29,36 @@ class App::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     p provider.to_s
     provider = provider.to_s
 
-    @user = User.find_for_oauth(request.env['omniauth.auth'])
+    session[:omniauth] = request.env['omniauth.auth']
+    if User.has_oauth_user_exist(request.env['omniauth.auth'])
+      @user = User.find_for_oauth(request.env['omniauth.auth'])
+
+      if @user.persisted?
+        flash[:success] = I18n.t('devise.omniauth_callbacks.success', kind: provider.capitalize)
+        @user.skip_confirmation!
+        sign_in_and_redirect @user, event: :authentication
+      else
+        session["devise.#{provider}_data"] = request.env['omniauth.auth']
+        redirect_to new_user_registration_url
+      end
+    else
+      flash[:success] = 'もう少しで登録完了です'
+      redirect_to user_input_path, :id => 'hello'
+    end
+  end
+
+  def input
+  end
+
+  def complete
+    p "##### user name #####"
+    p params
+    p session[:omniauth]
+    p params[:user][:name]
+
+    provider = session[:omniauth].provider
+
+    @user = User.create_oauth_user(session[:omniauth], params[:user][:name])
 
     if @user.persisted?
       flash[:success] = I18n.t('devise.omniauth_callbacks.success', kind: provider.capitalize)
@@ -38,5 +68,6 @@ class App::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       session["devise.#{provider}_data"] = request.env['omniauth.auth']
       redirect_to new_user_registration_url
     end
+
   end
 end

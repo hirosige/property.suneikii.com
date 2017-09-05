@@ -60,7 +60,8 @@ before_filter :configure_account_update_params, only: [:update]
           :password,
           :password_confirmation,
           :role_id,
-          :provider_id
+          :provider_id,
+          :name
       )
     end
   end
@@ -76,7 +77,8 @@ before_filter :configure_account_update_params, only: [:update]
           :password,
           :password_confirmation,
           :role_id,
-          :provider_id
+          :provider_id,
+          :name
       )
     end
   end

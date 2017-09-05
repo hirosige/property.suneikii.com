@@ -24,6 +24,7 @@
 #  uid                    :string(255)
 #  provider               :string(255)
 #  provider_id            :integer
+#  name                   :string(255)
 #
 # Indexes
 #
