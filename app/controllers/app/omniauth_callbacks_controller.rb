@@ -1,5 +1,5 @@
 class App::OmniauthCallbacksController < Devise::OmniauthCallbacksController
-  layout "login"
+  layout "properties_layout"
 
   def github
     callback_from :github
