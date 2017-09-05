@@ -1,5 +1,5 @@
 class App::ConfirmationsController < Devise::ConfirmationsController
-  layout "login"
+  layout "properties_layout"
 
   # GET /resource/confirmation/new
   # def new

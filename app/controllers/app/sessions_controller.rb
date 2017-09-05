@@ -1,6 +1,6 @@
 class App::SessionsController < Devise::SessionsController
 # before_filter :configure_sign_in_params, only: [:create]
-  layout "login"
+  layout "properties_layout"
 
   # GET /resource/sign_in
   # def new

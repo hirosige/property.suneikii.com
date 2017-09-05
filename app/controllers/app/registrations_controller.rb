@@ -1,10 +1,14 @@
 class App::RegistrationsController < Devise::RegistrationsController
 before_filter :configure_sign_up_params, only: [:new, :create]
 before_filter :configure_account_update_params, only: [:update]
-  layout "login"
+  layout "properties_layout"
+
+  add_breadcrumb 'SNK Property Home', :root_path
 
   # GET /resource/sign_up
   def new
+    add_breadcrumb 'アカウント作成'
+
     super
   end
 
