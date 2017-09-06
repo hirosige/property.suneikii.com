@@ -1,10 +1,14 @@
 class App::ConfirmationsController < Devise::ConfirmationsController
   layout "properties_layout"
 
+  add_breadcrumb 'SNK Property Home', :root_path
+
   # GET /resource/confirmation/new
-  # def new
-  #   super
-  # end
+  def new
+    add_breadcrumb '確認メール再送'
+
+    super
+  end
 
   # POST /resource/confirmation
   # def create

@@ -6,6 +6,7 @@
     justify-content: center;
     align-content: center;
     align-items: center;
+    flex-flow: wrap;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     background: #fff;
@@ -23,7 +24,7 @@
 
   .sign-in-top__right {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     flex-direction: column;
     margin: 20px;
   }
@@ -43,11 +44,6 @@
   <div class="sign-in-top__base">
 
     <div class="sign-in-top__left width-400">
-      <%= render 'devise/shared/provider_logins' %>
-      <%= render "devise/shared/links" %>
-    </div>
-
-    <div class="sign-in-top__right width-400">
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <h1>Login Form</h1>
           <fieldset class="form-group">
@@ -71,6 +67,11 @@
           <% end -%>
 
       <% end %>
+    </div>
+
+    <div class="sign-in-top__right width-400">
+      <%= render 'devise/shared/provider_logins' %>
+      <%= render "devise/shared/links" %>
     </div>
   </div>
 

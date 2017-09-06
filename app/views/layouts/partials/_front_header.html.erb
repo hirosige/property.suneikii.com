@@ -56,7 +56,9 @@
 
 <div class="header-info">
   <div class="container">
-    <% unless controller.controller_name == 'registrations' %>
+    <% no_info_controllers = Array.new %>
+    <% no_info_controllers.push('registrations', 'sessions', 'confirmations', 'passwords', 'omniauth_callbacks') %>
+    <% unless no_info_controllers.include?(controller.controller_name) %>
       <% if params[:province].nil? %>
           <%= params[:controller].split('/')[1].capitalize %> を検索
       <% else %>
@@ -69,7 +71,7 @@
 </div>
 <div class="breadcrumb">
   <div class="container">
-    <%= render_breadcrumbs separator: ' > ' %>
+    <%= render_breadcrumbs separator: ' ▶ ' %>
   </div>
 </div>
 

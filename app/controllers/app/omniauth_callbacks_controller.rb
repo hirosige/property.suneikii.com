@@ -1,6 +1,8 @@
 class App::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   layout "properties_layout"
 
+  add_breadcrumb 'SNK Property Home', :root_path
+
   def github
     callback_from :github
   end
@@ -48,14 +50,10 @@ class App::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
   def input
+    add_breadcrumb '名前入力'
   end
 
   def complete
-    p "##### user name #####"
-    p params
-    p session[:omniauth]
-    p params[:user][:name]
-
     provider = session[:omniauth].provider
 
     @user = User.create_oauth_user(session[:omniauth], params[:user][:name])

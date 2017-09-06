@@ -1,10 +1,14 @@
 class App::PasswordsController < Devise::PasswordsController
   layout "properties_layout"
 
+  add_breadcrumb 'SNK Property Home', :root_path
+
   # GET /resource/password/new
-  # def new
-  #   super
-  # end
+  def new
+    add_breadcrumb 'パスワードリセット'
+
+    super
+  end
 
   # POST /resource/password
   # def create
