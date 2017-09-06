@@ -238,6 +238,9 @@ Rails.application.routes.draw do
            end
          end
 
+         get 'users/profile' => 'users#profile'
+         get 'users/edit'    => 'users#edit'
+
          resources :apartments, shallow: true, :only => [:index, :show]
 
          get 'apartments/:province/city'                         => 'apartments#filtered_index', as: 'test'
