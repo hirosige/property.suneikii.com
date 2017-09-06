@@ -25,6 +25,7 @@
 #  provider               :string(255)
 #  provider_id            :integer
 #  name                   :string(255)
+#  role                   :string(255)      default("customer"), not null
 #
 # Indexes
 #
@@ -46,8 +47,14 @@ class User < ActiveRecord::Base
   has_one :customer
   has_one :business_partner
   has_one :system_admin
-  belongs_to :role
   belongs_to :realestate_provider
+
+  enum role: {
+    :admin    => 'admin',
+    :staff    => 'staff',
+    :provider => 'provider',
+    :customer => 'customer'
+  }
 
   def self.has_oauth_user_exist(auth)
     user = User.where(uid: auth.uid, provider: auth.provider).first
@@ -67,7 +74,7 @@ class User < ActiveRecord::Base
           provider: auth.provider,
           email:    User.dummy_email(auth),
           password: Devise.friendly_token[0, 20],
-          role_id: 1
+          role: :customer
       )
     end
 
@@ -82,7 +89,7 @@ class User < ActiveRecord::Base
           provider: auth.provider,
           email:    User.dummy_email(auth),
           password: Devise.friendly_token[0, 20],
-          role_id: 1
+          role: :customer
       )
 
     user

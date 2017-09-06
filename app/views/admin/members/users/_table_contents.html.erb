@@ -15,7 +15,6 @@
       <th class="column-title"><%= t('admin.users.items.updated_at') %></th>
       <th class="column-title"><%= t('admin.users.items.ban_status') %></th>
       <th class="column-title"><%= t('admin.users.items.reference') %></th>
-      <th class="column-title"><%= t('admin.users.items.from_where') %></th>
       <th class="column-title"><%= t('admin.users.items.control_del') %></th>
       </th>
       <th class="bulk-actions" colspan="12">
@@ -35,7 +34,7 @@
           <td><%= user.email %> <%= user.your_id_sign %></td>
           <td><%= user.sign_in_count %></td>
           <td><%= user.current_sign_in_ip %></td>
-          <td><label class="label label-success"><%= user.role.name unless user.role.nil? %></label></td>
+          <td><label class="label label-success"><%= user.role %></label></td>
           <td><%= user.created_at.strftime("%Y年%m月%d日 %H:%M:%S") %></td>
           <td><%= user.updated_at.strftime("%Y年%m月%d日 %H:%M:%S") %></td>
           <td>
@@ -49,7 +48,6 @@
               </li>
             </ul>
           </td>
-          <td><%= user.who_are_you %></td>
           <td>
             <% if user.provider.blank? %>
                 <label class="label label-primary"><%= "origin" %></label>

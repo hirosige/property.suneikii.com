@@ -34,11 +34,7 @@ class Admin::Members::UsersController < AdminController
     def set_users
       @users = UsersDecorator.decorate(
         UserDecorator.decorate_collection(
-            User.includes(
-              :role,
-              :customer,
-              :system_admin,
-            ).page(params[:page])
+            User.page(params[:page])
         )
       )
     end

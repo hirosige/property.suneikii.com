@@ -4,7 +4,7 @@ class AdminController < ApplicationController
   protect_from_forgery with: :null_session
   before_filter :authenticate_user!
   # before_filter :banned_user?
-  # before_filter :admin?
+  before_filter :authenticate_admin?
   before_action :set_locale
 
   layout 'admin'
@@ -24,9 +24,9 @@ class AdminController < ApplicationController
     end
   end
 
-  def admin?
-    if current_user.role.id == 1
-      redirect_to :root, alert: 'You are not permitted to get in this area'
+  def authenticate_admin?
+    if cannot? :customer, current_user
+      raise "not authroized here"
     end
   end
 

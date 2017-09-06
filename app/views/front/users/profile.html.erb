@@ -7,3 +7,7 @@
 <br>
 <br>
 Profile こんにちは、 <%= @user.name %>さん
+
+<% if can? :admin, current_user %>
+  hello admin
+<% end %>
