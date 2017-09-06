@@ -11,7 +11,7 @@
     background: #fff;
     margin-bottom: 30px;
     padding-top: 20px;
-
+    border: 1px #bdc8ca solid;
   }
 
   .sign-in-top__left {
@@ -41,10 +41,12 @@
   </div>
 
   <div class="sign-in-top__base">
+
     <div class="sign-in-top__left width-400">
       <%= render 'devise/shared/provider_logins' %>
       <%= render "devise/shared/links" %>
     </div>
+
     <div class="sign-in-top__right width-400">
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <h1>Login Form</h1>
@@ -72,9 +74,5 @@
     </div>
   </div>
 
-  <div>
-    <h1><i class="fa fa-s15" style="font-size: 26px;"></i> <%= t('site_name') %></h1>
-    <p>©2016 All Rights Reserved. <%= t('site_name') %>! <br> Privacy and Terms</p>
-  </div>
 </div>
 
