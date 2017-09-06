@@ -5,7 +5,7 @@ class Admin::Providers::ProvidersController < AdminController
   # GET /providers.json
   def index
     @providers = ProviderDecorator.decorate_collection(
-        Provider.page(params[:page])
+        Provider.accessible_by(current_ability).page(params[:page])
     )
   end
 

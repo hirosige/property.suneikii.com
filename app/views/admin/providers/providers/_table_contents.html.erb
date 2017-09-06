@@ -45,7 +45,9 @@
           <td> <%= provider.formatted_updated_date %></td>
           <td> <%= set_button_show('', [:admin, :providers, provider]) %></td>
           <td> <%= set_button_edit('', edit_admin_providers_provider_path(provider)) %></td>
-          <td> <%= set_button_delete('', [:admin, :providers, provider]) %></td>
+          <% if can? :destroy, Provider %>
+            <td> <%= set_button_delete('', [:admin, :providers, provider]) %></td>
+          <% end %>
         </tr>
     <% end %>
     </tbody>

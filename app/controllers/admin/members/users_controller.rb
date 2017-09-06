@@ -34,7 +34,7 @@ class Admin::Members::UsersController < AdminController
     def set_users
       @users = UsersDecorator.decorate(
         UserDecorator.decorate_collection(
-            User.page(params[:page])
+            User.accessible_by(current_ability).page(params[:page])
         )
       )
     end

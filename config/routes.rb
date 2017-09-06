@@ -238,8 +238,9 @@ Rails.application.routes.draw do
            end
          end
 
-         get 'users/profile' => 'users#profile'
-         get 'users/edit'    => 'users#edit'
+         get 'user/profile' => 'users#profile'
+         get 'user/edit'    => 'users#edit'
+         get 'user/deny'    => 'users#deny'
 
          resources :apartments, shallow: true, :only => [:index, :show]
 

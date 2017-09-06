@@ -7,11 +7,24 @@ class Ability
     if user.admin?
       can :manage, :all
     elsif user.staff?
-      can :manage, :all
+      # can :manage, :all
+      can :manage, Apartment
+      can [:read, :create, :update], Provider
+      can :read, User
     elsif user.provider?
-      can :manage, :all
+      can :manage, Apartment, ["provider_id = ?" , user.provider_id] do |record|
+        record.provider_id == user.provider_id
+      end
+
+      can [:read, :update], Provider, ["id = ?" , user.provider_id] do |record|
+        record.id == user.provider_id
+      end
+
+      can [:read, :update], User, ["provider_id = ?" , user.provider_id] do |record|
+        record.provider_id == user.provider_id
+      end
     elsif user.customer?
-      can :manage, :read
+      can :read, :all
     end
   end
 end

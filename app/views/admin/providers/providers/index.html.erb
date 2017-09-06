@@ -1,4 +1,4 @@
-<% provide(:title, t('admin.apartments.title')) %>
+<% provide(:title, t('admin.providers.title')) %>
 
 <div class="right_col" role="main">
   <div class="">
@@ -9,7 +9,7 @@
     <div class="row">
       <div class="clearfix"></div>
       <div class="col-md-12 col-sm-12 col-xs-12">
-        <%= render 'layouts/admin_menus/apartments_sub_tab' %>
+        <%= render 'layouts/admin_menus/providers_sub_tab' %>
 
         <div class="x_panel">
           <%= render :partial => 'admin/shared/table_title', :locals => {title: t('admin.providers.title'), description: t('admin.providers.description')} %>
@@ -20,7 +20,10 @@
             <%= render 'pagination' %>
 
             <br>
-            <%= set_button_new(t('admin.providers.buttons.add'), new_admin_providers_provider_path) %>
+            <% if can? :create, Provider %>
+              <%= set_button_new(t('admin.providers.buttons.add'), new_admin_providers_provider_path) %>
+            <% end %>
+
             <%= set_button_csv(t('admin.providers.buttons.csv_export'), admin_providers_providers_path(format: 'csv')) %>
           </div>
         </div>

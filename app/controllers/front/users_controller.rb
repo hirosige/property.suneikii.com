@@ -11,6 +11,10 @@ class Front::UsersController < FrontController
   def update
   end
 
+  def deny
+
+  end
+
   private
     def set_user
       @user = User.find(current_user.id)

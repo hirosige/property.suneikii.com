@@ -35,6 +35,9 @@ en:
     sidemenu_11:
       title: "Facilities"
 
+    sidemenu_12:
+      title: "Providers"
+
     elements:
       search:
         keyword:  "Search for..."

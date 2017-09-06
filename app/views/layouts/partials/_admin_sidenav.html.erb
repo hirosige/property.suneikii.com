@@ -15,11 +15,7 @@
         <div class="profile_info">
           <span><%= t('admin.greeting') %></span>
           <h2>
-            <% if current_user.system_admin.nil? %>
-              <%= "匿名希望さん" %>
-            <% else %>
-              <%= "#{current_user.system_admin.first_name}さん" %>
-            <% end %>
+            <%= current_user.name %> さん
           </h2>
         </div>
       </div>
@@ -34,8 +30,11 @@
             <%= render partial: 'layouts/partials/sub_bars/site_sub' %>
             <%= render partial: 'layouts/partials/sub_bars/aparts_sub' %>
             <%= render partial: 'layouts/partials/sub_bars/facilities_sub' %>
-            <%= render partial: 'layouts/partials/sub_bars/users_sub' %>
-            <%= render partial: 'layouts/partials/sub_bars/tenants_sub' %>
+            <% if can? :read, User %>
+              <%= render partial: 'layouts/partials/sub_bars/users_sub' %>
+            <% end %>
+            <%= render partial: 'layouts/partials/sub_bars/providers_sub' %>
+            <% # render partial: 'layouts/partials/sub_bars/tenants_sub' %>
             <%= render partial: 'layouts/partials/sub_bars/reports_sub' %>
           </ul>
         </div>

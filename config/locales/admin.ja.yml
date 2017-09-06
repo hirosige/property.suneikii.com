@@ -35,6 +35,9 @@ ja:
     sidemenu_11:
       title: "施設管理"
 
+    sidemenu_12:
+      title: "取り扱い会社管理"
+
     elements:
       search:
         keyword:  "キーワード"

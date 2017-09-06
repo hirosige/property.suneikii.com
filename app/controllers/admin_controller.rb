@@ -25,8 +25,8 @@ class AdminController < ApplicationController
   end
 
   def authenticate_admin?
-    if cannot? :customer, current_user
-      raise "not authroized here"
+    if current_user.customer?
+      redirect_to user_deny_path
     end
   end
 

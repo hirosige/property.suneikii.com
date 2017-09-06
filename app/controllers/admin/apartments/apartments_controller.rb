@@ -3,7 +3,7 @@ class Admin::Apartments::ApartmentsController < AdminController
 
   def index
     @apartments = ApartmentDecorator.decorate_collection(
-        Apartment.includes(
+        Apartment.accessible_by(current_ability).includes(
             :apartment_info,
             :country,
             :province,
