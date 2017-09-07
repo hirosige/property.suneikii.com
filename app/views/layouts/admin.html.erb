@@ -11,13 +11,7 @@
 <body class="nav-md">
   <div class="container body">
     <div class="main_container">
-      <% flash.each do |key, value| %>
-          <div align="center"
-               id="flash"
-               class="alert alert-<%= key %>">
-            <%= value %>
-          </div>
-      <% end %>
+      <%= render 'layouts/shared/flash' %>
 
       <%= render "layouts/partials/admin_sidenav" %>
       <%= render "layouts/partials/topnav" %>

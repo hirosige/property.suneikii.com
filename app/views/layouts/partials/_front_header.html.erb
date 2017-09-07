@@ -1,18 +1,21 @@
 <header>
   <div class="list-header">
-    <div class="logo"><%= Settings.site[:name] %></div>
-    <div class="description"><a href="#">物件数No.1の不動産・住宅情報サイト <%= Settings.site[:name] %></a></div>
-    <% if user_signed_in? %>
-        <p class="top-header__login--signed-in">
+    <div class="list-header--left">
+      <div class="logo"><%= Settings.site[:name] %></div>
+      <div class="description"><a href="#">物件数No.1の不動産・住宅情報サイト <%= Settings.site[:name] %></a></div>
+    </div>
+
+    <div class="list-header--right">
+      <% if user_signed_in? %>
           <%= image_tag current_user.gravatar_url, :class => 'control-box__gravatar' %>
           <span class="top-header__login-user-name"><%= current_user.name %></span>
           <% if Rails.env %>
-            <span class="label label-primary">:<%= current_user.role %></span>
+              <span class="label label-primary">:<%= current_user.role %></span>
           <% end %>
-        </p>
-    <% else %>
-        <button class="btn btn-xs btn-default login_btn" onclick="location.href='<%= new_user_session_path %>'">ログイン</button>
-    <% end %>
+      <% else %>
+          <button class="btn btn-xs btn-default login_btn" onclick="location.href='<%= new_user_session_path %>'">ログイン</button>
+      <% end %>
+    </div>
   </div>
 
   <div class="control-box">
@@ -60,21 +63,25 @@
   </div>
 </header>
 
-<div class="header-info">
-  <div class="container">
-    <% no_info_controllers = Array.new %>
-    <% no_info_controllers.push('registrations', 'sessions', 'confirmations', 'passwords', 'omniauth_callbacks') %>
-    <% unless no_info_controllers.include?(controller.controller_name) %>
-      <% if params[:province].nil? %>
-          <%= params[:controller].split('/')[1].capitalize %> を検索
-      <% else %>
-          <%= params[:province].capitalize unless params[:province].nil? %>の<%= params[:controller].split('/')[1].capitalize %>
-      <% end %>
+<% module_name = params[:controller].split('/')[0] %>
+<% unless params[:action] == 'render_404' or module_name == 'admin' %>
+  <div class="header-info">
+    <div class="container">
+      <% no_info_controllers = Array.new %>
+      <% no_info_controllers.push('registrations', 'sessions', 'confirmations', 'passwords', 'omniauth_callbacks') %>
+      <% unless no_info_controllers.include?(controller.controller_name) %>
+        <% if params[:province].nil? %>
+            <%= params[:controller].split('/')[1].capitalize %> を検索
+        <% else %>
+            <%= params[:province].capitalize unless params[:province].nil? %>の<%= params[:controller].split('/')[1].capitalize %>
+        <% end %>
 
-      物件一覧ページ。面積（坪数）や価格（坪単価）で絞り込み、簡単に比較・資料請求。
-    <% end %>
+        物件一覧ページ。面積（坪数）や価格（坪単価）で絞り込み、簡単に比較・資料請求。
+      <% end %>
+    </div>
   </div>
-</div>
+<% end %>
+
 <div class="breadcrumb">
   <div class="container">
     <%= render_breadcrumbs separator: ' ▶ ' %>

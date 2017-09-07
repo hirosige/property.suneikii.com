@@ -3,16 +3,14 @@ class Front::UsersController < FrontController
   before_action :set_user, only: [:profile, :edit]
 
   def profile
+    add_breadcrumb "マイページ"
+
   end
 
   def edit
   end
 
   def update
-  end
-
-  def deny
-
   end
 
   private

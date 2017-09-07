@@ -29,7 +29,7 @@ ja:
     passwords:
       no_token: "このページにアクセスする事が出来ません。正しいURLでアクセスしている事を確認して下さい。"
       send_instructions: "パスワードのリセット方法を数分以内にメールでご連絡します。"
-      send_paranoid_instructions: ""
+      send_paranoid_instructions: "If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes."
       updated: "パスワードを変更しました。"
       updated_not_active: "パスワードを変更しました。"
     registrations:

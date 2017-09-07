@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title><%= yield(:title) %> | <%= t('site_name') %> </title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= favicon_link_tag 'favicon.ico' %>
-  <%= csrf_meta_tags %>
+  <title><%= content_for?(:title) ? yield(:title) : "SNK Property" %> </title>
+
+  <%= render 'layouts/partials/front_assets' %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-<body>
-  <div class="container-fluid">
-      <div class="row">
-          <div class="col-md-9 left_contains_padding">
-              <%= yield %>
-          </div>
-      </div>
-  </div>
+
+<body class="main">
+
+<%= render 'layouts/partials/front_header' %>
+<%= yield %>
+<%= render 'layouts/partials/front_footer' %>
+
 </body>
 </html>

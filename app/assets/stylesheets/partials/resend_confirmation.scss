@@ -1,0 +1,54 @@
+.resend-confirmation-title__base {
+  background: #fff;
+  min-height: 50px;
+  border-radius: 10px;
+  border: 1px #bdc8ca solid;
+  border-top: 8px rgb(000, 000, 228) solid;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.resend-confirmation-title__caption {
+  display: inline-block;
+  font-size: 1.2em;
+  color: #444;
+  margin: 10px 10px 10px;
+}
+
+.resend-confirmation-top__base {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-flow: wrap;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  background: #fff;
+  margin-bottom: 30px;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  border: 1px #bdc8ca solid;
+}
+
+.resend-confirmation-top__left {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 20px;
+}
+
+.resend-confirmation-top__right {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin: 20px;
+}
+
+.resend-confirmation-top__width {
+  width: 500px;
+}
+
+.resend-confirmation-top__submit {
+  margin-bottom: 20px;
+}

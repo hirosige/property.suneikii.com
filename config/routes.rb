@@ -240,7 +240,7 @@ Rails.application.routes.draw do
 
          get 'user/profile' => 'users#profile'
          get 'user/edit'    => 'users#edit'
-         get 'user/deny'    => 'users#deny'
+         get 'user/logout'    => 'sessions#logout'
 
          resources :apartments, shallow: true, :only => [:index, :show]
 

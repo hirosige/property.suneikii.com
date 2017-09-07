@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
 
   rescue_from ActiveRecord::RecordNotFound, with: :render_404
   rescue_from ActionController::RoutingError, with: :render_404
+  rescue_from AccessDenied, with: :render_401
 
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale
@@ -17,7 +18,15 @@ class ApplicationController < ActionController::Base
     { locale: I18n.locale }.merge options
   end
 
+  def render_401
+    add_breadcrumb "このページにアクセスする権限がありません。 | #{Settings.site[:name]}"
+
+    render template: 'errors/error_401', status: 401, layout: 'error', content_type: 'text/html'
+  end
+
   def render_404
+    add_breadcrumb "ページが見つかりません。 | #{Settings.site[:name]}"
+
     render template: 'errors/error_404', status: 404, layout: 'error', content_type: 'text/html'
   end
 
@@ -30,7 +39,7 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_out_path_for(resource)
-    root_path
+    user_logout_path
   end
 
   protected

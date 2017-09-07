@@ -1,3 +1,4 @@
+
 class AdminController < ApplicationController
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
@@ -26,7 +27,7 @@ class AdminController < ApplicationController
 
   def authenticate_admin?
     if current_user.customer?
-      redirect_to user_deny_path
+      raise AccessDenied.new
     end
   end
 
