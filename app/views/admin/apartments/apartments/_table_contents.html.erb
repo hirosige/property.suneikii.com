@@ -6,7 +6,7 @@
         <input type="checkbox" id="check-all" class="flat">
       </th>
 
-      <th class="column-title" colspan="4"><%= t('admin.apartments.items.area') %></th>
+      <th class="column-title"><%= t('admin.apartments.items.area') %></th>
       <th class="column-title"><%= t('admin.apartments.items.name') %></th>
       <th class="column-title"><%= t('admin.apartments.items.since_when') %></th>
       <th class="column-title"><%= t('admin.apartments.items.room_type') %></th>
@@ -30,10 +30,17 @@
           <td class="a-center">
             <input type="checkbox" class="flat" name="table_records">
           </td>
-          <td><span class="label label-xs label-primary"><%= apartment.country.name_ja unless apartment.country.nil? %></span></td>
-          <td><span class="label label-xs label-primary"><%= apartment.province.name_ja unless apartment.province.nil? %></span></td>
-          <td><span class="label label-xs label-primary"><%= apartment.district.name_ja unless apartment.district.nil? %></span></td>
-          <td><span class="label label-xs label-primary"><%= apartment.subdistrict.name_ja unless apartment.subdistrict.nil? %></span></td>
+          <td>
+            <div class="apartment__area">
+              <span class="apartment__area__item"><%= apartment.country.name_ja unless apartment.country.nil? %></span>
+              <span>▼</span>
+              <span class="apartment__area__item"><%= apartment.province.name_ja unless apartment.province.nil? %></span>
+              <span>▼</span>
+              <span class="apartment__area__item"><%= apartment.district.name_ja unless apartment.district.nil? %></span>
+              <span>▼</span>
+              <span class="apartment__area__item"><%= apartment.subdistrict.name_ja unless apartment.subdistrict.nil? %></span>
+            </div>
+          </td>
           <td> <%= apartment.name %></td>
           <td> <%= apartment.since_when %></td>
           <td> <%= apartment.room_type_id %></td>
