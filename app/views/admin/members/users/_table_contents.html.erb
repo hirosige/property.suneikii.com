@@ -65,7 +65,7 @@
 
           </td>
           <% if can? :destroy, User %>
-              <td><%= set_button_delete('', [:admin, :members, user]) %></td>
+              <td><%= set_button_delete('', [:admin, user]) %></td>
           <% end %>
 
         </tr>

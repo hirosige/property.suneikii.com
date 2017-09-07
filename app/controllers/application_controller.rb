@@ -22,11 +22,14 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
-    user_profile_path
+    if User.find(resource.id).admin?
+      admin_path
+    else
+      user_profile_path
+    end
   end
 
   def after_sign_out_path_for(resource)
-    p resource
     root_path
   end
 

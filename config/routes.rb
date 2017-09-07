@@ -250,7 +250,7 @@ Rails.application.routes.draw do
       end
 
       # Administrator Pages
-      get 'admin' => 'admin/apartments/apartments#index'
+      get 'admin' => 'admin/members/users#index'
       namespace :admin do
         namespace :settings do
           resources :use_terms
@@ -303,7 +303,7 @@ Rails.application.routes.draw do
           resources :sizes
         end
 
-        namespace :members do
+        scope module: :members do
           resources :users, shallow: true, :only => [:index, :show, :destroy] do
              member do
                 get 'toggle_ban'
