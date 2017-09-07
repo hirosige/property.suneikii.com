@@ -1,0 +1,25 @@
+provider:
+  facebook:
+    api_key: 'dev_api'
+    secret_key: ''
+
+  twitter:
+    api_key: 'dev_api'
+    secret_key: ''
+
+  instagram:
+    api_key: '5ea2ce402cd549c19c280bef8df56565'
+    secret_key: '4be82c89388d44f39a7f6a3448844c6e'
+
+  github:
+    api_key:    '902f29eca40612cb71a9'
+    secret_key: 'cba6e100ccb78d80b06180d8b870696924e8cf90'
+    scope:      'user:email'
+
+  flickr:
+    api_key: 'dev_api'
+    secret_key: ''
+
+  foursquare:
+    api_key: 'dev_api'
+    secret_key: ''

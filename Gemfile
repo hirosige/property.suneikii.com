@@ -68,6 +68,7 @@ gem 'cocoon'
 gem 'acts-as-taggable-on'
 gem 'mobylette'
 gem 'swiper-rails'
+gem 'gravtastic'
 
 group :development, :test do
   gem 'byebug'

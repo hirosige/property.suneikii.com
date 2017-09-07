@@ -34,6 +34,9 @@
 #
 
 class User < ActiveRecord::Base
+  include Gravtastic
+  gravtastic
+
   # :lockable, :timeoutable
   devise :database_authenticatable,
          :registerable,
@@ -44,9 +47,6 @@ class User < ActiveRecord::Base
          :confirmable,
          :omniauthable
 
-  has_one :customer
-  has_one :business_partner
-  has_one :system_admin
   belongs_to :realestate_provider
 
   enum role: {

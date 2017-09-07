@@ -1,16 +1,14 @@
   <div class="col-md-3 left_col">
     <div class="left_col scroll-view">
 
-      <% hash = Digest::MD5.hexdigest(current_user.email) %>
-
       <div class="navbar nav_title" style="border: 0;">
-        <a href="<%= admin_path %>" class="site_title"><i class="fa fa-s15"></i> <span><%= t('site_name') %> <%= t('admin.page_title') %></span></a>
+        <a href="<%= admin_path %>" class="site_title"><i class="fa fa-s15"></i> <span><%= Settings.site[:name] %> <%= t('admin.page_title') %></span></a>
       </div>
       <div class="clearfix"></div>
 
       <div class="profile">
         <div class="profile_pic">
-          <%= image_tag "https://www.gravatar.com/avatar/#{hash}", :class => "img-circle profile_img"  %>
+          <%= image_tag current_user.gravatar_url, :class => "img-circle profile_img"  %>
         </div>
         <div class="profile_info">
           <span><%= t('admin.greeting') %></span>

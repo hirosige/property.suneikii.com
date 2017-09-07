@@ -8,3 +8,5 @@ ruby
 config/database.yml
 .env
 public/uploads
+# Ignore application configuration
+/config/application.yml

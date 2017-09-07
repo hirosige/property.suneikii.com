@@ -28,8 +28,8 @@ header {
   z-index: 3;
   top: 0;
   background: rgba(000, 000, 228, 0.9);
-  width: 100%;;
-  min-height: 30px;
+  width: 100%;
+  min-height: 50px;
   display: inline-block;
   color: #fff;
   position: fixed;
@@ -123,13 +123,17 @@ header {
   height: 20px;
 }
 
+.top-header__login-user-name {
+  font-size: 1.5rem;
+}
+
 .control-box {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-content: center;
   align-items: center;
-  margin-top: 30px;
+  margin-top: 50px;
   background: #fff;
   min-height: 100px;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
@@ -186,3 +190,11 @@ button:disabled {
   background-image: none;
 }
 
+.control-box__gravatar {
+  border: 2px #0d6aad solid;
+  border-radius: 50%;
+  height: 35px;
+  width: 35px;
+  margin-right: 10px;
+  margin-left: 10px;
+}

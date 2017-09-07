@@ -1,13 +1,13 @@
 <footer>
   <div class="container">
     <div class="top-footer__detail">
-      <h1><i class="fa fa-s15" style="font-size: 26px;"></i> <%= t('site_name') %></h1>
-      <p>©2017 All Rights Reserved. <%= t('site_name') %>! <br> Privacy and Terms</p>
+      <h1><i class="fa fa-s15" style="font-size: 26px;"></i> <%= Settings.site[:name] %></h1>
+      <p>©2017 All Rights Reserved. <%= Settings.site[:name] %>! <br> Privacy and Terms</p>
     </div>
   </div>
 
   <div class="snk-footer">
-    <a href="#" class="snk-footer__link">SNK Propertyとは</a>
+    <a href="#" class="snk-footer__link"><%= Settings.site[:name] %>とは</a>
     <a href="#" class="snk-footer__link">サイトマップ</a>
     <a href="#" class="snk-footer__link">ご意見・ご要望</a>
     <a href="#" class="snk-footer__link">掲載物件に関するお問合せ</a>
@@ -15,10 +15,10 @@
     <br>
     <a href="#" class="snk-footer__link">免責事項</a>
     <a href="#" class="snk-footer__link">個人情報について</a>
-    <a href="#" class="snk-footer__link">SNK Propertyに掲載する</a>
+    <a href="#" class="snk-footer__link"><%= Settings.site[:name] %>に掲載する</a>
     <a href="#" class="snk-footer__link">スタッフ募集</a>
     <a href="#" class="snk-footer__link">運営会社について</a>
     <br><br>
-    <div style="font-size: 0.8em;">Copyright © SNK Property. All Rights Reserved.</div>
+    <div style="font-size: 0.8em;">Copyright © <%= Settings.site[:name] %>. All Rights Reserved.</div>
   </div>
 </footer>
