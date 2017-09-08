@@ -54,10 +54,15 @@ header {
   margin-right: auto;
 }
 
-.list-header_info--signed-in {
+.list-header__info--signed-in-btn {
   margin-top: 5px;
   margin-bottom: 5px;
   border-radius: 20px;
+}
+
+.list-header__info--signed-in-menu {
+  background: $main_deep_color;
+  font-size: 1.2rem;
 }
 
 .flex-container {

@@ -20,5 +20,3 @@ case Rails.env
   else
     raise 'いやはや何か問題ですぞ'
 end
-
-

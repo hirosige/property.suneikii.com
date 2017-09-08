@@ -6,24 +6,7 @@
     </div>
 
     <div class="list-header--right">
-      <% if user_signed_in? %>
-          <div class="dropdown">
-            <button class="btn btn-sm btn-primary dropdown-toggle list-header_info--signed-in" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-              <%= image_tag current_user.gravatar_url, :class => 'control-box__gravatar' %> <%= current_user.name %>
-              <% if Rails.env == 'development' %>
-                  <span class="label label-success">:<%= current_user.role %></span>
-              <% end %>
-              <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#">Separated link</a></li>
-            </ul>
-          </div>
-      <% end %>
+
 
       <%= cell("front/sessions/sign_in", current_user).(:sign_in_btn) %>
     </div>

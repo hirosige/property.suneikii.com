@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= content_for?(:title) ? yield(:title) : "GentelellaOnRails" %> </title>
+  <title><%= content_for?(:title) ? yield(:title) : Settings.site[:name] %> </title>
 
   <%= render 'layouts/partials/assets' %>
   <meta name="viewport" content="width=device-width, initial-scale=1">
