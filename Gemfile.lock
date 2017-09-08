@@ -95,12 +95,12 @@ GEM
       declarative-option (< 0.2.0)
       tilt (>= 1.4, < 3)
       uber (< 0.2.0)
+    cells-erb (0.1.0)
+      cells (~> 4.0)
+      erbse (>= 0.1.1)
     cells-rails (0.0.8)
       actionpack (>= 3.0)
       cells (>= 4.1.6, < 5.0.0)
-    cells-slim (0.0.5)
-      cells (>= 4.0.1, < 6.0.0)
-      slim (~> 3.0)
     childprocess (0.7.0)
       ffi (~> 1.0, >= 1.0.11)
     climate_control (0.2.0)
@@ -180,6 +180,8 @@ GEM
     em-websocket (0.5.1)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0.6.0)
+    erbse (0.1.1)
+      temple
     erubis (2.7.0)
     eventmachine (1.2.3)
     excon (0.57.0)
@@ -728,8 +730,8 @@ DEPENDENCIES
   capybara
   carrierwave
   cells
+  cells-erb
   cells-rails
-  cells-slim
   cocoon
   coffee-rails (~> 4.1.0)
   config

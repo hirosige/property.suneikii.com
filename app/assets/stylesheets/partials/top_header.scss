@@ -54,6 +54,12 @@ header {
   margin-right: auto;
 }
 
+.list-header_info--signed-in {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-radius: 20px;
+}
+
 .flex-container {
   display: flex;
   min-height: 200px;
@@ -135,6 +141,8 @@ header {
 
 .top-header__login-user-name {
   font-size: 1.5rem;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .control-box {
@@ -205,5 +213,4 @@ button:disabled {
   border-radius: 50%;
   height: 30px;
   width: 30px;
-  margin-right: 5px;
 }

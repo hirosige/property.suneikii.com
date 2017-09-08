@@ -1,0 +1,9 @@
+<% if user_signed_in? %>
+    <%= image_tag gravatar_url, :class => 'control-box__gravatar' %>
+    <span class="top-header__login-user-name"><%= name %></span>
+    <% if Rails.env == 'development' %>
+        <span class="label label-success">:<%= role %></span>
+    <% end %>
+<% else %>
+    <button class="btn btn-xs btn-default login_btn" onclick="location.href='<%= login_link %>'">ログイン</button>
+<% end %>

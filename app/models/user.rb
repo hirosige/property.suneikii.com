@@ -82,7 +82,6 @@ class User < ActiveRecord::Base
   end
 
   def self.create_oauth_user(auth, name)
-    p auth
       user = User.create(
           uid:      auth.uid,
           name:     name,
