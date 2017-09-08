@@ -11,6 +11,41 @@ body {
   color: rgba(000, 000, 228, 0.7);
 }
 
+.sql-info {
+  border-bottom: 1px rgba(000, 000, 228, 0.1) solid;
+  background: rgba(000, 000, 127, 0.02);
+  font-size: 0.8em;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  color: rgba(000, 000, 228, 0.7);
+}
+
+.sql {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: $color_of_error
+}
+
+.sql__caption {
+  background: $color_of_error;
+  color: $white;
+  width: 100px;
+  border-radius: 5px;
+  padding: 5px;
+  margin-top: 20px;
+}
+
+.sql__border {
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.ex-explanation {
+  margin-left: 10px;
+  text-decoration: underline;
+  color: $color_of_error
+}
+
 .breadcrumb {
   border-bottom: 1px rgba(000, 000, 228, 0.1) solid;
   background: rgba(000, 000, 127, 0.02);

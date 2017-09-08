@@ -11,6 +11,7 @@
   </div>
 
   <div class="control-box">
+
     <div class="control-box--left">
       <%= image_tag("snk_logo.jpg", :style => 'width: 100px;', :alt => 'logo') %>
       <button class="control-box__btn" onclick="location.href='<%= apartments_path %>'">
@@ -53,7 +54,20 @@
     </div>
 
   </div>
+
 </header>
+
+<% if Rails.env == 'development' %>
+<div class="sql-info">
+  <div class="container">
+    <span class="sql__caption">SQL Debugging </span> <span class="ex-explanation">プロダクションでは表示されません。</span>
+    <hr class="sql__border">
+    <div class="well sql">
+      <%= @sql unless @sql.nil? %>
+    </div>
+  </div>
+</div>
+<% end %>
 
 <% module_name = params[:controller].split('/')[0] %>
 <% unless params[:action] == 'render_404' or module_name == 'admin' %>

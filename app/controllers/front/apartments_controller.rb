@@ -7,12 +7,15 @@ class Front::ApartmentsController < FrontController
     session[:apartments_session_list] = []
     add_breadcrumb 'バンコクの物件一覧'
 
+    apartments = Apartment.published.includes(
+        :apartment_info
+    ).page(params[:page])
+
     @apartments = Front::ApartmentDecorator.decorate_collection(
-        Apartment.published
-            .includes(
-                :apartment_info
-            ).page(params[:page])
+        apartments
     )
+
+    @sql = apartments.to_sql
   end
 
   def show
