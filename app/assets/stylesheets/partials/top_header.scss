@@ -10,6 +10,15 @@
   background-color: $white;
 }
 
+.site__logo {
+  background: $main_deep_color;
+  border-radius: 50%;
+  border: 2px $white solid;
+  font-size: 2rem;
+  padding: 5px;
+  margin-right: 5px;
+}
+
 header {
   a:link {
     color: $not_visit_in_blue;
@@ -165,7 +174,7 @@ header {
   justify-content: space-between;
   align-content: center;
   align-items: center;
-  margin-top: 60px;
+  margin-top: 50px;
   background: #fff;
   min-height: 100px;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
