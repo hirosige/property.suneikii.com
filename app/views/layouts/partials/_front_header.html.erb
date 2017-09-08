@@ -2,12 +2,10 @@
   <div class="list-header">
     <div class="list-header--left">
       <div class="logo"><%= Settings.site[:name] %></div>
-      <div class="description"><a href="#">物件数No.1の不動産・住宅情報サイト <%= Settings.site[:name] %></a></div>
+      <div class="description"><a href="<%= root_path %>">物件数No.1の不動産・住宅情報サイト <%= Settings.site[:name] %></a></div>
     </div>
 
     <div class="list-header--right">
-
-
       <%= cell("front/sessions/sign_in", current_user).(:sign_in_btn) %>
     </div>
   </div>
