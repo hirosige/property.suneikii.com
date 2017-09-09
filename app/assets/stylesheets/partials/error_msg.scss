@@ -21,7 +21,7 @@
     color: $color_of_error;
     font-size: 1.5rem;
     background: $white;
-    border: 2px #ff2647 solid;
+    border: 2px $color_of_error solid;
     margin: 20px;
     padding: 5px;
     border-radius: 10px;

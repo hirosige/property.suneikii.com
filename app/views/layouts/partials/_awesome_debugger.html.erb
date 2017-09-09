@@ -1,0 +1,44 @@
+<% if Rails.env == 'development' %>
+    <% if user_signed_in? %>
+        <% @awesome_debugger.learn(current_user, 'Current Signed in User') %>
+    <% end %>
+
+    <% @awesome_debugger.learn(@apartments, 'Apartments') unless @apartments.nil? %>
+    <% @awesome_debugger.learn(@apartment, "Apartment_#{params[:id]}") unless @apartment.nil? %>
+
+    <div class="sql-info">
+      <div class="container">
+        <span class="sql__caption"> Debugging </span> <span class="ex-explanation">プロダクションでは表示されません。</span>
+        <hr class="sql__border">
+        <div class="well sql">
+            <% if @awesome_debugger.pool.nil? %>
+              <%= "No Debugging Data" %>
+            <% else %>
+              <% @awesome_debugger.pool.each do |object| %>
+                <% case_safe_name = '' %>
+                <% split_name = object[:name].split(' ') %>
+                <% split_name.each do |splicted_name| %>
+                  <% case_safe_name += "#{splicted_name.downcase}_" %>
+                <% end %>
+
+                <div class="panel panel-danger">
+                  <div class="panel-heading" role="tab" id="<%= case_safe_name %><%= object[:id] %>_heading">
+                    <h4 class="panel-title">
+                      <a role="button" data-toggle="collapse" data-parent="#accordion" href="#<%= case_safe_name %><%= object[:id] %>_collapse" aria-expanded="true" aria-controls="<%= case_safe_name %><%= object[:id] %>_collapse">
+                        Debug <%= object[:name] %>
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="<%= case_safe_name %><%= object[:id] %>_collapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="<%= case_safe_name %><%= object[:id] %>_heading">
+                    <div class="panel-body">
+                      <%= debug(object[:object]) %>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+<% end %>

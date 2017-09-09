@@ -8,6 +8,7 @@ class Front::UsersController < FrontController
   end
 
   def edit
+    add_breadcrumb "登録情報変更"
   end
 
   def update

@@ -1,11 +1,40 @@
-$main_color: rgb(3, 18, 126);
-$main_deep_color: rgb(19, 2, 85);
-$main_light_color: rgb(1, 49, 228);
-$white: #fff;
+// function for color
+@function get_flex_rgba($rgb, $a) {
+  @return rgba($rgb, $a);
+}
+
+$main_color: #03127E;
+$main_deep_color: #130255;
+$main_light_color: #0131E4;
+$white: #ffffff;
+$black: #444444;
 
 // color of link
-$not_visit_in_blue: #fff;
+$not_visit_in_blue: #ffffff;
 $visited_in_blue: #8fff7b;
-$hover_in_blue: rgba(255,255,255,0.9);
-
+$hover_in_blue: #ffffff;
 $color_of_error: #ff2647;
+
+//bg_color
+$bg_color: #00007F;
+
+//color of alert
+$color_of_text: #E9EDEF;
+$color_of_success: #26B99A;
+$color_of_info: #3498DB;
+$color_of_alert: #F39C12;
+$color_of_danger: #E74C3C;
+$color_of_dark: #34495E;
+
+//border
+$border-light: get_flex_rgba($main_light_color, 0.1);
+$border-deep: #bdc8ca;
+
+//shadow
+$shadow-light: get_flex_rgba($black, 0.2);
+$shadow-middle: get_flex_rgba($black, 0.5);
+$shadow-deep: get_flex_rgba($black, 1);
+
+//terminal
+$terminal-bg-color: $black;
+$terminal-text-color: #8fff7b

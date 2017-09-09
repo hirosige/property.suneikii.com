@@ -42,10 +42,10 @@ header {
 
   z-index: 3;
   top: 0;
-  background: rgba(000, 000, 228, 0.9);
+  background: $main_light_color;
   width: 100%;
   min-height: 40px;
-  color: #fff;
+  color: $white;
   position: fixed;
 }
 
@@ -175,10 +175,10 @@ header {
   align-content: center;
   align-items: center;
   margin-top: 50px;
-  background: #fff;
+  background: $white;
   min-height: 100px;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
-  border: 1px #e7efef solid;
+  border: 1px $border-light solid;
   width: 100%;
 }
 
@@ -189,14 +189,20 @@ header {
 .control-box__btn {
   font-size: 1.2em;
   border: 0;
-  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 1px 1px 1px 1px $shadow-light;
   margin: 3px;
   vertical-align: middle;
   height: 50px;
   width: 200px;
   border-radius: 5px;
   background: #fff;
-  color: rgb(000, 000, 228);
+  color: $main_light_color;
+  transition: background, color 0.8s;
+}
+
+.control-box__btn--active {
+  background: rgba($main_light_color, 0.8);
+  color: $white;
 }
 
 .control-box__login-info {
@@ -207,9 +213,9 @@ header {
   align-items: center;
   padding-top: 10px;
   font-size: 1.1rem;
-  border-left: 1px rgba(0, 0, 0, 0.6) dotted;
-  border-right: 1px rgba(0, 0, 0, 0.6) dotted;
-  color: rgb(000, 000, 228);
+  border-left: 1px rgba($main_light_color, 0.6) dotted;
+  border-right: 1px rgba($main_light_color, 0.6) dotted;
+  color: $main_light_color;
   width: 100px;
 }
 
@@ -223,7 +229,8 @@ header {
 }
 
 .control-box__btn:hover {
-  background: rgba(0, 0, 0, 0.05);
+  background: rgba($main_light_color, 0.8);
+  color: $white;
 }
 
 button:disabled {

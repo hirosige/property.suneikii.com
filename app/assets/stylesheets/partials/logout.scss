@@ -2,17 +2,17 @@
   background: #fff;
   min-height: 50px;
   border-radius: 10px;
-  border: 1px #bdc8ca solid;
-  border-top: 8px rgb(000, 000, 228) solid;
+  border: 1px $border-deep solid;
+  border-top: 8px $main_light_color solid;
   margin-top: 20px;
   margin-bottom: 20px;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 1px $shadow-light;
 }
 
 .logout-title__caption {
   display: inline-block;
   font-size: 1.2em;
-  color: #444;
+  color: $black;
   margin: 10px 10px 10px;
 }
 
@@ -22,13 +22,13 @@
   align-content: center;
   align-items: center;
   flex-flow: wrap;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 1px $shadow-light;
   border-radius: 10px;
-  background: #fff;
+  background: $white;
   margin-bottom: 30px;
   padding-top: 20px;
   padding-bottom: 30px;
-  border: 1px #bdc8ca solid;
+  border: 1px $border-deep solid;
 }
 
 .logout-top__left {

@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :null_session
   # before_filter :authenticate_user!
   before_action :set_locale
+  before_action :set_awesome_debugger
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   rescue_from ActiveRecord::RecordNotFound, with: :render_404
@@ -12,6 +13,14 @@ class ApplicationController < ActionController::Base
 
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale
+  end
+
+  def set_awesome_debugger
+    if Rails.env == 'development'
+      @awesome_debugger = AwesomeDebugger.new
+      @awesome_debugger.learn(params, 'URL Params')
+
+    end
   end
 
   def default_url_options(options = {})

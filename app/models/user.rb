@@ -47,6 +47,8 @@ class User < ActiveRecord::Base
          :confirmable,
          :omniauthable
 
+  has_one :profile, dependent: :destroy
+
   belongs_to :realestate_provider
 
   enum role: {
@@ -69,20 +71,22 @@ class User < ActiveRecord::Base
     user = User.where(uid: auth.uid, provider: auth.provider).first
 
     unless user
-      user = User.create(
+      user = User.new(
           uid:      auth.uid,
           provider: auth.provider,
           email:    User.dummy_email(auth),
           password: Devise.friendly_token[0, 20],
           role: :customer
       )
+      user.build_profile
+      user.save
     end
 
     user
   end
 
   def self.create_oauth_user(auth, name)
-      user = User.create(
+      user = User.new(
           uid:      auth.uid,
           name:     name,
           provider: auth.provider,
@@ -90,6 +94,9 @@ class User < ActiveRecord::Base
           password: Devise.friendly_token[0, 20],
           role: :customer
       )
+
+      user.build_profile
+      user.save
 
     user
   end

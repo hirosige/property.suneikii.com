@@ -14,8 +14,6 @@ class Front::ApartmentsController < FrontController
     @apartments = Front::ApartmentDecorator.decorate_collection(
         apartments
     )
-
-    @sql = apartments.to_sql
   end
 
   def show

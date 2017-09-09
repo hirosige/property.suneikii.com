@@ -66,7 +66,13 @@ before_filter :configure_account_update_params, only: [:update]
           :role_id,
           :role,
           :provider_id,
-          :name
+          :name,
+          profiles_attributes: [
+              :postal_code,
+              :address,
+              :tel,
+              :reciever_email
+          ]
       )
     end
   end
@@ -84,7 +90,13 @@ before_filter :configure_account_update_params, only: [:update]
           :role_id,
           :role,
           :provider_id,
-          :name
+          :name,
+          profiles_attributes: [
+              :postal_code,
+              :address,
+              :tel,
+              :reciever_email
+          ]
       )
     end
   end

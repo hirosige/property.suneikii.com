@@ -35,4 +35,8 @@ class Front::Sessions::SignInCell < Cell::ViewModel
     def logout_link
       destroy_user_session_path
     end
+
+    def edit_link
+      user_edit_path
+    end
 end

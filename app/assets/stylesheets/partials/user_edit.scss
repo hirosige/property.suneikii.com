@@ -1,22 +1,22 @@
-.sign-in-title__base {
+.user-edit-title__base {
   background: $white;
   min-height: 50px;
   border-radius: 10px;
   border: 1px $border-deep solid;
-  border-top: 8px $main_light_color solid;
+  border-top: $main_light_color solid;
   margin-top: 20px;
   margin-bottom: 20px;
   box-shadow: 1px 1px 1px $shadow-light;
 }
 
-.sign-in-title__caption {
+.user-edit-title__caption {
   display: inline-block;
   font-size: 1.2em;
   color: $black;
   margin: 10px 10px 10px;
 }
 
-.sign-in-top__base {
+.user-edit-top__base {
   display: flex;
   justify-content: center;
   align-content: center;
@@ -27,23 +27,39 @@
   background: $white;
   margin-bottom: 30px;
   padding-top: 20px;
+  padding-bottom: 30px;
   border: 1px $border-deep solid;
 }
 
-.sign-in-top__left {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
+.user-edit-top__left {
   margin: 20px;
 }
 
-.sign-in-top__right {
+.user-edit-top__right {
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
   margin: 20px;
 }
 
-.width-400 {
-  width: 400px;
+.user-edit-top__width {
+  width: 500px;
+}
+
+.user-edit-top__submit {
+  margin-bottom: 20px;
+}
+
+.user-edit__item {
+  margin-bottom: 20px;
+}
+
+table.user-edit__table {
+  th {
+    width: 400px;
+  }
+
+  td {
+    width: 400px;
+  }
 }
