@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170908141559) do
+ActiveRecord::Schema.define(version: 20170909133438) do
 
   create_table "accessories", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -185,6 +185,16 @@ ActiveRecord::Schema.define(version: 20170908141559) do
   end
 
   add_index "districts", ["province_id"], name: "index_districts_on_province_id", using: :btree
+
+  create_table "favorites", force: :cascade do |t|
+    t.integer  "user_id",      limit: 4
+    t.integer  "apartment_id", limit: 4
+    t.integer  "land_id",      limit: 4
+    t.integer  "condo_id",     limit: 4
+    t.integer  "house_id",     limit: 4
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",           limit: 255, null: false

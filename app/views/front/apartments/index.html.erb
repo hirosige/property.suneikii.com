@@ -51,12 +51,12 @@
           </div>
         </div>
         <div class="main-title--right">
-          <button class="main-title__btn">
-            <i class="fa fa-envelope"></i> この条件で新着メールを受取る
-          </button>
-          <button class="main-title__btn">
-            <i class="fa fa-save"></i> この条件を保存する
-          </button>
+          <!--<button class="main-title__btn">-->
+            <!--<i class="fa fa-envelope"></i> この条件で新着メールを受取る-->
+          <!--</button>-->
+          <!--<button class="main-title__btn">-->
+            <!--<i class="fa fa-save"></i> この条件を保存する-->
+          <!--</button>-->
         </div>
         <div class="main--title-clearfix"></div>
       </div>
@@ -112,7 +112,9 @@
                 <th>坪（坪単価）</th>
                 <th>建ぺい率/容積率</th>
                 <th>画像</th>
-                <th>お気に入り</th>
+                <% if user_signed_in? %>
+                  <th>お気に入り</th>
+                <% end %>
                 <th>詳細</th>
                 </thead>
                 <tbody>
@@ -121,11 +123,17 @@
                 <td>66.39坪（15万円）</td>
                 <td>60% / 200%</td>
                 <td>6枚</td>
-                <td>
-                  <button class="mainplane__btn">
-                    <i class="fa fa-save"></i> お気に入りへ
-                  </button>
+                <% if user_signed_in? %>
+                <td id="favorite_apartment_<%= apartment.id %>">
+                  <% if Favorite.where(user_id: current_user, apartment_id: apartment.id).size > 0 %>
+                      <div class="mainplane__btn--saved">登録済み</div>
+                  <% else %>
+                      <button class="mainplane__btn" id="like_apartment_<%= apartment.id %>" data-id="<%= apartment.id %>">
+                        <i class="fa fa-save"></i> お気に入りへ
+                      </button>
+                  <% end %>
                 </td>
+                <% end %>
                 <td>
                   <button class="mainplane__btn" onclick="location.href='<%= apartment_path(apartment.id) %>'">
                     <i class="fa fa-save"></i> 詳細

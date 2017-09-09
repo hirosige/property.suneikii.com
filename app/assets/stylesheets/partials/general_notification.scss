@@ -1,0 +1,27 @@
+.general__notification {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-flow: wrap;
+  align-items: center;
+  position: fixed;
+  margin-right: 40px;
+  right: 0;
+  top: 10%;
+  background: $main_light_color;
+  color: $white;
+  border: 0;
+  min-width: 300px;
+  min-height: 120px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1.3rem;
+  box-shadow: 3px 3px 3px $shadow-deep;
+  overflow-wrap: break-word;
+  z-index: 5;
+}
+
+.general__notification:hover {
+  background: rgba($main_deep_color, 0.6);
+  box-shadow: 1px 1px 1px rgba($black, 0.8);
+}

@@ -11,22 +11,22 @@
         <tr>
           <th>ユーザー名</th>
           <td><%= current_user.name %></td>
-          <td><button class="btn btn-default" >変更する</button></td>
+          <td><button class="btn btn-default" onclick="location.href='<%= user_name_path %>'">変更する</button></td>
         </tr>
         <tr>
           <th>住所</th>
           <td>
-            <%= current_user.profile.postal_code unless current_user.profile.nil? %>
+            <%= current_user.profile.postal_code unless current_user.profile.nil? %><br>
             <%= current_user.profile.address unless current_user.profile.nil? %>
           </td>
-          <td><button class="btn btn-default" >変更する</button></td>
+          <td><button class="btn btn-default" onclick="location.href='<%= user_address_path %>'">変更する</button></td>
         </tr>
         <tr>
           <th>配信用メールアドレス</th>
           <td>
             <%= current_user.profile.reciever_email unless current_user.profile.nil? %>
           </td>
-          <td><button class="btn btn-default" >変更する</button></td>
+          <td><button class="btn btn-default" onclick="location.href='<%= user_email_path %>'">変更する</button></td>
         </tr>
         <tr>
           <th>登録情報の削除</th>

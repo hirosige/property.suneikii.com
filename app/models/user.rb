@@ -48,6 +48,8 @@ class User < ActiveRecord::Base
          :omniauthable
 
   has_one :profile, dependent: :destroy
+  has_many :favorites
+  accepts_nested_attributes_for :profile, allow_destroy: true
 
   belongs_to :realestate_provider
 

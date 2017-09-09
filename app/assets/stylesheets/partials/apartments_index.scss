@@ -292,3 +292,10 @@ table.mainplane__sub-info__table {
   font-size: 0.8em;
   box-shadow: 1px 1px 1px $shadow-light;
 }
+
+.mainplane__btn--saved {
+  color: $main_light_color;
+  border: 1px $main_light_color solid;
+  border-radius: 5px;
+  text-align: center;
+}

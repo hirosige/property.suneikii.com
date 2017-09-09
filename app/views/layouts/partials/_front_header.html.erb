@@ -41,17 +41,19 @@
       <p>最近見た物件</p>
     </div>
 
+    <% if user_signed_in? %>
     <div class="control-box__login-info">
       <p><i class="fa fa-save control-box__icon"></i></p>
-      <p class="control-box__counter">
-        <% if session[:apartments_session_list].nil? %>
+      <p id="favorite_counter" class="control-box__counter">
+        <% if current_user.favorites.nil? %>
             <%= 0 %>
         <% else %>
-            <%= session[:apartments_session_list].size unless session[:apartments_session_list].nil? %>
+            <%= current_user.favorites.size %>
         <% end %>
       </p>
       <p>お気に入り</p>
     </div>
+    <% end %>
 
   </div>
 
@@ -82,6 +84,10 @@
   <div class="container">
     <%= render_breadcrumbs separator: ' ▶ ' %>
   </div>
+</div>
+
+<div id="notification" class="general__notification">
+
 </div>
 
 <div id="page-top">
