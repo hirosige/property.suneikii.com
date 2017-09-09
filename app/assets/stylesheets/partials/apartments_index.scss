@@ -1,11 +1,11 @@
 .explanation-search {
-  border: 3px rgba(000, 000, 228, 0.7) solid;
+  border: 3px $main_light_color solid;
   border-radius: 10px;
   padding: 10px;
   position: relative;
   margin-bottom: 40px;
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
-  background: #fff;
+  box-shadow: 2px 2px 2px $shadow-light;
+  background: $white;
 }
 
 .explanation-search::after {
@@ -16,7 +16,7 @@
   top: 40px;
   border-style: solid;
   border-width: 30px 20px 0 20px;
-  border-color: rgba(000, 000, 228, 0.7) transparent transparent transparent;
+  border-color: $main_light_color transparent transparent transparent;
 }
 
 .comming_soon {
@@ -27,8 +27,8 @@
   bottom: 0;
   left: 0;
   font-size: 1.5em;
-  color: #fff;
-  background-color: rgba(000, 000, 228, 1);
+  color: $white;
+  background-color: $main_light_color;
   border-radius: 20px;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
   width: 70%;
@@ -36,35 +36,35 @@
 }
 
 .sideplane__base {
-  background: #fff;
+  background: $white;
   min-height: 200px;
   border-radius: 10px;
-  border: 1px #bdc8ca solid;
+  border: 1px $border-deep solid;
   margin-bottom: 20px;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 1px $shadow-light;
 }
 
 .sideplane-title {
-  background: rgba(000, 000, 228, 0.9);
+  background: $main_light_color;
   height: 30px;
   border-radius: 10px 10px 0 0;
-  border: 1px #bdc8ca solid;
+  border: 1px $border-deep solid;
 }
 
 .sideplane-title__caption {
   display: inline-block;
-  color: #fff;
+  color: $white;
   font-size: 1em;
   padding: 5px;
   padding-left: 10px;
 }
 
 .mini-news {
-  border: 1px rgba(000, 000, 228, 0.5) solid;
-  background: #fff;
+  border: 1px rgba($main_deep_color, 0.5) solid;
+  background: $white;
   padding: 10px;
   font-size: 0.9em;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 1px $shadow-light;
 }
 
 .mini-news--link {
@@ -73,14 +73,14 @@
 }
 
 .main-title__base {
-  background: #fff;
+  background: $white;
   min-height: 50px;
   border-radius: 10px;
   border: 1px #bdc8ca solid;
-  border-top: 8px rgb(000, 000, 228) solid;
+  border-top: 8px $main_light_color solid;
   margin-top: 20px;
   margin-bottom: 20px;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 1px $shadow-light;
 }
 
 .main-title__caption {
@@ -91,16 +91,16 @@
 }
 
 .main-title__btn {
-  background: rgba(000, 000, 228, 0.9);
+  background: $main_light_color;
   margin: 10px;
   padding: 3px;
   padding-left: 10px;
   padding-right: 10px;
-  color: #fff;
+  color: $white;
   border-radius: 5px;
   border: 0;
   font-size: 0.9em;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 1px $shadow-light;
 }
 
 .main-title--left {
@@ -116,16 +116,16 @@
 }
 
 .mainplane__base {
-  background: #fff;
+  background: $white;
   min-height: 200px;
   border-radius: 10px;
-  border: 1px #bdc8ca solid;
-  border-top: 8px rgb(000, 000, 228) solid;
+  border: 1px $border-deep solid;
+  border-top: 8px $main_light_color solid;
 
   margin-top: 20px;
   margin-bottom: 20px;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
-  color: #444;
+  box-shadow: 1px 1px 1px $shadow-light;
+  color: $black;
 }
 
 .mainplane__title {
@@ -141,15 +141,15 @@
 
 .mainplane__category {
   font-size: 0.8em;
-  background: rgba(000, 000, 228, 0.8);
-  color: #fff;
+  background: $main_light_color;
+  color: $white;
   padding: 2px 5px 2px;
 }
 
 .mainplane__type {
   font-size: 0.8em;
-  background: #444;
-  color: #fff;
+  background: $black;
+  color: $white;
   padding: 2px 5px 2px;
 }
 
@@ -157,8 +157,8 @@
   z-index: 1;
   position: relative;
   text-align: center;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
-  border: 1px #444 solid;
+  box-shadow: 5px 5px 5px $shadow-light;
+  border: 1px $black solid;
   margin: 20px;
   border-radius: 10px;
 }
@@ -195,17 +195,17 @@
 }
 
 .mainplane__table th {
-  border: 1px rgb(000, 000, 228) solid;
+  border: 1px $main_light_color solid;
   padding: 10px;
   width: 300px;
   font-weight: normal;
   font-size: 0.9em;
-  background: rgba(000, 000, 127, 0.05);
-  color: rgb(000, 000, 228);
+  background: rgba($bg_color, 0.05);
+  color: $main_light_color;
 }
 
 .mainplane__table td {
-  border: 1px rgb(000, 000, 228) solid;
+  border: 1px $main_light_color solid;
   padding: 10px;
   width: 400px;
   font-size: 0.9em;
@@ -219,22 +219,22 @@
 .mainplane__sub-info__title {
   padding-left: 10px;
   font-size: 0.9em;
-  color: rgb(000, 000, 228);
-  border-top: 1px rgb(000, 000, 228) solid;
-  border-bottom: 1px rgb(000, 000, 228) solid;
-  background: rgba(000, 000, 127, 0.05);
+  color: $main_light_color;
+  border-top: 1px $main_light_color solid;
+  border-bottom: 1px $main_light_color solid;
+  background: rgba($bg_color, 0.05);
 }
 
 .mainplane__sub-info__body {
   padding: 10px;
   padding-left: 30px;
-  border-bottom: 1px rgb(000, 000, 228) solid;
+  border-bottom: 1px $main_light_color solid;
   position: relative;
 }
 
 .mainplane__sub-info__body::before {
   content: "";
-  background: rgb(000, 000, 228);
+  background: $main_light_color;
   height: 10px;
   width: 10px;
   left: 15px;
@@ -249,9 +249,9 @@ table.mainplane__sub-info__table {
 }
 
 .mainplane__sub-info__table thead {
-  color: rgb(000, 000, 228);
-  background: rgba(000, 000, 127, 0.05);
-  border-bottom: 1px rgb(000, 000, 228) solid;
+  color: $main_light_color;
+  background: rgba($bg_color, 0.05);
+  border-bottom: 1px $main_light_color solid;
 }
 
 .mainplane__sub-info__table thead th {
@@ -261,7 +261,7 @@ table.mainplane__sub-info__table {
 }
 
 .mainplane__sub-info__table tbody {
-  border-bottom: 1px rgb(000, 000, 228) solid;
+  border-bottom: 1px $main_light_color solid;
   font-size: 0.9em;
 }
 
@@ -270,25 +270,25 @@ table.mainplane__sub-info__table {
   text-align: center;
   padding-top: 10px;
   padding-bottom: 10px;
-  background: rgba(000, 000, 127, 0.07);
+  background: rgba($bg_color, 0.07);
 }
 
 .price {
   font-size: 1.3em;
-  color: rgb(000, 000, 228);
+  color: $main_light_color;
   font-weight: bold;
   line-height: 10px;
 }
 
 .mainplane__btn {
-  background: rgba(000, 000, 228, 0.9);
+  background: $main_light_color;
   margin: 10px;
   padding: 3px;
   padding-left: 10px;
   padding-right: 10px;
-  color: #fff;
+  color: $white;
   border-radius: 5px;
   border: 0;
   font-size: 0.8em;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 1px $shadow-light;
 }
