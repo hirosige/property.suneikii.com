@@ -1,9 +1,27 @@
 <footer>
   <div class="container">
-    <div class="top-footer__detail">
-      <h1><i class="fa fa-s15" style="font-size: 26px;"></i> <%= Settings.site[:name] %></h1>
-      <p>©2017 All Rights Reserved. <%= Settings.site[:name] %>! <br> Privacy and Terms</p>
+    <div class="top-footer__top">
+      <div class="top-footer__detail">
+        <i class="fa fa-building-o top-footer__icon"></i>
+        <span class="top-footer__logo">
+        <%= Settings.site[:name].split(' ')[0] %><br>
+          <%= Settings.site[:name].split(' ')[1] %>
+      </span>
+        <div class="top-footer__description">
+          不動産・住宅情報の総合サイト<%= Settings.site[:name] %>。
+          賃貸から住宅購入、注文住宅、リフォーム、不動産投資など、不動産に関するあらゆるご要望におこたえします。
+          不動産用語集や、住まい探しに役立つマニュアルなどの情報も満載。
+          キーワードからも<%= Settings.site[:name] %>ならズバッと検索ができます。
+          全国の不動産・住宅情報なら、バンコク最大級の<%= Settings.site[:name] %>におまかせ。
+        </div>
+      </div>
+
+      <div class="top-footer__link-map">
+        <div class="content-left">left</div>
+        <div class="content-right">right</div>
+      </div>
     </div>
+
   </div>
 
   <div class="snk-footer">
