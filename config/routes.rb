@@ -256,7 +256,7 @@ Rails.application.routes.draw do
            end
          end
 
-         get 'apartments/:province/city'                         => 'apartments#filtered_index', as: 'test'
+         get 'apartments/:province/city'                         => 'apartments#filtered_index', as: 'province'
          get 'apartments/:province/city/:district'               => 'apartments#filtered_index'
          get 'apartments/:province/city/:district/:sub_district' => 'apartments#filtered_index'
       end

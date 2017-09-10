@@ -1,4 +1,6 @@
 class Front::ApartmentsController < FrontController
+  include Mobylette::RespondToMobileRequests
+
   before_action :set_apartment, only: [:show]
 
   add_breadcrumb 'アパート', :apartments_path
@@ -6,13 +8,21 @@ class Front::ApartmentsController < FrontController
   def index
     add_breadcrumb 'バンコクの物件一覧'
 
-    apartments = Apartment.published.includes(
-        :apartment_info
-    ).page(params[:page])
+    # apartments = Apartment.published.includes(
+    #     :apartment_info
+    # ).page(params[:page])
 
-    @apartments = Front::ApartmentDecorator.decorate_collection(
-        apartments
-    )
+    # @apartments = Front::ApartmentDecorator.decorate_collection(
+    #     apartments
+    # )
+
+    ids = Apartment.province_list(28)
+    @provinces = Province.balc_find(ids)
+
+    respond_to do |format|
+      format.html
+      format.mobile
+    end
   end
 
   def show
@@ -26,22 +36,25 @@ class Front::ApartmentsController < FrontController
       raise ActionController::RoutingError.new('Not Found')
     end
 
-    add_breadcrumb Province.where(original_id: params[:province])[0].name_ja, test_path(params[:province]) unless params[:province].nil?
-    add_breadcrumb District.where(original_id: params[:district])[0].name_ja unless params[:district].nil?
-    add_breadcrumb Subdistrict.where(original_id: params[:sub_district])[0].name_ja unless params[:sub_district].nil?
+    @province = Province.where(original_id: params[:province])[0] unless params[:province].nil?
+    @district = District.where(original_id: params[:district])[0] unless params[:district].nil?
+    @sub_district = Subdistrict.where(original_id: params[:sub_district])[0] unless params[:sub_district].nil?
 
-    province_id     = Province.where(original_id: params[:province])[0].id unless params[:province].nil?
-    district_id     = District.where(original_id: params[:district])[0].id unless params[:district].nil?
-    sub_district_id = Subdistrict.where(original_id: params[:sub_district])[0].id unless params[:sub_district].nil?
+    add_breadcrumb @province.name_ja, province_path(params[:province]) unless @province.nil?
+    add_breadcrumb @district.name_ja unless @district.nil?
+    add_breadcrumb @sub_district.name_ja unless @sub_district.nil?
+
+    search_condition  = {}
+    search_condition[:province_id] = @province.id unless @province.nil?
+    search_condition[:district_id] =  @district.id unless @district.nil?
+    search_condition[:subdistrict_id] = @sub_district.id unless @sub_district.nil?
 
     @apartments = Front::ApartmentDecorator.decorate_collection(
         Apartment.published
             .includes(
                 :apartment_info
             ).where(
-            province_id:    province_id,
-            district_id:    district_id,
-            subdistrict_id: sub_district_id,
+            search_condition
         ).page(params[:page])
     )
 

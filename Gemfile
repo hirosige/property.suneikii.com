@@ -66,7 +66,7 @@ gem 'state_machine'
 gem 'state_machines-activerecord'
 gem 'cocoon'
 gem 'acts-as-taggable-on'
-gem 'mobylette'
+gem 'mobylette', git: 'https://github.com/jonigual/mobylette.git'
 gem 'swiper-rails'
 gem 'gravtastic'
 
@@ -101,6 +101,7 @@ group :development do
   gem 'rubocop', require: false
   gem 'ruby-debug-ide'
   gem 'debase'
+  gem 'faker'
 
   gem 'annotate', git: 'git://github.com/ctran/annotate_models.git'
   gem 'timecop'

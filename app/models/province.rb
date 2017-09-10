@@ -29,4 +29,8 @@ class Province < ActiveRecord::Base
   belongs_to :country,
              foreign_key: "original_id",
              primary_key: "country_original_id"
+
+  def self.balc_find(ids)
+    find(ids)
+  end
 end

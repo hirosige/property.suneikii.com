@@ -4,11 +4,20 @@
   <div class="">
 
     <%= render :partial => 'admin/shared/page_title', :locals => {title: t('admin.apartments.title'), description: t('admin.apartments.description')} %>
-
     <div class="clearfix"></div>
     <div class="row">
       <div class="clearfix"></div>
       <div class="col-md-12 col-sm-12 col-xs-12">
+
+
+
+        <div class="x_panel">
+          <%= render :partial => 'admin/shared/table_title', :locals => {title: t('admin.elements.search.button'), description: ''} %>
+          <div class="x_content">
+            <%= render 'search_form' %>
+          </div>
+        </div>
+
         <%= render 'layouts/admin_menus/apartments_sub_tab' %>
 
         <div class="x_panel">

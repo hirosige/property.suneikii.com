@@ -1,0 +1,65 @@
+<div class="explanation-search">
+  検索条件の設定・変更
+</div>
+
+<div class="sideplane__base">
+  <div class="sideplane-title">
+    <div class="sideplane-title__caption">
+      <i class="fa fa-search"></i> 選択中の地域
+    </div>
+  </div>
+  <div class="sideplane__body">
+    <div class="sideplane__body-item">
+      Province
+      <div class="sideplane__body-data">
+        <% if @province.nil? %>
+            選択なし
+        <% else %>
+            <%= @province.name_ja %>
+        <% end %>
+      </div>
+    </div>
+    <div class="sideplane__body-item">
+      District
+      <div class="sideplane__body-data">
+        <% if @district.nil? %>
+            選択なし
+        <% else %>
+            <%= @district.name_ja %>
+        <% end %>
+      </div>
+    </div>
+    <div class="sideplane__body-item">
+      Sub District
+      <div class="sideplane__body-data">
+        <% if @sub_district.nil? %>
+            選択なし
+        <% else %>
+            <%= @sub_district.name_ja %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--<div class="sideplane__base">-->
+  <!--<div class="sideplane-title">-->
+    <!--<div class="sideplane-title__caption">-->
+      <!--物件種別-->
+    <!--</div>-->
+  <!--</div>-->
+  <!--<div class="description-body">-->
+    <!--<div class="comming_soon">Comming Soon</div>-->
+  <!--</div>-->
+<!--</div>-->
+
+<!--<div class="sideplane__base">-->
+  <!--<div class="sideplane-title">-->
+    <!--<div class="sideplane-title__caption">-->
+      <!--物件の条件-->
+    <!--</div>-->
+  <!--</div>-->
+  <!--<div class="description-body">-->
+    <!--<div class="comming_soon">Comming Soon</div>-->
+  <!--</div>-->
+<!--</div>-->

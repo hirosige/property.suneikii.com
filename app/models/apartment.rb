@@ -49,6 +49,7 @@ class Apartment < ActiveRecord::Base
   mount_uploader :photo, ApartmentPhotoUploader
 
   scope :published, -> { where(status: :public)}
+  scope :count_all, -> { all.count }
 
   state_machine :status, :initial => :secret do
     state :secret
@@ -64,4 +65,15 @@ class Apartment < ActiveRecord::Base
     end
   end
 
+  def self.province_list(country_id)
+    where(country_id: country_id).pluck(:province_id).uniq
+  end
+
+  def self.district_list(province_id)
+    where(province_id: province_id).pluck(:district_id).uniq
+  end
+
+  def self.subdistrict_list(district_id)
+    where(district_id: district_id).pluck(:subdistrict_id).uniq
+  end
 end

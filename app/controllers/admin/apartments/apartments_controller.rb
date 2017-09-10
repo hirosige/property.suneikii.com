@@ -2,8 +2,9 @@ class Admin::Apartments::ApartmentsController < AdminController
   before_action :set_apartment, only: [:show, :edit, :update, :destroy]
 
   def index
+    @search = Apartment.search(params[:q])
     @apartments = ApartmentDecorator.decorate_collection(
-        Apartment.accessible_by(current_ability).includes(
+        @search.result.accessible_by(current_ability).includes(
             :apartment_info,
             :country,
             :province,

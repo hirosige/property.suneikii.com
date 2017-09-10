@@ -1,0 +1,5 @@
+
+<%= search_form_for [:admin, :apartments, @search] do |f| %>
+  <%= f.text_field :name, :class => 'w500 form-control' %>
+  <%= f.submit t('admin.goods.buttons.search'), :class => 'btn btn-info' %>
+<% end %>

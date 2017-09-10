@@ -23,13 +23,6 @@
         <div class="main--title-clearfix"></div>
       </div>
 
-      <% unless @provinces.nil? %>
-        <% @provinces.each do |province| %>
-          <a href="<%= province_path(province.original_id) %>"><%= province.name_ja %></a>
-          <br>
-        <% end %>
-      <% end %>
-
       <% if @apartments.blank? %>
         <%= render 'front/shared/not_found' %>
       <% else %>

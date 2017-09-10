@@ -1,0 +1,81 @@
+<% @apartments.each do |apartment| %>
+    <div class="mainplane__base">
+      <div class="mainplane__title">
+        <soan class="mainplane__category">土地</soan>
+        <soan class="mainplane__type">分譲</soan>
+        <a href="<%= apartment_path(apartment.id) %>" class="mainplane__title--link"><%= apartment.name %></a>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-4 col-xs-12">
+          <div class="mainplane__photo">
+            <a href="<%= apartment_path(apartment.id) %>">
+              <%= apartment.photo %>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-8 col-md-8 col-xs-12">
+          <table class="mainplane__table">
+            <tbody>
+            <tr>
+              <th>交通 <br>/ 所在地</th>
+              <td colspan="3">
+                <%= apartment.transportation %><br>
+                <%= apartment.address %>
+              </td>
+            </tr>
+            <tr>
+              <th>現況</th>
+              <td><%= apartment.apartment_info.availability %></td>
+              <th>建築条件</th>
+              <td><%= apartment.apartment_info.conditions %></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="mainplane__sub-info">
+        <div class="mainplane__sub-info__title">
+          掲載物件への不動産会社コメント
+        </div>
+        <div class="mainplane__sub-info__body">
+          お気軽にご連絡下さい
+        </div>
+        <table class="mainplane__sub-info__table">
+          <thead>
+          <th>価格</th>
+          <th>土地面積</th>
+          <th>坪（坪単価）</th>
+          <th>建ぺい率/容積率</th>
+          <th>画像</th>
+          <% if user_signed_in? %>
+              <th>お気に入り</th>
+          <% end %>
+          <th>詳細</th>
+          </thead>
+          <tbody>
+          <td class="price"><%= apartment.rent_fee %> 万円</td>
+          <td><%= apartment.space %></td>
+          <td>66.39坪（15万円）</td>
+          <td>60% / 200%</td>
+          <td>6枚</td>
+          <% if user_signed_in? %>
+              <td id="favorite_apartment_<%= apartment.id %>">
+                <% if Favorite.where(user_id: current_user, apartment_id: apartment.id).size > 0 %>
+                    <div class="mainplane__btn--saved">登録済み</div>
+                <% else %>
+                    <button class="mainplane__btn" id="like_apartment_<%= apartment.id %>" data-id="<%= apartment.id %>">
+                      <i class="fa fa-save"></i> お気に入りへ
+                    </button>
+                <% end %>
+              </td>
+          <% end %>
+          <td>
+            <button class="mainplane__btn" onclick="location.href='<%= apartment_path(apartment.id) %>'">
+              <i class="fa fa-save"></i> 詳細
+            </button>
+          </td>
+          </tbody>
+        </table>
+      </div>
+    </div>
+<% end %>

@@ -1,0 +1,28 @@
+.sideplane__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: flex-start;
+  padding: 10px;
+}
+
+.sideplane__body-item {
+  padding: 5px;
+  padding-left: 20px;
+  font-size: 1.4rem;
+  border-radius: 5px;
+  width: 300px;
+  margin: 10px;
+  background: $main_light_color;
+  color: $white;
+}
+
+.sideplane__body-data {
+   background: $white;
+   padding: 5px;
+   color: $main_light_color;
+   margin: 10px;
+   border-radius: 5px;
+   margin-right: 40px;
+ }
