@@ -249,16 +249,17 @@ Rails.application.routes.draw do
          get 'user/edit'      => 'users#edit'
          get 'user/logout'    => 'sessions#logout'
 
-         resources :apartments, shallow: true, :only => [:index, :show]
+         # resources :apartments, shallow: true, :only => [:index, :show]
          resources :favorites, :only => [:index, :show] do
            collection do
              post 'like'
            end
          end
 
-         get 'apartments/:province/city'                         => 'apartments#filtered_index', as: 'province'
-         get 'apartments/:province/city/:district'               => 'apartments#filtered_index'
-         get 'apartments/:province/city/:district/:sub_district' => 'apartments#filtered_index'
+         get 'apartments'                                        => 'apartments#province',       as: 'apartment_province_list'
+         get 'apartments/:id'                                    => 'apartments#show',           as: 'apartment'
+         get 'apartments/:province/city'                         => 'apartments#district',       as: 'apartment_district_list'
+         get 'apartments/:province/city/:district'               => 'apartments#index',          as: 'apartments'
       end
 
       # Administrator Pages

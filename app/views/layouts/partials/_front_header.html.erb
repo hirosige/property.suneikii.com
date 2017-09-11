@@ -14,7 +14,7 @@
 
     <div class="control-box--left">
       <%= image_tag("snk_logo.jpg", :style => 'width: 100px;', :alt => 'logo') %>
-      <button class="control-box__btn <%= 'control-box__btn--active' if params[:controller].split('/')[1] == 'apartments' %>" onclick="location.href='<%= apartments_path %>'">
+      <button class="control-box__btn <%= 'control-box__btn--active' if params[:controller].split('/')[1] == 'apartments' %>" onclick="location.href='<%= apartment_province_list_path %>'">
         <i class="fa fa-building"></i>
         アパート
       </button>

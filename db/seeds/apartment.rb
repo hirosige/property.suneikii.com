@@ -1,8 +1,10 @@
 require 'faker'
 
+Apartment.destroy_all
+
 100.times do
-  province = Province.where( 'id >= ?', rand(Province.first.id..Province.last.id) ).first
-  district = District.where('id >= ? ', rand(District.where(province_original_id: province.original_id).first.id..District.where(province_original_id: province.original_id).last.id) ).first
+  province    = Province.where('id >= ?', rand(Province.first.id..Province.last.id)).first
+  district    = District.where('id >= ? ', rand(District.where(province_original_id: province.original_id).first.id..District.where(province_original_id: province.original_id).last.id) ).first
   subdistrict = Subdistrict.where('id >= ? ', rand(Subdistrict.where(district_original_id: district.original_id).first.id..Subdistrict.where(district_original_id: district.original_id).last.id) ).first
 
   random_name             = "#{Faker::Company.name} Apartment"
@@ -17,7 +19,7 @@ require 'faker'
   since_when              = Faker::Date.between(2000.days.ago, Date.today)
   room_type_id            = Faker::Number.between(1, 5)
   space                   = Faker::Number.between(20, 60)
-  random_country_id       = 28
+  random_country_id       = Country.find_by(original_id: 'th').id
   random_province_id      = province.id
   random_district_id      = district.id
   random_subdistrict_id   = subdistrict.id

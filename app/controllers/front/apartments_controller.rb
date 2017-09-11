@@ -3,21 +3,29 @@ class Front::ApartmentsController < FrontController
 
   before_action :set_apartment, only: [:show]
 
-  add_breadcrumb 'アパート', :apartments_path
+  add_breadcrumb 'アパート', :apartment_province_list_path
 
-  def index
-    add_breadcrumb 'バンコクの物件一覧'
+  def province
+    add_breadcrumb '全国のアパートを探す'
 
-    # apartments = Apartment.published.includes(
-    #     :apartment_info
-    # ).page(params[:page])
-
-    # @apartments = Front::ApartmentDecorator.decorate_collection(
-    #     apartments
-    # )
-
-    ids = Apartment.province_list(Country.find_by(original_id: 'th'))
+    ids = Apartment.province_list(Country.find_by(original_id: 'th').id)
     @provinces = Province.balc_find(ids)
+
+    respond_to do |format|
+      format.html
+      format.mobile
+    end
+  end
+
+  def district
+    add_breadcrumb "#{params[:province]}のアパートを探す"
+
+    if Province.find_by(original_id: params[:province]).nil?
+      raise ActionController::RoutingError.new('Not Found')
+    end
+
+    ids = Apartment.district_list(Province.find_by(original_id: params[:province]).id)
+    @districts = District.balc_find(ids)
 
     respond_to do |format|
       format.html
@@ -29,9 +37,14 @@ class Front::ApartmentsController < FrontController
     add_breadcrumb "#{@apartment.name}の詳細情報", apartment_path(@apartment.id)
 
     track_visit_into_session
+
+    respond_to do |format|
+      format.html
+      format.mobile
+    end
   end
 
-  def filtered_index
+  def index
     if Province.where(original_id: params[:province])[0].nil?
       raise ActionController::RoutingError.new('Not Found')
     end
@@ -40,7 +53,7 @@ class Front::ApartmentsController < FrontController
     @district = District.where(original_id: params[:district])[0] unless params[:district].nil?
     @sub_district = Subdistrict.where(original_id: params[:sub_district])[0] unless params[:sub_district].nil?
 
-    add_breadcrumb @province.name_ja, province_path(params[:province]) unless @province.nil?
+    add_breadcrumb @province.name_ja, apartment_district_list_path(params[:province]) unless @province.nil?
     add_breadcrumb @district.name_ja unless @district.nil?
     add_breadcrumb @sub_district.name_ja unless @sub_district.nil?
 
@@ -58,7 +71,10 @@ class Front::ApartmentsController < FrontController
         ).page(params[:page])
     )
 
-    render :index
+    respond_to do |format|
+      format.html
+      format.mobile
+    end
   end
 
   private

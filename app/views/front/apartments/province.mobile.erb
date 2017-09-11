@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+
+      <div class="main-title__base">
+        <div class="main-title--left">
+          <div class="main-title__caption">
+            全国のアパートを探す
+          </div>
+        </div>
+        <div class="main--title-clearfix"></div>
+      </div>
+
+      <% unless @provinces.nil? %>
+        <% @provinces.each do |province| %>
+          <a href="<%= apartment_district_list_path(province.original_id) %>"><%= province.name_ja %></a>
+          <br>
+        <% end %>
+      <% end %>
+
+      <br>
+      </div>
+    </div>
+  </div>
+</div>

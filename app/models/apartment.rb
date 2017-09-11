@@ -37,7 +37,7 @@ class Apartment < ActiveRecord::Base
 
   belongs_to :country
   belongs_to :province
-  belongs_to :district
+  belongs_to :district, counter_cache: true
   belongs_to :subdistrict
 
   belongs_to :provider

@@ -25,7 +25,7 @@
 
       <% unless @provinces.nil? %>
         <% @provinces.each do |province| %>
-          <a href="<%= province_path(province.original_id) %>"><%= province.name_ja %></a>
+          <a href="<%= apartment_province_list_path(province.original_id) %>"><%= province.name_ja %></a>
           <br>
         <% end %>
       <% end %>

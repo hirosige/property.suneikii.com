@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+
+      <div class="main-title__base">
+        <div class="main-title--left">
+          <div class="main-title__caption">
+            <%= params[:province] %>のアパートを探す
+          </div>
+        </div>
+        <div class="main--title-clearfix"></div>
+      </div>
+
+      <% unless @districts.nil? %>
+          <% @districts.each do |district| %>
+              <a href="<%= apartments_path(params[:province], district.original_id) %>"><%= district.name_ja %></a> : <span><%= "#{district.apartments.size}件" %></span>
+              <br>
+          <% end %>
+      <% end %>
+
+      <br>
+      </div>
+    </div>
+  </div>
+</div>
