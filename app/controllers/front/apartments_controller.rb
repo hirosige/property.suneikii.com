@@ -16,7 +16,7 @@ class Front::ApartmentsController < FrontController
     #     apartments
     # )
 
-    ids = Apartment.province_list(28)
+    ids = Apartment.province_list(Country.find_by(original_id: 'th'))
     @provinces = Province.balc_find(ids)
 
     respond_to do |format|
