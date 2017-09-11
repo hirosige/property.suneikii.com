@@ -248,6 +248,7 @@ Rails.application.routes.draw do
          get 'user/profile'   => 'users#profile'
          get 'user/edit'      => 'users#edit'
          get 'user/logout'    => 'sessions#logout'
+         get 'user/visited'   => 'sessions#visited'
 
          # resources :apartments, shallow: true, :only => [:index, :show]
          resources :favorites, :only => [:index, :show] do

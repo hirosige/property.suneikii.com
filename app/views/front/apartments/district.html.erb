@@ -11,14 +11,16 @@
         <div class="main--title-clearfix"></div>
       </div>
 
-      <% unless @districts.nil? %>
-          <% @districts.each do |district| %>
-              <a href="<%= apartments_path(params[:province], district.original_id) %>"><%= district.name_ja %></a> : <span><%= "#{district.apartments.size}件" %></span>
-              <br>
-          <% end %>
-      <% end %>
+      <div class="district-map__base">
+        <% unless @districts.nil? %>
+            <% @districts.each do |district| %>
+                <button class="district-map__item" onclick="location.href='<%= apartments_path(params[:province], district.original_id) %>'">
+                  <%= district.name_ja %>
+                  <span class="district-map__count"><%= "#{district.apartments.size}" %></span>
+                </button>
 
-      <br>
+            <% end %>
+        <% end %>
       </div>
     </div>
   </div>

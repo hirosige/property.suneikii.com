@@ -11,14 +11,14 @@
         <div class="main--title-clearfix"></div>
       </div>
 
-      <% unless @provinces.nil? %>
-        <% @provinces.each do |province| %>
-          <a href="<%= apartment_district_list_path(province.original_id) %>"><%= province.name_ja %></a>
-          <br>
+      <div class="province-map__base">
+        <% unless @provinces.nil? %>
+          <% @provinces.each do |province| %>
+            <button class="province-map__item" onclick="location.href='<%= apartment_district_list_path(province.original_id) %>'">
+              <%= province.name_ja %>
+            </button>
+          <% end %>
         <% end %>
-      <% end %>
-
-      <br>
       </div>
     </div>
   </div>

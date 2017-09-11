@@ -5,6 +5,8 @@
 
     <% @awesome_debugger.learn(@apartments, 'Apartments') unless @apartments.nil? %>
     <% @awesome_debugger.learn(@apartment, "Apartment_#{params[:id]}") unless @apartment.nil? %>
+    <% @awesome_debugger.learn(session[:apartments_session_list], 'Apartment Sessions') unless session[:apartments_session_list].nil? %>
+    <% @awesome_debugger.learn(@favorites, 'Favorites') unless @favorites.nil? %>
 
     <div class="sql-info">
       <div class="container">

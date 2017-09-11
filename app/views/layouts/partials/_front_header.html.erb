@@ -28,7 +28,7 @@
       </button>
     </div>
 
-    <div class="control-box__login-info">
+    <a href="<%= user_visited_path %>" class="control-box__login-info">
       <p><i class="fa fa-search control-box__icon"></i></p>
       <p class="control-box__counter">
         <% if session[:apartments_session_list].nil? %>
@@ -38,11 +38,11 @@
         <% end %>
 
       </p>
-      <p>最近見た物件</p>
-    </div>
+      <p >最近見た物件</p>
+    </a>
 
     <% if user_signed_in? %>
-    <div class="control-box__login-info">
+    <a href="<%= favorites_path %>" class="control-box__login-info">
       <p><i class="fa fa-save control-box__icon"></i></p>
       <p id="favorite_counter" class="control-box__counter">
         <% if current_user.favorites.nil? %>
@@ -52,7 +52,7 @@
         <% end %>
       </p>
       <p>お気に入り</p>
-    </div>
+    </a>
     <% end %>
 
   </div>
@@ -66,7 +66,16 @@
   <div class="header-info">
     <div class="container">
       <% no_info_controllers = Array.new %>
-      <% no_info_controllers.push('registrations', 'sessions', 'confirmations', 'passwords', 'omniauth_callbacks') %>
+      <% no_info_controllers.push(
+             'registrations',
+             'sessions',
+             'confirmations',
+             'passwords',
+             'omniauth_callbacks',
+             'favorites',
+             'users'
+         )
+      %>
       <% unless no_info_controllers.include?(controller.controller_name) %>
         <% if params[:province].nil? %>
             <%= params[:controller].split('/')[1].capitalize %> を検索

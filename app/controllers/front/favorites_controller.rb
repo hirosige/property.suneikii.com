@@ -3,12 +3,13 @@ class Front::FavoritesController < FrontController
 
   def index
     if request.xhr?
-      @user = User.find(current_user.id)
-      favorites = @user.favorites
+      favorites = current_user.favorites
 
       render json: { status: 'success', favorites: favorites }
     else
-      render :nothing => true
+      add_breadcrumb "お気に入りリスト"
+
+      @favorites = current_user.favorites
     end
   end
 

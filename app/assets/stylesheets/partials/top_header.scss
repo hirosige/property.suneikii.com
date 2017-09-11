@@ -31,6 +31,18 @@ header {
   a:hover {
     color: $hover_in_blue;
   }
+
+  a.control-box__login-info:link {
+    color: $main_light_color
+  }
+
+  a.control-box__login-info:visited {
+    color: $main_light_color
+  }
+
+  a.control-box__login-info:hover {
+    color: $main_light_color
+  }
 }
 
 .list-header {
