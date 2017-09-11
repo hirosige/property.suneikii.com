@@ -2,7 +2,7 @@ require 'faker'
 
 Apartment.destroy_all
 
-100.times do
+10000.times do
   province    = Province.where('id >= ?', rand(Province.first.id..Province.last.id)).first
   district    = District.where('id >= ? ', rand(District.where(province_original_id: province.original_id).first.id..District.where(province_original_id: province.original_id).last.id) ).first
   subdistrict = Subdistrict.where('id >= ? ', rand(Subdistrict.where(district_original_id: district.original_id).first.id..Subdistrict.where(district_original_id: district.original_id).last.id) ).first
