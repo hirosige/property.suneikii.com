@@ -7,9 +7,22 @@ require 'spec_helper'
 require 'rspec/rails'
 require 'capybara/rails'
 require 'capybara/rspec'
+require 'capybara/poltergeist'
+require 'capybara-webkit'
+require 'capybara/dsl'
 require 'shoulda-matchers'
 
-Capybara.default_driver = :webkit
+Capybara.javascript_driver = :poltergeist
+Capybara.register_driver :poltergeist do |app|
+  Capybara::Poltergeist::Driver.new(app, :js_errors => true, :timeout => 60)
+end
+
+Capybara.configure do |config|
+  config.run_server = false
+  config.default_driver = :poltergeist
+  config.app_host = 'http://localhost:3000'
+end
+
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in

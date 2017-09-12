@@ -1,0 +1,24 @@
+# == Schema Information
+#
+# Table name: apartment_thumbnails
+#
+#  id           :integer          not null, primary key
+#  apartment_id :integer
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#  image        :string(255)
+#
+# Indexes
+#
+#  index_apartment_thumbnails_on_apartment_id  (apartment_id)
+#
+# Foreign Keys
+#
+#  fk_rails_...  (apartment_id => apartments.id)
+#
+
+require 'rails_helper'
+
+RSpec.describe ApartmentThumbnail, type: :model do
+  pending "add some examples to (or delete) #{__FILE__}"
+end

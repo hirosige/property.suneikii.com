@@ -3,7 +3,6 @@
 # Table name: apartments
 #
 #  id               :integer          not null, primary key
-#  area_id          :integer
 #  name             :string(255)
 #  rent_fee         :integer
 #  security_deposit :integer
@@ -21,6 +20,10 @@
 #  provider_id      :integer
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
+#  country_id       :integer
+#  province_id      :integer
+#  district_id      :integer
+#  subdistrict_id   :integer
 #
 
 require "rails_helper"

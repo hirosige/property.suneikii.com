@@ -10,3 +10,4 @@ config/database.yml
 public/uploads
 # Ignore application configuration
 /config/application.yml
+node_modules
