@@ -1,5 +1,18 @@
 
 <%= search_form_for [:admin, :apartments, @search] do |f| %>
-  <%= f.text_field :name, :class => 'w500 form-control' %>
+  <%= f.text_field :name_cont, :class => 'form-control' %><br>
+  <%= f.collection_select(
+          :province_id_start,  # <= property_name
+          Province.all,             # <= object_array
+          :id,                 # <= value_data
+          :name_ja,                 # <= text_item
+          {prompt: "Select any"},   # <= default_message
+          {class: "form-control"}   # <= style_class
+      ) %>
+  <br>
   <%= f.submit t('admin.goods.buttons.search'), :class => 'btn btn-info' %>
+<% end %>
+<br>
+<% if Rails.env.development? %>
+  <%= @sql %>
 <% end %>

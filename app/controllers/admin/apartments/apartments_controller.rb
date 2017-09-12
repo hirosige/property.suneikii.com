@@ -13,6 +13,8 @@ class Admin::Apartments::ApartmentsController < AdminController
             :provider
         ).page(params[:page])
     )
+
+    @sql = @search.result.page(params[:page]).to_sql
   end
 
   def show
