@@ -9,7 +9,7 @@ class Front::FavoritesController < FrontController
     else
       add_breadcrumb "お気に入りリスト"
 
-      @favorites = current_user.favorites
+      @favorites = Favorite.personal_favorites(current_user.id)
     end
   end
 
@@ -17,14 +17,17 @@ class Front::FavoritesController < FrontController
     if request.xhr?
       @apartment = Apartment.find(params[:id])
 
-      @user = User.find(current_user.id)
-      @user.favorites.build(:apartment_id => params[:id])
+      favorite = Favorite.new(
+          :apartment_id => params[:id],
+          :user_id => current_user.id
+      )
 
-      if @user.save
+      favorite.set_as_apartment
+
+      if favorite.save
         render json: { status: 'success', apartment: @apartment }
       else
-        p @user.favorites
-        render json: { status: 'failure', apartment: @apartment, errors: @user }
+        render json: { status: 'failure', apartment: @apartment, errors: favorite }
       end
 
     else

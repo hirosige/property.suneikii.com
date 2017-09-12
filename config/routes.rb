@@ -238,17 +238,18 @@ Rails.application.routes.draw do
            end
          end
 
-         get 'user/profile'   => 'users#profile'
-         get 'user/name'      => 'users#name'
-         put 'user/name'      => 'users#update'
-         get 'user/address'   => 'users#address'
-         put 'user/address'   => 'users#update_profile'
-         get 'user/email'     => 'users#email'
-         put 'user/email'     => 'users#update_profile'
-         get 'user/profile'   => 'users#profile'
-         get 'user/edit'      => 'users#edit'
-         get 'user/logout'    => 'sessions#logout'
-         get 'user/visited'   => 'sessions#visited'
+         get 'user/profile'       => 'users#profile'
+         get 'user/name'          => 'users#name'
+         put 'user/name'          => 'users#update'
+         get 'user/address'       => 'users#address'
+         put 'user/address'       => 'users#update_profile'
+         get 'user/email'         => 'users#email'
+         put 'user/email'         => 'users#update_profile'
+         get 'user/profile'       => 'users#profile'
+         get 'user/edit'          => 'users#edit'
+         get 'user/clear_session' => 'users#clear_session'
+         get 'user/logout'        => 'sessions#logout'
+         get 'user/visited'       => 'sessions#visited'
 
          # resources :apartments, shallow: true, :only => [:index, :show]
          resources :favorites, :only => [:index, :show] do

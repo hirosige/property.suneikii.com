@@ -47,6 +47,15 @@ class Front::UsersController < FrontController
     end
   end
 
+  def clear_session
+    if Rails.env.development?
+
+      session[:apartments_session_list] = []
+      redirect_to user_profile_path, flash: { :success => "セッションをクリアしました。" }
+    end
+
+  end
+
   private
     def set_user
       @user = User.find(current_user.id)

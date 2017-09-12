@@ -16,6 +16,9 @@
       <li role="separator" class="divider"></li>
       <li><a href="<%= admin_page_link %>"><%= Settings.site[:name] %> 管理画面</a></li>
       <% end %>
+      <% if Rails.env.development? %>
+      <li><a href="<%= clear_session_link %>">セッションクリア</a></li>
+      <% end %>
     </ul>
   </div>
 <% else %>

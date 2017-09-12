@@ -1,0 +1,96 @@
+.footstamp-title__base {
+  background: #fff;
+  min-height: 50px;
+  border-radius: 10px;
+  border: 1px $border-deep solid;
+  border-top: 8px $main_light_color solid;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  box-shadow: 1px 1px 1px $shadow-light;
+}
+
+.footstamp-title__caption {
+  display: inline-block;
+  font-size: 1.2em;
+  color: $black;
+  margin: 10px 10px 10px;
+}
+
+.footstamp-top__base {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-flow: wrap;
+  box-shadow: 1px 1px 1px $shadow-light;
+  border-radius: 10px;
+  background: $white;
+  margin-bottom: 30px;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  border: 1px $border-deep solid;
+}
+
+.footstamp-top__left {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 20px;
+}
+
+.footstamp-top__right {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin: 20px;
+}
+
+.footstamp-top__width {
+  width: 500px;
+}
+
+.footstamp-name-top__submit {
+  margin-bottom: 20px;
+}
+
+.footstamp-top__tbl th {
+  text-align: center;
+  background: $main_light_color;
+  color: $white;
+  font-weight: normal;
+  font-size: 1.2rem;
+}
+
+.footstamp-top__tbl-col1 {
+  width: 130px;
+}
+
+.footstamp-top__tbl-btns {
+  display: flex;
+  justify-content: flex-end;
+  align-content: center;
+  align-items: center;
+  height: 40px;
+}
+
+.footstamp-top__tbl-btn {
+  margin: 10px;
+}
+
+.footstamp-top__tbl-col-name {
+  font-size: 1.5rem;
+}
+
+.footstamp-top__tbl-col-category {
+  padding: 3px;
+  background: $main_light_color;
+  color: $white;
+  font-size: 1.3rem;
+}
+
+.footstamp-top__tbl-col-status {
+  border: 1px $main_light_color solid;
+  padding: 2px;
+  color: $main_light_color;
+  font-size: 1.3rem;
+}

@@ -69,6 +69,7 @@ gem 'acts-as-taggable-on'
 gem 'mobylette', git: 'https://github.com/jonigual/mobylette.git'
 gem 'swiper-rails'
 gem 'gravtastic'
+gem 'faker'
 
 group :development, :test do
   gem 'byebug'

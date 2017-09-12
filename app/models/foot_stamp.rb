@@ -14,7 +14,11 @@ class FootStamp
 
     unless self.apartment_sessions.nil?
       self.apartment_sessions.each do |apartment|
-        self.properties.push(Apartment.find(apartment))
+        if Apartment.exists?(apartment)
+          self.properties.push(Front::ApartmentDecorator.decorate(Apartment.find(apartment)))
+        else
+          Apartment.new(:name => 'この物件は削除されました。')
+        end
       end
     end
 

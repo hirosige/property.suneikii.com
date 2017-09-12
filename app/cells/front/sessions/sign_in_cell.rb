@@ -47,4 +47,8 @@ class Front::Sessions::SignInCell < Cell::ViewModel
     def admin_page_link
       admin_path
     end
+
+    def clear_session_link
+      user_clear_session_path
+    end
 end

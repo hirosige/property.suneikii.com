@@ -1,13 +1,62 @@
 <div class="container">
-  <div class="logout-title__base">
-    <div class="logout-title__caption">
+  <div class="footstamp-title__base">
+    <div class="footstamp-title__caption">
       最近見た物件リスト
     </div>
   </div>
 
-  <div class="logout-top__base">
-    <div class="logout-top__left">
-      最近見た物件だよー
+  <div class="footstamp-top__base">
+    <div class="footstamp-top__left">
+      <% if @foot_stamps.properties.blank? %>
+        No Data
+      <% else %>
+        <table class="table table-hover table-condensed table-bordered footstamp-top__tbl">
+          <thead>
+          <tr>
+            <th class="footstamp-top__tbl-col1">画像</th>
+            <th>賃料<br>管理費等</th>
+            <th>敷金/礼金<br>保証/償却・敷引</th>
+            <th>交通<br>所在地</th>
+            <th>間取り<br>占有面積</th>
+            <th>構造<br>所在階/階数</th>
+            <th>築年数<br>主要採光面</th>
+          </tr>
+          </thead>
+          <tbody>
+          <% @foot_stamps.properties.each do |foot_stamp| %>
+              <tr>
+                <td rowspan="3"><%= foot_stamp.photo %></td>
+                <td colspan="6" class="footstamp-top__tbl-col-name">
+                  <span class="footstamp-top__tbl-col-category">アパート</span>
+                  <a href="<%= apartment_path(foot_stamp.id) %>"><%= foot_stamp.name %></a>
+                  <span class="footstamp-top__tbl-col-status">即入可</span>
+                </td>
+              </tr>
+              <tr>
+                <td>2.6万円<br>4,000円</td>
+                <td>無 / 無<br>- / -</td>
+                <td>ＪＲ東海道・山陽本線 山科駅 徒歩15分<br>京都府京都市山科区厨子奥矢倉町25-5</td>
+                <td>1K<br>20m²</td>
+                <td>鉄骨造<br>1階 / 3階建</td>
+                <td>27年<br>南</td>
+              </tr>
+              <tr>
+                <td colspan="6">
+                  <div class="footstamp-top__tbl-btns">
+                    <button class="btn btn-default footstamp-top__tbl-btn">お気に入りに追加</button>
+                    <button class="btn btn-primary footstamp-top__tbl-btn" onclick='location.href="<%= apartment_path(foot_stamp.id) %>"'>
+                      詳細を見る <i class="fa fa-arrow-circle-o-right"></i>
+                    </button>
+                  </div>
+
+                </td>
+              </tr>
+
+          <% end %>
+          </tbody>
+        </table>
+      <% end %>
+
     </div>
   </div>
 
