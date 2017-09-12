@@ -16,6 +16,7 @@
           <% @provinces.each do |province| %>
             <button class="province-map__item" onclick="location.href='<%= apartment_district_list_path(province.original_id) %>'">
               <%= province.name_ja %>
+              <span class="district-map__count"><%= "#{province.apartments.size}" %></span>
             </button>
           <% end %>
         <% end %>

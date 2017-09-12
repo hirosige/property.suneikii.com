@@ -37,6 +37,7 @@ def write_rb_file(data, name, parent_name, parent_id='')
   file.puts "    name_ja: '#{data['name']}',"
   file.puts "    name_th: '#{data['nameThai']}',"
   file.puts "    name_en: '#{data['name']}',"
+  file.puts "    url_safe: '#{hyphenize(data['name'])}',"
 
   if parent_id.empty?
     file.puts "    #{parent_name}_original_id: 'th'"
@@ -46,6 +47,10 @@ def write_rb_file(data, name, parent_name, parent_id='')
 
   file.puts ")"
   file.puts ""
+end
+
+def hyphenize(name)
+  name.split(' ').map(&:downcase).join('-')
 end
 
 initialize_files

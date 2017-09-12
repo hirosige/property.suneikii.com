@@ -6,6 +6,7 @@ class Ability
 
     if user.admin?
       can :manage, :all
+      can :manage, :admin
     elsif user.staff?
       # can :manage, :all
       can :manage, Apartment

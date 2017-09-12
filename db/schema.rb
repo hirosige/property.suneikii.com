@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170909133438) do
+ActiveRecord::Schema.define(version: 20170912075427) do
 
   create_table "accessories", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -182,6 +182,7 @@ ActiveRecord::Schema.define(version: 20170909133438) do
     t.datetime "updated_at",                       null: false
     t.string   "original_id",          limit: 255
     t.string   "province_original_id", limit: 255
+    t.string   "url_safe",             limit: 255
   end
 
   add_index "districts", ["province_id"], name: "index_districts_on_province_id", using: :btree
@@ -356,6 +357,7 @@ ActiveRecord::Schema.define(version: 20170909133438) do
     t.datetime "updated_at",                      null: false
     t.string   "original_id",         limit: 255
     t.string   "country_original_id", limit: 255
+    t.string   "url_safe",            limit: 255
   end
 
   add_index "provinces", ["country_id"], name: "index_provinces_on_country_id", using: :btree
@@ -479,6 +481,7 @@ ActiveRecord::Schema.define(version: 20170909133438) do
     t.datetime "updated_at",                       null: false
     t.string   "original_id",          limit: 255
     t.string   "district_original_id", limit: 255
+    t.string   "url_safe",             limit: 255
   end
 
   add_index "subdistricts", ["district_id"], name: "index_subdistricts_on_district_id", using: :btree

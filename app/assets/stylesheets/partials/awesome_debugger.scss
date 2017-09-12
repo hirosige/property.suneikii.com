@@ -1,7 +1,7 @@
 .sql-info {
   border-bottom: 1px $border-light solid;
   background: get_flex_rgba($bg_color, 0.02);
-  font-size: 0.8em;
+  font-size: 1.2rem;
   padding-top: 20px;
   padding-bottom: 0;
   color: $main_light_color;
@@ -9,7 +9,7 @@
 
 .sql .debug_dump {
   color: $terminal-text-color;
-  font-size: 0.8rem;
+  font-size: 1.2rem;
   margin: 0;
   background: $terminal-bg-color;
 }

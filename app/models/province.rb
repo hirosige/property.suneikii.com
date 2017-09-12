@@ -11,6 +11,7 @@
 #  updated_at          :datetime         not null
 #  original_id         :string(255)
 #  country_original_id :string(255)
+#  url_safe            :string(255)
 #
 # Indexes
 #
@@ -22,6 +23,7 @@
 #
 
 class Province < ActiveRecord::Base
+  has_many :apartments
   has_many :districts,
            foreign_key: "province_original_id",
            primary_key: "original_id"

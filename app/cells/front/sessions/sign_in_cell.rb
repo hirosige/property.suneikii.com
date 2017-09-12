@@ -39,4 +39,12 @@ class Front::Sessions::SignInCell < Cell::ViewModel
     def edit_link
       user_edit_path
     end
+
+    def my_page_link
+      user_profile_path
+    end
+
+    def admin_page_link
+      admin_path
+    end
 end

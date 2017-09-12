@@ -12,8 +12,11 @@ class FootStamp
   def build_properties
     self.properties = Array.new
 
-    self.apartment_sessions.each do |apartment|
-      self.properties.push(Apartment.find(apartment))
+    unless self.apartment_sessions.nil?
+      self.apartment_sessions.each do |apartment|
+        self.properties.push(Apartment.find(apartment))
+      end
     end
+
   end
 end

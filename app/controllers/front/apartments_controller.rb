@@ -27,6 +27,8 @@ class Front::ApartmentsController < FrontController
     ids = Apartment.district_list(Province.find_by(original_id: params[:province]).id)
     @districts = District.balc_find(ids)
 
+    @nil_sub_districts = Subdistrict.where(url_safe: '')
+
     respond_to do |format|
       format.html
       format.mobile

@@ -11,6 +11,7 @@
 #  updated_at           :datetime         not null
 #  original_id          :string(255)
 #  district_original_id :string(255)
+#  url_safe             :string(255)
 #
 # Indexes
 #

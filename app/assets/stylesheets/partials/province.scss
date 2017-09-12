@@ -26,3 +26,14 @@
 .province-map__item:hover {
   background: rgba($main_light_color, 0.7);
 }
+
+.province-map__count {
+  background: $white;
+  color: $main_light_color;
+  border-radius: 10px;
+  padding: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 0.9rem;
+  margin-left: 5px;
+}
