@@ -26,6 +26,7 @@ database:
 test:
   pre:
     - sudo service redis-server start
+    - rails s -b 0.0.0.0
   override:
     - bundle exec rspec spec/
 
