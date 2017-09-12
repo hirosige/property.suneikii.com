@@ -9,7 +9,7 @@
       <div class="main-title__base">
         <div class="main-title--left">
           <div class="main-title__caption">
-            <%= params[:province].capitalize unless params[:province].nil? %>の物件一覧
+            <%= params[:province].split('-').map(&:capitalize).join(' ') unless params[:province].nil? %>の物件一覧
           </div>
         </div>
         <div class="main-title--right">

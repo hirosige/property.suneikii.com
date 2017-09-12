@@ -20,11 +20,11 @@ class Front::ApartmentsController < FrontController
   def district
     add_breadcrumb "#{params[:province]}のアパートを探す"
 
-    if Province.find_by(original_id: params[:province]).nil?
+    if Province.find_by(url_safe: params[:province]).nil?
       raise ActionController::RoutingError.new('Not Found')
     end
 
-    ids = Apartment.district_list(Province.find_by(original_id: params[:province]).id)
+    ids = Apartment.district_list(Province.find_by(url_safe: params[:province]).id)
     @districts = District.balc_find(ids)
 
     respond_to do |format|
@@ -49,8 +49,8 @@ class Front::ApartmentsController < FrontController
       raise ActionController::RoutingError.new('Not Found')
     end
 
-    @province = Province.where(original_id: params[:province])[0] unless params[:province].nil?
-    @district = District.where(original_id: params[:district])[0] unless params[:district].nil?
+    @province = Province.where(url_safe: params[:province])[0] unless params[:province].nil?
+    @district = District.where(url_safe: params[:district])[0] unless params[:district].nil?
     @sub_district = Subdistrict.where(original_id: params[:sub_district])[0] unless params[:sub_district].nil?
 
     add_breadcrumb @province.name_ja, apartment_district_list_path(params[:province]) unless @province.nil?
