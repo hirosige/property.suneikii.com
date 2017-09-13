@@ -1,8 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe Front::ApartmentsController, type: :controller do
+  let(:user) { create(:user) }
 
   describe "GET #index" do
+    before do
+      login_user user
+    end
+
     it "returns http success" do
       create(:province_bangkok)
       create(:district_dusit)
