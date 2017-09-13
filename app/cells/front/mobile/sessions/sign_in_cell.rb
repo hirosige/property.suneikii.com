@@ -1,4 +1,4 @@
-class Front::Sessions::SignInCell < Cell::ViewModel
+class Front::Mobile::Sessions::SignInCell < Cell::ViewModel
   include ::Cell::Erb
 
   include Devise::Controllers::Helpers

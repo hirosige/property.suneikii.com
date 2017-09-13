@@ -1,0 +1,26 @@
+<% if user_signed_in? %>
+  <div class="dropdown">
+    <button class="btn btn-sm btn-primary dropdown-toggle list-header__info--signed-in-btn" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+      <%= image_tag gravatar_url, :class => 'control-box__gravatar' %>
+      <% if Rails.env.development? %>
+          <span class="label label-success">:<%= role %></span>
+      <% end %>
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu list-header__info--signed-in-menu" aria-labelledby="dropdownMenu1">
+      <li><a href="<%= my_page_link %>">マイページ</a></li>
+      <li><a href="<%= edit_link %>">登録情報の変更</a></li>
+      <li role="separator" class="divider"></li>
+      <li><a href="<%= logout_link %>" data-toggle="tooltip" data-method="delete" data-placement="top" title="Logout">ログアウト</a></li>
+      <% unless current_user.customer? %>
+      <li role="separator" class="divider"></li>
+      <li><a href="<%= admin_page_link %>"><%= Settings.site[:name] %> 管理画面</a></li>
+      <% end %>
+      <% if Rails.env.development? %>
+      <li><a href="<%= clear_session_link %>">セッションクリア</a></li>
+      <% end %>
+    </ul>
+  </div>
+<% else %>
+  <button class="btn btn-sm btn-success" onclick="location.href='<%= login_link %>'">ログイン</button>
+<% end %>

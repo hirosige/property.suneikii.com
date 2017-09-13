@@ -1,15 +1,18 @@
 <header>
   <div class="list-header">
     <div class="list-header--left">
-      <div class="logo"><i class="fa fa-building site__logo"></i><%= Settings.site[:name] %></div>
-      <div class="description"><a href="<%= root_path %>">物件数No.1の不動産・住宅情報サイト <%= Settings.site[:name] %></a></div>
-    </div>
+      <div class="logo" style="display: flex">
+        <i class="fa fa-building site__logo" style="width: 50px"></i>
+        <%= Settings.site[:name].split(' ')[0] %><br>
+        <%= Settings.site[:name].split(' ')[1] %>
+      </div>
+    </div><br>
 
     <div class="list-header--right">
       <% I18n.available_locales.reject{|l| l == I18n.locale}.each do |locale| %>
           <%= link_to(locale, i18n_url_for(params.merge(locale: locale)), :class => 'btn btn-sm btn-info list-header__lang-btn') %>
       <% end %>
-      <%= cell("front/pc/sessions/sign_in", current_user).(:sign_in_btn) %>
+      <%= cell("front/mobile/sessions/sign_in", current_user).(:sign_in_btn) %>
     </div>
   </div>
 
@@ -27,7 +30,7 @@
       </button>
       <button class="control-box__btn" disabled>
         <i class="fa fa-building-o"></i>
-        コンドミニアム
+        コンドミニアム - mobile
       </button>
 
     </div>
