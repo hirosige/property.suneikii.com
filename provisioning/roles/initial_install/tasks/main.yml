@@ -25,6 +25,7 @@
 
 - name: create symbolic link
   command: sudo ln -s /opt/rh/qt48/root/usr/include/QtCore/qconfig-64.h  /opt/rh/qt48/root/usr/include/QtCore/qconfig-x86_64.h
+  ignore_errors: True
 
 #- name: source qt48
 #  command: source /opt/rh/qt48/enable

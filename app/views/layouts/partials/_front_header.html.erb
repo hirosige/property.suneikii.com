@@ -6,6 +6,9 @@
     </div>
 
     <div class="list-header--right">
+      <% I18n.available_locales.reject{|l| l == I18n.locale}.each do |locale| %>
+          <%= link_to(locale, i18n_url_for(params.merge(locale: locale)), :class => 'btn btn-sm btn-info list-header__lang-btn') %>
+      <% end %>
       <%= cell("front/sessions/sign_in", current_user).(:sign_in_btn) %>
     </div>
   </div>
@@ -26,6 +29,7 @@
         <i class="fa fa-building-o"></i>
         コンドミニアム
       </button>
+
     </div>
 
     <a href="<%= user_visited_path %>" class="control-box__login-info">

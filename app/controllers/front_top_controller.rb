@@ -12,7 +12,6 @@ class FrontTopController < ApplicationController
 
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale unless params[:locale] == 'favicon'
-    p params
   end
 
   def default_url_options(options = {})
