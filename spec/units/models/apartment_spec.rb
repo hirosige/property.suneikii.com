@@ -31,6 +31,8 @@ require 'rails_helper'
 RSpec.describe Apartment, type: :model do
 
   it "can create" do
+    create(:country_thai)
+
     apartment = Apartment.new
     expect(apartment.class.to_s).to eq('Apartment')
   end

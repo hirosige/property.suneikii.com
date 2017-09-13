@@ -12,9 +12,19 @@
 #
 
 FactoryGirl.define do
-  factory :country do
-    name_ja "MyString"
-    name_th "MyString"
-    name_en "MyString"
+
+  factory :country_japan, class: Country do
+    name_ja "日本"
+    name_th "yipun"
+    name_en "Japan"
+    original_id "th"
   end
+
+  factory :country_thai, class: Country do
+    name_ja "タイ"
+    name_th "thai"
+    name_en "Thai"
+    original_id "th"
+  end
+
 end

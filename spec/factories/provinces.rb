@@ -23,10 +23,12 @@
 #
 
 FactoryGirl.define do
-  factory :province do
-    name_ja "MyString"
-    name_th "MyString"
-    name_en "MyString"
-    country nil
+  factory :province_bangkok, class: Province do
+    name_ja "バンコク"
+    name_th "Bangkok"
+    name_en "Bangkok"
+    original_id 'bangkok'
+    country_original_id 'th'
+    url_safe 'bangkok'
   end
 end

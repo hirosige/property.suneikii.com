@@ -14,3 +14,4 @@
 #   - { role: bundle                 }
    - { role: zsh                    }
    - { role: redis                  }
+   - { role: npm                    }

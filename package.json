@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/hirosige/property.suneikii.com#readme",
   "devDependencies": {
-    "phantomjs": "^2.1.7"
+    "phantomjs": "2.1.1"
   }
 }

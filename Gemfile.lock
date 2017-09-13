@@ -128,6 +128,7 @@ GEM
     config (1.4.0)
       activesupport (>= 3.0)
       deep_merge (~> 1.1.1)
+    database_cleaner (1.6.1)
     debase (0.2.1)
       debase-ruby_core_source
     debase-ruby_core_source (0.9.9)
@@ -748,6 +749,7 @@ DEPENDENCIES
   cocoon
   coffee-rails (~> 4.1.0)
   config
+  database_cleaner
   debase
   devise
   dotenv-rails

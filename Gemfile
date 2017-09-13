@@ -81,6 +81,7 @@ group :development, :test do
   gem "capybara"
   gem 'capybara-webkit'
   gem 'poltergeist'
+  gem 'database_cleaner'
 end
 
 group :development do
