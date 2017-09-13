@@ -10,7 +10,7 @@ describe "home", :type => :feature do
     expect(page).to have_text('SNK')
     expect(page).to have_text('Properties')
 
-    page.save_screenshot('/vagrant/property_suneikii_home.png', full: true)
+    # page.save_screenshot('/vagrant/property_suneikii_home.png', full: true)
   end
 
   # it "test2" do
