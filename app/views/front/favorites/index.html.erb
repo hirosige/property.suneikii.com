@@ -10,6 +10,8 @@
       <% if @favorites.blank? %>
           No Data
       <% else %>
+          <%= render 'pagination' %>
+
         <table class="table table-hover table-condensed table-bordered favorites-top__tbl">
           <thead>
           <tr>
@@ -24,11 +26,12 @@
           </thead>
           <tbody>
           <% @favorites.each do |favorite| %>
+            <% property = favorite.apartment if favorite.apartment? %>
               <tr>
-                <td rowspan="3"><%= favorite.photo %></td>
+                <td rowspan="3"><%= image_tag("no_image.rf", :class => 'photo-thumnail') %></td>
                 <td colspan="6" class="favorites-top__tbl-col-name">
                   <span class="favorites-top__tbl-col-category">アパート</span>
-                  <a href="<%= apartment_path(favorite.id) %>"><%= favorite.name %></a>
+                  <a href="<%= apartment_path(property.id) %>"><%= property.name %></a>
                   <span class="favorites-top__tbl-col-status">即入可</span>
                 </td>
               </tr>
@@ -43,7 +46,7 @@
               <tr>
                 <td colspan="6">
                   <div class="favorites-top__tbl-btns">
-                    <button class="btn btn-primary favorites-top__tbl-btn" onclick='location.href="<%= apartment_path(favorite.id) %>"'>
+                    <button class="btn btn-primary favorites-top__tbl-btn" onclick='location.href="<%= apartment_path(property.id) %>"'>
                       詳細を見る <i class="fa fa-arrow-circle-o-right"></i>
                     </button>
                   </div>
@@ -54,6 +57,7 @@
           <% end %>
           </tbody>
         </table>
+          <%= render 'pagination' %>
       <% end %>
 
     </div>

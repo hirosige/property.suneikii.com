@@ -9,7 +9,7 @@ class Front::FavoritesController < FrontController
     else
       add_breadcrumb "お気に入りリスト"
 
-      @favorites = Favorite.personal_favorites(current_user.id)
+      @favorites = Favorite.includes(:apartment).page(params[:page])
     end
   end
 
@@ -22,11 +22,11 @@ class Front::FavoritesController < FrontController
           :user_id => current_user.id
       )
 
-      favorite.set_as_apartment
-
-      if favorite.save
+      if favorite.valid?
+        favorite.set_as_apartment
         render json: { status: 'success', apartment: @apartment }
       else
+        p favorite.errors
         render json: { status: 'failure', apartment: @apartment, errors: favorite }
       end
 
