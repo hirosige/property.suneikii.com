@@ -15,14 +15,18 @@
   font-size: 4em;
   color: $white;
   text-align: center;
+  padding-bottom: 30px;
 }
 
 .top-body__buttons {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-content: center;
   align-items: center;
-  flex-wrap: wrap;
+  flex-direction: column;
+  margin-bottom: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .top-body__categories {
@@ -31,15 +35,8 @@
   align-content: center;
   align-items: center;
   background: $white;
-  height: 250px;
-  width: 250px;
-  border-radius: 50%;
   color: $main_light_color;
   font-size: 4em;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-.top-body__categories + .top-body__categories {
-  margin-left: 20px;
+  margin: 10px;
+  min-width: 700px;
 }

@@ -1,0 +1,10 @@
+ja:
+  front:
+    top:
+      home:
+        title:
+        search_property: '物件を探す'
+        apartment:    'アパート'
+        condominium:  'コンド'
+        house:        '家'
+        land:         '土地'

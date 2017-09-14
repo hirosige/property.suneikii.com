@@ -1,0 +1,10 @@
+en:
+  front:
+    top:
+      home:
+        title:
+        search_property: 'Select a kind of property'
+        apartment:    'Apartments'
+        condominium:  'Condominiums'
+        house:        'Houses'
+        land:         'Lands'
