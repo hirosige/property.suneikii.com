@@ -28,7 +28,8 @@ test:
     - sudo service redis-server start
     - rails s -e test -d
   override:
-    - bundle exec rspec spec/
+    - bundle exec rspec spec/units
+    - bundle exec rspec spec/features
 
 deployment:
   staging:
