@@ -259,6 +259,13 @@ button:disabled {
 
 
 .list-header__lang-btn {
-  margin-left: 5px;
-  margin-right: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.list-header__lang-text {
+  background: $white;
+  color: $main_light_color;
+  border-radius: 5px;
+  padding: 5px;
 }

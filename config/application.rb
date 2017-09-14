@@ -8,7 +8,7 @@ module SnkProperty
 
     # config.time_zone = 'Central Time (US & Canada)'
 
-    config.i18n.available_locales = %i(ja en zh th)
+    config.i18n.available_locales = %i(ja en th)
     config.i18n.enforce_available_locales = true
     config.i18n.default_locale = :en
 

@@ -29,7 +29,10 @@ class Favorite < ActiveRecord::Base
   end
 
   def unique_apartment
-    if apartment_id.present? and Favorite.where(:user_id => user_id, :apartment_id => apartment_id).size > 0
+    p user_id
+    p apartment_id
+
+    if Favorite.where(:user_id => user_id, :apartment_id => apartment_id).size > 0
       errors.add(:apartment_id, "Apartment cannot be duplicate in Favorite")
     end
   end

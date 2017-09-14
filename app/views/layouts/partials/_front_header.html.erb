@@ -6,9 +6,15 @@
     </div>
 
     <div class="list-header--right">
-      <% I18n.available_locales.reject{|l| l == I18n.locale}.each do |locale| %>
-          <%= link_to(locale, i18n_url_for(params.merge(locale: locale)), :class => 'btn btn-sm btn-info list-header__lang-btn') %>
-      <% end %>
+      <div class="list-header__lang-text">言語切り替え</div>
+      <div class="btn-group list-header__lang-btn" role="group" aria-label="...">
+        <% I18n.available_locales.reject{|l| l == I18n.locale}.each do |locale| %>
+            <button type="button" class="btn btn-info" onclick='location.href="<%= i18n_url_for(params.merge(locale: locale)) %>"'>
+              <%= locale %>
+            </button>
+        <% end %>
+      </div>
+
       <%= cell("front/pc/sessions/sign_in", current_user).(:sign_in_btn) %>
     </div>
   </div>
