@@ -97,10 +97,12 @@ header {
 
 .flex-container {
   display: flex;
-  min-height: 200px;
   justify-content: center;
   align-content: center;
+  align-items: center;
   flex-flow: wrap;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .top-header {
@@ -120,15 +122,12 @@ header {
 }
 
 .top-header__icon-img {
-  display: table-cell;
-  width: 80px;
-  height: 80px;
   border: 2px $main_deep_color solid;
   border-radius: 50%;
   background: $main_color;
+  color: $white;
   font-size: 3.0em;
-  text-align: center;
-  vertical-align: middle;
+  padding: 20px;
 }
 
 .top-header__title {
@@ -137,9 +136,7 @@ header {
   margin-right: 10px;
   font-size: 3em;
   color: $main_light_color;
-  line-height: 40px;
   display: inline-block;
-  margin-top: 50px;
 }
 
 .top-header__desc-body {

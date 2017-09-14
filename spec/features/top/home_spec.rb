@@ -2,16 +2,43 @@ require 'rails_helper'
 
 describe "home", :type => :feature do
   subject{ page }
-  before {
-    visit('/')
-  }
 
-  it "has text snk" do
-    expect(page).to have_text('SNK')
-    expect(page).to have_text('Properties')
+  describe "en" do
+    before {
+      visit('/en')
+    }
 
-    # page.save_screenshot('/vagrant/property_suneikii_home.png', full: true)
+    it "has text" do
+      expect(page).to have_text('Property Suneikii')
+
+      page.save_screenshot("#{ENV['TEST_IMG_PATH']}/top/home/home_en.png", full: true)
+    end
   end
+
+  describe "ja" do
+    before {
+      visit('/ja')
+    }
+
+    it "has text" do
+      expect(page).to have_text('Property Suneikii')
+
+      page.save_screenshot("#{ENV['TEST_IMG_PATH']}/top/home/home_ja.png", full: true)
+    end
+  end
+
+  describe "th" do
+    before {
+      visit('/th')
+    }
+
+    it "has text" do
+      expect(page).to have_text('Property Suneikii')
+
+      page.save_screenshot("#{ENV['TEST_IMG_PATH']}/top/home/home_th.png", full: true)
+    end
+  end
+
 
   # it "test2" do
   #   within("form") do
