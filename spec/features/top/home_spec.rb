@@ -11,7 +11,7 @@ describe "home", :type => :feature do
     it "has text" do
       expect(page).to have_text(Settings.site[:name])
       expect(page).to have_text('Select a kind of property')
-      expect(page).to have_text('© 2017 SNK Property Powered by Suneikii.com All Rights Reserved.')
+      expect(page).to have_text('© 2017 Property Suneikii Powered by Suneikii.com All Rights Reserved.')
 
       # Buttons
       expect(page).to have_content('Apartments')
@@ -38,7 +38,7 @@ describe "home", :type => :feature do
     it "has text" do
       expect(page).to have_text(Settings.site[:name])
       expect(page).to have_text('物件を探す')
-      expect(page).to have_text('© 2017 SNK Property Powered by Suneikii.com All Rights Reserved.')
+      expect(page).to have_text('© 2017 Property Suneikii Powered by Suneikii.com All Rights Reserved.')
 
       # Buttons
       expect(page).to have_content('アパート')
@@ -65,7 +65,7 @@ describe "home", :type => :feature do
     it "has text" do
       expect(page).to have_text(Settings.site[:name])
       # TODO 物件を探す
-      expect(page).to have_text('© 2017 SNK Property Powered by Suneikii.com All Rights Reserved.')
+      expect(page).to have_text('© 2017 Property Suneikii Powered by Suneikii.com All Rights Reserved.')
 
       # Buttons
 
@@ -73,14 +73,4 @@ describe "home", :type => :feature do
     end
   end
 
-  # it "test2" do
-  #   within("form") do
-  #     fill_in "q", with: "aaa"
-  #   end
-  #   click_button "Google 検索"
-  #   expect(page).to have_text('aaa')
-  #   page.save_screenshot('screenshot.png')
-  #   page.save_screenshot('screenshot2.png', full: true)
-  #   expect(page).to have_text('次へ')
-  # end
 end

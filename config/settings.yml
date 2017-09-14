@@ -1,6 +1,6 @@
 site:
   name: "Property Suneikii"
-  provider: "Suneiki.com"
+  provider: "Suneikii.com"
   page_description: "SuneikiiはRuby on Railsで作られたブログアプリケーションです"
   meta:
     og:
