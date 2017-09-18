@@ -8,6 +8,12 @@ class Front::ApartmentsController < FrontController
   def province
     add_breadcrumb '全国のアパートを探す'
 
+    p "########## in controller ###########"
+
+    if Country.find_by(original_id: 'th').nil?
+      raise ActionController::RoutingError.new('Not Found')
+    end
+
     ids = Apartment.province_list(Country.find_by(original_id: 'th').id)
     @provinces = Province.balc_find(ids)
 

@@ -17,7 +17,7 @@ FactoryGirl.define do
     name_ja "日本"
     name_th "yipun"
     name_en "Japan"
-    original_id "th"
+    original_id "ja"
   end
 
   factory :country_thai, class: Country do

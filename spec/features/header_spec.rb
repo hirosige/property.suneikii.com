@@ -1,11 +1,20 @@
 require 'rails_helper'
 
-describe "header", :type => :feature do
+RSpec.describe "header", :type => :feature do
   subject{ page }
   let(:local_path) {"/top/header"}
+  let!(:country) { create(:country_thai) }
+  let!(:province) { create(:province_bangkok) }
+  let!(:district) { create(:district_dusit) }
+  let!(:sub_district) { create(:subdistrict_dusit) }
 
   describe 'header in login with ja' do
     before(:each) {
+      country
+      province
+      district
+      sub_district
+
       visit('/ja/apartments')
     }
 
@@ -50,12 +59,21 @@ describe "header", :type => :feature do
 
   describe 'header in login with ja' do
 
-    before do
+    before(:each) do
+      country
+      province
+      district
+      sub_district
+
       visit('/ja/apartments')
+      page.save_screenshot("#{ENV['TEST_IMG_PATH']}#{local_path}/debug1.png", full: true)
       find("button.btn", text: "ログイン").click
       fill_in('user[email]', :with => 'hirosige1@gmail.com')
       fill_in('user[password]', :with => 'abCD1234')
+      page.save_screenshot("#{ENV['TEST_IMG_PATH']}#{local_path}/fillin.png", full: true)
       find(:xpath, '//*[@id="new_user"]/div[1]/input').click
+
+      page.save_screenshot("#{ENV['TEST_IMG_PATH']}#{local_path}/press_login.png", full: true)
       visit('/ja/apartments')
     end
 

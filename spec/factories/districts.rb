@@ -28,7 +28,7 @@ FactoryGirl.define do
     name_th "Dusit"
     name_en "Dusit"
     original_id 'dusit'
-    province_original_id 'dusit'
+    province_original_id 'bangkok'
     url_safe 'dusit'
   end
 end
