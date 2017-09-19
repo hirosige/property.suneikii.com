@@ -3,19 +3,14 @@ require 'rails_helper'
 RSpec.describe "header", :type => :feature do
   subject{ page }
   let(:local_path) {"/top/header"}
-  let!(:country) { create(:country_thai) }
+  let!(:country)  { create(:country_thai) }
   let!(:province) { create(:province_bangkok) }
   let!(:district) { create(:district_dusit) }
   let!(:sub_district) { create(:subdistrict_dusit) }
 
   describe 'header in login with ja' do
     before(:each) {
-      country
-      province
-      district
-      sub_district
-
-      visit('/ja/apartments')
+      visit('/en/apartments')
     }
 
     it "has top header" do
@@ -26,11 +21,11 @@ RSpec.describe "header", :type => :feature do
 
       # lang btns
       expect(list_header).to have_css(".list-header__lang-text", text: "言語切り替え")
-      expect(list_header).to have_css("button.btn", text: "en")
+      expect(list_header).to have_css("button.btn", text: "ja")
       expect(list_header).to have_css("button.btn", text: "th")
 
       # login btns
-      expect(list_header).to have_css("button.btn", text: "ログイン")
+      expect(list_header).to have_css("button.btn", text: "Sign in")
 
       page.save_screenshot("#{ENV['TEST_IMG_PATH']}#{local_path}/header_ja_logout.png", full: true)
     end
@@ -60,27 +55,24 @@ RSpec.describe "header", :type => :feature do
   describe 'header in login with ja' do
 
     before(:each) do
-      country
-      province
-      district
-      sub_district
+      user = User.find_by(name: 'admin')
 
-      visit('/ja/apartments')
-      page.save_screenshot("#{ENV['TEST_IMG_PATH']}#{local_path}/debug1.png", full: true)
-      find("button.btn", text: "ログイン").click
-      fill_in('user[email]', :with => 'hirosige1@gmail.com')
+      visit('/en/apartments')
+      find("button.btn", text: "Sign in").click
+      page.save_screenshot("#{ENV['TEST_IMG_PATH']}/users/login.png", full: true)
+      fill_in('user[email]', :with => user.email)
       fill_in('user[password]', :with => 'abCD1234')
-      page.save_screenshot("#{ENV['TEST_IMG_PATH']}#{local_path}/fillin.png", full: true)
+      page.save_screenshot("#{ENV['TEST_IMG_PATH']}/users/fill_in.png", full: true)
       find(:xpath, '//*[@id="new_user"]/div[1]/input').click
-
-      page.save_screenshot("#{ENV['TEST_IMG_PATH']}#{local_path}/press_login.png", full: true)
+      page.save_screenshot("#{ENV['TEST_IMG_PATH']}/users/after_press_login.png", full: true)
       visit('/ja/apartments')
+      page.save_screenshot("#{ENV['TEST_IMG_PATH']}/users/move_to_apartments_after_login.png", full: true)
     end
 
     it "has top header" do
 
       # login btns
-      expect(page).to have_no_css("button.btn", text: "ログイン")
+      expect(page).to have_no_css("button.btn", text: "Sign in")
       expect(page).to have_css("div.dropdown")
 
       dropdown = find("div.dropdown")
@@ -88,12 +80,16 @@ RSpec.describe "header", :type => :feature do
       expect(dropdown).to have_css("button.btn.list-header__info--signed-in-btn")
       expect(dropdown.hover).to have_css("ul.dropdown-menu.list-header__info--signed-in-menu")
 
+      within dropdown do
+        button = find("button.btn.list-header__info--signed-in-btn")
+        expect(button).to have_css("span.list-header__info--signed-in-name", :text => "admin")
+      end
+
       within dropdown.hover do
         dropdown_menu = find("ul.dropdown-menu.list-header__info--signed-in-menu")
         expect(dropdown_menu).to have_css("li a", :text => "マイページ")
         expect(dropdown_menu).to have_css("li a", :text => "登録情報の変更")
         expect(dropdown_menu).to have_css("li a", :text => "ログアウト")
-        expect(dropdown_menu).to have_css("li a", :text => "セッションクリア")
 
         page.save_screenshot("#{ENV['TEST_IMG_PATH']}#{local_path}/header_ja_hover_menu.png", full: true)
       end

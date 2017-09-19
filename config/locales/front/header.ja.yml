@@ -1,0 +1,8 @@
+ja:
+  front:
+    header:
+      lang:
+        caption: '言語切り替え'
+        button: ''
+      session:
+        btn_sign_in: 'ログイン'

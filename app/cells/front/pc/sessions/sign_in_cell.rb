@@ -2,6 +2,7 @@ class Front::Pc::Sessions::SignInCell < Cell::ViewModel
   include ::Cell::Erb
 
   include Devise::Controllers::Helpers
+  include ActionView::Helpers::TranslationHelper
 
   property :name
   property :gravatar_url

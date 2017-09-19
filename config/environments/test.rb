@@ -13,4 +13,6 @@ Rails.application.configure do
   config.active_support.deprecation = :stderr
   # config.action_view.raise_on_missing_translations = true
   config.active_record.raise_in_transactional_callbacks = true
+
+  config.action_mailer.default_url_options = { host: '192.168.33.13', port: 3000 }
 end

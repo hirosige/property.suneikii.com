@@ -1,0 +1,8 @@
+en:
+  front:
+    header:
+      lang:
+        caption: 'Select Lang'
+        button: ''
+      session:
+        btn_sign_in: 'Sign in'
