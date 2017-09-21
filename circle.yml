@@ -14,6 +14,7 @@ dependencies:
     - sudo apt-get update -y; true
     - sudo apt-get install -y qt54webkit libwebkit-dev libgstreamer0.10-dev
     - echo "/opt/qt54/bin/qt54-env.sh" >> ~/.circlerc
+    - sudo apt-get install fonts-migmix
   override:
     - QMAKE=/opt/qt54/bin/qmake bundle install:
         timeout: 180
