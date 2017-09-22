@@ -8,6 +8,8 @@ describe "home", :type => :feature do
       visit('/')
     }
 
+    ENV['TEST_IMG_PATH'] = ENV['CIRCLE_ARTIFACTS'] ||= ENV['TEST_IMG_PATH']
+
     it "has text" do
       expect(page).to have_text(Settings.site[:name])
       expect(page).to have_text('Select a kind of property')
@@ -19,7 +21,7 @@ describe "home", :type => :feature do
       expect(page).to have_content('Houses')
       expect(page).to have_content('Lands')
 
-      page.save_screenshot("#{ENV['CIRCLE_ARTIFACTS']}/top/home/home_en.png", full: true)
+      page.save_screenshot("#{ENV['TEST_IMG_PATH']}/top/home/home_en.png", full: true)
     end
 
     it "click_link_apartments" do
