@@ -6,7 +6,7 @@ machine:
       2.3.4
   environment:
     REDIS_URL: redis://localhost:6379
-    TEST_IMG_PATH: ~/results
+    TEST_IMG_PATH: spec/results
 dependencies:
   pre:
     - sudo apt-get install apt -y
@@ -32,6 +32,11 @@ test:
   override:
     - bundle exec rspec spec/units
     - bundle exec rspec spec/features
+
+general:
+  artifacts:
+    - "spec/results"
+    - "log"
 
 deployment:
   staging:
