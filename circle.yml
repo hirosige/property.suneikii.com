@@ -7,7 +7,6 @@ machine:
   environment:
     REDIS_URL: redis://localhost:6379
     TEST_IMG_PATH: ~/results
-    CIRCLE_ARTIFACTS: ~/results
 dependencies:
   pre:
     - sudo apt-get install apt -y

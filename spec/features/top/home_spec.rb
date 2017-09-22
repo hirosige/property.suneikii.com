@@ -19,7 +19,7 @@ describe "home", :type => :feature do
       expect(page).to have_content('Houses')
       expect(page).to have_content('Lands')
 
-      page.save_screenshot("#{ENV['TEST_IMG_PATH']}/top/home/home_en.png", full: true)
+      page.save_screenshot("#{ENV['CIRCLE_ARTIFACTS']}/top/home/home_en.png", full: true)
     end
 
     it "click_link_apartments" do
