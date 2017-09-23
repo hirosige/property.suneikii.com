@@ -31,7 +31,6 @@ test:
     - rails s -b 0.0.0.0 -e test -d
   override:
     - bundle exec rspec spec/units
-    - bundle exec rspec spec/features
 
 general:
   artifacts:
