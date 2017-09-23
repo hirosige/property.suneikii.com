@@ -6,7 +6,7 @@ machine:
       2.3.4
   environment:
     REDIS_URL: redis://localhost:6379
-    TEST_IMG_PATH: ~/property.suneikii.com/spec/results
+    TEST_IMG_PATH: /home/ubuntu/property.suneikii.com/spec/results
 dependencies:
   pre:
     - sudo apt-get install apt -y
@@ -35,7 +35,7 @@ test:
 
 general:
   artifacts:
-    - "spec/results"
+    - "/home/ubuntu/property.suneikii.com/spec/results"
     - "log"
 
 deployment:
