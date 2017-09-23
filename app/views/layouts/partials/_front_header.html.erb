@@ -2,11 +2,11 @@
   <div class="list-header">
     <div class="list-header--left">
       <div class="logo"><i class="fa fa-building site__logo"></i><%= Settings.site[:name] %></div>
-      <div class="description"><a href="<%= root_path %>">物件数No.1の不動産・住宅情報サイト <%= Settings.site[:name] %></a></div>
+      <div class="description"><a href="<%= root_path %>"><%= t('front.header.title') %> <%= Settings.site[:name] %></a></div>
     </div>
 
     <div class="list-header--right">
-      <div class="list-header__lang-text">言語切り替え</div>
+      <div class="list-header__lang-text"><%= t('front.header.lang.caption') %></div>
       <div class="btn-group list-header__lang-btn" role="group" aria-label="...">
         <% I18n.available_locales.reject{|l| l == I18n.locale}.each do |locale| %>
             <button type="button" class="btn btn-info" onclick='location.href="<%= i18n_url_for(params.merge(locale: locale)) %>"'>
@@ -25,15 +25,15 @@
       <%= image_tag("snk_logo.jpg", :style => 'width: 100px;', :alt => 'logo') %>
       <button class="control-box__btn <%= 'control-box__btn--active' if params[:controller].split('/')[1] == 'apartments' %>" onclick="location.href='<%= apartment_province_list_path %>'">
         <i class="fa fa-building"></i>
-        アパート
+        <%= t('front.apartments.title') %>
       </button>
       <button class="control-box__btn" disabled>
         <i class="fa fa-plus-square-o"></i>
-        土地
+        <%= t('front.lands.title') %>
       </button>
       <button class="control-box__btn" disabled>
         <i class="fa fa-building-o"></i>
-        コンドミニアム
+        <%= t('front.condominiums.title') %>
       </button>
 
     </div>
@@ -48,7 +48,7 @@
         <% end %>
 
       </p>
-      <p >最近見た物件</p>
+      <p ><%= t('front.header.session.recent') %></p>
     </a>
 
     <% if user_signed_in? %>
@@ -61,7 +61,7 @@
             <%= current_user.favorites.size %>
         <% end %>
       </p>
-      <p>お気に入り</p>
+      <p><%= t('front.header.session.favorites') %></p>
     </a>
     <% end %>
 
@@ -88,12 +88,12 @@
       %>
       <% unless no_info_controllers.include?(controller.controller_name) %>
         <% if params[:province].nil? %>
-            <%= params[:controller].split('/')[1].capitalize %> を検索
+              <%= t('front.header.category.caption', :name => params[:controller].split('/')[1].capitalize) %>
         <% else %>
-            <%= params[:province].capitalize unless params[:province].nil? %>の<%= params[:controller].split('/')[1].capitalize %>
+              <%= @params_service.visualize(params[:province]) unless params[:province].nil? %>の<%= params[:controller].split('/')[1].capitalize %>
         <% end %>
 
-        物件一覧ページ。面積（坪数）や価格（坪単価）で絞り込み、簡単に比較・資料請求。
+        <%= t('front.header.sub_description') %>
       <% end %>
     </div>
   </div>

@@ -1,8 +1,14 @@
 en:
   front:
     header:
+      title: 'Real Estate Site'
+      sub_description: 'Property list page. select the area where you look for a property'
+      category:
+        caption: 'Search for %{name}.'
       lang:
         caption: 'Select Lang'
         button: ''
       session:
         btn_sign_in: 'Sign in'
+        recent: 'Recent Check'
+        favorites: 'Favorites'

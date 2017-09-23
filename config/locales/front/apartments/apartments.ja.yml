@@ -1,0 +1,8 @@
+ja:
+  front:
+    apartments:
+      title: 'アパート'
+      province_title: '%{province}のアパートを探す'
+      province_breadcrumb: '全国のアパートを探す'
+      district_title:
+      district_breadcrumb: "%{province}のアパートを探す"

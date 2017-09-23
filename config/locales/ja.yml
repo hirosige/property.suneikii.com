@@ -3,6 +3,7 @@ ja:
   provider_name: "suneikii.com"
   admin_page: "管理画面"
   home: "ホーム"
+  copyright: 'Copyright © %{site_name}. All Rights Reserved.'
   pagination:
     count: "件"
 

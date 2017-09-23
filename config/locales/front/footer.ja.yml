@@ -1,0 +1,19 @@
+ja:
+  front:
+    footer:
+      description: '不動産・住宅情報の総合サイト%{site_name}。
+                          賃貸から住宅購入、注文住宅、リフォーム、不動産投資など、不動産に関するあらゆるご要望におこたえします。
+                          不動産用語集や、住まい探しに役立つマニュアルなどの情報も満載。
+                          キーワードからも%{site_name}ならズバッと検索ができます。
+                          全国の不動産・住宅情報なら、バンコク最大級の%{site_name}におまかせ。'
+      links:
+        explanation: '%{site_name}とは'
+        sitemap: 'サイトマップ'
+        suggestions: 'ご意見・ご要望'
+        inquiry: '掲載物件に関するお問合せ'
+        service_policy: 'サービス利用規約'
+        disclaimer: '免責事項'
+        privacy_policy: '個人情報について'
+        for_provider: '掲載を希望する方へ'
+        recruit: 'スタッフ募集'
+        about_suneikii: 'Suneikii.comについて'

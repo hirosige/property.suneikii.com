@@ -1,0 +1,18 @@
+en:
+  front:
+    footer:
+      description: '%{site_name} is a site to find your best residences.
+                    Providing not only Houses, Apartments, Condos, Lands, etc,
+                    but also we provide information about properties necessary for you.
+                    %{site_name} provides you to flexible search function.'
+      links:
+        explanation: 'What is %{site_name}'
+        sitemap: 'Sitemap'
+        suggestions: 'Requests'
+        inquiry: 'Contact Us'
+        service_policy: 'Usage Policy'
+        disclaimer: 'Disclaimer'
+        privacy_policy: 'Privacy Policy'
+        for_provider: 'For provider'
+        recruit: 'For job applicants'
+        about_suneikii: 'About Suneikii.com'

@@ -1,0 +1,8 @@
+en:
+  front:
+    apartments:
+      title: 'Apartments'
+      province_title: 'Search Apartments in %{province}'
+      province_breadcrumb: 'Search for Apartments'
+      district_title:
+      district_breadcrumb: "Search for apartments in %{province}"

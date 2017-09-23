@@ -8,11 +8,7 @@
           <%= Settings.site[:name].split(' ')[1] %>
         </span>
         <div class="top-footer__description">
-          不動産・住宅情報の総合サイト<%= Settings.site[:name] %>。
-          賃貸から住宅購入、注文住宅、リフォーム、不動産投資など、不動産に関するあらゆるご要望におこたえします。
-          不動産用語集や、住まい探しに役立つマニュアルなどの情報も満載。
-          キーワードからも<%= Settings.site[:name] %>ならズバッと検索ができます。
-          全国の不動産・住宅情報なら、バンコク最大級の<%= Settings.site[:name] %>におまかせ。
+          <%= t('front.footer.description', :site_name => Settings.site[:name]) %>
         </div>
       </div>
 
@@ -25,18 +21,18 @@
   </div>
 
   <div class="snk-footer">
-    <a href="#" class="snk-footer__link"><%= Settings.site[:name] %>とは</a>
-    <a href="#" class="snk-footer__link">サイトマップ</a>
-    <a href="#" class="snk-footer__link">ご意見・ご要望</a>
-    <a href="#" class="snk-footer__link">掲載物件に関するお問合せ</a>
-    <a href="#" class="snk-footer__link">サービス利用規約</a>
+    <a href="#" class="snk-footer__link"><%= t('front.footer.links.explanation', :site_name => Settings.site[:name]) %></a>
+    <!--<a href="#" class="snk-footer__link"><% t('front.footer.links.sitemap') %></a>-->
+    <!--<a href="#" class="snk-footer__link"><% t('front.footer.links.suggestions') %></a>-->
+    <a href="#" class="snk-footer__link"><%= t('front.footer.links.inquiry') %></a>
+    <!--<a href="#" class="snk-footer__link"><% t('front.footer.links.service_policy') %></a>-->
     <br>
-    <a href="#" class="snk-footer__link">免責事項</a>
-    <a href="#" class="snk-footer__link">個人情報について</a>
-    <a href="#" class="snk-footer__link"><%= Settings.site[:name] %>に掲載する</a>
-    <a href="#" class="snk-footer__link">スタッフ募集</a>
-    <a href="#" class="snk-footer__link">運営会社について</a>
-    <br><br>
-    <div style="font-size: 0.8em;">Copyright © <%= Settings.site[:name] %>. All Rights Reserved.</div>
+    <!--<a href="#" class="snk-footer__link"><% t('front.footer.links.disclaimer') %></a>-->
+    <!--<a href="#" class="snk-footer__link"><% t('front.footer.links.privacy_policy') %></a>-->
+    <!--<a href="#" class="snk-footer__link"><% t('front.footer.links.for_provider') %></a>-->
+    <!--<a href="#" class="snk-footer__link"><% t('front.footer.links.recruit') %></a>-->
+    <!--<a href="#" class="snk-footer__link"><% t('front.footer.links.about_suneikii') %></a>-->
+    <br>
+    <div class="top-footer__copyright"><%= t('copyright', :site_name => Settings.site[:name]) %></div>
   </div>
 </footer>

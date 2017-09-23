@@ -3,6 +3,7 @@ en:
   provider_name: "suneikii.com"
   provider_website: "http://google.com"
   admin_page: "Admin Page"
+  copyright: 'Copyright © %{site_name}. All Rights Reserved.'
   home: "Home"
   pagination:
     count: "hits"

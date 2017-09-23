@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
   before_action :set_awesome_debugger
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :set_params_service
 
   # rescue_from ActiveRecord::RecordNotFound, with: :render_404
   # rescue_from ActionController::RoutingError, with: :render_404
@@ -21,6 +22,10 @@ class ApplicationController < ActionController::Base
       @awesome_debugger.learn(params, 'URL Params')
 
     end
+  end
+
+  def set_params_service
+    @params_service = ParamsService.new(params)
   end
 
   def default_url_options(options = {})

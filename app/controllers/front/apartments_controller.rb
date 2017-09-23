@@ -2,13 +2,10 @@ class Front::ApartmentsController < FrontController
   include Mobylette::RespondToMobileRequests
 
   before_action :set_apartment, only: [:show]
-
-  add_breadcrumb 'アパート', :apartment_province_list_path
+  before_action :set_root_breadcrumb
 
   def province
-    add_breadcrumb '全国のアパートを探す'
-
-    p "########## in controller ###########"
+    add_breadcrumb t('front.apartments.province_breadcrumb')
 
     if Country.find_by(original_id: 'th').nil?
       raise ActionController::RoutingError.new('Not Found')
@@ -24,7 +21,7 @@ class Front::ApartmentsController < FrontController
   end
 
   def district
-    add_breadcrumb "#{params[:province]}のアパートを探す"
+    add_breadcrumb t('front.apartments.district_breadcrumb', :province => @params_service.visualize(params[:province]))
 
     if Province.find_by(url_safe: params[:province]).nil?
       raise ActionController::RoutingError.new('Not Found')
@@ -88,5 +85,9 @@ class Front::ApartmentsController < FrontController
       @apartment = Front::ApartmentDecorator.decorate(
           Apartment.find(params[:id])
       )
+    end
+
+    def set_root_breadcrumb
+      add_breadcrumb t('front.apartments.title'), :apartment_province_list_path
     end
 end

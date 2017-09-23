@@ -1,8 +1,14 @@
 ja:
   front:
     header:
+      title: '物件数No.1の不動産・住宅情報サイト'
+      sub_description: '物件一覧ページ。面積（坪数）や価格（坪単価）で絞り込み、簡単に比較・資料請求。'
+      category:
+        caption: '%{name} を探す。'
       lang:
         caption: '言語切り替え'
         button: ''
       session:
         btn_sign_in: 'ログイン'
+        recent: '最近見た物件'
+        favorites: 'お気に入り'

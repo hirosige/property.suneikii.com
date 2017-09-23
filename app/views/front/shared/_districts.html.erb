@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+
+      <div class="main-title__base">
+        <div class="main-title--left">
+          <div class="main-title__caption">
+            <%= t("front.#{@params_service.category}.province_title", :province => @params_service.visualize(params[:province])) %>
+          </div>
+        </div>
+        <div class="main--title-clearfix"></div>
+      </div>
+
+      <div class="district-map__base">
+        <% unless @districts.nil? %>
+            <% @districts.each do |district| %>
+                <button class="district-map__item" onclick="location.href='<%= send("#{@params_service.category}_path", params[:province], district.url_safe) %>'">
+                  <%= district.name_ja %>
+                  <span class="district-map__count"><%= "#{district.send(@params_service.category).size}" %></span>
+                </button>
+            <% end %>
+        <% end %>
+      </div>
+
+    </div>
+  </div>
+</div>
