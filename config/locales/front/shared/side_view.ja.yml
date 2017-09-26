@@ -1,0 +1,12 @@
+ja:
+  front:
+    side_view:
+      search:
+        title: '検索条件'
+
+      area_plane:
+        title: '選択中の地域'
+        province: '地方・エリア'
+        district: '地区'
+        sub_district: '分区'
+        no_select: '選択なし'

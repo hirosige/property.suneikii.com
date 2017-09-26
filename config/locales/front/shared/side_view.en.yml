@@ -1,0 +1,12 @@
+en:
+  front:
+    side_view:
+      search:
+        title: 'Search Conditions'
+
+      area_plane:
+        title: 'Current Area Select'
+        province: 'Province'
+        district: 'District'
+        sub_district: 'Sub District'
+        no_select: 'No Select'

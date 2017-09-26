@@ -12,3 +12,8 @@ ja:
         btn_sign_in: 'ログイン'
         recent: '最近見た物件'
         favorites: 'お気に入り'
+        mypage: 'マイページ'
+        edit_profile: '登録情報の変更'
+        sign_out: 'ログアウト'
+        to_admin: '%{site_name} 管理画面'
+        clear_session: 'セッションクリア'

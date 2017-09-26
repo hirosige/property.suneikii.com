@@ -37,7 +37,8 @@ class Front::ApartmentsController < FrontController
   end
 
   def show
-    add_breadcrumb "#{@apartment.name}の詳細情報", apartment_path(@apartment.id)
+    add_breadcrumb t('front.apartments.show.breadcrumb', :apartment_name => @apartment.name),
+                   apartment_path(@apartment.id)
 
     track_visit_into_session
 

@@ -9,7 +9,7 @@
       <div class="main-title__base">
         <div class="main-title--left">
           <div class="main-title__caption">
-            <%= params[:province].split('-').map(&:capitalize).join(' ') unless params[:province].nil? %>の物件一覧
+            <%= t('front.apartments.main_plane.title', :province => @params_service.visualize(params[:province])) %>
           </div>
         </div>
         <div class="main-title--right">

@@ -52,7 +52,7 @@ module ApplicationHelper
     out_html_data = ''.html_safe
     out_html_data << '<h5>'.html_safe
     out_html_data << '  <span class="label label-default">'.html_safe
-    out_html_data << "  #{list_data.total_count}件".html_safe
+    out_html_data << "  #{list_data.total_count} results".html_safe
     out_html_data << '  </span>&nbsp;'.html_safe
     out_html_data << "  #{list_data.current_page} / #{list_data.total_pages}<br>".html_safe
     out_html_data << '</h5>'.html_safe

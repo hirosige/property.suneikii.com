@@ -1,39 +1,39 @@
 <div class="explanation-search">
-  検索条件の設定・変更
+  <%= t('front.side_view.search.title') %>
 </div>
 
 <div class="sideplane__base">
   <div class="sideplane-title">
     <div class="sideplane-title__caption">
-      <i class="fa fa-search"></i> 選択中の地域
+      <i class="fa fa-search"></i> <%= t('front.side_view.area_plane.title') %>
     </div>
   </div>
   <div class="sideplane__body">
     <div class="sideplane__body-item">
-      Province
+      <%= t('front.side_view.area_plane.province') %>
       <div class="sideplane__body-data">
         <% if @province.nil? %>
-            選択なし
+            <%= t('front.side_view.area_plane.no_select') %>
         <% else %>
             <%= @province.name_ja %>
         <% end %>
       </div>
     </div>
     <div class="sideplane__body-item">
-      District
+      <%= t('front.side_view.area_plane.district') %>
       <div class="sideplane__body-data">
         <% if @district.nil? %>
-            選択なし
+            <%= t('front.side_view.area_plane.no_select') %>
         <% else %>
             <%= @district.name_ja %>
         <% end %>
       </div>
     </div>
     <div class="sideplane__body-item">
-      Sub District
+      <%= t('front.side_view.area_plane.sub_district') %>
       <div class="sideplane__body-data">
         <% if @sub_district.nil? %>
-            選択なし
+            <%= t('front.side_view.area_plane.no_select') %>
         <% else %>
             <%= @sub_district.name_ja %>
         <% end %>
