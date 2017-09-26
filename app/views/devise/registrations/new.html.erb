@@ -3,7 +3,7 @@
 <div class="container">
   <div class="sign-up-title__base">
     <div class="sign-up-title__caption">
-      アカウント作成
+      <%= t('front.sessions.sign_up.title') %>
     </div>
   </div>
 
@@ -12,37 +12,33 @@
         <%= devise_error_messages! %>
 
         <fieldset class="form-group sign-up-main__item--width">
-          <label for="email">Name</label>
-          <%= f.text_field :name, :class => 'form-control' ,:placeholder => 'Enter Name', autofocus: true %>
+          <label for="email"><%= t('front.sessions.sign_up.items.field.name') %></label>
+          <%= f.text_field :name, :class => 'form-control' ,:placeholder => t('front.sessions.sign_up.items.placeholder.name'), autofocus: true %>
         </fieldset>
 
         <fieldset class="form-group">
-          <label for="email">Email address</label>
-          <%= f.email_field :email, :class => 'form-control' ,:placeholder => 'Enter Email', autofocus: true %>
+          <label for="email"><%= t('front.sessions.sign_up.items.field.email') %></label>
+          <%= f.email_field :email, :class => 'form-control' ,:placeholder => t('front.sessions.sign_up.items.placeholder.email'), autofocus: true %>
         </fieldset>
 
         <fieldset class="form-group">
-          <label for="password">Password</label>
+          <label for="password"><%= t('front.sessions.sign_up.items.field.password') %></label>
           <% if @minimum_password_length %>
-              <em>(<%= @minimum_password_length %> characters minimum)</em>
+              <em><%= t('front.sessions.sign_up.message', :max => @minimum_password_length) %></em>
           <% end %><br />
-          <%= f.password_field :password, :class => 'form-control' ,:placeholder => 'Enter your Password', autofocus: true, autocomplete: "off" %>
+          <%= f.password_field :password, :class => 'form-control' ,:placeholder => t('front.sessions.sign_up.items.placeholder.password'), autofocus: true, autocomplete: "off" %>
         </fieldset>
 
         <fieldset class="form-group">
-          <label for="password_confirmation">Password Confirmation</label>
-          <%= f.password_field :password_confirmation, :class => 'form-control' ,:placeholder => 'Enter Password again', autofocus: true, autocomplete: "off" %>
+          <label for="password_confirmation"><%= t('front.sessions.sign_up.items.field.password_confirmation') %></label>
+          <% if @minimum_password_length %>
+              <em><%= t('front.sessions.sign_up.message', :max => @minimum_password_length) %></em>
+          <% end %><br />
+          <%= f.password_field :password_confirmation, :class => 'form-control' ,:placeholder => t('front.sessions.sign_up.items.placeholder.password_confirmation'), autofocus: true, autocomplete: "off" %>
         </fieldset>
-
-        <% unless Role.all.size == 0 %>
-          <fieldset class="form-group">
-            <label for="ingredient">ユーザ権限</label>
-            <%= f.collection_select :role_id, Role.all, :id, :name, {}, {:class => 'form-control'} %>
-          </fieldset>
-        <% end %>
 
         <div class="actions">
-          <%= f.submit "Sign up", :class => 'sign-up-main__btn' %>
+          <%= f.submit t('front.sessions.sign_up.button'), :class => 'sign-up-main__btn' %>
         </div>
     <% end %>
 

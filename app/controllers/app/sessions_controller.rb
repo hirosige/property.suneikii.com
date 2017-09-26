@@ -2,11 +2,11 @@ class App::SessionsController < Devise::SessionsController
 # before_filter :configure_sign_in_params, only: [:create]
   layout "properties_layout"
 
-  add_breadcrumb 'SNK Property Home', :root_path
+  add_breadcrumb "#{Settings.site[:name]} Home", :root_path
 
   # GET /resource/sign_in
   def new
-    add_breadcrumb 'ログイン'
+    add_breadcrumb t('front.sessions.login.title')
 
     super
   end

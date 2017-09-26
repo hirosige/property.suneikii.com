@@ -1,7 +1,7 @@
 class App::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   layout "properties_layout"
 
-  add_breadcrumb 'SNK Property Home', :root_path
+  add_breadcrumb "#{Settings.site[:name]} Home", :root_path
 
   def github
     callback_from :github
@@ -44,13 +44,13 @@ class App::OmniauthCallbacksController < Devise::OmniauthCallbacksController
         redirect_to new_user_registration_url
       end
     else
-      flash[:success] = 'もう少しで登録完了です'
+      flash[:success] = t('front.sessions.omni_auth.flash.almost_complete')
       redirect_to user_input_path, :id => 'hello'
     end
   end
 
   def input
-    add_breadcrumb '名前入力'
+    add_breadcrumb t('front.sessions.omni_auth.input_name.title')
   end
 
   def complete

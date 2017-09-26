@@ -1,7 +1,7 @@
 <div class="container">
   <div class="forget-password-title__base">
     <div class="forget-password-title__caption">
-      確認メール再送
+      <%= t('front.sessions.confirmation.title') %>
     </div>
   </div>
 
@@ -12,11 +12,11 @@
 
           <fieldset class="form-group forget-password-top__width">
             <%= f.label :email %><br />
-            <%= f.email_field :email, :class => 'form-control' ,:placeholder => 'Enter email', autofocus: true, value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email)%>
+            <%= f.email_field :email, :class => 'form-control' ,:placeholder => t('front.sessions.confirmation.items.placeholder.email'), autofocus: true, value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email)%>
           </fieldset>
 
           <div class="forget-password-top__submit">
-            <%= f.submit "確認メール送信", :class => 'btn btn-default submit' %>
+            <%= f.submit t('front.sessions.confirmation.button'), :class => 'btn btn-default submit' %>
           </div>
       <% end %>
 

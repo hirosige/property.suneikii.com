@@ -3,29 +3,29 @@ class Front::UsersController < FrontController
   before_action :set_user, only: [:profile, :edit, :update, :update_profile, :name, :address, :email]
 
   def profile
-    add_breadcrumb "マイページ"
+    add_breadcrumb t('front.sessions.my_page.title')
   end
 
   def edit
-    add_breadcrumb "登録情報変更"
+    add_breadcrumb t('front.sessions.edit_profile.title')
   end
 
   def name
-    add_breadcrumb "氏名変更"
+    add_breadcrumb t('front.sessions.edit_name.title')
   end
 
   def address
-    add_breadcrumb "住所情報変更"
+    add_breadcrumb t('front.sessions.edit_address.title')
   end
 
   def email
-    add_breadcrumb "配信用メールアドレス変更"
+    add_breadcrumb t('front.sessions.edit_email.title')
   end
 
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to user_edit_path, flash: { :success => "#{@user.name}を更新しました。" } }
+        format.html { redirect_to user_edit_path, flash: { :success => t('front.sessions.flash.update', :user_name => @user.name) } }
       else
         format.html { render :edit }
       end
@@ -40,7 +40,7 @@ class Front::UsersController < FrontController
       @user.profile.reciever_email = params[:user][:profile][:reciever_email] unless params[:user][:profile][:reciever_email].nil?
 
       if @user.save
-        format.html { redirect_to user_edit_path, flash: { :success => "#{@user.name}を更新しました。" } }
+        format.html { redirect_to user_edit_path, flash: { :success => t('front.sessions.flash.update_profile', :user_name => @user.name) } }
       else
         format.html { render :edit }
       end
@@ -51,7 +51,7 @@ class Front::UsersController < FrontController
     if Rails.env.development?
 
       session[:apartments_session_list] = []
-      redirect_to user_profile_path, flash: { :success => "セッションをクリアしました。" }
+      redirect_to user_profile_path, flash: { :success => t('front.sessions.flash.clear_session') }
     end
 
   end

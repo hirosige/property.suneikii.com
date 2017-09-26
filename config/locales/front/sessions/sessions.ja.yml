@@ -1,0 +1,89 @@
+ja:
+  front:
+    sessions:
+      login:
+        title: 'ログイン画面'
+        header_title: 'ログインフォーム'
+        button: 'ログイン'
+        placeholder:
+          email: 'Eメール入力'
+          password: 'パスワード入力'
+      logout:
+        title: 'ログアウト'
+        description: 'ログアウトしました。'
+      sign_up:
+        title: 'アカウント作成'
+        button: 'サインアップ'
+        items:
+          field:
+            name: '氏名'
+            email: 'Eメール'
+            password: 'パスワード'
+            password_confirmation: 'パスワード確認'
+          placeholder:
+            name: '氏名入力'
+            email: 'Eメール入力'
+            password: 'パスワード入力'
+            password_confirmation: 'パスワード確認入力'
+        message: '(%{max}以上で入力してください)'
+      confirmation:
+        title: '確認メールが届かない'
+        button: '確認メール送信'
+        items:
+          placeholder:
+            email: 'Eメール入力'
+      omni_auth:
+        input_name:
+          title: '名前入力'
+          button: '送信'
+          items:
+            filed:
+              name: '氏名を入力してください'
+            placeholder:
+              name: '氏名入力'
+        flash:
+          almost_complete: 'もう少しで登録完了です'
+      forget_password:
+        title: 'パスワードを忘れた'
+        button: '送信'
+        items:
+          placeholder:
+            email: 'Eメール入力'
+      registrations:
+        title: 'アカウント作成'
+      shared:
+        links:
+          login: 'ログイン'
+          sign_up: 'サインアップ'
+          forget_pass: 'パスワードを忘れた'
+          confirm_again: '確認メールが届かない'
+          unlock_again: 'ロック解除メールが届かない'
+        provider_link:
+          message: '%{provider}でログインする'
+      watched:
+        title: '最近見た物件リスト'
+      my_page:
+        title: 'マイページ'
+      edit_profile:
+        title: '登録情報変更'
+        items:
+          filed:
+            name: 'ユーザー名'
+            address: '住所'
+            email: '配信用メールアドレス'
+            delete: '登録情報の削除'
+          button:
+            name: '変更する'
+            address: '変更する'
+            email: '変更する'
+            delete: '削除する'
+      edit_name:
+        title: '氏名変更'
+      edit_address:
+        title: '住所情報変更'
+      edit_email:
+        title: '配信用メールアドレス'
+      flash:
+        update: '%{user_name}さんの情報を更新しました'
+        update_profile: '%{user_name}さんのプロフィール情報を更新しました'
+        clear_session: '%{user_name}さんのセッションをクリアしました'

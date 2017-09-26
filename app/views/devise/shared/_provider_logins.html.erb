@@ -3,7 +3,7 @@
         <% omniauth_url = omniauth_authorize_path(resource_name, provider) %>
 
         <a href="<%= omniauth_url %>" class="btn btn-block btn-social btn-<%= provider %>">
-          <span class="fa fa-<%= provider %>"></span> Sign in with <%= "#{OmniAuth::Utils.camelize(provider)}" %>
+          <span class="fa fa-<%= provider %>"></span> <%= t('front.sessions.shared.provider_link.message', :provider => OmniAuth::Utils.camelize(provider)) %>
         </a>
     <% end -%>
 <% end -%>

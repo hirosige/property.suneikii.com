@@ -1,0 +1,89 @@
+en:
+  front:
+    sessions:
+      login:
+        title: 'Sign-In Page'
+        header_title: 'Sign-In Form'
+        button: 'Sign In'
+        placeholder:
+          email: 'Enter Email'
+          password: 'Enter Password'
+      logout:
+        title: 'Sign Out'
+        description: 'You Signed Out'
+      sign_up:
+        title: 'Sign Up'
+        button: 'Send'
+        items:
+          field:
+            name: 'Name'
+            email: 'Email'
+            password: 'Password'
+            password_confirmation: 'Password Confirmation'
+          placeholder:
+            name: 'Enter Name'
+            email: 'Enter Email'
+            password: 'Enter Password'
+            password_confirmation: 'Enter Password Confirmation'
+        message: '(%{max} characters minimum)'
+      confirmation:
+        title: 'Didnt get confirmation?'
+        button: 'Submit'
+        items:
+          placeholder:
+            email: 'Enter Email'
+      omni_auth:
+        input_name:
+          title: 'Input Name'
+          button: 'Submit'
+          items:
+            filed:
+              name: 'Please input your name'
+            placeholder:
+              name: 'Enter Name'
+        flash:
+          almost_complete: 'Be patient, Almost complete'
+      forget_password:
+        title: 'Forget your password'
+        button: 'Submit'
+        items:
+          placeholder:
+            email: 'Enter Email'
+      registrations:
+        title: 'Sign Up'
+      shared:
+        links:
+          login: 'Sign In'
+          sign_up: 'Sign Up'
+          forget_pass: 'Forget your password?'
+          confirm_again: "Didn't receive confirmation instructions?"
+          unlock_again: "Didn't receive unlock instructions?"
+        provider_link:
+          message: 'Sign in with %{provider}'
+      watched:
+        title: 'Watched List'
+      my_page:
+        title: 'My Page'
+      edit_profile:
+        title: 'Edit Profile'
+        items:
+          filed:
+            name: 'Name'
+            address: 'Address'
+            email: 'Email'
+            delete: 'Delete User'
+          button:
+            name: 'Edit'
+            address: 'Edit'
+            email: 'Edit'
+            delete: 'Delete'
+      edit_name:
+        title: 'Edit Name'
+      edit_address:
+        title: 'Edit Address'
+      edit_email:
+        title: 'Edit Email'
+      flash:
+        update: 'Mr %{user_name}, Your information have been updated'
+        update_profile: 'Mr %{user_name}, Your profile have been updated'
+        clear_session: 'Your session have been removed'

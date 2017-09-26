@@ -1,7 +1,7 @@
 <div class="container">
   <div class="input-name-title__base">
     <div class="input-name-title__caption">
-      ユーザ名入力
+      <%= t('front.sessions.omni_auth.input_name.title') %>
     </div>
   </div>
 
@@ -9,12 +9,12 @@
     <div class="input-name-top__left">
       <%= form_tag('/user/complete', :method => :post) do %>
           <fieldset class="form-group input-name-top__width">
-            <%= label_tag 'Please input your name' %>
-            <%= text_field_tag 'user[name]', '', :class => 'form-control' ,:placeholder => 'Enter Name' %>
+            <%= label_tag t('front.sessions.omni_auth.input_name.items.filed.name') %>
+            <%= text_field_tag 'user[name]', '', :class => 'form-control' ,:placeholder => t('front.sessions.omni_auth.input_name.items.placeholder.name') %>
           </fieldset>
 
           <div class="input-name-top__submit">
-            <%= submit_tag '送信', :class => 'btn btn-primary' %>
+            <%= submit_tag t('front.sessions.omni_auth.input_name.button'), :class => 'btn btn-primary' %>
           </div>
       <% end %>
     </div>

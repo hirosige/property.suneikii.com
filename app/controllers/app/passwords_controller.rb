@@ -1,11 +1,11 @@
 class App::PasswordsController < Devise::PasswordsController
   layout "properties_layout"
 
-  add_breadcrumb 'SNK Property Home', :root_path
+  add_breadcrumb "#{Settings.site[:name]} Home", :root_path
 
   # GET /resource/password/new
   def new
-    add_breadcrumb 'パスワードリセット'
+    add_breadcrumb t('front.sessions.forget_password.title')
 
     super
   end
