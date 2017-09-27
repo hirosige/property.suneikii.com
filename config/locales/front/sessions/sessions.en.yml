@@ -79,10 +79,55 @@ en:
             delete: 'Delete'
       edit_name:
         title: 'Edit Name'
+        button: 'Update'
       edit_address:
         title: 'Edit Address'
+        button: 'Update'
       edit_email:
         title: 'Edit Email'
+        button: 'Update'
+      watched_list:
+        title: 'Watched List'
+        items:
+          image: 'Image'
+          rent_fee: 'Rent Fee'
+          utility_fee: 'Utility Fee'
+          security_deposit: 'Security Deposit'
+          deposit: 'Deposit'
+          transportation: 'Transportation'
+          address: 'Address'
+          room_type: 'Room Type'
+          space: 'Space'
+          made_of: 'Made Of'
+          floors: 'Floors'
+          since_when: 'Since When'
+          light_on: 'Light On'
+        buttons:
+          favorite: 'Add to favorite'
+          detail: 'Detail'
+        message:
+          no_data: 'No Data'
+      favorite:
+        title: 'Favorites'
+        items:
+          image: 'Image'
+          rent_fee: 'Rent Fee'
+          utility_fee: 'Utility Fee'
+          security_deposit: 'Security Deposit'
+          deposit: 'Deposit'
+          transportation: 'Transportation'
+          address: 'Address'
+          room_type: 'Room Type'
+          space: 'Space'
+          made_of: 'Made Of'
+          floors: 'Floors'
+          since_when: 'Since When'
+          light_on: 'Light On'
+        buttons:
+          favorite: 'Add to favorite'
+          detail: 'Detail'
+        message:
+          no_data: 'No Data'
       flash:
         update: 'Mr %{user_name}, Your information have been updated'
         update_profile: 'Mr %{user_name}, Your profile have been updated'

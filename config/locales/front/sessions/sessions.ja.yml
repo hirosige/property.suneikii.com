@@ -79,10 +79,55 @@ ja:
             delete: '削除する'
       edit_name:
         title: '氏名変更'
+        button: '更新'
       edit_address:
         title: '住所情報変更'
+        button: '更新'
       edit_email:
         title: '配信用メールアドレス'
+        button: '更新'
+      watched_list:
+        title: 'ウォッチリスト'
+        items:
+          image: '画像'
+          rent_fee: '賃料'
+          utility_fee: '管理費等'
+          security_deposit: '敷金/礼金'
+          deposit: '保証/償却・敷引'
+          transportation: '交通'
+          address: '所在地'
+          room_type: '間取り'
+          space: '占有面積'
+          made_of: '構造'
+          floors: '所在階/階数'
+          since_when: '築年数'
+          light_on: '主要採光面'
+        buttons:
+          favorite: 'お気に入りに追加'
+          detail: '詳細を見る'
+        message:
+          no_data: 'データがありません'
+      favorite:
+        title: 'お気に入りリスト'
+        items:
+          image: '画像'
+          rent_fee: '賃料'
+          utility_fee: '管理費等'
+          security_deposit: '敷金/礼金'
+          deposit: '保証/償却・敷引'
+          transportation: '交通'
+          address: '所在地'
+          room_type: '間取り'
+          space: '占有面積'
+          made_of: '構造'
+          floors: '所在階/階数'
+          since_when: '築年数'
+          light_on: '主要採光面'
+        buttons:
+          favorite: 'お気に入りに追加'
+          detail: '詳細を見る'
+        message:
+          no_data: 'データがありません'
       flash:
         update: '%{user_name}さんの情報を更新しました'
         update_profile: '%{user_name}さんのプロフィール情報を更新しました'

@@ -8,46 +8,46 @@
   <div class="favorites-top__base">
     <div class="favorites-top__left">
       <% if @favorites.blank? %>
-          No Data
+          <%= t('front.sessions.favorite.title') %>
       <% else %>
           <%= render 'pagination' %>
 
         <table class="table table-hover table-condensed table-bordered favorites-top__tbl">
           <thead>
           <tr>
-            <th class="favorites-top__tbl-col1">画像</th>
-            <th>賃料<br>管理費等</th>
-            <th>敷金/礼金<br>保証/償却・敷引</th>
-            <th>交通<br>所在地</th>
-            <th>間取り<br>占有面積</th>
-            <th>構造<br>所在階/階数</th>
-            <th>築年数<br>主要採光面</th>
+            <th class="favorites-top__tbl-col1"><%= t('front.sessions.watched_list.items.image') %></th>
+            <th><%= t('front.sessions.watched_list.items.rent_fee') %><br><%= t('front.sessions.watched_list.items.utility_fee') %></th>
+            <th><%= t('front.sessions.watched_list.items.security_deposit') %><br><%= t('front.sessions.watched_list.items.deposit') %></th>
+            <th><%= t('front.sessions.watched_list.items.transportation') %><br><%= t('front.sessions.watched_list.items.address') %></th>
+            <th><%= t('front.sessions.watched_list.items.room_type') %><br><%= t('front.sessions.watched_list.items.space') %></th>
+            <th><%= t('front.sessions.watched_list.items.made_of') %><br><%= t('front.sessions.watched_list.items.floors') %></th>
+            <th><%= t('front.sessions.watched_list.items.since_when') %><br><%= t('front.sessions.watched_list.items.light_on') %></th>
           </tr>
           </thead>
           <tbody>
           <% @favorites.each do |favorite| %>
-            <% property = favorite.apartment if favorite.apartment? %>
+            <% property = favorite.apartment.decorate if favorite.apartment? %>
               <tr>
                 <td rowspan="3"><%= image_tag("no_image.rf", :class => 'photo-thumnail') %></td>
                 <td colspan="6" class="favorites-top__tbl-col-name">
-                  <span class="favorites-top__tbl-col-category">アパート</span>
+                  <span class="favorites-top__tbl-col-category"><%= property.category %></span>
                   <a href="<%= apartment_path(property.id) %>"><%= property.name %></a>
-                  <span class="favorites-top__tbl-col-status">即入可</span>
+                  <span class="favorites-top__tbl-col-status"><%= property.info.availability %></span>
                 </td>
               </tr>
               <tr>
-                <td>2.6万円<br>4,000円</td>
-                <td>無 / 無<br>- / -</td>
-                <td>ＪＲ東海道・山陽本線 山科駅 徒歩15分<br>京都府京都市山科区厨子奥矢倉町25-5</td>
-                <td>1K<br>20m²</td>
-                <td>鉄骨造<br>1階 / 3階建</td>
-                <td>27年<br>南</td>
+                <td><%= property.delimited_rent_fee %> Baht<br><%= property.delimited_utility_fee %> Baht</td>
+                <td><%= property.delimited_security_deposit %> Baht<br><%= property.delimited_deposit %> Baht</td>
+                <td width="400px"><%= property.transportation %><br><%= property.address %></td>
+                <td><%= property.room_type_id %><br><%= property.unit_space %></td>
+                <td><%= property.info.made_of %><br><%= property.info.floors %></td>
+                <td><%= property.formatted_since_when %><br>南</td>
               </tr>
               <tr>
                 <td colspan="6">
                   <div class="favorites-top__tbl-btns">
                     <button class="btn btn-primary favorites-top__tbl-btn" onclick='location.href="<%= apartment_path(property.id) %>"'>
-                      詳細を見る <i class="fa fa-arrow-circle-o-right"></i>
+                      <%= t('front.sessions.watched_list.buttons.detail') %> <i class="fa fa-arrow-circle-o-right"></i>
                     </button>
                   </div>
 

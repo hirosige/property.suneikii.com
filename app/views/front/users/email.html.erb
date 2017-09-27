@@ -1,7 +1,7 @@
 <div class="container">
   <div class="user-edit-title__base">
     <div class="user-edit-title__caption">
-      配信用メールアドレス変更
+      <%= t('front.sessions.edit_email.title') %>
     </div>
   </div>
 
@@ -15,7 +15,7 @@
           </div>
 
           <div class="actions">
-            <%= submit_tag "Update", :class => 'form-control' %>
+            <%= submit_tag t('front.sessions.edit_email.button'), :class => 'form-control' %>
           </div>
       <% end %>
 

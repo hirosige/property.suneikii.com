@@ -1,13 +1,12 @@
 
 <div class="container">
   <div class="well">
-    <p class="error-404__title"><i class="fa fa-exclamation-triangle "></i> ページがみつかりません</p>
+    <p class="error-404__title"><i class="fa fa-exclamation-triangle "></i> <%= t('front.errors.error_404.title') %></p>
 
-    <p><%= Settings.site[:name] %>をご利用いただきましてありがとうございます。</p>
+    <p><%= simple_format(t('front.errors.error_404.greeting', :site_name => Settings.site[:name])) %></p>
 
     <p>
-      誠に恐れ入りますが、お客様がアクセスしようとしたページがみつかりませんでした。<br>
-      すでに削除されたか、アドレスが間違っている可能性がございます。
+      <%= simple_format(t('front.errors.error_404.body')) %>
     </p>
   </div>
 </div>

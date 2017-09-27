@@ -1,7 +1,7 @@
 <div class="container">
   <div class="user-edit-title__base">
     <div class="user-edit-title__caption">
-      住所情報変更
+      <%= t('front.sessions.edit_address.title') %>
     </div>
   </div>
 
@@ -20,7 +20,7 @@
           </div>
 
           <div class="actions">
-            <%= submit_tag "Update", :class => 'form-control' %>
+            <%= submit_tag t('front.sessions.edit_address.button'), :class => 'form-control' %>
           </div>
       <% end %>
 

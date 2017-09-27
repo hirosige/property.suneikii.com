@@ -1,0 +1,15 @@
+en:
+  front:
+    errors:
+      error_401:
+        title: 'Your are not Authorized'
+        greeting: 'Thank you for using %{site_name}.'
+        body: |-
+         You're not authorized to this page, sorry for inconvenience.
+         If you want to access admin page, please contact system administrator.
+      error_404:
+        title: 'Page Not Found'
+        greeting: 'Thank you for using %{site_name}.'
+        body: |-
+         The page you access is not found, sorry for inconvenience.
+         It might be deleted or please check URL again.

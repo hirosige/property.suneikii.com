@@ -33,13 +33,13 @@ class ApplicationController < ActionController::Base
   end
 
   def render_401
-    add_breadcrumb "このページにアクセスする権限がありません。 | #{Settings.site[:name]}"
+    add_breadcrumb "#{t('front.errors.error_401.title')} | #{Settings.site[:name]}"
 
     render template: 'errors/error_401', status: 401, layout: 'error', content_type: 'text/html'
   end
 
   def render_404
-    add_breadcrumb "ページが見つかりません。 | #{Settings.site[:name]}"
+    add_breadcrumb "#{t('front.errors.error_404.title')} | #{Settings.site[:name]}"
 
     render template: 'errors/error_404', status: 404, layout: 'error', content_type: 'text/html'
   end
