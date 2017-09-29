@@ -43,4 +43,8 @@ class Front::ApartmentDecorator < Draper::Decorator
     format_date(self.since_when)
   end
 
+  def unit_floors
+    "#{self.info.floors}階"
+  end
+
 end

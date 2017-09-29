@@ -41,6 +41,7 @@ class Apartment < ActiveRecord::Base
   belongs_to :subdistrict
 
   belongs_to :provider
+  belongs_to :room_type
 
   accepts_nested_attributes_for :apartment_info
   accepts_nested_attributes_for :apartment_option_installations, allow_destroy: true

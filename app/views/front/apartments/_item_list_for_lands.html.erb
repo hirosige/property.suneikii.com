@@ -17,24 +17,20 @@
           <table class="mainplane__table">
             <tbody>
             <tr>
-              <th style="width: 200px;">
+              <th>
+                <%= t('front.apartments.main_plane.items.transportation') %>/ <br>
                 <%= t('front.apartments.main_plane.items.address') %>
               </th>
-              <td>
+              <td colspan="3">
+                <%= apartment.transportation %><br>
                 <%= apartment.address %>
               </td>
             </tr>
             <tr>
-              <th>
-                <%= t('front.apartments.main_plane.items.transportation') %>
-              </th>
-              <td>
-                <%= apartment.transportation %>
-              </td>
-            </tr>
-            <tr>
-              <th><%= t('front.apartments.main_plane.items.since_when_floors') %></th>
-              <td><%= apartment.formatted_since_when %> / <%= apartment.unit_floors %></td>
+              <th><%= t('front.apartments.main_plane.items.availability') %></th>
+              <td><%= apartment.apartment_info.availability %></td>
+              <th><%= t('front.apartments.main_plane.items.conditions') %></th>
+              <td><%= apartment.apartment_info.conditions %></td>
             </tr>
             </tbody>
           </table>
@@ -49,24 +45,22 @@
         </div>
         <table class="mainplane__sub-info__table">
           <thead>
-          <th sytle="width: 50px;"><%= t('front.apartments.main_plane.items.floor') %></th>
           <th><%= t('front.apartments.main_plane.items.price') %></th>
-          <th><%= t('front.apartments.main_plane.items.utility_fee') %></th>
-          <th><%= t('front.apartments.main_plane.items.deposits') %></th>
-          <th><%= t('front.apartments.main_plane.items.room_type') %></th>
           <th><%= t('front.apartments.main_plane.items.space') %></th>
+          <th><%= t('front.apartments.main_plane.items.unit_price') %></th>
+          <th><%= t('front.apartments.main_plane.items.building_coverage_rate') %></th>
+          <th><%= t('front.apartments.main_plane.items.image') %></th>
           <% if user_signed_in? %>
               <th><%= t('front.apartments.main_plane.items.favorite.caption') %></th>
           <% end %>
           <th><%= t('front.apartments.main_plane.items.detail') %></th>
           </thead>
           <tbody>
-          <td>2階</td>
-          <td class="price"><%= apartment.delimited_rent_fee %> Baht</td>
-          <td><%= apartment.delimited_utility_fee %> Baht</td>
-          <td><%= apartment.delimited_deposit %> Baht</td>
-          <td><%= apartment.room_type_id %></td>
-          <td><%= apartment.unit_space %></td>
+          <td class="price"><%= apartment.rent_fee %> Baht</td>
+          <td><%= apartment.space %></td>
+          <td>66.39坪（15万円）</td>
+          <td>60% / 200%</td>
+          <td>6枚</td>
           <% if user_signed_in? %>
               <td id="favorite_apartment_<%= apartment.id %>">
                 <% if Favorite.where(user_id: current_user, apartment_id: apartment.id).size > 0 %>

@@ -76,4 +76,8 @@ class ApartmentDecorator < Draper::Decorator
   def formatted_since_when
     format_date(self.since_when)
   end
+
+  def unit_floors
+    "#{self.info.floors}階"
+  end
 end
