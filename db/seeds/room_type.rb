@@ -1,26 +1,49 @@
 RoomType.destroy_all
 
 RoomType.create(
-    name: 'name'
+    name: '1R'
 )
 
 RoomType.create(
-    original_id: 'th',
-    name_ja: 'タイ',
-    name_th: 'ประเทศไทย',
-    name_en: 'Thailand'
+    name: '1K'
 )
 
 RoomType.create(
-    original_id: 'us',
-    name_ja: 'アメリカ',
-    name_th: 'สหรัฐอเมริกา',
-    name_en: 'United States'
+    name: '1DK'
 )
 
 RoomType.create(
-    original_id: 'cn',
-    name_ja: '中国',
-    name_th: 'ประเทศจีน',
-    name_en: 'China'
+    name: '1LDK'
+)
+
+RoomType.create(
+    name: '2K/2DK'
+)
+
+RoomType.create(
+    name: '2LDK'
+)
+
+RoomType.create(
+    name: '3K/3DK'
+)
+
+RoomType.create(
+    name: '3LDK'
+)
+
+RoomType.create(
+    name: '4K/4DK'
+)
+
+RoomType.create(
+    name: '4LDK'
+)
+
+RoomType.create(
+    name: '5K/5DK'
+)
+
+RoomType.create(
+    name: '5LDK'
 )

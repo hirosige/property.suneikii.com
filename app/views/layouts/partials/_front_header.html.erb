@@ -90,7 +90,11 @@
         <% if params[:province].nil? %>
               <%= t('front.header.category.caption', :name => params[:controller].split('/')[1].capitalize) %>
         <% else %>
-              <%= @params_service.visualize(params[:province]) unless params[:province].nil? %>の<%= params[:controller].split('/')[1].capitalize %>
+              <%= t('front.header.category.breadcrumb',
+                    :category => params[:controller].split('/')[1].capitalize,
+                    :province => @params_service.visualize(params[:province])
+                  )
+              %>
         <% end %>
 
         <%= t('front.header.sub_description') %>

@@ -69,7 +69,8 @@ class Front::ApartmentsController < FrontController
     @apartments = Front::ApartmentDecorator.decorate_collection(
         Apartment.published
             .includes(
-                :apartment_info
+                :apartment_info,
+                :room_type
             ).where(
             search_condition
         ).page(params[:page])

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170928154229) do
+ActiveRecord::Schema.define(version: 20170930152046) do
 
   create_table "accessories", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -43,6 +43,25 @@ ActiveRecord::Schema.define(version: 20170928154229) do
     t.integer  "apartment_id",         limit: 4
     t.datetime "created_at",                                                   null: false
     t.datetime "updated_at",                                                   null: false
+    t.integer  "floor",                limit: 4
+    t.integer  "brandnew",             limit: 4
+    t.integer  "more_than_2floors",    limit: 4
+    t.integer  "light_on_south",       limit: 4
+    t.integer  "parkinglot",           limit: 4
+    t.integer  "auto_lock",            limit: 4
+    t.integer  "air_con",              limit: 4
+    t.integer  "separate_bath_toilet", limit: 4
+    t.integer  "reheating",            limit: 4
+    t.integer  "wooden_floor",         limit: 4
+    t.integer  "pet",                  limit: 4
+    t.integer  "number_of_rooms",      limit: 4
+    t.string   "house_insurance",      limit: 255
+    t.string   "deal_way",             limit: 255
+    t.text     "kitchen_bath",         limit: 65535
+    t.text     "services",             limit: 65535
+    t.text     "etc",                  limit: 65535
+    t.integer  "balcony_space",        limit: 4
+    t.string   "light_direction",      limit: 255
   end
 
   create_table "apartment_option_installations", force: :cascade do |t|
@@ -76,27 +95,28 @@ ActiveRecord::Schema.define(version: 20170928154229) do
   add_index "apartment_thumbnails", ["apartment_id"], name: "index_apartment_thumbnails_on_apartment_id", using: :btree
 
   create_table "apartments", force: :cascade do |t|
-    t.string   "name",             limit: 255
-    t.integer  "rent_fee",         limit: 4
-    t.integer  "security_deposit", limit: 4
-    t.integer  "deposit",          limit: 4
-    t.text     "transportation",   limit: 65535
-    t.integer  "utility_fee",      limit: 4
-    t.integer  "key_money",        limit: 4
-    t.text     "address",          limit: 65535
+    t.string   "name",              limit: 255
+    t.integer  "rent_fee",          limit: 4
+    t.integer  "security_deposit",  limit: 4
+    t.integer  "deposit",           limit: 4
+    t.text     "transportation",    limit: 65535
+    t.integer  "utility_fee",       limit: 4
+    t.integer  "key_money",         limit: 4
+    t.text     "address",           limit: 65535
     t.date     "since_when"
-    t.integer  "room_type_id",     limit: 4
-    t.string   "space",            limit: 255
-    t.string   "photo",            limit: 255
-    t.text     "recommendations",  limit: 65535
-    t.string   "status",           limit: 255
-    t.integer  "provider_id",      limit: 4
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
-    t.integer  "country_id",       limit: 4
-    t.integer  "province_id",      limit: 4
-    t.integer  "district_id",      limit: 4
-    t.integer  "subdistrict_id",   limit: 4
+    t.integer  "room_type_id",      limit: 4
+    t.string   "space",             limit: 255
+    t.string   "photo",             limit: 255
+    t.text     "recommendations",   limit: 65535
+    t.string   "status",            limit: 255
+    t.integer  "provider_id",       limit: 4
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.integer  "country_id",        limit: 4
+    t.integer  "province_id",       limit: 4
+    t.integer  "district_id",       limit: 4
+    t.integer  "subdistrict_id",    limit: 4
+    t.integer  "surety_company_id", limit: 4
   end
 
   create_table "business_partners", force: :cascade do |t|

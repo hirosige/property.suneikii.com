@@ -5,6 +5,7 @@ en:
       sub_description: 'Property list page. select the area where you look for a property'
       category:
         caption: 'Search for %{name}.'
+        breadcrumb: 'Search %{category} in %{province}.'
       lang:
         caption: 'Select Lang'
         button: ''

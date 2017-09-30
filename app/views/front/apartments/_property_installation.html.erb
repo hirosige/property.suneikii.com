@@ -8,40 +8,55 @@
       <th><%= t('front.apartments.property_installation.installations.title') %></th>
       <td>
         <div class="detailed-info__installations-boxes">
-          <div class="detailed-info__installations-box--inactive"><%= t('front.apartments.property_installation.installations.brandnew') %></div>
-          <div class="detailed-info__installations-box--active"><%= t('front.apartments.property_installation.installations.more_than_2floors') %></div>
-          <div class="detailed-info__installations-box--active"><%= t('front.apartments.property_installation.installations.light_on_south') %></div>
-          <div class="detailed-info__installations-box--inactive"><%= t('front.apartments.property_installation.installations.parkinglot') %></div>
-          <div class="detailed-info__installations-box--inactive"><%= t('front.apartments.property_installation.installations.auto_lock') %></div>
-          <div class="detailed-info__installations-box--active"><%= t('front.apartments.property_installation.installations.air_con') %></div>
-          <div class="detailed-info__installations-box--active"><%= t('front.apartments.property_installation.installations.separate_bath_toilet') %></div>
-          <div class="detailed-info__installations-box--inactive"><%= t('front.apartments.property_installation.installations.reheating') %></div>
-          <div class="detailed-info__installations-box--inactive"><%= t('front.apartments.property_installation.installations.wooden_floor') %></div>
-          <div class="detailed-info__installations-box--inactive"><%= t('front.apartments.property_installation.installations.pet') %></div>
+          <div class="detailed-info__installations-box--<%= @apartment.brandnew %>">
+            <%= t('front.apartments.property_installation.installations.brandnew') %>
+          </div>
+          <div class="detailed-info__installations-box--<%= @apartment.more_than_2floors %>">
+            <%= t('front.apartments.property_installation.installations.more_than_2floors') %>
+          </div>
+          <div class="detailed-info__installations-box--<%= @apartment.light_on_south %>">
+            <%= t('front.apartments.property_installation.installations.light_on_south') %>
+          </div>
+          <div class="detailed-info__installations-box--<%= @apartment.parkinglot %>">
+            <%= t('front.apartments.property_installation.installations.parkinglot') %>
+          </div>
+          <div class="detailed-info__installations-box--<%= @apartment.auto_lock %>">
+            <%= t('front.apartments.property_installation.installations.auto_lock') %>
+          </div>
+          <div class="detailed-info__installations-box--<%= @apartment.air_con %>">
+            <%= t('front.apartments.property_installation.installations.air_con') %>
+          </div>
+          <div class="detailed-info__installations-box--<%= @apartment.separate_bath_toilet %>">
+            <%= t('front.apartments.property_installation.installations.separate_bath_toilet') %>
+          </div>
+          <div class="detailed-info__installations-box--<%= @apartment.reheating %>">
+            <%= t('front.apartments.property_installation.installations.reheating') %>
+          </div>
+          <div class="detailed-info__installations-box--<%= @apartment.wooden_floor %>">
+            <%= t('front.apartments.property_installation.installations.wooden_floor') %>
+          </div>
+          <div class="detailed-info__installations-box--<%= @apartment.pet %>">
+            <%= t('front.apartments.property_installation.installations.pet') %>
+          </div>
         </div>
 
       </td>
     </tr>
     <tr>
       <th><%= t('front.apartments.property_installation.kitchen_bath') %></th>
-      <td>バス・トイレ別, 温水洗浄便座, 浴室乾燥機, 室内洗濯機置場</td>
+      <td><%= @apartment.kitchen_bath %></td>
     </tr>
     <tr>
       <th><%= t('front.apartments.property_installation.service') %></th>
-      <td>防犯カメラ, TVモニタ付インターホン, エアコン, バルコニー, インターネット対応, 駐輪場あり</td>
+      <td><%= @apartment.services %></td>
     </tr>
     <tr>
       <th><%= t('front.apartments.property_installation.etc') %></th>
-      <td>家具・家電付</td>
+      <td><%= @apartment.etc %></td>
     </tr>
     <tr>
       <th><%= t('front.apartments.property_installation.remarks') %></th>
-      <td>
-        環境維持費:1ヶ月540円（税込）、
-        鍵交換費:ご契約時10260円（税込）、
-        基本清掃料(退室時)1K27540円(家具・家電付の部屋は3240円追加)税込、
-        インターネット利用料：有料、更新手数料:16200円（税込）、保証委託料：必要、引落手数料：540円（税込）
-      </td>
+      <td><%= @apartment.remarks %></td>
     </tr>
     </tbody>
   </table>

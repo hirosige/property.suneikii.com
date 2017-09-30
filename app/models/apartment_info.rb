@@ -26,6 +26,25 @@
 #  apartment_id         :integer
 #  created_at           :datetime         not null
 #  updated_at           :datetime         not null
+#  floor                :integer
+#  brandnew             :integer
+#  more_than_2floors    :integer
+#  light_on_south       :integer
+#  parkinglot           :integer
+#  auto_lock            :integer
+#  air_con              :integer
+#  separate_bath_toilet :integer
+#  reheating            :integer
+#  wooden_floor         :integer
+#  pet                  :integer
+#  number_of_rooms      :integer
+#  house_insurance      :string(255)
+#  deal_way             :string(255)
+#  kitchen_bath         :text(65535)
+#  services             :text(65535)
+#  etc                  :text(65535)
+#  balcony_space        :integer
+#  light_direction      :string(255)
 #
 
 class ApartmentInfo < ActiveRecord::Base
@@ -34,34 +53,54 @@ class ApartmentInfo < ActiveRecord::Base
   scope :available, -> { where(availability: :now_available) }
   scope :vacant,    -> { where(property_status: :vacant) }
 
-  enum reconstructed_or_not: {
-      reconstructed:     10,
-      not_reconstructed: 20
+  enum brandnew: {
+      brandnew: 10,
+      old: 20
   }
 
-  enum renovated_or_not:     {
-      renovated:     10,
-      not_renovated: 20
+  enum more_than_2floors: {
+      more: 10,
+      only_one: 20
   }
 
-  enum car_park_or_not:      {
-      can_park_car:    10,
-      cannot_park_car: 20
+  enum light_on_south: {
+      south: 10,
+      other: 20
   }
 
-  enum bicycle_park_or_not:  {
-      can_park_bicycle: 10,
-      cannot_park_bicycle: 20
+  enum parkinglot: {
+      have_park: 10,
+      not_have_park: 20
   }
 
-  enum bike_park_or_not:     {
-      can_park_bike: 10,
-      cannot_park_bike: 20
+  enum auto_lock: {
+      have_auto_lock: 10,
+      not_have_auto_lock: 20
   }
 
-  enum can_have_pet_or_not:  {
-      can_have_pet: 10,
-      cannot_have_pet: 20
+  enum air_con: {
+      have_air_con: 10,
+      not_have_air_con: 20
+  }
+
+  enum separate_bath_toilet: {
+      separated_bath_toilet: 10,
+      united_bath_toilet: 20
+  }
+
+  enum reheating: {
+      have_reheating: 10,
+      not_have_reheating: 20
+  }
+
+  enum wooden_floor: {
+      have_wooden_floor: 10,
+      not_have_wooden_floor: 20
+  }
+
+  enum pet: {
+      have_pet: 10,
+      not_have_pet: 20
   }
 
   state_machine :property_status, :initial => :vacant do

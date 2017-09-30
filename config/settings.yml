@@ -1,5 +1,6 @@
 site:
   name: "Property Suneikii"
+  region: 'th'
   provider: "Suneikii.com"
   page_description: "SuneikiiはRuby on Railsで作られたブログアプリケーションです"
   meta:

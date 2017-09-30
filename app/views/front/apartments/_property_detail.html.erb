@@ -6,45 +6,43 @@
     <tbody>
     <tr>
       <th><%= t('front.apartments.property_detail.made_of') %></th>
-      <td><%= @apartment.apartment_info.made_of %></td>
+      <td><%= @apartment.made_of %></td>
       <th><%= t('front.apartments.property_detail.floors') %></th>
-      <td><%= @apartment.apartment_info.floors %></td>
+      <td><%= @apartment.unit_floors %></td>
     </tr>
     <tr>
       <th><%= t('front.apartments.property_detail.parking') %></th>
-      <td><%= @apartment.apartment_info.car_park_or_not %></td>
+      <td><%= @apartment.parking %></td>
       <th><%= t('front.apartments.property_detail.number_of_rooms') %></th>
-      <td>40戸</td>
+      <td><%= @apartment.number_of_rooms %></td>
     </tr>
     <tr>
       <th><%= t('front.apartments.property_detail.contract_span') %></th>
-      <td><%= @apartment.apartment_info.contact_span %></td>
+      <td><%= @apartment.contact_span %></td>
       <th><%= t('front.apartments.property_detail.update_fee') %></th>
-      <td><%= @apartment.apartment_info.update_fee %> Baht</td>
+      <td><%= @apartment.delimited_update_fee %></td>
     </tr>
     <tr>
       <th><%= t('front.apartments.property_detail.utility_fee') %></th>
-      <td colspan="3">
-        <%= @apartment.utility_fee %> Baht
-      </td>
+      <td colspan="3"><%= @apartment.delimited_utility_fee %></td>
     </tr>
     <tr>
       <th><%= t('front.apartments.property_detail.surety_company') %></th>
       <td> - </td>
       <th><%= t('front.apartments.property_detail.house_insurance') %></th>
-      <td>要</td>
+      <td><%= @apartment.house_insurance %></td>
     </tr>
     <tr>
       <th><%= t('front.apartments.property_detail.status') %></th>
-      <td><%= @apartment.apartment_info.property_status %></td>
+      <td><%= @apartment.property_status %></td>
       <th><%= t('front.apartments.property_detail.availability') %></th>
-      <td><%= @apartment.apartment_info.availability %></td>
+      <td><%= @apartment.availability %></td>
     </tr>
     <tr>
       <th><%= t('front.apartments.property_detail.property_id') %></th>
-      <td><%= @apartment.apartment_info.management_id %></td>
+      <td><%= @apartment.management_id %></td>
       <th><%= t('front.apartments.property_detail.deal_way') %></th>
-      <td>Intermediate</td>
+      <td><%= @apartment.deal_way %></td>
     </tr>
     </tbody>
   </table>
