@@ -15,13 +15,39 @@
         <table class="table table-hover table-condensed table-bordered favorites-top__tbl">
           <thead>
           <tr>
-            <th class="favorites-top__tbl-col1"><%= t('front.sessions.watched_list.items.image') %></th>
-            <th><%= t('front.sessions.watched_list.items.rent_fee') %><br><%= t('front.sessions.watched_list.items.utility_fee') %></th>
-            <th><%= t('front.sessions.watched_list.items.security_deposit') %><br><%= t('front.sessions.watched_list.items.deposit') %></th>
-            <th><%= t('front.sessions.watched_list.items.transportation') %><br><%= t('front.sessions.watched_list.items.address') %></th>
-            <th><%= t('front.sessions.watched_list.items.room_type') %><br><%= t('front.sessions.watched_list.items.space') %></th>
-            <th><%= t('front.sessions.watched_list.items.made_of') %><br><%= t('front.sessions.watched_list.items.floors') %></th>
-            <th><%= t('front.sessions.watched_list.items.since_when') %><br><%= t('front.sessions.watched_list.items.light_on') %></th>
+            <th class="favorites-top__tbl-col1">
+              <%= t('front.sessions.watched_list.items.image') %>
+            </th>
+            <th>
+              <%= t('front.sessions.watched_list.items.rent_fee') %>
+              <br>
+              <%= t('front.sessions.watched_list.items.utility_fee') %>
+            </th>
+            <th>
+              <%= t('front.sessions.watched_list.items.security_deposit') %>
+              <br>
+              <%= t('front.sessions.watched_list.items.deposit') %>
+            </th>
+            <th>
+              <%= t('front.sessions.watched_list.items.transportation') %>
+              <br>
+              <%= t('front.sessions.watched_list.items.address') %>
+            </th>
+            <th>
+              <%= t('front.sessions.watched_list.items.room_type') %>
+              <br>
+              <%= t('front.sessions.watched_list.items.space') %>
+            </th>
+            <th>
+              <%= t('front.sessions.watched_list.items.made_of') %>
+              <br>
+              <%= t('front.sessions.watched_list.items.floors') %>
+            </th>
+            <th>
+              <%= t('front.sessions.watched_list.items.since_when') %>
+              <br>
+              <%= t('front.sessions.watched_list.items.light_on') %>
+            </th>
           </tr>
           </thead>
           <tbody>
@@ -32,16 +58,40 @@
                 <td colspan="6" class="favorites-top__tbl-col-name">
                   <span class="favorites-top__tbl-col-category"><%= property.category %></span>
                   <a href="<%= apartment_path(property.id) %>"><%= property.name %></a>
-                  <span class="favorites-top__tbl-col-status"><%= property.info.availability %></span>
+                  <span class="favorites-top__tbl-col-status"><%= property.availability %></span>
                 </td>
               </tr>
               <tr>
-                <td><%= property.delimited_rent_fee %> Baht<br><%= property.delimited_utility_fee %> Baht</td>
-                <td><%= property.delimited_security_deposit %> Baht<br><%= property.delimited_deposit %> Baht</td>
-                <td width="400px"><%= property.transportation %><br><%= property.address %></td>
-                <td><%= property.room_type_id %><br><%= property.unit_space %></td>
-                <td><%= property.info.made_of %><br><%= property.info.floors %></td>
-                <td><%= property.formatted_since_when %><br>南</td>
+                <td>
+                  <%= property.delimited_rent_fee %>
+                  <br>
+                  <%= property.delimited_utility_fee %>
+                </td>
+                <td>
+                  <%= property.delimited_security_deposit %>
+                  <br>
+                  <%= property.delimited_deposit %>
+                </td>
+                <td width="400px">
+                  <%= property.transportation %>
+                  <br>
+                  <%= property.address %>
+                </td>
+                <td>
+                  <%= property.room_type.name %>
+                  <br>
+                  <%= property.unit_space %>
+                </td>
+                <td>
+                  <%= property.made_of %>
+                  <br>
+                  <%= property.unit_floors %>
+                </td>
+                <td>
+                  <%= property.formatted_since_when %>
+                  <br>
+                  <%= property.light_direction %>
+                </td>
               </tr>
               <tr>
                 <td colspan="6">

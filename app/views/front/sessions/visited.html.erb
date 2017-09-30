@@ -13,13 +13,39 @@
         <table class="table table-hover table-condensed table-bordered footstamp-top__tbl">
           <thead>
           <tr>
-            <th class="footstamp-top__tbl-col1"><%= t('front.sessions.watched_list.items.image') %></th>
-            <th><%= t('front.sessions.watched_list.items.rent_fee') %><br><%= t('front.sessions.watched_list.items.utility_fee') %></th>
-            <th><%= t('front.sessions.watched_list.items.security_deposit') %><br><%= t('front.sessions.watched_list.items.deposit') %></th>
-            <th><%= t('front.sessions.watched_list.items.transportation') %><br><%= t('front.sessions.watched_list.items.address') %></th>
-            <th><%= t('front.sessions.watched_list.items.room_type') %><br><%= t('front.sessions.watched_list.items.space') %></th>
-            <th><%= t('front.sessions.watched_list.items.made_of') %><br><%= t('front.sessions.watched_list.items.floors') %></th>
-            <th><%= t('front.sessions.watched_list.items.since_when') %><br><%= t('front.sessions.watched_list.items.light_on') %></th>
+            <th class="footstamp-top__tbl-col1">
+              <%= t('front.sessions.watched_list.items.image') %>
+            </th>
+            <th>
+              <%= t('front.sessions.watched_list.items.rent_fee') %>
+              <br>
+              <%= t('front.sessions.watched_list.items.utility_fee') %>
+            </th>
+            <th>
+              <%= t('front.sessions.watched_list.items.security_deposit') %>
+              <br>
+              <%= t('front.sessions.watched_list.items.deposit') %>
+            </th>
+            <th>
+              <%= t('front.sessions.watched_list.items.transportation') %>
+              <br>
+              <%= t('front.sessions.watched_list.items.address') %>
+            </th>
+            <th>
+              <%= t('front.sessions.watched_list.items.room_type') %>
+              <br>
+              <%= t('front.sessions.watched_list.items.space') %>
+            </th>
+            <th>
+              <%= t('front.sessions.watched_list.items.made_of') %>
+              <br>
+              <%= t('front.sessions.watched_list.items.floors') %>
+            </th>
+            <th>
+              <%= t('front.sessions.watched_list.items.since_when') %>
+              <br>
+              <%= t('front.sessions.watched_list.items.light_on') %>
+            </th>
           </tr>
           </thead>
           <tbody>
@@ -29,21 +55,45 @@
                 <td colspan="6" class="footstamp-top__tbl-col-name">
                   <span class="footstamp-top__tbl-col-category"><%= foot_stamp.category %></span>
                   <a href="<%= apartment_path(foot_stamp.id) %>"><%= foot_stamp.name %></a>
-                  <span class="footstamp-top__tbl-col-status"><%= foot_stamp.info.availability %></span>
+                  <span class="footstamp-top__tbl-col-status"><%= foot_stamp.availability %></span>
                 </td>
               </tr>
               <tr>
-                <td><%= foot_stamp.delimited_rent_fee %> Baht<br><%= foot_stamp.delimited_utility_fee %> Baht</td>
-                <td><%= foot_stamp.delimited_security_deposit %> Baht<br><%= foot_stamp.delimited_deposit %> Baht</td>
-                <td width="400px"><%= foot_stamp.transportation %><br><%= foot_stamp.address %></td>
-                <td><%= foot_stamp.room_type_id %><br><%= foot_stamp.unit_space %></td>
-                <td><%= foot_stamp.info.made_of %><br><%= foot_stamp.info.floors %></td>
-                <td><%= foot_stamp.formatted_since_when %><br>南</td>
+                <td>
+                  <%= foot_stamp.delimited_rent_fee %>
+                  <br>
+                  <%= foot_stamp.delimited_utility_fee %>
+                </td>
+                <td>
+                  <%= foot_stamp.delimited_security_deposit %>
+                  <br>
+                  <%= foot_stamp.delimited_deposit %>
+                </td>
+                <td width="400px">
+                  <%= foot_stamp.transportation %>
+                  <br>
+                  <%= foot_stamp.address %>
+                </td>
+                <td>
+                  <%= foot_stamp.room_type.name %>
+                  <br>
+                  <%= foot_stamp.unit_space %>
+                </td>
+                <td>
+                  <%= foot_stamp.made_of %>
+                  <br>
+                  <%= foot_stamp.unit_floors %>
+                </td>
+                <td>
+                  <%= foot_stamp.formatted_since_when %>
+                  <br>
+                  <%= foot_stamp.light_direction %>
+                </td>
               </tr>
               <tr>
                 <td colspan="6">
                   <div class="footstamp-top__tbl-btns">
-                    <button class="btn btn-default footstamp-top__tbl-btn"><%= t('front.sessions.watched_list.buttons.favorite') %></button>
+                    <!--<button class="btn btn-default footstamp-top__tbl-btn"><% t('front.sessions.watched_list.buttons.favorite') %></button>-->
                     <button class="btn btn-primary footstamp-top__tbl-btn" onclick='location.href="<%= apartment_path(foot_stamp.id) %>"'>
                       <%= t('front.sessions.watched_list.buttons.detail') %> <i class="fa fa-arrow-circle-o-right"></i>
                     </button>

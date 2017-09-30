@@ -35,6 +35,7 @@ class Apartment < ActiveRecord::Base
   has_many :apartment_option_installations, dependent: :destroy
   has_many :apartment_options, through: :apartment_option_installations
   has_many :apartment_thumbnails
+  has_many :favorites, dependent: :destroy
 
   belongs_to :country
   belongs_to :province
