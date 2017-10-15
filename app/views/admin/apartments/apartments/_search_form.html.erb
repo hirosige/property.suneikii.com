@@ -1,5 +1,5 @@
 
-<%= search_form_for [:admin, :apartments, @search] do |f| %>
+<%= search_form_for [:admin, @search] do |f| %>
   <%= f.text_field :name_cont, :class => 'form-control' %><br>
   <%= f.collection_select(
           :province_id_start,  # <= property_name

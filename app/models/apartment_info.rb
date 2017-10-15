@@ -48,6 +48,28 @@
 #
 
 class ApartmentInfo < ActiveRecord::Base
+  validates :latitude,              presence: true
+  validates :longitude,             presence: true
+  validates :brandnew,              presence: true
+  validates :more_than_2floors,     presence: true
+  validates :light_on_south,        presence: true
+  validates :parkinglot,            presence: true
+  validates :auto_lock,             presence: true
+  validates :air_con,               presence: true
+  validates :separate_bath_toilet,  presence: true
+  validates :reheating,             presence: true
+  validates :wooden_floor,          presence: true
+  validates :pet,                   presence: true
+  validates :floor,                 presence: true
+  validates :floors,                presence: true
+  validates :light_direction,       presence: true
+  validates :contact_span,          presence: true
+  validates :update_fee,            presence: true
+  validates :number_of_rooms,       presence: true
+  validates :kitchen_bath,          presence: true
+  validates :services,              presence: true
+
+
   belongs_to :apartment
 
   scope :available, -> { where(availability: :now_available) }

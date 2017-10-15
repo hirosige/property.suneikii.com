@@ -1,0 +1,28 @@
+en:
+  front:
+    site_inquiry:
+      input:
+        title: 'Inquiry Form'
+        description: 'Please sincerely give me your opinions for this website.'
+        errors:
+          title: 'Your input contains errors.'
+        items:
+          name: 'Name'
+          email: 'E-Mail'
+          inquiry: 'Your Inquiry'
+          button:
+            caption: 'Confirm'
+            loading: 'Moving confirm...'
+      confirm:
+        title: 'Confirm Form'
+        items:
+          name: 'Name'
+          email: 'E-Mail'
+          inquiry: 'Your Inquiry'
+        buttons:
+          caption: 'Submit'
+          sending: 'Submitting...'
+      thanks:
+        title: 'Complete'
+        description: 'Your inquiry is successfully sent to us.'
+        greeting: 'Thank you for your inquiry.'

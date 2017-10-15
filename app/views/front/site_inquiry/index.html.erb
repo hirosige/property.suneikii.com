@@ -1,0 +1,61 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-1"></div>
+    <div class="col-xs-8">
+      <div class="page-header">
+        <h3><%= t('front.site_inquiry.input.title') %></h3>
+      </div>
+
+      <%= form_for @site_inquiry, :url => site_inquiry_confirm_path do |f| %>
+        <br>
+        <p><%= t('front.site_inquiry.input.description') %></p>
+
+        <%- if @site_inquiry.errors.any? %>
+          <div id="error_explanation">
+            <strong><%= t('front.site_inquiry.input.errors.title') %></strong>
+            <ul>
+              <%- @site_inquiry.errors.each do |attr, msg| %>
+                <li>
+                  <%= msg %>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="form-group">
+          <label class="control-label" for=""><%= t('front.site_inquiry.input.items.name') %></label>
+          <div class="row">
+            <div class="col-xs-12">
+              <%= f.text_field :name, class: 'form-control' %>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label" for=""><%= t('front.site_inquiry.input.items.email') %></label>
+          <div class="row">
+            <div class="col-xs-12">
+              <%= f.text_field :email, class: 'form-control' %>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label" for=""><%= t('front.site_inquiry.input.items.inquiry') %></label>
+          <div class="row">
+            <div class="col-xs-12">
+              <%= f.text_area :body, rows: 5, class: 'form-control' %>
+            </div>
+          </div>
+        </div>
+
+        <%= f.submit t('front.site_inquiry.input.items.button.caption'),
+                     class: 'btn btn-primary',
+                     data: { disable_with: t('front.site_inquiry.input.items.button.loading')} %>
+
+      <% end %>
+    </div>
+  </div>
+</div>
+<br>

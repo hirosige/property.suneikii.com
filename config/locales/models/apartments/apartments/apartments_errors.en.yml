@@ -1,0 +1,35 @@
+en:
+  activerecord:
+    attributes:
+      apartment:
+        name: 'Apartment Name'
+        country_id: 'Area：Country'
+        province_id: 'Area：Province'
+        district_id: 'Area：District'
+        subdistrict_id: 'Area：Sub District'
+        rent_fee: 'Rent Fee'
+        address: 'Address'
+        room_type_id: 'Room Type'
+        space: 'Space'
+    errors:
+      models:
+        apartment:
+          attributes:
+            name:
+              blank: 'is required, Must input.'
+            country_id:
+              blank: 'is required, Please select any.'
+            province_id:
+              blank: 'is required, Please select any.'
+            district_id:
+              blank: 'is required, Please select any.'
+            subdistrict_id:
+              blank: 'is required, Please select any.'
+            rent_fee:
+              blank: 'is required, Must input.'
+            address:
+              blank: 'is required, Must input.'
+            room_type_id:
+              blank: 'is required, Please select any.'
+            space:
+              blank: 'is required, Must input.'

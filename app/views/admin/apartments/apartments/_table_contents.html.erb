@@ -48,36 +48,36 @@
           <td>
             <%=
               if apartment.publish?
-                link_to "非公開にする", decline_admin_apartments_apartment_path(apartment), :class => 'btn btn-danger btn-xs'
+                link_to "非公開にする", decline_admin_apartment_path(apartment), :class => 'btn btn-danger btn-xs'
               else
-                link_to "公開する", publish_admin_apartments_apartment_path(apartment), :class => 'btn btn-primary btn-xs'
+                link_to "公開する", publish_admin_apartment_path(apartment), :class => 'btn btn-primary btn-xs'
               end
             %>
           </td>
           <td>
             <%=
               if apartment.apartment_info.vacant?
-                link_to "満員にする", occupy_admin_apartments_apartment_path(apartment), :class => 'btn btn-danger btn-xs'
+                link_to "満員にする", occupy_admin_apartment_path(apartment), :class => 'btn btn-danger btn-xs'
               else
-                link_to "空きにする", clean_admin_apartments_apartment_path(apartment), :class => 'btn btn-primary btn-xs'
+                link_to "空きにする", clean_admin_apartment_path(apartment), :class => 'btn btn-primary btn-xs'
               end
             %>
           </td>
           <td>
             <%=
               if apartment.apartment_info.now_available?
-                link_to "準備中にする", disable_admin_apartments_apartment_path(apartment), :class => 'btn btn-danger btn-xs'
+                link_to "準備中にする", disable_admin_apartment_path(apartment), :class => 'btn btn-danger btn-xs'
               else
-                link_to "即時入居可能にする", enable_admin_apartments_apartment_path(apartment), :class => 'btn btn-primary btn-xs'
+                link_to "即時入居可能にする", enable_admin_apartment_path(apartment), :class => 'btn btn-primary btn-xs'
               end
             %>
           </td>
           <td> <%= apartment.provider.name unless apartment.provider.nil? %></td>
           <td> <%= apartment.formatted_created_date %></td>
           <td> <%= apartment.formatted_updated_date %></td>
-          <td> <%= set_button_show('', [:admin, :apartments, apartment]) %></td>
-          <td> <%= set_button_edit('', edit_admin_apartments_apartment_path(apartment)) %></td>
-          <td> <%= set_button_delete('', [:admin, :apartments, apartment]) %></td>
+          <td> <%= set_button_show('', [:admin, apartment]) %></td>
+          <td> <%= set_button_edit('', edit_admin_apartment_path(apartment)) %></td>
+          <td> <%= set_button_delete('', [:admin, apartment]) %></td>
         </tr>
     <% end %>
     </tbody>

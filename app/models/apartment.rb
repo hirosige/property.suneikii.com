@@ -28,6 +28,20 @@
 #
 
 class Apartment < ActiveRecord::Base
+  validates :name,           :presence => true
+  validates :country_id,     :presence => true
+  validates :province_id,    :presence => true
+  validates :district_id,    :presence => true
+  validates :subdistrict_id, :presence => true
+  validates :rent_fee,       :presence => true
+  validates :address,        :presence => true
+  validates :room_type_id,   :presence => true
+  validates :space,          :presence => true
+
+  def validate_info
+    errors.add(:latitude, "latitude is required") unless apartment_info.latitude.nil?
+  end
+
   has_one :apartment_info, dependent: :destroy
   has_many :apartment_surroundings
   has_many :surroundings, :through => :apartment_surroundings

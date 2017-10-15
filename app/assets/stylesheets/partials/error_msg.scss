@@ -39,4 +39,9 @@
     box-shadow: 0 0 7px $color_of_error;
     border: 1px solid $color_of_error;
   }
+
+  textarea, textarea:focus {
+    box-shadow: 0 0 7px $color_of_error;
+    border: 1px solid $color_of_error;
+  }
 }

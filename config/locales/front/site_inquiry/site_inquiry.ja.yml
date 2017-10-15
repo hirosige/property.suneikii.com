@@ -1,0 +1,28 @@
+ja:
+  front:
+    site_inquiry:
+      input:
+        title: 'お問い合わせフォーム'
+        description: '本システムに関する、ご意見、ご感想をお寄せください。'
+        errors:
+          title: '入力内容にエラーがあります'
+        items:
+          name: 'お名前'
+          email: 'メールアドレス'
+          inquiry: 'お問い合わせ内容'
+          button:
+            caption: '確認'
+            loading: '確認フォームへ...'
+      confirm:
+        title: 'お問い合わせ確認フォーム'
+        items:
+          name: '名前'
+          email: 'メールアドレス'
+          inquiry: 'お問い合わせ内容'
+        buttons:
+          caption: '送信'
+          sending: '送信中...'
+      thanks:
+        title: 'お問い合わせ完了'
+        description: 'お客様のお問合わせは正常に送信されました。'
+        greeting: 'お問い合わせいただきありがとうございました。'

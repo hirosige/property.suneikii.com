@@ -42,7 +42,7 @@
           <div class="x_content">
 
             <br />
-            <%= form_for [:admin, :apartments, @apartment], :html => {:class => 'form-horizontal form-label-left'}  do |f| %>
+            <%= form_for [:admin, @apartment], :html => {:class => 'form-horizontal form-label-left'}  do |f| %>
 
 
                 <div style="float: left; width: 50%;">
@@ -100,28 +100,28 @@
                   <div class="form-group">
                     <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.apartments.items.rent_fee') %></label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
-                      <%= f.text_field :rent_fee, :required => 'required', :class => 'form-control col-md-7 col-xs-12' %>
+                      <%= f.text_field :rent_fee, :class => 'form-control col-md-7 col-xs-12' %>
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.apartments.items.deposit') %></label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
-                      <%= f.text_field :deposit, :required => 'required', :class => 'form-control col-md-7 col-xs-12' %>
+                      <%= f.text_field :deposit, :class => 'form-control col-md-7 col-xs-12' %>
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.apartments.items.utility_fee') %></label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
-                      <%= f.text_field :utility_fee, :required => 'required', :class => 'form-control col-md-7 col-xs-12' %>
+                      <%= f.text_field :utility_fee, :class => 'form-control col-md-7 col-xs-12' %>
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.apartments.items.address') %></label>
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                      <%= f.text_field :address, :required => 'required', :class => 'form-control col-md-7 col-xs-12' %>
+                    <div class="col-md-8 col-sm-8 col-xs-12" style="height: 120px;">
+                      <%= f.text_area :address, :class => 'form-control col-md-7 col-xs-12', :style => "height: 120px;"%>
                     </div>
                   </div>
 
@@ -189,49 +189,49 @@
                   <div class="form-group">
                     <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.apartments.items.name') %></label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
-                      <%= f.text_field :name, :required => 'required', :class => 'form-control col-md-7 col-xs-12' %>
+                      <%= f.text_field :name, :class => 'form-control col-md-7 col-xs-12' %>
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.apartments.items.security_deposit') %></label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
-                      <%= f.text_field :security_deposit, :required => 'required', :class => 'form-control col-md-7 col-xs-12' %>
+                      <%= f.text_field :security_deposit, :class => 'form-control col-md-7 col-xs-12' %>
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.apartments.items.transportation') %></label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
-                      <%= f.text_field :transportation, :required => 'required', :class => 'form-control col-md-7 col-xs-12' %>
+                      <%= f.text_field :transportation, :class => 'form-control col-md-7 col-xs-12' %>
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.apartments.items.key_money') %></label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
-                      <%= f.text_field :key_money, :required => 'required', :class => 'form-control col-md-7 col-xs-12' %>
+                      <%= f.text_field :key_money, :class => 'form-control col-md-7 col-xs-12' %>
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.apartments.items.since_when') %></label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
-                      <%= f.text_field :since_when, :required => 'required', :class => 'form-control col-md-7 col-xs-12' %>
+                      <%= f.text_field :since_when, :class => 'form-control col-md-7 col-xs-12' %>
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.apartments.items.space') %></label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
-                      <%= f.text_field :space, :required => 'required', :class => 'form-control col-md-7 col-xs-12' %>
+                      <%= f.text_field :space, :class => 'form-control col-md-7 col-xs-12' %>
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.apartments.items.recommendations') %></label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
-                      <%= f.text_field :recommendations, :required => 'required', :class => 'form-control col-md-7 col-xs-12' %>
+                      <%= f.text_field :recommendations, :class => 'form-control col-md-7 col-xs-12' %>
                     </div>
                   </div>
 
@@ -403,257 +403,262 @@
                   <hr>
 
                   <%= f.fields_for :apartment_info do |ai| %>
-                      <div class="form-group">
-                        <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">Remarks</label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <%= ai.text_field :remarks, :required => 'required', :class => 'form-control col-md-7 col-xs-12' %>
+                      <div style="float: left; width: 50%;">
+                        <div class="form-group">
+                          <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">Remarks</label>
+                          <div class="col-md-6 col-sm-6 col-xs-12">
+                            <%= ai.text_field :remarks, :class => 'form-control col-md-7 col-xs-12' %>
+                          </div>
                         </div>
-                      </div>
 
-                      <div class="form-group">
-                        <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">緯度</label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <%= ai.text_field :latitude, :required => 'required', :class => 'form-control col-md-7 col-xs-12' %>
+                        <div class="form-group">
+                          <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">緯度</label>
+                          <div class="col-md-6 col-sm-6 col-xs-12">
+                            <%= ai.text_field :latitude, :class => 'form-control col-md-7 col-xs-12' %>
+                          </div>
                         </div>
-                      </div>
 
-                      <div class="form-group">
-                        <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">経度</label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <%= ai.text_field :longitude, :required => 'required', :class => 'form-control col-md-7 col-xs-12' %>
+                        <div class="form-group">
+                          <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">経度</label>
+                          <div class="col-md-6 col-sm-6 col-xs-12">
+                            <%= ai.text_field :longitude, :class => 'form-control col-md-7 col-xs-12' %>
+                          </div>
                         </div>
-                      </div>
 
-                      <div class="form-group">
-                        <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"></label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                            グーグルマップで取得
-                          </button>
+                        <div class="form-group">
+                          <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"></label>
+                          <div class="col-md-6 col-sm-6 col-xs-12">
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                              グーグルマップで取得
+                            </button>
+                          </div>
                         </div>
-                      </div>
 
-                      <!-- Button trigger modal -->
+                        <!-- Button trigger modal -->
 
 
-                      <!-- Modal -->
-                      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-lg" role="document">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <h3 class="modal-title" id="exampleModalLabel">グーグルマップで位置情報を登録</h3>
-                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                              </button>
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h3 class="modal-title" id="exampleModalLabel">グーグルマップで位置情報を登録</h3>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <div id="modal-body" class="modal-body">
+
+                                <div id="floating-panel">
+                                  <input id="address" type="textbox" value="Sydney, NSW">
+                                  <input id="submit" type="button" value="検索">
+                                </div><br>
+
+                                <div id="map" style='width: 100%; height: 500px; margin: auto; border: 1px #2A3F54 solid; border-radius: 5px;'></div>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" id="close" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+                                <button type="button" id="decide_address" class="btn btn-primary">ここに決める</button>
+                                <button type="button" id="complete" class="btn btn-primary">完了</button>
+                              </div>
                             </div>
-                            <div id="modal-body" class="modal-body">
+                          </div>
+                        </div>
 
-                              <div id="floating-panel">
-                                <input id="address" type="textbox" value="Sydney, NSW">
-                                <input id="submit" type="button" value="検索">
-                              </div><br>
+                        <div class="form-group">
+                          <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">新築</label>
+                          <div class="col-md-6 col-sm-6 col-xs-12">
+                            <%= ai.radio_button :brandnew, :brandnew %> 新築&nbsp;
+                            <%= ai.radio_button :brandnew, :old %> 古物件
+                          </div>
+                        </div>
 
-                              <div id="map" style='width: 100%; height: 500px; margin: auto; border: 1px #2A3F54 solid; border-radius: 5px;'></div>
-                            </div>
-                            <div class="modal-footer">
-                              <button type="button" id="close" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
-                              <button type="button" id="decide_address" class="btn btn-primary">ここに決める</button>
-                              <button type="button" id="complete" class="btn btn-primary">完了</button>
-                            </div>
+                        <div class="form-group">
+                          <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">２階以上の物件</label>
+                          <div class="col-md-6 col-sm-6 col-xs-12">
+                            <%= ai.radio_button :more_than_2floors, :more %> 2階以上 &nbsp;
+                            <%= ai.radio_button :more_than_2floors, :only_one %> 1階のみ
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">南向き</label>
+                          <div class="col-md-6 col-sm-6 col-xs-12">
+                            <%= ai.radio_button :light_on_south, :south %> 南向き &nbsp;
+                            <%= ai.radio_button :light_on_south, :other %> 南向きじゃない
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">駐車場</label>
+                          <div class="col-md-6 col-sm-6 col-xs-12">
+                            <%= ai.radio_button :parkinglot, :have_park %> あり &nbsp;
+                            <%= ai.radio_button :parkinglot, :not_have_park %> 無し
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">オートロック</label>
+                          <div class="col-md-6 col-sm-6 col-xs-12">
+                            <%= ai.radio_button :auto_lock, :have_auto_lock %> あり &nbsp;
+                            <%= ai.radio_button :auto_lock, :not_have_auto_lock %> 無し
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">エアコン</label>
+                          <div class="col-md-6 col-sm-6 col-xs-12">
+                            <%= ai.radio_button :air_con, :have_air_con %> あり &nbsp;
+                            <%= ai.radio_button :air_con, :not_have_air_con %> 無し
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">バス・トイレ別</label>
+                          <div class="col-md-6 col-sm-6 col-xs-12">
+                            <%= ai.radio_button :separate_bath_toilet, :separated_bath_toilet %> バス・トイレ別 &nbsp;
+                            <%= ai.radio_button :separate_bath_toilet, :united_bath_toilet %> ユニットバス
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">追焚機能</label>
+                          <div class="col-md-6 col-sm-6 col-xs-12">
+                            <%= ai.radio_button :reheating, :have_reheating %> あり &nbsp;
+                            <%= ai.radio_button :reheating, :not_have_reheating %> 無し
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">フローリング</label>
+                          <div class="col-md-6 col-sm-6 col-xs-12">
+                            <%= ai.radio_button :wooden_floor, :have_wooden_floor %> フローリング &nbsp;
+                            <%= ai.radio_button :wooden_floor, :not_have_wooden_floor %> その他
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">ペット可</label>
+                          <div class="col-md-6 col-sm-6 col-xs-12">
+                            <%= ai.radio_button :pet, :have_pet %> ペット可 &nbsp;
+                            <%= ai.radio_button :pet, :not_have_pet %> ペット不可
+                          </div>
+                        </div>
+                      </div>
+                      <div style="float: right; width: 50%;">
+                        <div class="form-group">
+                          <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">階 / 階数</label>
+                          <div class="col-md-2 col-sm-2 col-xs-12">
+                            <%= ai.number_field :floor, :class => 'form-control col-md-2 col-xs-12' %>
+                          </div>
+
+                          <div class="col-md-2 col-sm-2 col-xs-12">
+                            <%= ai.number_field :floors, :class => 'form-control col-md-2 col-xs-12' %>
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">バルコニー面積</label>
+                          <div class="col-md-2 col-sm-2 col-xs-12">
+                            <%= ai.number_field :balcony_space, :class => 'form-control col-md-2 col-xs-12' %>
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">主要採光面</label>
+                          <div class="col-md-2 col-sm-2 col-xs-12">
+                            <%= ai.text_field :light_direction, :class => 'form-control col-md-2 col-xs-12' %>
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">建物構造</label>
+                          <div class="col-md-6 col-sm-6 col-xs-12">
+                            <%= ai.text_field :made_of, :class => 'form-control col-md-7 col-xs-12' %>
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">契約期間</label>
+                          <div class="col-md-6 col-sm-6 col-xs-12">
+                            <%= ai.number_field :contact_span, :class => 'form-control col-md-7 col-xs-12' %>
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">条件等</label>
+                          <div class="col-md-6 col-sm-6 col-xs-12">
+                            <%= ai.text_field :conditions, :class => 'form-control col-md-7 col-xs-12' %>
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">更新料</label>
+                          <div class="col-md-6 col-sm-6 col-xs-12">
+                            <%= ai.text_field :update_fee, :class => 'form-control col-md-7 col-xs-12' %>
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">次回更新予定日</label>
+                          <div class="col-md-6 col-sm-6 col-xs-12">
+                            <%= ai.text_field :updating_on, :class => 'form-control col-md-7 col-xs-12' %>
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">総戸数</label>
+                          <div class="col-md-2 col-sm-2 col-xs-12">
+                            <%= ai.number_field :number_of_rooms, :class => 'form-control col-md-7 col-xs-12' %>
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">住宅保険</label>
+                          <div class="col-md-6 col-sm-6 col-xs-12">
+                            <%= ai.text_field :house_insurance, :class => 'form-control col-md-7 col-xs-12' %>
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">取引態様</label>
+                          <div class="col-md-6 col-sm-6 col-xs-12">
+                            <%= ai.text_field :deal_way, :class => 'form-control col-md-7 col-xs-12' %>
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">キッチン/バス・トイレ</label>
+                          <div class="col-md-6 col-sm-6 col-xs-12">
+                            <%= ai.text_area :kitchen_bath, :class => 'form-control col-md-7 col-xs-12' %>
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">設備・サービス</label>
+                          <div class="col-md-6 col-sm-6 col-xs-12">
+                            <%= ai.text_area :services, :class => 'form-control col-md-7 col-xs-12' %>
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">その他</label>
+                          <div class="col-md-6 col-sm-6 col-xs-12">
+                            <%= ai.text_area :etc, :class => 'form-control col-md-7 col-xs-12' %>
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">物件番号</label>
+                          <div class="col-md-6 col-sm-6 col-xs-12">
+                            <%= ai.text_field :management_id, :class => 'form-control col-md-7 col-xs-12' %>
                           </div>
                         </div>
                       </div>
 
-                      <div class="form-group">
-                        <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">新築</label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <%= ai.radio_button :brandnew, :brandnew %> 新築&nbsp;
-                          <%= ai.radio_button :brandnew, :old %> 古物件
-                        </div>
+                      <div style="clear: both;">
                       </div>
-
-                      <div class="form-group">
-                        <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">２階以上の物件</label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <%= ai.radio_button :more_than_2floors, :more %> 2階以上 &nbsp;
-                          <%= ai.radio_button :more_than_2floors, :only_one %> 1階のみ
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">南向き</label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <%= ai.radio_button :light_on_south, :south %> 南向き &nbsp;
-                          <%= ai.radio_button :light_on_south, :other %> 南向きじゃない
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">駐車場</label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <%= ai.radio_button :parkinglot, :have_park %> あり &nbsp;
-                          <%= ai.radio_button :parkinglot, :not_have_park %> 無し
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">オートロック</label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <%= ai.radio_button :auto_lock, :have_auto_lock %> あり &nbsp;
-                          <%= ai.radio_button :auto_lock, :not_have_auto_lock %> 無し
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">エアコン</label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <%= ai.radio_button :air_con, :have_air_con %> あり &nbsp;
-                          <%= ai.radio_button :air_con, :not_have_air_con %> 無し
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">バス・トイレ別</label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <%= ai.radio_button :separate_bath_toilet, :separated_bath_toilet %> バス・トイレ別 &nbsp;
-                          <%= ai.radio_button :separate_bath_toilet, :united_bath_toilet %> ユニットバス
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">追焚機能</label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <%= ai.radio_button :reheating, :have_reheating %> あり &nbsp;
-                          <%= ai.radio_button :reheating, :not_have_reheating %> 無し
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">フローリング</label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <%= ai.radio_button :wooden_floor, :have_wooden_floor %> フローリング &nbsp;
-                          <%= ai.radio_button :wooden_floor, :not_have_wooden_floor %> その他
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">ペット可</label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <%= ai.radio_button :pet, :have_pet %> ペット可 &nbsp;
-                          <%= ai.radio_button :pet, :not_have_pet %> ペット不可
-                        </div>
-                      </div>
-
-
-                      <div class="form-group">
-                        <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">階 / 階数</label>
-                        <div class="col-md-2 col-sm-2 col-xs-12">
-                          <%= ai.number_field :floor, :required => 'required', :class => 'form-control col-md-2 col-xs-12' %>
-                        </div>
-
-                        <div class="col-md-2 col-sm-2 col-xs-12">
-                          <%= ai.number_field :floors, :required => 'required', :class => 'form-control col-md-2 col-xs-12' %>
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">バルコニー面積</label>
-                        <div class="col-md-2 col-sm-2 col-xs-12">
-                          <%= ai.number_field :balcony_space, :required => 'required', :class => 'form-control col-md-2 col-xs-12' %>
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">主要採光面</label>
-                        <div class="col-md-2 col-sm-2 col-xs-12">
-                          <%= ai.text_field :light_direction, :required => 'required', :class => 'form-control col-md-2 col-xs-12' %>
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">建物構造</label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <%= ai.text_field :made_of, :required => 'required', :class => 'form-control col-md-7 col-xs-12' %>
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">契約期間</label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <%= ai.number_field :contact_span, :required => 'required', :class => 'form-control col-md-7 col-xs-12' %>
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">条件等</label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <%= ai.text_field :conditions, :required => 'required', :class => 'form-control col-md-7 col-xs-12' %>
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">更新料</label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <%= ai.text_field :update_fee, :required => 'required', :class => 'form-control col-md-7 col-xs-12' %>
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">次回更新予定日</label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <%= ai.text_field :updating_on, :required => 'required', :class => 'form-control col-md-7 col-xs-12' %>
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">総戸数</label>
-                        <div class="col-md-2 col-sm-2 col-xs-12">
-                          <%= ai.number_field :number_of_rooms, :required => 'required', :class => 'form-control col-md-7 col-xs-12' %>
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">住宅保険</label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <%= ai.text_field :house_insurance, :required => 'required', :class => 'form-control col-md-7 col-xs-12' %>
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">取引態様</label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <%= ai.text_field :deal_way, :required => 'required', :class => 'form-control col-md-7 col-xs-12' %>
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">キッチン/バス・トイレ</label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <%= ai.text_area :kitchen_bath, :required => 'required', :class => 'form-control col-md-7 col-xs-12' %>
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">設備・サービス</label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <%= ai.text_area :services, :required => 'required', :class => 'form-control col-md-7 col-xs-12' %>
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">その他</label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <%= ai.text_area :etc, :required => 'required', :class => 'form-control col-md-7 col-xs-12' %>
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12">物件番号</label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <%= ai.text_field :management_id, :required => 'required', :class => 'form-control col-md-7 col-xs-12' %>
-                        </div>
-                      </div>
-
+                      
                 <%  end %>
 
                   <hr>

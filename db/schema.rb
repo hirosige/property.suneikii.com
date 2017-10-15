@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170930152046) do
+ActiveRecord::Schema.define(version: 20171003164645) do
 
   create_table "accessories", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -354,6 +354,19 @@ ActiveRecord::Schema.define(version: 20170930152046) do
     t.datetime "updated_at",                   null: false
   end
 
+  create_table "property_inquiries", force: :cascade do |t|
+    t.string   "name",           limit: 255
+    t.string   "email",          limit: 255
+    t.text     "body",           limit: 65535
+    t.integer  "apartment_id",   limit: 4
+    t.integer  "land_id",        limit: 4
+    t.integer  "condominium_id", limit: 4
+    t.integer  "house_id",       limit: 4
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.string   "tel",            limit: 255
+  end
+
   create_table "providers", force: :cascade do |t|
     t.string   "name",         limit: 255
     t.string   "photo",        limit: 255
@@ -489,6 +502,14 @@ ActiveRecord::Schema.define(version: 20170930152046) do
   create_table "shoppers_distributors", force: :cascade do |t|
     t.integer  "shopper_id",     limit: 4
     t.integer  "distributor_id", limit: 4
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  create_table "site_inquiries", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.string   "email",      limit: 255
+    t.text     "body",       limit: 65535
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
   end

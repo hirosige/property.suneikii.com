@@ -1,0 +1,9 @@
+en:
+  front:
+    not_found:
+      title: 'Search hits 0 resuls'
+      description: 'Conditions you search hits 0 result, please try other search condition.'
+      recommendation: 'Try these.'
+      property:
+        apartments: 'The list of apartments'
+        lands: 'The list of lands'

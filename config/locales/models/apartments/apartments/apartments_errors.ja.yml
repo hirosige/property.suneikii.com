@@ -1,0 +1,35 @@
+ja:
+  activerecord:
+    attributes:
+      apartment:
+        name: 'アパート名'
+        country_id: '物件エリア：国'
+        province_id: '物件エリア：都道府県'
+        district_id: '物件エリア：地区'
+        subdistrict_id: '物件エリア：区画'
+        rent_fee: '賃料'
+        address: '所在地'
+        room_type_id: '間取り'
+        space: '占有面積'
+    errors:
+      models:
+        apartment:
+          attributes:
+            name:
+              blank: 'を入力してください。'
+            country_id:
+              blank: 'を選択してください。'
+            province_id:
+              blank: 'を選択してください。'
+            district_id:
+              blank: 'を選択してください。'
+            subdistrict_id:
+              blank: 'を選択してください。'
+            rent_fee:
+              blank: 'を入力してください。'
+            address:
+              blank: 'を入力してください。'
+            room_type_id:
+              blank: 'を選択してください。'
+            space:
+              blank: 'を入力してください。'

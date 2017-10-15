@@ -84,3 +84,31 @@ ja:
           working_time: '営業時間'
           holidays: '定休日'
         inquiry: '空室状況を問い合わせる'
+      inquiry_form:
+        title: 'お問い合わせフォーム'
+        description: '%{apartment_name}に関する問い合わせを致します。'
+        errors:
+          title: '入力内容にエラーがあります'
+        items:
+          name: 'お名前'
+          email: 'メールアドレス'
+          tel: '電話番号'
+          inquiry: 'お問い合わせ内容'
+          button:
+            caption: '確認'
+            loading: '確認フォームへ...'
+      confirm:
+        title: 'お問い合わせ確認フォーム'
+        items:
+          property: 'お問い合わせ物件'
+          name: '名前'
+          email: 'メールアドレス'
+          tel: '電話番号'
+          inquiry: 'お問い合わせ内容'
+        buttons:
+          caption: '送信'
+          sending: '送信中...'
+      thanks:
+        title: 'お問い合わせ完了'
+        description: 'お客様のお問合わせは正常に送信されました。'
+        greeting: 'お問い合わせいただきありがとうございました。'

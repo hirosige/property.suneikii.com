@@ -1,0 +1,55 @@
+<div class="container marketing">
+  <div class="row">
+    <div class="col-xs-1"></div>
+    <div class="col-xs-8">
+      <div class="page-header">
+        <h3><%= t('front.apartments.confirm.title') %></h3>
+      </div>
+      <%= form_for @property_inquiry, :url => apartment_inquiry_thanks_path do |f| %>
+        <table class="table">
+          <tr>
+            <th class="col-xs-4"><%= t('front.apartments.confirm.items.property') %></th>
+            <td>
+              <%= f.hidden_field :apartment_id, :value => @apartment.id %>
+              <%= @apartment.name %>
+            <td>
+          </tr>
+          <tr>
+            <th class="col-xs-4"><%= t('front.apartments.confirm.items.name') %></th>
+            <td>
+              <%= f.hidden_field :name %>
+              <%= @property_inquiry.name %>
+            <td>
+          </tr>
+          <tr>
+            <th><%= t('front.apartments.confirm.items.email') %></th>
+            <td>
+              <%= f.hidden_field :email %>
+              <%= @property_inquiry.email %>
+            </td>
+          </tr>
+          <tr>
+            <th><%= t('front.apartments.confirm.items.tel') %></th>
+            <td>
+              <%= f.hidden_field :tel %>
+              <%= @property_inquiry.tel %>
+            </td>
+          </tr>
+          <tr>
+            <th><%= t('front.apartments.confirm.items.inquiry') %></th>
+            <td>
+              <%= f.hidden_field :body %>
+              <%= simple_format(@property_inquiry.body) %>
+            </td>
+          </tr>
+        </table>
+        <br>
+        <%= f.submit t('front.apartments.confirm.buttons.caption'),
+                     :class => 'btn btn-primary',
+                     data: { disable_with: t('front.apartments.confirm.buttons.sending')} %>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<br>

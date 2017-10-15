@@ -144,6 +144,12 @@
 
 Rails.application.routes.draw do
 
+  namespace :api do
+    namespace :v1 do
+      resources :apartments
+    end
+  end
+
    namespace :users do
       get 'omniauth_callbacks/github'
       get 'omniauth_callbacks/facebook'
@@ -258,10 +264,18 @@ Rails.application.routes.draw do
            end
          end
 
-         get 'apartments'                                        => 'apartments#province',       as: 'apartment_province_list'
-         get 'apartments/:id'                                    => 'apartments#show',           as: 'apartment'
-         get 'apartments/:province/city'                         => 'apartments#district',       as: 'apartment_district_list'
-         get 'apartments/:province/city/:district'               => 'apartments#index',          as: 'apartments'
+         # Inquiry
+         get  'site_inquiry'             => 'site_inquiry#index'
+         post 'site_inquiry/confirm'     => 'site_inquiry#confirm'
+         post 'site_inquiry/thanks'      => 'site_inquiry#thanks'
+
+         get  'apartments'                                        => 'apartments#province',       as: 'apartment_province_list'
+         get  'apartments/:id'                                    => 'apartments#show',           as: 'apartment'
+         get  'apartments/:province/city'                         => 'apartments#district',       as: 'apartment_district_list'
+         get  'apartments/:province/city/:district'               => 'apartments#index',          as: 'apartments'
+         get  'apartments/:id/inquiry'                            => 'apartments#inquiry',        as: 'apartment_inquiry'
+         post 'apartments/:id/confirm'                            => 'apartments#confirm',        as: 'apartment_inquiry_confirm'
+         post 'apartments/thanks'                                 => 'apartments#thanks',         as: 'apartment_inquiry_thanks'
       end
 
       # Administrator Pages
@@ -284,7 +298,7 @@ Rails.application.routes.draw do
           resources :accessories
         end
 
-        namespace :apartments do
+        scope module: :apartments do
           resources :apartments do
             member do
               get 'publish'

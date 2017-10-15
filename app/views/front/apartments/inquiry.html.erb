@@ -1,0 +1,75 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-1"></div>
+    <div class="col-xs-8">
+      <div class="page-header">
+        <h3><%= t('front.apartments.inquiry_form.title') %></h3>
+      </div>
+
+      <%= form_for @property_inquiry, :url => apartment_inquiry_confirm_path(@apartment.id) do |f| %>
+        <br>
+          <p>
+            <%= simple_format(t('front.apartments.inquiry_form.description',
+                                :apartment_name => "<span class='label label-lg label-primary'>#{@apartment.name}</span>"))
+            %>
+          </p>
+          <br>
+
+        <%- if @property_inquiry.errors.any? %>
+          <div class="alert.alert-danger" role="alert">
+            <strong><%= t('front.apartments.inquiry_form.errors.title') %></strong>
+            <ul>
+              <%- @property_inquiry.errors.each do |attr, msg| %>
+                <li>
+                  <%= msg %>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="form-group">
+          <label class="control-label" for=""><%= t('front.apartments.inquiry_form.items.name') %></label>
+          <div class="row">
+            <div class="col-xs-12">
+              <%= f.text_field :name, class: 'form-control' %>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label" for=""><%= t('front.apartments.inquiry_form.items.email') %></label>
+          <div class="row">
+            <div class="col-xs-12">
+              <%= f.text_field :email, class: 'form-control' %>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label" for=""><%= t('front.apartments.inquiry_form.items.tel') %></label>
+          <div class="row">
+            <div class="col-xs-12">
+              <%= f.text_field :tel, class: 'form-control' %>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label" for=""><%= t('front.apartments.inquiry_form.items.inquiry') %></label>
+          <div class="row">
+            <div class="col-xs-12">
+              <%= f.text_area :body, rows: 5, class: 'form-control' %>
+            </div>
+          </div>
+        </div>
+
+        <%= f.submit t('front.apartments.inquiry_form.items.button.caption'),
+                     class: 'btn btn-primary',
+                     data: { disable_with: t('front.apartments.inquiry_form.items.button.loading')} %>
+
+      <% end %>
+    </div>
+  </div>
+</div>
+<br>

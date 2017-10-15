@@ -1,0 +1,9 @@
+ja:
+  front:
+    not_found:
+      title: '該当物件は 0件でした。'
+      description: '条件に一致する情報は見つかりませんでした。再度条件を入力してください。'
+      recommendation: 'こちらのコンテンツも試して見てください'
+      property:
+        apartment: 'アパートの一覧'
+        lands: '土地の一覧'

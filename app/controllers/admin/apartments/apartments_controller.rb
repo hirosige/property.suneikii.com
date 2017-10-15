@@ -54,7 +54,7 @@ class Admin::Apartments::ApartmentsController < AdminController
 
     respond_to do |format|
       if @apartment.save
-        format.html { redirect_to [:admin, :apartments, @apartment], flash: { :success => "#{@apartment.name}を作成しました。" } }
+        format.html { redirect_to [:admin, @apartment], flash: { :success => "#{@apartment.name}を作成しました。" } }
         format.json { render :show, status: :created, location: @apartment }
       else
         format.html { render :new }
@@ -66,7 +66,7 @@ class Admin::Apartments::ApartmentsController < AdminController
   def update
     respond_to do |format|
       if @apartment.update(apartment_params)
-        format.html { redirect_to [:admin, :apartments, @apartment], flash: { :success => "#{@apartment.name}を更新しました。" } }
+        format.html { redirect_to [:admin, @apartment], flash: { :success => "#{@apartment.name}を更新しました。" } }
         format.json { render :show, status: :ok, location: @apartment }
       else
         format.html { render :edit }
@@ -78,7 +78,7 @@ class Admin::Apartments::ApartmentsController < AdminController
   def destroy
     @apartment.destroy
     respond_to do |format|
-      format.html { redirect_to admin_apartments_apartments_url, { :warning => "#{@apartment.name}を削除しました。" } }
+      format.html { redirect_to admin_apartments_url, { :warning => "#{@apartment.name}を削除しました。" } }
       format.json { head :no_content }
     end
   end

@@ -26,6 +26,25 @@
 #  apartment_id         :integer
 #  created_at           :datetime         not null
 #  updated_at           :datetime         not null
+#  floor                :integer
+#  brandnew             :integer
+#  more_than_2floors    :integer
+#  light_on_south       :integer
+#  parkinglot           :integer
+#  auto_lock            :integer
+#  air_con              :integer
+#  separate_bath_toilet :integer
+#  reheating            :integer
+#  wooden_floor         :integer
+#  pet                  :integer
+#  number_of_rooms      :integer
+#  house_insurance      :string(255)
+#  deal_way             :string(255)
+#  kitchen_bath         :text(65535)
+#  services             :text(65535)
+#  etc                  :text(65535)
+#  balcony_space        :integer
+#  light_direction      :string(255)
 #
 
 FactoryGirl.define do

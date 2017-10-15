@@ -24,7 +24,7 @@
     </table>
 
     <div class="provider-info__inquiry">
-      <button class="provider-info__inquiry--btn">
+      <button class="provider-info__inquiry--btn" onclick="location.href='<%= apartment_inquiry_path(@apartment.id) %>'">
         <%= t('front.apartments.provider_info.inquiry') %>
       </button>
     </div>

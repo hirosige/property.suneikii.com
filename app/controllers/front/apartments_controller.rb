@@ -42,6 +42,21 @@ class Front::ApartmentsController < FrontController
 
     track_visit_into_session
 
+    @places = Array.new
+    @places.push({
+                     :latitude    => @apartment.apartment_info.latitude,
+                     :longitude   => @apartment.apartment_info.longitude,
+                     :description => @apartment.name,
+                     :title       => @apartment.name
+                 })
+
+    @hash = Gmaps4rails.build_markers(@places) do |place, marker|
+      marker.lat place[:latitude]
+      marker.lng place[:longitude]
+      marker.infowindow place[:description]
+      marker.json({title: place[:title]})
+    end
+
     respond_to do |format|
       format.html
       format.mobile
@@ -82,6 +97,29 @@ class Front::ApartmentsController < FrontController
     end
   end
 
+  def inquiry
+    @apartment = Apartment.find(params[:id])
+    @property_inquiry = PropertyInquiry.new
+  end
+
+  def confirm
+    @apartment = Apartment.find(params[:id])
+    @property_inquiry = PropertyInquiry.new(property_inquiry_params)
+
+    if @property_inquiry.valid?
+      render :action => 'confirm'
+    else
+      render :action => 'inquiry'
+    end
+  end
+
+  def thanks
+    @property_inquiry = PropertyInquiry.new(property_inquiry_params)
+    @property_inquiry.save
+
+    PropertyInquiryMailer.received_email(@property_inquiry).deliver
+  end
+
   private
     def set_apartment
       @apartment = Front::ApartmentDecorator.decorate(
@@ -91,5 +129,15 @@ class Front::ApartmentsController < FrontController
 
     def set_root_breadcrumb
       add_breadcrumb t('front.apartments.title'), :apartment_province_list_path
+    end
+
+    def property_inquiry_params
+      params.require(:property_inquiry).permit(
+          :name,
+          :email,
+          :tel,
+          :body,
+          :apartment_id
+      )
     end
 end

@@ -84,3 +84,31 @@ en:
           working_time: 'Working Time'
           holidays: 'Holidays'
         inquiry: 'Contact Us About This'
+      inquiry_form:
+        title: 'Inquiry Form'
+        description: 'Inquiry about %{apartment_name}.'
+        errors:
+          title: 'Your input contains errors.'
+        items:
+          name: 'Name'
+          email: 'E-Mail'
+          tel: 'Tel'
+          inquiry: 'Your Inquiry'
+          button:
+            caption: 'Confirm'
+            loading: 'Moving confirm...'
+      confirm:
+        title: 'Confirm Form'
+        items:
+          property: 'Property Inquiry'
+          name: 'Name'
+          email: 'E-Mail'
+          tel: 'Tel'
+          inquiry: 'Your Inquiry'
+        buttons:
+          caption: 'Submit'
+          sending: 'Submitting...'
+      thanks:
+        title: 'Complete'
+        description: 'Your inquiry is successfully sent to us.'
+        greeting: 'Thank you for your inquiry.'

@@ -1,0 +1,61 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <!-- If you delete this tag, the sky will fall on your head -->
+  <meta name="viewport" content="width=device-width" />
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title><%= t('site_name') %></title>
+
+  <style type="text/css">
+    .main {
+      background: rgba(68, 68, 68, 0.9);
+      padding: 20px;
+      border-radius: 5px;
+      color: #fff;
+    }
+
+    .site_name {
+      padding: 5px;
+      background: #ff0084;
+      color: #fff;
+      border-radius: 5px;
+    }
+
+    .greet {
+      font-size: 1.5rem;
+      text-decoration: underline;
+    }
+
+    .message {
+      background: #444;
+      color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      margin: 10px;
+    }
+  </style>
+</head>
+<body class="main">
+  <h1 class="greet">
+    Dear <%= @site_inquiry.name %>,
+  </h1>
+
+  <p>Thank you for choosing <span class="site_name"><%= Settings.site[:name] %></span>; we appreciate your business.</p>
+
+  <p>We received your inquiry via our website like below:</p>
+
+  <div class="message">
+    <%= simple_format(@site_inquiry.body) %>
+  </div>
+
+  <p>
+    We will reply you as soon as possible.<br/>
+    And please let our staff contact you.
+  </p>
+
+  <p>
+    Sincerely,<br><br>
+    <span class="site_name"><%= Settings.site[:name] %></span> Team
+  </p>
+</body>
+</html>
