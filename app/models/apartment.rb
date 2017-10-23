@@ -38,9 +38,6 @@ class Apartment < ActiveRecord::Base
   validates :room_type_id,   :presence => true
   validates :space,          :presence => true
 
-  def validate_info
-    errors.add(:latitude, "latitude is required") unless apartment_info.latitude.nil?
-  end
 
   has_one :apartment_info, dependent: :destroy
   has_many :apartment_surroundings

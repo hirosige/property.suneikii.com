@@ -20,7 +20,7 @@ RSpec.describe Front::ApartmentsController, type: :controller do
 
   describe "GET #show" do
     it "returns http success" do
-      Apartment.create!
+      create(:apartment_th)
       apartment = Apartment.first
 
       get :show, id: apartment.id

@@ -12,7 +12,7 @@ require "rails_helper"
 
 RSpec.describe Admin::Apartments::ApartmentOptionsController, type: :routing do
   describe "routing" do
-    let(:url_request) {"/ja/admin/apartments/apartment_options"}
+    let(:url_request) {"/ja/admin/apartment_options"}
     let(:request)     {"admin/apartments/apartment_options"}
 
     it "routes to #index" do

@@ -43,18 +43,20 @@ class Front::ApartmentsController < FrontController
     track_visit_into_session
 
     @places = Array.new
-    @places.push({
-                     :latitude    => @apartment.apartment_info.latitude,
-                     :longitude   => @apartment.apartment_info.longitude,
-                     :description => @apartment.name,
-                     :title       => @apartment.name
-                 })
+    unless @apartment.apartment_info.nil?
+      @places.push({
+                       :latitude    => @apartment.apartment_info.latitude,
+                       :longitude   => @apartment.apartment_info.longitude,
+                       :description => @apartment.name,
+                       :title       => @apartment.name
+                   })
 
-    @hash = Gmaps4rails.build_markers(@places) do |place, marker|
-      marker.lat place[:latitude]
-      marker.lng place[:longitude]
-      marker.infowindow place[:description]
-      marker.json({title: place[:title]})
+      @hash = Gmaps4rails.build_markers(@places) do |place, marker|
+        marker.lat place[:latitude]
+        marker.lng place[:longitude]
+        marker.infowindow place[:description]
+        marker.json({title: place[:title]})
+      end
     end
 
     respond_to do |format|

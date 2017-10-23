@@ -28,22 +28,25 @@
 #
 
 FactoryGirl.define do
-  factory :apartment do
-    area_id 1
-    name "MyString"
-    rent_fee 1
-    security_deposit 1
-    deposit 1
-    transportation "MyText"
-    utility_fee 1
-    key_money 1
-    address "MyText"
-    since_when "2017-06-10"
-    room_type_id 1
-    space "MyString"
-    photo "MyString"
-    recommendations "MyText"
-    status "MyString"
-    provider_id 1
+
+  factory :apartment_th, class: Apartment do
+    name              "test"
+    rent_fee          4000
+    security_deposit  4000
+    deposit           4000
+    transportation    "test"
+    utility_fee       4000
+    key_money         4000
+    address           "test"
+    since_when        "2017-09-09"
+    room_type_id      1
+    space             40
+    recommendations   "test"
+    provider_id       1
+    country_id        1
+    province_id       1
+    district_id       1
+    subdistrict_id    1
+    surety_company_id 1
   end
 end

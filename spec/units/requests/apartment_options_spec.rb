@@ -13,7 +13,7 @@ require 'rails_helper'
 RSpec.describe "ApartmentOptions", type: :request do
   describe "GET /apartment_options" do
     it "works! (now write some real specs)" do
-      get admin_apartments_apartment_options_path
+      get admin_apartment_options_path
       expect(response).to have_http_status(302)
     end
   end
