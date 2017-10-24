@@ -9,7 +9,7 @@ class Front::FavoritesController < FrontController
     else
       add_breadcrumb "お気に入りリスト"
 
-      @favorites = Favorite.includes(:apartment).page(params[:page])
+      @favorites = current_user.favorites.page(params[:page])
     end
   end
 
