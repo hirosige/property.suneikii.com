@@ -6,7 +6,7 @@ ja:
       modify_page_title:     "備品 追加/修正画面"
       description:           ""
       items:
-        area:                "エリア"
+        area:                "物件エリア"
         name:                "アパート名"
         rent_fee:            "賃料"
         security_deposit:    "敷金"
@@ -34,3 +34,9 @@ ja:
         add:                 "アパート追加"
         exec:                "追加/修正"
         csv_export:          "アパートデータ エクスポート"
+        publish:             "公開する"
+        seal:                "非公開にする"
+        occupy:              "満員にする"
+        vacant:              "空きにする"
+        busy:                "準備中にする"
+        be_ready:            "即時入居可能にする"

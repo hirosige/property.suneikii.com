@@ -1,6 +1,7 @@
 en:
   admin:
     greeting: "Welcome,"
+    user_name: "Mr. %{name}"
     page_title: "Admin"
     sidemenu_1:
       title: "Home"

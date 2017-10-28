@@ -13,7 +13,7 @@
         <div class="profile_info">
           <span><%= t('admin.greeting') %></span>
           <h2>
-            <%= current_user.name %> さん
+            <%= t('admin.user_name', :name => current_user.name) %>
           </h2>
         </div>
       </div>
@@ -38,29 +38,7 @@
         </div>
         <div class="menu_section">
           <h3>Live On</h3>
-          <ul class="nav side-menu">
-            <li><a><i class="fa fa-windows"></i> Extras <span class="fa fa-chevron-down"></span></a>
-              <ul class="nav child_menu" style="display: none">
-                <li><a>Errors<span class="fa fa-chevron-down"></span></a>
-                  <ul class="nav child_menu" style="display: none">
-                    <li><a href="<%= sample_error_403_path %>">403 Error</a>
-                    </li>
-                    <li><a href="<%= sample_error_404_path %>">404 Error</a>
-                    </li>
-                    <li><a href="<%= sample_error_500_path %>">500 Error</a>
-                    </li>
-                  </ul>
-                </li>
 
-                <li><a href="<%= sample_plain_page_path %>">Plain Page</a>
-                </li>
-                <li><a href="<%= sample_login_page_path %>">Login Page</a>
-                </li>
-                <li><a href="<%= sample_pricing_tables_path %>">Pricing Tables</a>
-                </li>
-              </ul>
-            </li>
-          </ul>
         </div>
       </div>
 

@@ -30,7 +30,7 @@ class Admin::Apartments::ApartmentOptionsController < AdminController
 
     respond_to do |format|
       if @apartment_option.save
-        format.html { redirect_to [:admin, :apartments, @apartment_option], flash: { :success => "#{@apartment_option.name}を作成しました。" } }
+        format.html { redirect_to [:admin, @apartment_option], flash: { :success => "#{@apartment_option.name}を作成しました。" } }
         format.json { render :show, status: :created, location: @apartment_option }
       else
         format.html { render :new }
@@ -44,7 +44,7 @@ class Admin::Apartments::ApartmentOptionsController < AdminController
   def update
     respond_to do |format|
       if @apartment_option.update(apartment_option_params)
-        format.html { redirect_to [:admin, :apartments, @apartment_option], flash: { :success => "#{@apartment_option.name}を更新しました。" } }
+        format.html { redirect_to [:admin, @apartment_option], flash: { :success => "#{@apartment_option.name}を更新しました。" } }
         format.json { render :show, status: :ok, location: @apartment_option }
       else
         format.html { render :edit }
@@ -58,7 +58,7 @@ class Admin::Apartments::ApartmentOptionsController < AdminController
   def destroy
     @apartment_option.destroy
     respond_to do |format|
-      format.html { redirect_to admin_apartments_apartment_options_url, flash: { :warning => "#{@apartment_option.name}を削除しました。" } }
+      format.html { redirect_to admin_apartment_options_url, flash: { :warning => "#{@apartment_option.name}を削除しました。" } }
       format.json { head :no_content }
     end
   end

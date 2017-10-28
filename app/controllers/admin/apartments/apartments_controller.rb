@@ -10,7 +10,8 @@ class Admin::Apartments::ApartmentsController < AdminController
             :province,
             :district,
             :subdistrict,
-            :provider
+            :provider,
+            :room_type,
         ).page(params[:page])
     )
 

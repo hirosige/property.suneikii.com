@@ -1,6 +1,7 @@
 ja:
   admin:
     greeting: "ようこそ、"
+    user_name: "%{name}さん"
     page_title: "管理画面"
     sidemenu_1:
       title: "ホーム"

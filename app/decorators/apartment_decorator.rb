@@ -121,6 +121,10 @@ class ApartmentDecorator < Draper::Decorator
     "#{self.info.number_of_rooms}戸"
   end
 
+  def room_type_name
+    self.room_type.name unless self.room_type_id.nil?
+  end
+
   def contact_span
     "#{self.info.contact_span}戸"
   end
