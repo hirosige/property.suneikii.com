@@ -1,0 +1,63 @@
+<section>
+  <div class="section-title">
+    <%= t('front.apartments.property_installation.title') %>
+  </div>
+  <table class="detailed-info__table column2">
+    <tbody>
+    <tr>
+      <th><%= t('front.apartments.property_installation.installations.title') %></th>
+      <td>
+        <div class="detailed-info__installations-boxes">
+          <div class="detailed-info__installations-box--<%= @apartment.brandnew %>">
+            <%= t('front.apartments.property_installation.installations.brandnew') %>
+          </div>
+          <div class="detailed-info__installations-box--<%= @apartment.more_than_2floors %>">
+            <%= t('front.apartments.property_installation.installations.more_than_2floors') %>
+          </div>
+          <div class="detailed-info__installations-box--<%= @apartment.light_on_south %>">
+            <%= t('front.apartments.property_installation.installations.light_on_south') %>
+          </div>
+          <div class="detailed-info__installations-box--<%= @apartment.parkinglot %>">
+            <%= t('front.apartments.property_installation.installations.parkinglot') %>
+          </div>
+          <div class="detailed-info__installations-box--<%= @apartment.auto_lock %>">
+            <%= t('front.apartments.property_installation.installations.auto_lock') %>
+          </div>
+          <div class="detailed-info__installations-box--<%= @apartment.air_con %>">
+            <%= t('front.apartments.property_installation.installations.air_con') %>
+          </div>
+          <div class="detailed-info__installations-box--<%= @apartment.separate_bath_toilet %>">
+            <%= t('front.apartments.property_installation.installations.separate_bath_toilet') %>
+          </div>
+          <div class="detailed-info__installations-box--<%= @apartment.reheating %>">
+            <%= t('front.apartments.property_installation.installations.reheating') %>
+          </div>
+          <div class="detailed-info__installations-box--<%= @apartment.wooden_floor %>">
+            <%= t('front.apartments.property_installation.installations.wooden_floor') %>
+          </div>
+          <div class="detailed-info__installations-box--<%= @apartment.pet %>">
+            <%= t('front.apartments.property_installation.installations.pet') %>
+          </div>
+        </div>
+
+      </td>
+    </tr>
+    <tr>
+      <th><%= t('front.apartments.property_installation.kitchen_bath') %></th>
+      <td><%= @apartment.kitchen_bath %></td>
+    </tr>
+    <tr>
+      <th><%= t('front.apartments.property_installation.service') %></th>
+      <td><%= @apartment.services %></td>
+    </tr>
+    <tr>
+      <th><%= t('front.apartments.property_installation.etc') %></th>
+      <td><%= @apartment.etc %></td>
+    </tr>
+    <tr>
+      <th><%= t('front.apartments.property_installation.remarks') %></th>
+      <td><%= @apartment.remarks %></td>
+    </tr>
+    </tbody>
+  </table>
+</section>

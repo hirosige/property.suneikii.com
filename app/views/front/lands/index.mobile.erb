@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <%= render 'front/shared/side_view' %>
+    </div>
+    <div class="col-md-8">
+      <%= render 'front/shared/mini_news' %>
+
+      <div class="main-title__base">
+        <div class="main-title--left">
+          <div class="main-title__caption">
+            <%= params[:province].capitalize unless params[:province].nil? %>の物件一覧
+          </div>
+        </div>
+        <div class="main-title--right">
+          <!--<button class="main-title__btn">-->
+            <!--<i class="fa fa-envelope"></i> この条件で新着メールを受取る-->
+          <!--</button>-->
+          <!--<button class="main-title__btn">-->
+            <!--<i class="fa fa-save"></i> この条件を保存する-->
+          <!--</button>-->
+        </div>
+        <div class="main--title-clearfix"></div>
+      </div>
+
+      <% unless @provinces.nil? %>
+        <% @provinces.each do |province| %>
+          <a href="<%= apartment_province_list_path(province.original_id) %>"><%= province.name_ja %></a>
+          <br>
+        <% end %>
+      <% end %>
+
+      <% if @apartments.blank? %>
+        <%= render 'front/shared/not_found' %>
+      <% else %>
+        <%= render 'pagination' %>
+        <%= render 'item_list' %>
+        <%= render 'pagination' %>
+      <% end %>
+
+      <br>
+      </div>
+    </div>
+  </div>
+</div>

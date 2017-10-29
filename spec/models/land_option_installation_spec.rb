@@ -1,0 +1,16 @@
+# == Schema Information
+#
+# Table name: land_option_installations
+#
+#  id             :integer          not null, primary key
+#  land_id        :integer
+#  land_option_id :integer
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#
+
+require 'rails_helper'
+
+RSpec.describe LandOptionInstallation, type: :model do
+  pending "add some examples to (or delete) #{__FILE__}"
+end

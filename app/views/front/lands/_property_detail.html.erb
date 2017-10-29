@@ -1,0 +1,49 @@
+<section>
+  <div class="section-title">
+    <%= t('front.apartments.property_detail.title') %>
+  </div>
+  <table class="detailed-info__table">
+    <tbody>
+    <tr>
+      <th><%= t('front.apartments.property_detail.made_of') %></th>
+      <td><%= @apartment.made_of %></td>
+      <th><%= t('front.apartments.property_detail.floors') %></th>
+      <td><%= @apartment.unit_floors %></td>
+    </tr>
+    <tr>
+      <th><%= t('front.apartments.property_detail.parking') %></th>
+      <td><%= @apartment.parking %></td>
+      <th><%= t('front.apartments.property_detail.number_of_rooms') %></th>
+      <td><%= @apartment.number_of_rooms %></td>
+    </tr>
+    <tr>
+      <th><%= t('front.apartments.property_detail.contract_span') %></th>
+      <td><%= @apartment.contact_span %></td>
+      <th><%= t('front.apartments.property_detail.update_fee') %></th>
+      <td><%= @apartment.delimited_update_fee %></td>
+    </tr>
+    <tr>
+      <th><%= t('front.apartments.property_detail.utility_fee') %></th>
+      <td colspan="3"><%= @apartment.delimited_utility_fee %></td>
+    </tr>
+    <tr>
+      <th><%= t('front.apartments.property_detail.surety_company') %></th>
+      <td> - </td>
+      <th><%= t('front.apartments.property_detail.house_insurance') %></th>
+      <td><%= @apartment.house_insurance %></td>
+    </tr>
+    <tr>
+      <th><%= t('front.apartments.property_detail.status') %></th>
+      <td><%= @apartment.property_status %></td>
+      <th><%= t('front.apartments.property_detail.availability') %></th>
+      <td><%= @apartment.availability %></td>
+    </tr>
+    <tr>
+      <th><%= t('front.apartments.property_detail.property_id') %></th>
+      <td><%= @apartment.management_id %></td>
+      <th><%= t('front.apartments.property_detail.deal_way') %></th>
+      <td><%= @apartment.deal_way %></td>
+    </tr>
+    </tbody>
+  </table>
+</section>

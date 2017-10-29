@@ -1,0 +1,284 @@
+<div class="container">
+  <div class="basic-info">
+    <div class="title-base">
+      <div class="kinds">
+        賃貸アパート
+      </div>
+      <div class="title">
+        レオパレスＴＮ参番館 3階/310
+      </div>
+    </div>
+    <div class="description-body">
+      <div class="description-left">
+        <div class="line">
+          <dl>
+            <dt class="title">賃料（管理費用）</dt>
+            <dd class="price">6.3万円</dd>
+          </dl>
+          <dl>
+            <dt class="title">敷金/礼金</dt>
+            <dd>無 / 0.5ヶ月</dd>
+          </dl>
+          <dl>
+            <dt class="title">保証金</dt>
+            <dd>- / -</dd>
+          </dl>
+        </div>
+        <div class="line">
+          <dl>
+            <dt class="title">交通</dt>
+            <dd>
+              阪急京都本線 高槻市駅 徒歩24分<br>
+              <a href="#">通勤・通学駅までの経路・所要時間を調べる</a>
+            </dd>
+          </dl>
+
+        </div>
+        <div class="line">
+          <dl>
+            <dt class="title">所在地</dt>
+            <dd>
+              大阪府高槻市春日町<br>
+              <a href="#">地図をみる</a>
+            </dd>
+          </dl>
+
+        </div>
+        <div class="line">
+          <dl>
+            <dt class="title">賃料（管理費用）</dt>
+            <dd class="price">6.3万円</dd>
+          </dl>
+          <dl>
+            <dt class="title">敷金/礼金</dt>
+            <dd>無 / 0.5ヶ月</dd>
+          </dl>
+          <dl>
+            <dt class="title">保証金</dt>
+            <dd>- / -</dd>
+          </dl>
+        </div>
+        <div class="date-info">
+          登録日 : <time>2017/06/28</time>
+          更新日 : <time>2017/06/30</time>
+        </div>
+      </div>
+      <div class="description-right">
+        <div class="description-inquiry">
+          <button class="btn-snk" >
+            <i class="fa fa-phone-square"></i>
+            この物件を問い合わせる
+          </button>
+          <%= image_tag("snk_logo.jpg", :class => 'provider', :alt => 'logo') %>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+
+    </div>
+  </div>
+
+
+
+  <% unless @apartment.apartment_thumbnails.blank? %>
+    <div class="contents-gap"></div>
+
+    <div class="phto-slide">
+      <style>
+        .swiper-container {
+          width: 100%;
+          height: 500px;
+          padding-top: 100px;
+          padding-bottom: 100px;
+        }
+        .swiper-slide {
+          background-position: center;
+          background-size: cover;
+          width: 300px;
+          height: 300px;
+          box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
+        }
+      </style>
+
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <% @apartment.apartment_thumbnails.each do |thumbnail| %>
+              <div class="swiper-slide" style="background-image:url(<%= thumbnail.image_url(:middle) %>)">
+                <div class="swiper-slide__title">Image</div>
+                <!--<button id="image1" class="swiper-slide__preview">-->
+                  <!--<i class="fa fa-arrows" aria-hidden="true"></i>-->
+                <!--</button>-->
+              </div>
+          <% end %>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination" style="margin-top: 50px; margin-bottom: 50px;"></div>
+
+        <script>
+            var swiper = new Swiper('.swiper-container', {
+                pagination: '.swiper-pagination',
+                effect: 'coverflow',
+                grabCursor: true,
+                centeredSlides: true,
+                slidesPerView: 'auto',
+                coverflow: {
+                    rotate: 50,
+                    stretch: 0,
+                    depth: 100,
+                    modifier: 1,
+                    slideShadows : true
+                }
+            });
+        </script>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="contents-gap"></div>
+
+  <div class="basic-info detailed-info">
+    <div class="title-base sub-info-title">
+      <div class="title sub-title">
+        このアパートの情報
+      </div>
+    </div>
+    <div class="info-body">
+      <section>
+        <div class="section-title">
+          物件詳細情報
+        </div>
+        <table class="detailed-info__table">
+          <tbody>
+          <tr>
+            <th>建物構造</th>
+            <td>鉄構造</td>
+            <th>所在階 / 階数</th>
+            <td>3階 / 4階建</td>
+          </tr>
+          <tr>
+            <th>駐車場</th>
+            <td> - </td>
+            <th>総戸数</th>
+            <td>40戸</td>
+          </tr>
+          <tr>
+            <th>契約期間</th>
+            <td> - </td>
+            <th>更新料</th>
+            <td>16,200円</td>
+          </tr>
+          <tr>
+            <th>その他費用</th>
+            <td colspan="3">
+              鍵交換費用 : 10,260円、室内清掃費用 : 30,780円
+            </td>
+          </tr>
+          <tr>
+            <th>保証会社</th>
+            <td> - </td>
+            <th>住宅保険</th>
+            <td>要</td>
+          </tr>
+          <tr>
+            <th>現況</th>
+            <td>居住中</td>
+            <th>引渡し</th>
+            <td>2017年08月 上旬</td>
+          </tr>
+          <tr>
+            <th>LIFULL HOME'S物件番号</th>
+            <td>0127879-0016847</td>
+            <th>取引態様</th>
+            <td>仲介</td>
+          </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <div class="section-title">
+          この物件のこだわり/設備・条件
+        </div>
+        <table class="detailed-info__table column2">
+          <tbody>
+          <tr>
+            <th>この物件のこだわり</th>
+            <td>
+              <div class="detailed-info__installations-boxes">
+                <div class="detailed-info__installations-box--inactive">新築</div>
+                <div class="detailed-info__installations-box--active">2階以上の物件</div>
+                <div class="detailed-info__installations-box--active">南向き</div>
+                <div class="detailed-info__installations-box--inactive">駐車場あり</div>
+                <div class="detailed-info__installations-box--inactive">オートロック</div>
+                <div class="detailed-info__installations-box--active">エアコン</div>
+                <div class="detailed-info__installations-box--active">バス・トイレ別</div>
+                <div class="detailed-info__installations-box--inactive">追焚機能</div>
+                <div class="detailed-info__installations-box--inactive">フローリング</div>
+                <div class="detailed-info__installations-box--inactive">ペット相談可</div>
+              </div>
+
+            </td>
+          </tr>
+          <tr>
+            <th>キッチン/バス・トイレ</th>
+            <td>バス・トイレ別, 温水洗浄便座, 浴室乾燥機, 室内洗濯機置場</td>
+          </tr>
+          <tr>
+            <th>設備・サービス</th>
+            <td>防犯カメラ, TVモニタ付インターホン, エアコン, バルコニー, インターネット対応, 駐輪場あり</td>
+          </tr>
+          <tr>
+            <th>その他</th>
+            <td>家具・家電付</td>
+          </tr>
+          <tr>
+            <th>備考</th>
+            <td>
+              環境維持費:1ヶ月540円（税込）、
+              鍵交換費:ご契約時10260円（税込）、
+              基本清掃料(退室時)1K27540円(家具・家電付の部屋は3240円追加)税込、
+              インターネット利用料：有料、更新手数料:16200円（税込）、保証委託料：必要、引落手数料：540円（税込）
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <div class="section-title">
+          取扱い不動産会社
+        </div>
+        <div class="provider-info">
+          <div class="provider-info__title">
+            <%= @apartment.provider.name unless @apartment.provider.nil? %>&nbsp;
+            <span class="provider-info__label">優良店認定</span>&nbsp;
+            <a class="provider-info__url" href="#">会社情報</a>
+          </div>
+          <table class="provider-info__table column2">
+            <tbody>
+            <tr>
+              <th>所在地</th>
+              <td colspan="3"><%= @apartment.provider.address unless @apartment.provider.nil? %></td>
+            </tr>
+            <tr>
+              <th>営業時間</th>
+              <td><%= @apartment.provider.working_time unless @apartment.provider.nil? %></td>
+              <th>定休日</th>
+              <td><%= @apartment.provider.holidays unless @apartment.provider.nil? %></td>
+            </tr>
+            </tbody>
+          </table>
+
+          <div class="provider-info__inquiry">
+            <button class="provider-info__inquiry--btn">
+              空室状況を問い合わせる
+            </button>
+          </div>
+        </div>
+
+      </section>
+    </div>
+  </div>
+
+  <div class="contents-gap"></div>
+
+</div>

@@ -1,0 +1,79 @@
+<div class="basic-info">
+  <div class="title-base">
+    <div class="kinds">
+      <%= t('front.apartments.title') %>
+    </div>
+    <div class="title">
+      <%= @apartment.name %>
+    </div>
+  </div>
+  <div class="description-body">
+    <div class="description-left">
+      <div class="line">
+        <dl>
+          <dt class="title"><%= t('front.apartments.basic_info.rent_fee') %></dt>
+          <dd class="price"><%= @apartment.delimited_rent_fee %></dd>
+        </dl>
+        <dl>
+          <dt class="title"><%= t('front.apartments.basic_info.security_deposit') %></dt>
+          <dd><%= @apartment.delimited_security_deposit %></dd>
+        </dl>
+        <dl>
+          <dt class="title"><%= t('front.apartments.basic_info.deposit') %></dt>
+          <dd><%= @apartment.delimited_deposit %></dd>
+        </dl>
+      </div>
+      <div class="line">
+        <dl>
+          <dt class="title"><%= t('front.apartments.basic_info.transportation') %></dt>
+          <dd>
+            <%= @apartment.transportation %><br>
+            <!--<a href="#">通勤・通学駅までの経路・所要時間を調べる</a>-->
+          </dd>
+        </dl>
+
+      </div>
+      <div class="line">
+        <dl>
+          <dt class="title"><%= t('front.apartments.basic_info.address') %></dt>
+          <dd>
+            <%= @apartment.address %><br>
+            <!--<a href="#">地図をみる</a>-->
+          </dd>
+        </dl>
+
+      </div>
+      <div class="line">
+        <dl>
+          <dt class="title"><%= t('front.apartments.basic_info.since_when') %></dt>
+          <dd><%= @apartment.formatted_since_when %></dd>
+          <dt class="title"><%= t('front.apartments.basic_info.light_direction') %></dt>
+          <dd><%= @apartment.light_direction %></dd>
+          <dt class="title"><%= t('front.apartments.basic_info.space') %></dt>
+          <dd><%= @apartment.unit_space %></dd>
+        </dl>
+        <dl>
+          <dt class="title"><%= t('front.apartments.basic_info.balcony_space') %></dt>
+          <dd><%= @apartment.balcony_space %></dd>
+          <dt class="title"><%= t('front.apartments.basic_info.room_type') %></dt>
+          <dd><%= @apartment.room_type.name %></dd>
+        </dl>
+      </div>
+      <div class="date-info">
+        <%= t('front.apartments.basic_info.created_at') %> : <time><%= @apartment.formatted_created_at %></time>
+        <%= t('front.apartments.basic_info.updated_at') %> : <time><%= @apartment.formatted_updated_at %></time>
+      </div>
+    </div>
+    <div class="description-right">
+      <div class="description-inquiry">
+        <button class="btn-snk" onclick="location.href='<%= apartment_inquiry_path(@apartment.id) %>'">
+          <i class="fa fa-phone-square"></i>
+          <%= t('front.apartments.inquiry') %>
+        </button>
+        <%= image_tag("snk_logo.jpg", :class => 'provider', :alt => 'logo') %>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+
+  </div>
+</div>

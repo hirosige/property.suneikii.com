@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171003164645) do
+ActiveRecord::Schema.define(version: 20171029160940) do
 
   create_table "accessories", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -288,6 +288,107 @@ ActiveRecord::Schema.define(version: 20171003164645) do
     t.text     "message",    limit: 65535
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+  end
+
+  create_table "land_categories", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.integer  "land_id",    limit: 4
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "land_infos", force: :cascade do |t|
+    t.text     "remarks",                   limit: 65535
+    t.string   "photo",                     limit: 255
+    t.decimal  "latitude",                                precision: 10
+    t.decimal  "longitude",                               precision: 10
+    t.integer  "corner",                    limit: 4
+    t.integer  "low_rise_residential_area", limit: 4
+    t.integer  "no_condition",              limit: 4
+    t.integer  "ownership_or_not",          limit: 4
+    t.integer  "contact_span",              limit: 4
+    t.string   "conditions",                limit: 255
+    t.integer  "update_fee",                limit: 4
+    t.date     "published_on"
+    t.date     "updating_on"
+    t.string   "property_status",           limit: 255
+    t.string   "availability",              limit: 255
+    t.string   "management_id",             limit: 255
+    t.integer  "land_id",                   limit: 4
+    t.string   "face_with_road",            limit: 255
+    t.string   "send_back",                 limit: 255
+    t.string   "private_way_space",         limit: 255
+    t.string   "urban_planning",            limit: 255
+    t.string   "zoning",                    limit: 255
+    t.string   "topography",                limit: 255
+    t.string   "ownership",                 limit: 255
+    t.string   "land_law_notification",     limit: 255
+    t.string   "deal_way",                  limit: 255
+    t.text     "services",                  limit: 65535
+    t.text     "etc",                       limit: 65535
+    t.text     "school",                    limit: 65535
+    t.text     "shopping",                  limit: 65535
+    t.text     "facilities",                limit: 65535
+    t.datetime "created_at",                                             null: false
+    t.datetime "updated_at",                                             null: false
+  end
+
+  create_table "land_option_installations", force: :cascade do |t|
+    t.integer  "land_id",        limit: 4
+    t.integer  "land_option_id", limit: 4
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  create_table "land_options", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "land_surrondings", force: :cascade do |t|
+    t.integer  "land_id",        limit: 4
+    t.integer  "surrounding_id", limit: 4
+    t.integer  "distance",       limit: 4
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  create_table "land_surroundings", force: :cascade do |t|
+    t.integer  "land_id",        limit: 4
+    t.integer  "surrounding_id", limit: 4
+    t.integer  "distance",       limit: 4
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  create_table "land_thumbnails", force: :cascade do |t|
+    t.integer  "land_id",    limit: 4
+    t.string   "image",      limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "lands", force: :cascade do |t|
+    t.string   "name",              limit: 255
+    t.integer  "rent_fee",          limit: 4
+    t.text     "transportation",    limit: 65535
+    t.text     "address",           limit: 65535
+    t.integer  "land_category_id",  limit: 4
+    t.string   "space",             limit: 255
+    t.string   "photo",             limit: 255
+    t.text     "recommendations",   limit: 65535
+    t.string   "status",            limit: 255
+    t.integer  "provider_id",       limit: 4
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.integer  "country_id",        limit: 4
+    t.integer  "province_id",       limit: 4
+    t.integer  "district_id",       limit: 4
+    t.integer  "subdistrict_id",    limit: 4
+    t.integer  "surety_company_id", limit: 4
+    t.integer  "building_coverage", limit: 4
+    t.integer  "floor_area_ratio",  limit: 4
   end
 
   create_table "menus", force: :cascade do |t|

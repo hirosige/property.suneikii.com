@@ -27,7 +27,7 @@
         <i class="fa fa-building"></i>
         <%= t('front.apartments.title') %>
       </button>
-      <button class="control-box__btn" disabled>
+      <button class="control-box__btn <%= 'control-box__btn--active' if params[:controller].split('/')[1] == 'lands' %>" onclick="location.href='<%= land_province_list_path %>'">
         <i class="fa fa-plus-square-o"></i>
         <%= t('front.lands.title') %>
       </button>

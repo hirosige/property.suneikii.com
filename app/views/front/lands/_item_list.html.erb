@@ -1,0 +1,90 @@
+<% @apartments.each do |apartment| %>
+    <div class="mainplane__base">
+      <div class="mainplane__title">
+        <soan class="mainplane__category"><%= t('front.apartments.title') %></soan>
+        <!--<soan class="mainplane__type">分譲</soan>-->
+        <a href="<%= apartment_path(apartment.id) %>" class="mainplane__title--link"><%= apartment.name %></a>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-4 col-xs-12">
+          <div class="mainplane__photo">
+            <a href="<%= apartment_path(apartment.id) %>">
+              <%= apartment.photo %>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-8 col-md-8 col-xs-12">
+          <table class="mainplane__table">
+            <tbody>
+            <tr>
+              <th style="width: 200px;">
+                <%= t('front.apartments.main_plane.items.address') %>
+              </th>
+              <td>
+                <%= apartment.address %>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <%= t('front.apartments.main_plane.items.transportation') %>
+              </th>
+              <td>
+                <%= apartment.transportation %>
+              </td>
+            </tr>
+            <tr>
+              <th><%= t('front.apartments.main_plane.items.since_when_floors') %></th>
+              <td><%= apartment.formatted_since_when %> / <%= apartment.unit_floors %></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="mainplane__sub-info">
+        <div class="mainplane__sub-info__title">
+          <%= t('front.apartments.main_plane.items.recommendations') %>
+        </div>
+        <div class="mainplane__sub-info__body">
+          <%= apartment.recommendations %>
+        </div>
+        <table class="mainplane__sub-info__table">
+          <thead>
+          <th sytle="width: 50px;"><%= t('front.apartments.main_plane.items.floor') %></th>
+          <th><%= t('front.apartments.main_plane.items.price') %></th>
+          <th><%= t('front.apartments.main_plane.items.utility_fee') %></th>
+          <th><%= t('front.apartments.main_plane.items.deposits') %></th>
+          <th><%= t('front.apartments.main_plane.items.room_type') %></th>
+          <th><%= t('front.apartments.main_plane.items.space') %></th>
+          <% if user_signed_in? %>
+              <th><%= t('front.apartments.main_plane.items.favorite.caption') %></th>
+          <% end %>
+          <th><%= t('front.apartments.main_plane.items.detail') %></th>
+          </thead>
+          <tbody>
+          <td><%= apartment.unit_floor %></td>
+          <td class="price"><%= apartment.delimited_rent_fee %></td>
+          <td><%= apartment.delimited_utility_fee %></td>
+          <td><%= apartment.delimited_deposit %></td>
+          <td><%= apartment.room_type.name %></td>
+          <td><%= apartment.unit_space %></td>
+          <% if user_signed_in? %>
+              <td id="favorite_apartment_<%= apartment.id %>">
+                <% if Favorite.where(user_id: current_user, apartment_id: apartment.id).size > 0 %>
+                    <div class="mainplane__btn--saved"><%= t('front.apartments.main_plane.items.favorite.done') %></div>
+                <% else %>
+                    <button class="mainplane__btn" id="like_apartment_<%= apartment.id %>" data-id="<%= apartment.id %>">
+                      <i class="fa fa-save"></i> <%= t('front.apartments.main_plane.items.favorite.button') %>
+                    </button>
+                <% end %>
+              </td>
+          <% end %>
+          <td>
+            <button class="mainplane__btn" onclick="location.href='<%= apartment_path(apartment.id) %>'">
+              <i class="fa fa-save"></i> <%= t('front.apartments.main_plane.items.detail') %>
+            </button>
+          </td>
+          </tbody>
+        </table>
+      </div>
+    </div>
+<% end %>

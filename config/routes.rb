@@ -269,13 +269,23 @@ Rails.application.routes.draw do
          post 'site_inquiry/confirm'     => 'site_inquiry#confirm'
          post 'site_inquiry/thanks'      => 'site_inquiry#thanks'
 
-         get  'apartments'                                        => 'apartments#province',       as: 'apartment_province_list'
-         get  'apartments/:id'                                    => 'apartments#show',           as: 'apartment'
-         get  'apartments/:province/city'                         => 'apartments#district',       as: 'apartment_district_list'
-         get  'apartments/:province/city/:district'               => 'apartments#index',          as: 'apartments'
-         get  'apartments/:id/inquiry'                            => 'apartments#inquiry',        as: 'apartment_inquiry'
-         post 'apartments/:id/confirm'                            => 'apartments#confirm',        as: 'apartment_inquiry_confirm'
-         post 'apartments/thanks'                                 => 'apartments#thanks',         as: 'apartment_inquiry_thanks'
+         # Apartments
+         get  'apartments'                           => 'apartments#province',       as: 'apartment_province_list'
+         get  'apartments/:id'                       => 'apartments#show',           as: 'apartment'
+         get  'apartments/:province/city'            => 'apartments#district',       as: 'apartment_district_list'
+         get  'apartments/:province/city/:district'  => 'apartments#index',          as: 'apartments'
+         get  'apartments/:id/inquiry'               => 'apartments#inquiry',        as: 'apartment_inquiry'
+         post 'apartments/:id/confirm'               => 'apartments#confirm',        as: 'apartment_inquiry_confirm'
+         post 'apartments/thanks'                    => 'apartments#thanks',         as: 'apartment_inquiry_thanks'
+
+         # Lands
+         get  'lands'                                => 'lands#province',            as: 'land_province_list'
+         get  'lands/:id'                            => 'lands#show',                as: 'land'
+         get  'lands/:province/city'                 => 'lands#district',            as: 'land_district_list'
+         get  'lands/:province/city/:district'       => 'lands#index',               as: 'lands'
+         get  'lands/:id/inquiry'                    => 'lands#inquiry',             as: 'land_inquiry'
+         post 'lands/:id/confirm'                    => 'lands#confirm',             as: 'land_inquiry_confirm'
+         post 'lands/thanks'                         => 'lands#thanks',              as: 'land_inquiry_thanks'
       end
 
       # Administrator Pages
