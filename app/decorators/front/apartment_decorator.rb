@@ -209,4 +209,8 @@ class Front::ApartmentDecorator < Draper::Decorator
     end
   end
 
+  def provider_address
+    self.provider.address unless self.provider.nil?
+  end
+
 end

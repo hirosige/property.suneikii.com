@@ -1,0 +1,582 @@
+<div class="right_col" role="main" xmlns="http://www.w3.org/1999/html">
+  <div class="">
+
+    <%= render :partial => 'admin/shared/page_title', :locals => {title: t('admin.lands.title'), description: t('admin.lands.description')} %>
+    <div class="clearfix"></div>
+
+
+
+    <div class="row">
+      <% if @land.errors.any? %>
+          <div id="error_explanation" style="border: 1px #ff855f solid; padding: 20px; margin: 20px; width: 800px; border-radius: 10px; background: rgba(255,127,128,0.5)">
+            <h2 style="text-decoration: underline; color: #ff0000;"><%= "#{pluralize(@land.errors.count, "")} つエラーがあります、ご確認下さい:" %></h2>
+            <ul>
+              <% @land.errors.full_messages.each do |message| %>
+                  <li style="color: #ff0000;"><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+      <% end %>
+
+      <div class="col-md-12 col-xs-12">
+        <div class="x_panel">
+          <div class="x_title">
+            <h2><%= t('admin.lands.modify_page_title') %></h2>
+            <ul class="nav navbar-right panel_toolbox">
+              <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="#">Settings 1</a>
+                  </li>
+                  <li><a href="#">Settings 2</a>
+                  </li>
+                </ul>
+              </li>
+              <li><a class="close-link"><i class="fa fa-close"></i></a>
+              </li>
+            </ul>
+            <div class="clearfix"></div>
+          </div>
+          <div class="x_content">
+
+            <br />
+            <%= form_for [:admin, @land], :html => {:class => 'form-horizontal form-label-left'}  do |f| %>
+
+
+                <div style="float: left; width: 50%;">
+
+                  <div class="form-group">
+                    <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.lands.items.area') %></label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <div id="area_boxes">
+                        <%= f.collection_select(
+                                :country_id,                 # <= property_name
+                                Country.all,              # <= object_array
+                                :id,                      # <= value_data
+                                :name_en,                 # <= text_item
+                                {prompt: "Select any"},   # <= default_message
+                                {class: "form-control"}   # <= style_class
+                            ) %>
+
+                        <% unless @land.province_id.nil? %>
+                          <%= f.collection_select(
+                                  :province_id,                 # <= property_name
+                                  Province.all,              # <= object_array
+                                  :id,                      # <= value_data
+                                  :name_en,                 # <= text_item
+                                  {prompt: "Select any"},   # <= default_message
+                                  {class: "form-control"}   # <= style_class
+                              ) %>
+                        <% end %>
+
+                        <% unless @land.district_id.nil? %>
+                          <%= f.collection_select(
+                                  :district_id,                 # <= property_name
+                                  District.all,              # <= object_array
+                                  :id,                      # <= value_data
+                                  :name_en,                 # <= text_item
+                                  {prompt: "Select any"},   # <= default_message
+                                  {class: "form-control"}   # <= style_class
+                              ) %>
+                        <% end %>
+
+                        <% unless @land.subdistrict_id.nil? %>
+                          <%= f.collection_select(
+                                  :subdistrict_id,                 # <= property_name
+                                  Subdistrict.all,              # <= object_array
+                                  :id,                      # <= value_data
+                                  :name_en,                 # <= text_item
+                                  {prompt: "Select any"},   # <= default_message
+                                  {class: "form-control"}   # <= style_class
+                              ) %>
+                        <% end %>
+
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.lands.items.rent_fee') %></label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <%= f.text_field :land_category_id, :class => 'form-control col-md-7 col-xs-12' %>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.lands.items.rent_fee') %></label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <%= f.text_field :rent_fee, :class => 'form-control col-md-7 col-xs-12' %>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.lands.items.address') %></label>
+                    <div class="col-md-8 col-sm-8 col-xs-12" style="height: 120px;">
+                      <%= f.text_area :address, :class => 'form-control col-md-7 col-xs-12', :style => "height: 120px;"%>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.lands.items.photo') %></label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <%= f.file_field :photo, :class => 'form-control col-md-7 col-xs-12' %>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.lands.items.photo') %></label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <%= f.fields_for :land_thumbnails do |thumbnail| %>
+                        <%= thumbnail.file_field :image %>
+                      <% end %>
+                    </div>
+                  </div>
+
+                  <% unless @land.photo.blank? %>
+                      <div class="form-group">
+                        <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.lands.items.uploaded_photo') %></label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <%= image_tag @land.photo_url(:middle), :style => 'border: 1px #ddd solid; border-radius: 10px;' %>
+                        </div>
+                      </div>
+                  <% end %>
+
+                  <div class="form-group">
+                    <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.lands.items.provider') %></label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <%= f.collection_select(
+                              :provider_id,
+                              Provider.all,
+                              :id,
+                              :name,
+                              {},
+                              {
+                                  :class => "form-control",
+                                  :disabled => true,
+                                  :selected => current_user.provider_id
+                              }
+                          ) %>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div style="float: right; width: 50%;">
+
+                  <div class="form-group">
+                    <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.lands.items.name') %></label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <%= f.text_field :name, :class => 'form-control col-md-7 col-xs-12' %>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.lands.items.transportation') %></label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <%= f.text_field :transportation, :class => 'form-control col-md-7 col-xs-12' %>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.lands.items.space') %></label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <%= f.text_field :space, :class => 'form-control col-md-7 col-xs-12' %>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.lands.items.recommendations') %></label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <%= f.text_field :recommendations, :class => 'form-control col-md-7 col-xs-12' %>
+                    </div>
+                  </div>
+
+
+
+                </div>
+
+                <script>
+                    $(function() {
+                        var create_static_img_url = function(lat, lng) {
+                            return '<img src="//maps.googleapis.com/maps/api/staticmap?center=' + lat + ',' + lng + '&markers=color:red%7Clabel:C%7C' + lat + ',' + lng + '&zoom=17&size=800x500&maptype=roadmap">'
+                        };
+
+                        $('#exampleModal').on('show.bs.modal', function (e) {
+                            $('#decide_address').hide();
+                            $('#complete').hide();
+                        });
+
+                        $('#exampleModal').on('shown.bs.modal', function (e) {
+
+                            if($('#land_land_info_attributes_latitude').val() != '') {
+                                lat = $('#land_land_info_attributes_latitude').val();
+                            } else {
+                                lat = 34.6937378;
+                            }
+
+                            if($('#land_land_info_attributes_longitude').val() != '') {
+                                lng = $('#land_land_info_attributes_longitude').val();
+                            } else {
+                                lng = 135.50216509999996;
+                            }
+
+                            init(lat, lng, zoom)
+                        });
+
+                        $('#decide_address').on('click', function() {
+                            console.log(lat);
+                            $('#map').empty();
+                            $('#map').html(create_static_img_url(lat, lng))
+                            $('#decide_address').hide();
+                            $('#complete').show();
+                        });
+
+                        $('#complete').on('click', function() {
+                            $('#land_land_info_attributes_latitude').val(lat);
+                            $('#land_land_info_attributes_longitude').val(lng);
+
+                            var geocoder = new google.maps.Geocoder;
+
+                            geocodeLatLng(geocoder, map);
+
+                            $('#exampleModal').modal('hide')
+                        });
+
+                        $('#submit').on('click', function() {
+                            var geocoder = new google.maps.Geocoder;
+                            geocodeAddress(geocoder, map);
+                        });
+
+                        var map;
+                        var lat;
+                        var lng;
+                        var zoom = 17;
+
+                        var init = function(lat, lng, zoom) {
+
+                            // 初期設定用
+                            var latlng = new google.maps.LatLng(lat, lng);//画面を開いた際に中心として表示させる緯度・経度、今回は大阪
+                            var opts = {
+                                zoom: zoom,//ズームレベル
+                                mapTypeId: google.maps.MapTypeId.ROADMAP,//マップの種類
+                                center: latlng//この記述で前述の緯度・経度が指定される
+                            };
+
+                            //body内の<div id="map">にmapを描画
+                            map = new google.maps.Map($('#map').get(0), opts);
+
+                            var marker = new google.maps.Marker({
+                                position: latlng,
+                                map: map,
+                                title: 'Hello World!'
+                            });
+
+                            infowindow = new google.maps.InfoWindow();
+                            var service = new google.maps.places.PlacesService(map);
+                            service.nearbySearch({
+                                location: latlng,
+                                radius: 500,
+                                type: ['store']
+                            }, callback);
+
+                            //クリックイベントに「clickEvent」処理を紐付ける
+                            google.maps.event.addListener(map, 'click', clickEvent);
+                            google.maps.event.addListener(map, 'zoom_changed', zoomChange);
+                        };
+
+                        var clickEvent = function(event){
+                            $('#decide_address').show();
+
+                            lat = event.latLng.lat();
+                            lng = event.latLng.lng();
+
+                            init(lat, lng, zoom);
+                        };
+
+                        var zoomChange = function(event) {
+                            zoom = map.getZoom();
+                        };
+
+                        var geocodeLatLng = function(geocoder, map) {
+                            var latlng = {lat: lat, lng: lng};
+
+                            geocoder.geocode({'location': latlng}, function (results, status) {
+                                if (status === 'OK') {
+                                    if (results[1]) {
+                                        $('#land_address').val(results[1].formatted_address);
+                                    } else {
+                                        window.alert('No results found');
+                                    }
+                                } else {
+                                    window.alert('Geocoder failed due to: ' + status);
+                                }
+                            });
+                        };
+
+                        var geocodeAddress = function(geocoder, resultsMap) {
+                            var address = document.getElementById('address').value;
+                            geocoder.geocode({'address': address}, function(results, status) {
+                                if (status === 'OK') {
+                                    resultsMap.setCenter(results[0].geometry.location);
+//                                    var marker = new google.maps.Marker({
+//                                        map: resultsMap,
+//                                        position: results[0].geometry.location
+//                                    });
+                                } else {
+                                    alert('Geocode was not successful for the following reason: ' + status);
+                                }
+                            });
+                        };
+
+                        var callback = function(results, status) {
+                            if (status === google.maps.places.PlacesServiceStatus.OK) {
+                                for (var i = 0; i < results.length; i++) {
+                                    createMarker(results[i]);
+                                }
+                            }
+                        };
+
+                        var createMarker = function(place) {
+                            var placeLoc = place.geometry.location;
+                            var marker = new google.maps.Marker({
+                                map: map,
+                                position: place.geometry.location,
+                                icon: BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)
+                            });
+
+                            google.maps.event.addListener(marker, 'click', function() {
+                                infowindow.setContent(place.name);
+                                infowindow.open(map, this);
+                            });
+                        }
+
+                        init(lat, lng, zoom)
+                    });
+                </script>
+
+                <div style="clear: both;">
+
+                  <hr>
+
+                  <%= f.fields_for :land_info do |ai| %>
+                      <div style="float: left; width: 50%;">
+                        <div class="form-group">
+                          <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.land_info.items.remarks') %></label>
+                          <div class="col-md-6 col-sm-6 col-xs-12">
+                            <%= ai.text_field :remarks, :class => 'form-control col-md-7 col-xs-12' %>
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.land_info.items.latitude') %></label>
+                          <div class="col-md-6 col-sm-6 col-xs-12">
+                            <%= ai.text_field :latitude, :class => 'form-control col-md-7 col-xs-12' %>
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.land_info.items.longitude') %></label>
+                          <div class="col-md-6 col-sm-6 col-xs-12">
+                            <%= ai.text_field :longitude, :class => 'form-control col-md-7 col-xs-12' %>
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"></label>
+                          <div class="col-md-6 col-sm-6 col-xs-12">
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                              <%= t('admin.land_info.buttons.gmap.open') %>
+                            </button>
+                          </div>
+                        </div>
+
+                        <!-- Button trigger modal -->
+
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h3 class="modal-title" id="exampleModalLabel"><%= t('admin.land_info.buttons.gmap.get_location') %></h3>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <div id="modal-body" class="modal-body">
+
+                                <div id="floating-panel">
+                                  <input id="address" type="textbox" value="Sydney, NSW">
+                                  <input id="submit" type="button" value="検索">
+                                </div><br>
+
+                                <div id="map" style='width: 100%; height: 500px; margin: auto; border: 1px #2A3F54 solid; border-radius: 5px;'></div>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" id="close" class="btn btn-secondary" data-dismiss="modal"><%= t('admin.land_info.buttons.gmap.close') %></button>
+                                <button type="button" id="decide_address" class="btn btn-primary"><%= t('admin.land_info.buttons.gmap.decide') %></button>
+                                <button type="button" id="complete" class="btn btn-primary"><%= t('admin.land_info.buttons.gmap.done') %></button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.land_info.items.more_than_2floors.title') %></label>
+                          <div class="col-md-6 col-sm-6 col-xs-12">
+                            <%= ai.radio_button :corner, :corner %> <%= t('admin.land_info.items.more_than_2floors.first') %> &nbsp;
+                            <%= ai.radio_button :corner, :not_corner %> <%= t('admin.land_info.items.more_than_2floors.second') %>
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.land_info.items.light_on_south.title') %></label>
+                          <div class="col-md-6 col-sm-6 col-xs-12">
+                            <%= ai.radio_button :low_rise_residential_area, :low_rise_residential_area %> <%= t('admin.land_info.items.light_on_south.first') %> &nbsp;
+                            <%= ai.radio_button :low_rise_residential_area, :not_low_rise_residential_area %> <%= t('admin.land_info.items.light_on_south.second') %>
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.land_info.items.parkinglot.title') %></label>
+                          <div class="col-md-6 col-sm-6 col-xs-12">
+                            <%= ai.radio_button :no_condition, :no_condition %> <%= t('admin.land_info.items.parkinglot.first') %> &nbsp;
+                            <%= ai.radio_button :no_condition, :conditional %> <%= t('admin.land_info.items.parkinglot.second') %>
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.land_info.items.air_con.title') %></label>
+                          <div class="col-md-6 col-sm-6 col-xs-12">
+                            <%= ai.radio_button :ownership_or_not, :ownership %> <%= t('admin.land_info.items.air_con.first') %> &nbsp;
+                            <%= ai.radio_button :ownership_or_not, :no_ownership %> <%= t('admin.land_info.items.air_con.second') %>
+                          </div>
+                        </div>
+
+                      </div>
+                      <div style="float: right; width: 50%;">
+                        <div class="form-group">
+                          <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.land_info.items.contact_span') %></label>
+                          <div class="col-md-6 col-sm-6 col-xs-12">
+                            <%= ai.number_field :contact_span, :class => 'form-control col-md-7 col-xs-12' %>
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.land_info.items.conditions') %></label>
+                          <div class="col-md-6 col-sm-6 col-xs-12">
+                            <%= ai.text_field :conditions, :class => 'form-control col-md-7 col-xs-12' %>
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.land_info.items.update_fee') %></label>
+                          <div class="col-md-6 col-sm-6 col-xs-12">
+                            <%= ai.text_field :update_fee, :class => 'form-control col-md-7 col-xs-12' %>
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.land_info.items.updating_on') %></label>
+                          <div class="col-md-6 col-sm-6 col-xs-12">
+                            <%= ai.text_field :updating_on, :class => 'form-control col-md-7 col-xs-12' %>
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.land_info.items.deal_way') %></label>
+                          <div class="col-md-6 col-sm-6 col-xs-12">
+                            <%= ai.text_field :deal_way, :class => 'form-control col-md-7 col-xs-12' %>
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.land_info.items.services') %></label>
+                          <div class="col-md-6 col-sm-6 col-xs-12">
+                            <%= ai.text_area :services, :class => 'form-control col-md-7 col-xs-12' %>
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.land_info.items.etc') %></label>
+                          <div class="col-md-6 col-sm-6 col-xs-12">
+                            <%= ai.text_area :etc, :class => 'form-control col-md-7 col-xs-12' %>
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.land_info.items.management_id') %></label>
+                          <div class="col-md-6 col-sm-6 col-xs-12">
+                            <%= ai.text_field :management_id, :class => 'form-control col-md-7 col-xs-12' %>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div style="clear: both;">
+                      </div>
+                      
+                <%  end %>
+
+                  <hr>
+
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <div id="ingredients" class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.land_info.items.options.title') %></label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <%= f.fields_for :land_option_installations do |builder| %>
+                              <%= render 'land_option_installation_fields', f: builder %>
+                          <% end %>
+                          <div id="links">
+                            <br>
+                            <%= link_to_add_association "Add Accessories", f, :land_option_installations, :class => 'btn btn-xs btn-primary' %><br/>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <div id="ingredients" class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.land_info.items.surroundings.title') %></label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <%= f.fields_for :land_surroundings do |builder| %>
+                              <%= render 'land_surrounding_fields', f: builder %>
+                          <% end %>
+                          <div id="links">
+                            <br>
+                            <%= link_to_add_association "Add Surroundings", f, :land_surroundings, :class => 'btn btn-xs btn-primary' %><br/>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                      <button type="submit" class="btn btn-primary" onclick="undisabled();">
+                        <%= t('admin.lands.buttons.exec') %>
+                      </button>
+                    </div>
+                  </div>
+
+                  <script type="text/javascript">
+                      function undisabled()
+                      {
+                          document.getElementById("land_provider_id").disabled = false ;
+                          return true;
+                      }
+                  </script>
+                </div>
+
+            <% end %>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

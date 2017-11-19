@@ -5,7 +5,7 @@ class Front::LandsController < FrontController
   before_action :set_root_breadcrumb
 
   def province
-    add_breadcrumb t('front.apartments.province_breadcrumb')
+    add_breadcrumb t('front.lands.province_breadcrumb')
 
     if Country.find_by(original_id: 'th').nil?
       raise ActionController::RoutingError.new('Not Found')
@@ -21,7 +21,7 @@ class Front::LandsController < FrontController
   end
 
   def district
-    add_breadcrumb t('front.apartments.district_breadcrumb', :province => @params_service.visualize(params[:province]))
+    add_breadcrumb t('front.lands.district_breadcrumb', :province => @params_service.visualize(params[:province]))
 
     if Province.find_by(url_safe: params[:province]).nil?
       raise ActionController::RoutingError.new('Not Found')
@@ -37,7 +37,7 @@ class Front::LandsController < FrontController
   end
 
   def show
-    add_breadcrumb t('front.apartments.show.breadcrumb', :apartment_name => @land.name),
+    add_breadcrumb t('front.lands.show.breadcrumb', :land_name => @land.name),
                    land_path(@land.id)
 
     track_visit_into_session
@@ -83,7 +83,7 @@ class Front::LandsController < FrontController
     search_condition[:district_id] =  @district.id unless @district.nil?
     search_condition[:subdistrict_id] = @sub_district.id unless @sub_district.nil?
 
-    @apartments = Front::LandDecorator.decorate_collection(
+    @lands = Front::LandDecorator.decorate_collection(
         Land.published
             .includes(
                 :land_info,
@@ -130,7 +130,7 @@ class Front::LandsController < FrontController
     end
 
     def set_root_breadcrumb
-      add_breadcrumb t('front.apartments.title'), :apartment_province_list_path
+      add_breadcrumb t('front.lands.title'), :land_province_list_path
     end
 
     def property_inquiry_params
@@ -139,7 +139,7 @@ class Front::LandsController < FrontController
           :email,
           :tel,
           :body,
-          :apartment_id
+          :land_id
       )
     end
 end

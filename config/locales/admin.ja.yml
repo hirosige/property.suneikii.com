@@ -39,6 +39,9 @@ ja:
     sidemenu_12:
       title: "取り扱い会社管理"
 
+    sidemenu_13:
+      title: "土地管理"
+
     elements:
       search:
         keyword:  "キーワード"

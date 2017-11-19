@@ -24,6 +24,7 @@
 
 class District < ActiveRecord::Base
   has_many :apartments
+  has_many :lands
   has_many :subdistricts,
            foreign_key: "district_original_id",
            primary_key: "original_id"

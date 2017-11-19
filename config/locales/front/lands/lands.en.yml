@@ -2,3 +2,113 @@ en:
   front:
     lands:
       title: 'Lands'
+      province_title: 'Search Lands in %{province}'
+      province_breadcrumb: 'Search for Lands'
+      district_title:
+      district_breadcrumb: "Search for lands in %{province}"
+      inquiry: 'Contact About this'
+      main_plane:
+        title: 'Lands in %{province}'
+        items:
+          transportation: 'Transportation'
+          address: 'Address'
+          since_when_floors: 'Since When/Floors'
+          recommendations: 'Recommendations'
+          floor: 'Floor'
+          price: 'Price'
+          utility_fee: 'Utility Fee'
+          deposits: 'Deposits'
+          room_type: 'Room Type'
+          space: 'space'
+          favorite:
+            caption: 'Favorite'
+            button: 'Add favorite'
+            done: 'Added favorite'
+          detail: 'Detail'
+      show:
+        breadcrumb: 'Detail of %{land_name}'
+      basic_info:
+        rent_fee: 'Rent Fee'
+        security_deposit: 'Security Deposit'
+        deposit: 'Deposit'
+        transportation: 'Transportation'
+        address: 'Address'
+        since_when: 'Since When'
+        light_direction: 'Light Direction'
+        space: 'Space'
+        balcony_space: 'Balcony Space'
+        room_type: 'Room Type'
+        created_at: 'Created at'
+        updated_at: 'Updated at'
+      detailed_info:
+        title: 'Information for this land'
+      property_detail:
+        title: 'Property Detail'
+        made_of: 'Made of'
+        floors: 'Floors'
+        parking: 'Parking'
+        number_of_rooms: 'Number of rooms'
+        contract_span: 'Contact Span'
+        update_fee: 'Update Fee'
+        utility_fee: 'Utility Fee'
+        surety_company: 'Surety Company'
+        house_insurance: 'House Insurance'
+        status: 'Status'
+        availability: 'Availability'
+        property_id: 'Property Suneikii ID'
+        deal_way: 'Deal Way'
+      property_installation:
+        title: 'Installations / Conditions'
+        installations:
+          title: 'Installations'
+          brandnew: 'Brand New'
+          more_than_2floors: '2 Floor and more'
+          light_on_south: 'Light on south'
+          parkinglot: 'Parking-lot'
+          auto_lock: 'Auto-lock'
+          air_con: 'Aircon installed'
+          separate_bath_toilet: 'Bath and Toilet separated'
+          reheating: 'Reheating bath'
+          wooden_floor: 'Wooden Floor'
+          pet: 'Pet Negotiable'
+        kitchen_bath: 'Kitchen/Bath/Toilet'
+        service: 'Services'
+        etc: 'Etc'
+        remarks: 'Remarks'
+      provider_info:
+        title: 'Provider Info'
+        provider:
+          certified: 'Good Provider'
+          link: 'Company Info'
+          address: 'Address'
+          working_time: 'Working Time'
+          holidays: 'Holidays'
+        inquiry: 'Contact Us About This'
+      inquiry_form:
+        title: 'Inquiry Form'
+        description: 'Inquiry about %{land_name}.'
+        errors:
+          title: 'Your input contains errors.'
+        items:
+          name: 'Name'
+          email: 'E-Mail'
+          tel: 'Tel'
+          inquiry: 'Your Inquiry'
+          button:
+            caption: 'Confirm'
+            loading: 'Moving confirm...'
+      confirm:
+        title: 'Confirm Form'
+        items:
+          property: 'Property Inquiry'
+          name: 'Name'
+          email: 'E-Mail'
+          tel: 'Tel'
+          inquiry: 'Your Inquiry'
+        buttons:
+          caption: 'Submit'
+          sending: 'Submitting...'
+      thanks:
+        title: 'Complete'
+        description: 'Your inquiry is successfully sent to us.'
+        greeting: 'Thank you for your inquiry.'

@@ -1,0 +1,92 @@
+ja:
+  admin:
+    land_info:
+      title:                 "土地情報一覧"
+      detail_page_title:     "土地情報 詳細"
+      modify_page_title:     "土地情報 追加/修正画面"
+      description:           ""
+      items:
+        remarks:             "備考"
+        latitude:            "緯度"
+        longitude:           "経度"
+        brand_new:
+          title:               "新築"
+          first:                 "新築"
+          second:                 "古物件"
+        more_than_2floors:
+          title:               "２階以上の物件"
+          true:                "2階以上"
+          false:               "1階のみ"
+        light_on_south:
+          title:               "南向き"
+          true:                "南向き"
+          false:               "南向きじゃない"
+        parkinglot:
+          title:               "駐車場"
+          true:                "あり"
+          false:               "無し"
+        auto_lock:
+          title:               "オートロック"
+          true:                "あり"
+          false:               "無し"
+        air_con:
+          title:               "エアコン"
+          true:                "あり"
+          false:               "無し"
+        separate_bath_toilet:
+          title:               "バス・トイレ別"
+          true:                "バス・トイレ別"
+          false:               "ユニットバス"
+        reheating:
+          title:               "追焚機能"
+          true:                "あり"
+          false:               "無し"
+        wooden_floor:
+          title:               "フローリング"
+          true:                "フローリング"
+          false:               "その他"
+        pet:
+          title:               "ペット可"
+          true:                "ペット可"
+          false:               "ペット不可"
+        status:
+          title:               "現況"
+          vacant:              "空き"
+          occupy:              "満員"
+        floor:               "階 / 階数"
+        balcony_space:       "バルコニー面積"
+        light_direction:     "主要採光面"
+        made_of:             "建物構造"
+        contact_span:        "契約期間"
+        conditions:          "条件等"
+        update_fee:          "更新料"
+        updating_on:         "次回更新予定日"
+        number_of_rooms:     "総戸数"
+        house_insurance:     "住宅保険"
+        deal_way:            "取引態様"
+        kitchen_bath:        "キッチン/バス・トイレ"
+        services:            "設備・サービス"
+        etc:                 "その他"
+        management_id:       "物件番号"
+        availability:
+          title:               "入居可能状況"
+          now_available:       "即時入居可能"
+          preparing:           "準備中"
+        created_at:          "作成日"
+        updated_at:          "更新日"
+        controls:            "操作"
+        options:
+          title:               "設備"
+        surroundings:
+          title:               "周辺施設"
+      buttons:
+        search:              "検索"
+        add:                 "土地情報 追加"
+        exec:                "追加/修正"
+        csv_export:          "土地情報データ エクスポート"
+        gmap:
+          open:                "グーグルマップで取得"
+          get_location:        "グーグルマップで位置情報を登録"
+          close:               "閉じる"
+          decide:              "ここに決める"
+          done:                "完了"

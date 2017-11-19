@@ -1,4 +1,4 @@
-<% unless @apartment.apartment_thumbnails.blank? %>
+<% unless @land.land_thumbnails.blank? %>
     <div class="contents-gap"></div>
 
     <div class="phto-slide">
@@ -20,7 +20,7 @@
 
       <div class="swiper-container">
         <div class="swiper-wrapper">
-          <% @apartment.apartment_thumbnails.each do |thumbnail| %>
+          <% @land.land_thumbnails.each do |thumbnail| %>
               <div class="swiper-slide" style="background-image:url(<%= thumbnail.image_url(:middle) %>)">
                 <div class="swiper-slide__title">Image</div>
                 <!--<button id="image1" class="swiper-slide__preview">-->

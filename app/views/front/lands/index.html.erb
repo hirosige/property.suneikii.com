@@ -9,7 +9,7 @@
       <div class="main-title__base">
         <div class="main-title--left">
           <div class="main-title__caption">
-            <%= t('front.apartments.main_plane.title', :province => @params_service.visualize(params[:province])) %>
+            <%= t('front.lands.main_plane.title', :province => @params_service.visualize(params[:province])) %>
           </div>
         </div>
         <div class="main-title--right">
@@ -25,12 +25,12 @@
 
       <% unless @provinces.nil? %>
         <% @provinces.each do |province| %>
-          <a href="<%= apartment_province_list_path(province.original_id) %>"><%= province.name_ja %></a>
+          <a href="<%= land_province_list_path(province.original_id) %>"><%= province.name_ja %></a>
           <br>
         <% end %>
       <% end %>
 
-      <% if @apartments.blank? %>
+      <% if @lands.blank? %>
         <%= render 'front/shared/not_found' %>
       <% else %>
         <%= render 'pagination' %>

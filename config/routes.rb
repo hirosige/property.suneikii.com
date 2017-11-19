@@ -323,6 +323,21 @@ Rails.application.routes.draw do
           resources :apartment_options
         end
 
+        scope module: :lands do
+          resources :lands do
+            member do
+              get 'publish'
+              get 'decline'
+              get 'clean'
+              get 'occupy'
+              get 'enable'
+              get 'disable'
+            end
+          end
+
+          resources :land_options
+        end
+
         namespace :facilities do
           resources :surroundings
         end
