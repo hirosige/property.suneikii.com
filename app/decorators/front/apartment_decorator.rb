@@ -59,6 +59,10 @@ class Front::ApartmentDecorator < Draper::Decorator
     self.info.kitchen_bath
   end
 
+  def room_type_name
+    self.room_type.name
+  end
+
   def services
     self.info.services
   end
@@ -117,6 +121,10 @@ class Front::ApartmentDecorator < Draper::Decorator
 
   def formatted_updated_at
     format_datetime(self.updated_at)
+  end
+
+  def show_url(id)
+    h.apartment_path(id)
   end
 
   # For options

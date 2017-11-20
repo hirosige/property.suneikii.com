@@ -58,15 +58,15 @@ class LandDecorator < Draper::Decorator
   end
 
   def delimited_utility_fee
-    "#{self.utility_fee.to_s(:delimited)} Baht"
+    "-"
   end
 
   def delimited_security_deposit
-    "#{self.security_deposit.to_s(:delimited)} Baht"
+    "-"
   end
 
   def delimited_deposit
-    "#{self.deposit.to_s(:delimited)} Baht"
+    "-"
   end
 
   def delimited_update_fee
@@ -78,15 +78,15 @@ class LandDecorator < Draper::Decorator
   end
 
   def formatted_since_when
-    format_date(self.since_when)
+    "-"
   end
 
   def unit_floors
-    "#{self.info.floors}階"
+    "-"
   end
 
   def unit_floor
-    "#{self.info.floor}階"
+    "-"
   end
 
   def kitchen_bath
@@ -110,11 +110,11 @@ class LandDecorator < Draper::Decorator
   end
 
   def light_direction
-    "#{self.info.light_direction}"
+    "-"
   end
 
   def made_of
-    "#{self.info.made_of}"
+    "-"
   end
 
   def number_of_rooms
@@ -122,7 +122,7 @@ class LandDecorator < Draper::Decorator
   end
 
   def room_type_name
-    self.room_type.name unless self.room_type_id.nil?
+    "-"
   end
 
   def contact_span
@@ -155,6 +155,10 @@ class LandDecorator < Draper::Decorator
 
   def formatted_updated_at
     format_datetime(self.updated_at)
+  end
+
+  def show_url(id)
+    h.land_path(id)
   end
 
   # For options

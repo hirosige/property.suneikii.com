@@ -157,6 +157,10 @@ class ApartmentDecorator < Draper::Decorator
     format_datetime(self.updated_at)
   end
 
+  def show_url(id)
+    h.apartment_path(id)
+  end
+
   # For options
 
   def brandnew

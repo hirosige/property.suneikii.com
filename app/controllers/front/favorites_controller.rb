@@ -15,6 +15,27 @@ class Front::FavoritesController < FrontController
 
   def like
     if request.xhr?
+
+      case params[:type]
+
+      when 'apartment' then
+        like_apartment
+
+      when 'land' then
+        like_land
+
+      else
+        render :nothing => true
+      end
+
+    else
+      render :nothing => true
+    end
+
+  end
+
+  private
+    def like_apartment
       @apartment = Apartment.find(params[:id])
 
       favorite = Favorite.new(
@@ -29,10 +50,22 @@ class Front::FavoritesController < FrontController
         p favorite.errors
         render json: { status: 'failure', apartment: @apartment, errors: favorite }
       end
-
-    else
-      render :nothing => true
     end
 
+  def like_land
+    @land = Land.find(params[:id])
+
+    favorite = Favorite.new(
+        :land_id => params[:id],
+        :user_id => current_user.id
+    )
+
+    if favorite.valid?
+      favorite.set_as_land
+      render json: { status: 'success', land: @land }
+    else
+      p favorite.errors
+      render json: { status: 'failure', land: @land, errors: favorite }
+    end
   end
 end

@@ -14,14 +14,6 @@
           <dt class="title"><%= t('front.lands.basic_info.rent_fee') %></dt>
           <dd class="price"><%= @land.delimited_rent_fee %></dd>
         </dl>
-        <dl>
-          <dt class="title"><%= t('front.lands.basic_info.security_deposit') %></dt>
-          <dd><%= @land.delimited_security_deposit %></dd>
-        </dl>
-        <dl>
-          <dt class="title"><%= t('front.lands.basic_info.deposit') %></dt>
-          <dd><%= @land.delimited_deposit %></dd>
-        </dl>
       </div>
       <div class="line">
         <dl>
@@ -45,18 +37,8 @@
       </div>
       <div class="line">
         <dl>
-          <dt class="title"><%= t('front.lands.basic_info.since_when') %></dt>
-          <dd><%= @land.formatted_since_when %></dd>
-          <dt class="title"><%= t('front.lands.basic_info.light_direction') %></dt>
-          <dd><%= @land.light_direction %></dd>
           <dt class="title"><%= t('front.lands.basic_info.space') %></dt>
           <dd><%= @land.unit_space %></dd>
-        </dl>
-        <dl>
-          <dt class="title"><%= t('front.lands.basic_info.balcony_space') %></dt>
-          <dd><%= @land.balcony_space %></dd>
-          <dt class="title"><%= t('front.lands.basic_info.room_type') %></dt>
-          <dd><%= @land.room_type.name %></dd>
         </dl>
       </div>
       <div class="date-info">

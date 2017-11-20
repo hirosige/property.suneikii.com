@@ -8,43 +8,21 @@
       <th><%= t('front.lands.property_installation.installations.title') %></th>
       <td>
         <div class="detailed-info__installations-boxes">
-          <div class="detailed-info__installations-box--<%= @land.brandnew %>">
-            <%= t('front.lands.property_installation.installations.brandnew') %>
+          <div class="detailed-info__installations-box--<%= @land.corner %>">
+            <%= t('front.lands.property_installation.installations.corner') %>
           </div>
-          <div class="detailed-info__installations-box--<%= @land.more_than_2floors %>">
-            <%= t('front.lands.property_installation.installations.more_than_2floors') %>
+          <div class="detailed-info__installations-box--<%= @land.low_rise_residential_area %>">
+            <%= t('front.lands.property_installation.installations.low_rise_residential_area') %>
           </div>
-          <div class="detailed-info__installations-box--<%= @land.light_on_south %>">
-            <%= t('front.lands.property_installation.installations.light_on_south') %>
+          <div class="detailed-info__installations-box--<%= @land.no_condition %>">
+            <%= t('front.lands.property_installation.installations.no_condition') %>
           </div>
-          <div class="detailed-info__installations-box--<%= @land.parkinglot %>">
-            <%= t('front.lands.property_installation.installations.parkinglot') %>
-          </div>
-          <div class="detailed-info__installations-box--<%= @land.auto_lock %>">
-            <%= t('front.lands.property_installation.installations.auto_lock') %>
-          </div>
-          <div class="detailed-info__installations-box--<%= @land.air_con %>">
-            <%= t('front.lands.property_installation.installations.air_con') %>
-          </div>
-          <div class="detailed-info__installations-box--<%= @land.separate_bath_toilet %>">
-            <%= t('front.lands.property_installation.installations.separate_bath_toilet') %>
-          </div>
-          <div class="detailed-info__installations-box--<%= @land.reheating %>">
-            <%= t('front.lands.property_installation.installations.reheating') %>
-          </div>
-          <div class="detailed-info__installations-box--<%= @land.wooden_floor %>">
-            <%= t('front.lands.property_installation.installations.wooden_floor') %>
-          </div>
-          <div class="detailed-info__installations-box--<%= @land.pet %>">
-            <%= t('front.lands.property_installation.installations.pet') %>
+          <div class="detailed-info__installations-box--<%= @land.ownership_or_not %>">
+            <%= t('front.lands.property_installation.installations.ownership_or_not') %>
           </div>
         </div>
 
       </td>
-    </tr>
-    <tr>
-      <th><%= t('front.lands.property_installation.kitchen_bath') %></th>
-      <td><%= @land.kitchen_bath %></td>
     </tr>
     <tr>
       <th><%= t('front.lands.property_installation.service') %></th>
