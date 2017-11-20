@@ -1,0 +1,92 @@
+en:
+  admin:
+    land_info:
+      title:                 "Land Info"
+      detail_page_title:     "Land Info Detail"
+      modify_page_title:     "Land Info Add/Modify"
+      description:           ""
+      items:
+        remarks:             "Remarks"
+        latitude:            "Latitude"
+        longitude:           "Longitude"
+        brand_new:
+          title:               "Brand New"
+          first:               "Brand New"
+          second:              "Old Property"
+        more_than_2floors:
+          title:               "2nd and more floors"
+          first:               "2nd and more floors"
+          second:              "Only one floor"
+        light_on_south:
+          title:               "Light on south"
+          first:               "South direction"
+          second:              "Not south direction"
+        parkinglot:
+          title:               "Parking"
+          first:               "Available"
+          second:              "N/A"
+        auto_lock:
+          title:               "Auto Lock"
+          first:               "Available"
+          second:              "N/A"
+        air_con:
+          title:               "Air Conditioning"
+          first:               "Available"
+          second:              "N/A"
+        separate_bath_toilet:
+          title:               "Separate bath and toilet"
+          first:               "Separate bath and toilet"
+          second:              "Bath and toilet"
+        reheating:
+          title:               "Reheating bath"
+          first:               "Available"
+          second:              "N/A"
+        wooden_floor:
+          title:               "Wooden Floor"
+          first:               "Available"
+          second:              "N/A"
+        pet:
+          title:               "Pet"
+          first:               "Available"
+          second:              "N/A"
+        status:
+          title:               "Status"
+          vacant:              "Vacant"
+          occupy:              "Occupied"
+        floor:               "Floor / Floors"
+        balcony_space:       "Balcony Space"
+        light_direction:     "Light Direction"
+        made_of:             "Made of"
+        contact_span:        "Contract Span"
+        conditions:          "Conditions"
+        update_fee:          "Update Fee"
+        updating_on:         "Updating on"
+        number_of_rooms:     "Number of Rooms"
+        house_insurance:     "House Insurance"
+        deal_way:            "Deal Way"
+        kitchen_bath:        "Kitchen/Bath"
+        services:            "Services"
+        etc:                 "Etc"
+        management_id:       "Management ID"
+        availability:
+          title:               "Availability"
+          now_available:       "Now Available"
+          preparing:           "Preparing"
+        created_at:          "Created at"
+        updated_at:          "Updated at"
+        controls:            "Controls"
+        options:
+          title:               "Options"
+        surroundings:
+          title:               "Facilities"
+      buttons:
+        search:              "Search"
+        add:                 "Add Land Info"
+        exec:                "Add/Modify"
+        csv_export:          "Export Land Info"
+        gmap:
+          open:                "Open Google Map"
+          get_location:        "Get location"
+          close:               "Close"
+          decide:              "Decide"
+          done:                "Complete"

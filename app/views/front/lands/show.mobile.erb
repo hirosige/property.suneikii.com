@@ -79,7 +79,7 @@
 
 
 
-  <% unless @apartment.apartment_thumbnails.blank? %>
+  <% unless @land.land_thumbnails.blank? %>
     <div class="contents-gap"></div>
 
     <div class="phto-slide">
@@ -101,7 +101,7 @@
 
       <div class="swiper-container">
         <div class="swiper-wrapper">
-          <% @apartment.apartment_thumbnails.each do |thumbnail| %>
+          <% @land.land_thumbnails.each do |thumbnail| %>
               <div class="swiper-slide" style="background-image:url(<%= thumbnail.image_url(:middle) %>)">
                 <div class="swiper-slide__title">Image</div>
                 <!--<button id="image1" class="swiper-slide__preview">-->
@@ -249,7 +249,7 @@
         </div>
         <div class="provider-info">
           <div class="provider-info__title">
-            <%= @apartment.provider.name unless @apartment.provider.nil? %>&nbsp;
+            <%= @land.provider.name unless @land.provider.nil? %>&nbsp;
             <span class="provider-info__label">優良店認定</span>&nbsp;
             <a class="provider-info__url" href="#">会社情報</a>
           </div>
@@ -257,13 +257,13 @@
             <tbody>
             <tr>
               <th>所在地</th>
-              <td colspan="3"><%= @apartment.provider.address unless @apartment.provider.nil? %></td>
+              <td colspan="3"><%= @land.provider.address unless @land.provider.nil? %></td>
             </tr>
             <tr>
               <th>営業時間</th>
-              <td><%= @apartment.provider.working_time unless @apartment.provider.nil? %></td>
+              <td><%= @land.provider.working_time unless @land.provider.nil? %></td>
               <th>定休日</th>
-              <td><%= @apartment.provider.holidays unless @apartment.provider.nil? %></td>
+              <td><%= @land.provider.holidays unless @land.provider.nil? %></td>
             </tr>
             </tbody>
           </table>

@@ -24,6 +24,7 @@
 
 class Province < ActiveRecord::Base
   has_many :apartments
+  has_many :lands
   has_many :districts,
            foreign_key: "province_original_id",
            primary_key: "original_id"

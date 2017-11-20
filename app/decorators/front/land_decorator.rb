@@ -15,6 +15,10 @@ class Front::LandDecorator < Draper::Decorator
     self.object.model_name.name
   end
 
+  def made_of
+    "-"
+  end
+
   def info
     self.land_info
   end
@@ -24,11 +28,27 @@ class Front::LandDecorator < Draper::Decorator
   end
 
   def delimited_update_fee
-    "#{self.info.update_fee.to_s(:delimited)} Baht"
+    "-"
+  end
+
+  def delimited_utility_fee
+    "-"
+  end
+
+  def delimited_security_deposit
+    "-"
+  end
+
+  def delimited_deposit
+    "-"
   end
 
   def unit_space
     "#{self.space}㎡"
+  end
+
+  def room_type_name
+    "-"
   end
 
   def services
@@ -55,6 +75,10 @@ class Front::LandDecorator < Draper::Decorator
     "#{self.info.availability}"
   end
 
+  def unit_floors
+    "-"
+  end
+
   def management_id
     "#{self.info.management_id}"
   end
@@ -71,38 +95,50 @@ class Front::LandDecorator < Draper::Decorator
     format_datetime(self.updated_at)
   end
 
+  def formatted_since_when
+    "-"
+  end
+
+  def light_direction
+    "-"
+  end
+
+  def show_url(id)
+    h.land_path(id)
+  end
+
   # For options
 
-  # def brandnew
-  #   if self.info.brandnew?
-  #     "active"
-  #   else
-  #     "inactive"
-  #   end
-  # end
-  #
-  # def more_than_2floors
-  #   if self.info.more?
-  #     "active"
-  #   else
-  #     "inactive"
-  #   end
-  # end
-  #
-  # def light_on_south
-  #   if self.info.south?
-  #     "active"
-  #   else
-  #     "inactive"
-  #   end
-  # end
-  #
-  # def parkinglot
-  #   if self.info.have_park?
-  #     "active"
-  #   else
-  #     "inactive"
-  #   end
-  # end
+  def corner
+    if self.info.corner?
+      "active"
+    else
+      "inactive"
+    end
+  end
+
+  def low_rise_residential_area
+    if self.info.low_rise_residential_area?
+      "active"
+    else
+      "inactive"
+    end
+  end
+
+  def no_condition
+    if self.info.no_condition?
+      "active"
+    else
+      "inactive"
+    end
+  end
+
+  def ownership_or_not
+    if self.info.ownership_or_not?
+      "active"
+    else
+      "inactive"
+    end
+  end
 
 end

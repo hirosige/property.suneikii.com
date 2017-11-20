@@ -1,0 +1,21 @@
+h1 Listing apartment_options
+
+table
+  thead
+    tr
+      th Name
+      th
+      th
+      th
+
+  tbody
+    - @apartment_options.each do |apartment_option|
+      tr
+        td = apartment_option.name
+        td = link_to 'Show', apartment_option
+        td = link_to 'Edit', edit_apartment_option_path(apartment_option)
+        td = link_to 'Destroy', apartment_option, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Apartment option', new_apartment_option_path

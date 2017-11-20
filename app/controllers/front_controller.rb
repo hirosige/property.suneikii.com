@@ -5,6 +5,7 @@ class FrontController < ApplicationController
   # before_filter :authenticate_user!
   # before_filter :banned_user?
   before_action :set_locale
+  before_action :count_property_session
 
   include Mobylette::RespondToMobileRequests
 
@@ -22,6 +23,21 @@ class FrontController < ApplicationController
     unless session[session_sym].include?(params[:id].to_i)
       session[session_sym].push(params[:id].to_i)
     end
+  end
+
+  def count_property_session
+    property_list = Array.new
+    property_list.push('apartments')
+    property_list.push('lands')
+
+    @count = 0
+    property_list.map{|property_name|
+      p property_name
+      session_sym = "#{property_name}_session_list".to_sym
+      p session_sym
+      @count = @count + session[session_sym].size unless session[session_sym].nil?
+      p session[session_sym].size
+    }
   end
 
   def set_locale

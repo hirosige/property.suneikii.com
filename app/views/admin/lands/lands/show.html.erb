@@ -1,0 +1,120 @@
+<% provide(:title, t('admin.lands.title')) %>
+
+<div class="right_col" role="main">
+  <div class="">
+
+    <%= render :partial => 'admin/shared/page_title', :locals => {title: t('admin.lands.detail_page_title'), description: t('admin.lands.description')} %>
+
+    <div class="clearfix"></div>
+    <div class="row">
+      <div class="clearfix"></div>
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <%= render 'layouts/admin_menus/lands_sub_tab' %>
+
+        <div class="x_panel">
+          <%= render :partial => 'admin/shared/table_title', :locals => {title: t('admin.lands.title'), description: t('admin.lands.description')} %>
+          <div class="x_content">
+            <div class="table-responsive">
+              <table class="table table-striped jambo_table bulk_action">
+                <thead>
+                  <tr class="headings">
+                    <th class="column-title" colspan="2">項目</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr class="headings">
+                    <th class="column-title"><%= t('admin.lands.items.area') %></th>
+                    <td> <%= @land.country_id %></td>
+                  </tr>
+                  <tr class="headings">
+                    <th class="column-title"><%= t('admin.lands.items.name') %></th>
+                    <td> <%= @land.name %></td>
+                  </tr>
+                  <tr class="headings">
+                    <th class="column-title"><%= t('admin.lands.items.rent_fee') %></th>
+                    <td> <%= @land.rent_fee %></td>
+                  </tr>
+                  <tr class="headings">
+                    <th class="column-title"><%= t('admin.lands.items.transportation') %></th>
+                    <td> <%= @land.transportation %></td>
+                  </tr>
+                  <tr class="headings">
+                    <th class="column-title"><%= t('admin.lands.items.address') %></th>
+                    <td> <%= @land.address %></td>
+                  </tr>
+                  <tr class="headings">
+                    <th class="column-title"><%= t('admin.lands.items.space') %></th>
+                    <td> <%= @land.space %></td>
+                  </tr>
+                  <tr class="headings">
+                    <th class="column-title"><%= t('admin.lands.items.photo') %></th>
+                    <td> <%= image_tag @land.photo_url(:middle), :style => 'border: 1px #ddd solid; border-radius: 10px;' %></td>
+                  </tr>
+                  <tr class="headings">
+                    <th class="column-title"><%= t('admin.lands.items.recommendations') %></th>
+                    <td> <%= @land.recommendations %></td>
+                  </tr>
+                  <tr class="headings">
+                    <th class="column-title"><%= t('admin.lands.items.status.title') %></th>
+                    <td> <%= @land.decollated_status %></td>
+                  </tr>
+                  <tr class="headings">
+                    <th class="column-title"><%= t('admin.lands.items.provider') %></th>
+                    <td> <%= @land.provider_id %></td>
+                  </tr>
+                  <tr class="headings">
+                    <th class="column-title"><%= t('admin.lands.items.created_at') %></th>
+                    <td> <%= @land.formatted_created_date %></td>
+                  </tr>
+                  <tr class="headings">
+                    <th class="column-title"><%= t('admin.lands.items.updated_at') %></th>
+                    <td> <%= @land.formatted_updated_date %></td>
+                  </tr>
+                  <tr class="headings">
+                    <th class="column-title">設備リスト</th>
+                    <td>
+                      <ul style="margin-left: -40px;">
+                        <% @land.land_options.each do |land_option| %>
+                            <% labels = %w{primary default info success warning danger} %>
+                            <% random_color_id = Random.new.rand(0..labels.size-1) %>
+
+                          <li style="list-style: none; margin: 4px;">
+                            <span class="label label-<%= labels[random_color_id] %>">
+                              <%= land_option.name %>
+                            </span>
+                          </li>
+                        <% end %>
+                      </ul>
+                    </td>
+                  </tr>
+                  <tr class="headings">
+                    <th class="column-title">周辺施設リスト</th>
+                    <td>
+                      <ul style="margin-left: -40px;">
+                        <% @land.surroundings.each do |surrounding| %>
+                            <% labels = %w{primary default info success warning danger} %>
+                            <% random_color_id = Random.new.rand(0..labels.size-1) %>
+
+                            <li style="list-style: none; margin: 4px;">
+                            <span class="label label-<%= labels[random_color_id] %>">
+                              <%= surrounding.name %>
+                            </span>
+                            </li>
+                        <% end %>
+                      </ul>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <%= link_to 'Edit', edit_admin_land_path(@land) %>
+              |
+              <%= link_to 'Back', admin_lands_path %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

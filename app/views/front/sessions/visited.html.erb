@@ -51,11 +51,19 @@
           <tbody>
           <% @foot_stamps.properties.each do |foot_stamp| %>
               <tr>
-                <td rowspan="3"><%= foot_stamp.photo %></td>
+                <td rowspan="3">
+                  <%= foot_stamp.photo %>
+                </td>
                 <td colspan="6" class="footstamp-top__tbl-col-name">
-                  <span class="footstamp-top__tbl-col-category"><%= foot_stamp.category %></span>
-                  <a href="<%= apartment_path(foot_stamp.id) %>"><%= foot_stamp.name %></a>
-                  <span class="footstamp-top__tbl-col-status"><%= foot_stamp.availability %></span>
+                  <span class="footstamp-top__tbl-col-category">
+                    <%= foot_stamp.category %>
+                  </span>
+                  <a href="<%= foot_stamp.show_url foot_stamp.id %>">
+                    <%= foot_stamp.name %>
+                  </a>
+                  <span class="footstamp-top__tbl-col-status">
+                    <%= foot_stamp.availability %>
+                  </span>
                 </td>
               </tr>
               <tr>
@@ -75,7 +83,7 @@
                   <%= foot_stamp.address %>
                 </td>
                 <td>
-                  <%= foot_stamp.room_type.name %>
+                  <%= foot_stamp.room_type_name %>
                   <br>
                   <%= foot_stamp.unit_space %>
                 </td>
@@ -94,7 +102,7 @@
                 <td colspan="6">
                   <div class="footstamp-top__tbl-btns">
                     <!--<button class="btn btn-default footstamp-top__tbl-btn"><% t('front.sessions.watched_list.buttons.favorite') %></button>-->
-                    <button class="btn btn-primary footstamp-top__tbl-btn" onclick='location.href="<%= apartment_path(foot_stamp.id) %>"'>
+                    <button class="btn btn-primary footstamp-top__tbl-btn" onclick='location.href="<%= foot_stamp.show_url foot_stamp.id %>"'>
                       <%= t('front.sessions.watched_list.buttons.detail') %> <i class="fa fa-arrow-circle-o-right"></i>
                     </button>
                   </div>

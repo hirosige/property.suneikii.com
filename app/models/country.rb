@@ -12,6 +12,7 @@
 #
 
 class Country < ActiveRecord::Base
+  validates :name_ja, :presence => true
   has_many :provinces,
            foreign_key: "country_original_id",
            primary_key: "original_id"

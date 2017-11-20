@@ -25,12 +25,12 @@
 
       <% unless @provinces.nil? %>
         <% @provinces.each do |province| %>
-          <a href="<%= apartment_province_list_path(province.original_id) %>"><%= province.name_ja %></a>
+          <a href="<%= land_province_list_path(province.original_id) %>"><%= province.name_ja %></a>
           <br>
         <% end %>
       <% end %>
 
-      <% if @apartments.blank? %>
+      <% if @lands.blank? %>
         <%= render 'front/shared/not_found' %>
       <% else %>
         <%= render 'pagination' %>

@@ -41,12 +41,7 @@
     <a href="<%= user_visited_path %>" class="control-box__login-info">
       <p><i class="fa fa-search control-box__icon"></i></p>
       <p class="control-box__counter">
-        <% if session[:apartments_session_list].nil? %>
-            <%= 0 %>
-        <% else %>
-            <%= session[:apartments_session_list].size unless session[:apartments_session_list].nil? %>
-        <% end %>
-
+        <%= @count %>
       </p>
       <p ><%= t('front.header.session.recent') %></p>
     </a>

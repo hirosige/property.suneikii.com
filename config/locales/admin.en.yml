@@ -39,6 +39,9 @@ en:
     sidemenu_12:
       title: "Providers"
 
+    sidemenu_13:
+      title: "Lands"
+
     elements:
       search:
         keyword:  "Search for..."
