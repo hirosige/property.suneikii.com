@@ -32,11 +32,8 @@ class FrontController < ApplicationController
 
     @count = 0
     property_list.map{|property_name|
-      p property_name
       session_sym = "#{property_name}_session_list".to_sym
-      p session_sym
       @count = @count + session[session_sym].size unless session[session_sym].nil?
-      p session[session_sym].size
     }
   end
 
