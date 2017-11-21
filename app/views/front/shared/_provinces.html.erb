@@ -16,7 +16,7 @@
             <% @provinces.each do |province| %>
                 <button class="province-map__item" onclick="location.href='<%= send("#{@params_service.singular_category}_district_list_path", province.url_safe) %>'">
                   <%= province.name_ja %>
-                  <span class="district-map__count"><%= "#{province.send(@params_service.category).size}" %></span>
+                  <span class="district-map__count"><%= "#{province.send("#{@params_service.category}_count")}" %></span>
                 </button>
             <% end %>
         <% end %>

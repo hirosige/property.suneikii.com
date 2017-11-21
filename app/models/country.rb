@@ -2,13 +2,15 @@
 #
 # Table name: countries
 #
-#  id          :integer          not null, primary key
-#  name_ja     :string(255)
-#  name_th     :string(255)
-#  name_en     :string(255)
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
-#  original_id :string(255)
+#  id               :integer          not null, primary key
+#  name_ja          :string(255)
+#  name_th          :string(255)
+#  name_en          :string(255)
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#  original_id      :string(255)
+#  apartments_count :integer          default(0), not null
+#  lands_count      :integer          default(0), not null
 #
 
 class Country < ActiveRecord::Base
@@ -16,4 +18,8 @@ class Country < ActiveRecord::Base
   has_many :provinces,
            foreign_key: "country_original_id",
            primary_key: "original_id"
+
+  def self.init_count
+    self.find_each { |country| self.reset_counters(country.id, :apartments) }
+  end
 end

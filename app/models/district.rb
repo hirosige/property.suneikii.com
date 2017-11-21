@@ -12,6 +12,8 @@
 #  original_id          :string(255)
 #  province_original_id :string(255)
 #  url_safe             :string(255)
+#  apartments_count     :integer          default(0), not null
+#  lands_count          :integer          default(0), not null
 #
 # Indexes
 #
@@ -33,7 +35,12 @@ class District < ActiveRecord::Base
              foreign_key: "original_id",
              primary_key: "province_original_id"
 
+  def self.init_count
+    self.find_each { |district| self.reset_counters(district.id, :apartments) }
+  end
+
   def self.balc_find(ids)
+    init_count
     find(ids)
   end
 end
