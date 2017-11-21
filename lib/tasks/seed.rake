@@ -4,7 +4,7 @@ Dir.glob(File.join(Rails.root, 'db', 'seeds', '*.rb')).each do |file|
     load(file)
   end
 
-  task "db:seed:all" => :environment do
-    load(file)
+  task "db:seed:exec" => :environment do
+    load(file) if File.basename(file).gsub(/\..+$/, '').eql?('exec')
   end
 end

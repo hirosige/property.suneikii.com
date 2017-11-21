@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171029160940) do
+ActiveRecord::Schema.define(version: 20171121145139) do
 
   create_table "accessories", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -141,12 +141,14 @@ ActiveRecord::Schema.define(version: 20171029160940) do
   end
 
   create_table "countries", force: :cascade do |t|
-    t.string   "name_ja",     limit: 255
-    t.string   "name_th",     limit: 255
-    t.string   "name_en",     limit: 255
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
-    t.string   "original_id", limit: 255
+    t.string   "name_ja",          limit: 255
+    t.string   "name_th",          limit: 255
+    t.string   "name_en",          limit: 255
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
+    t.string   "original_id",      limit: 255
+    t.integer  "apartments_count", limit: 4,   default: 0, null: false
+    t.integer  "lands_count",      limit: 4,   default: 0, null: false
   end
 
   create_table "course_menus", force: :cascade do |t|
@@ -198,11 +200,13 @@ ActiveRecord::Schema.define(version: 20171029160940) do
     t.string   "name_th",              limit: 255
     t.string   "name_en",              limit: 255
     t.integer  "province_id",          limit: 4
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
+    t.datetime "created_at",                                   null: false
+    t.datetime "updated_at",                                   null: false
     t.string   "original_id",          limit: 255
     t.string   "province_original_id", limit: 255
     t.string   "url_safe",             limit: 255
+    t.integer  "apartments_count",     limit: 4,   default: 0, null: false
+    t.integer  "lands_count",          limit: 4,   default: 0, null: false
   end
 
   add_index "districts", ["province_id"], name: "index_districts_on_province_id", using: :btree
@@ -346,14 +350,6 @@ ActiveRecord::Schema.define(version: 20171029160940) do
     t.datetime "updated_at",             null: false
   end
 
-  create_table "land_surrondings", force: :cascade do |t|
-    t.integer  "land_id",        limit: 4
-    t.integer  "surrounding_id", limit: 4
-    t.integer  "distance",       limit: 4
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-  end
-
   create_table "land_surroundings", force: :cascade do |t|
     t.integer  "land_id",        limit: 4
     t.integer  "surrounding_id", limit: 4
@@ -488,11 +484,13 @@ ActiveRecord::Schema.define(version: 20171029160940) do
     t.string   "name_th",             limit: 255
     t.string   "name_en",             limit: 255
     t.integer  "country_id",          limit: 4
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
+    t.datetime "created_at",                                  null: false
+    t.datetime "updated_at",                                  null: false
     t.string   "original_id",         limit: 255
     t.string   "country_original_id", limit: 255
     t.string   "url_safe",            limit: 255
+    t.integer  "apartments_count",    limit: 4,   default: 0, null: false
+    t.integer  "lands_count",         limit: 4,   default: 0, null: false
   end
 
   add_index "provinces", ["country_id"], name: "index_provinces_on_country_id", using: :btree
@@ -626,11 +624,13 @@ ActiveRecord::Schema.define(version: 20171029160940) do
     t.string   "name_th",              limit: 255
     t.string   "name_en",              limit: 255
     t.integer  "district_id",          limit: 4
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
+    t.datetime "created_at",                                   null: false
+    t.datetime "updated_at",                                   null: false
     t.string   "original_id",          limit: 255
     t.string   "district_original_id", limit: 255
     t.string   "url_safe",             limit: 255
+    t.integer  "apartments_count",     limit: 4,   default: 0, null: false
+    t.integer  "lands_count",          limit: 4,   default: 0, null: false
   end
 
   add_index "subdistricts", ["district_id"], name: "index_subdistricts_on_district_id", using: :btree
