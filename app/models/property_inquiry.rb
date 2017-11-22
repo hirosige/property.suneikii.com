@@ -23,7 +23,8 @@ class PropertyInquiry < ActiveRecord::Base
   validates :body, presence: true
   validates :tel, presence: true
 
-  def get_property
-    Apartment.find(self.apartment_id) unless self.apartment_id.nil?
+  def get_property(symbol)
+    Apartment.find(self.apartment_id) if symbol.equal?(:apartment)
+    Land.find(self.land_id) if symbol.equal?(:land)
   end
 end

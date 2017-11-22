@@ -36,11 +36,22 @@ class District < ActiveRecord::Base
              primary_key: "province_original_id"
 
   def self.init_count
-    self.find_each { |district| self.reset_counters(district.id, :apartments) }
+    self.find_each {|district|
+      self.reset_counters(district.id, :apartments)
+      self.reset_counters(district.id, :lands)
+    }
+  end
+
+  def self.reset_counter(ids)
+    ids.each do |id|
+      self.reset_counters(id, :apartments)
+      self.reset_counters(id, :lands)
+    end
   end
 
   def self.balc_find(ids)
-    init_count
-    find(ids)
+    reset_counter(ids)
+    districts = find(ids)
+    districts
   end
 end

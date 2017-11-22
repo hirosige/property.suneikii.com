@@ -13,9 +13,9 @@
       <th class="column-title"><%= t('admin.users.items.role') %></th>
       <th class="column-title"><%= t('admin.users.items.created_at') %></th>
       <th class="column-title"><%= t('admin.users.items.updated_at') %></th>
-      <% if can? :destroy, User %>
-        <th class="column-title"><%= t('admin.users.items.ban_status') %></th>
-      <% end %>
+      <% #if can? :destroy, User %>
+        <!--<th class="column-title"><% t('admin.users.items.ban_status') %></th>-->
+      <% #end %>
       <th class="column-title"><%= t('admin.users.items.reference') %></th>
       <% if can? :destroy, User %>
           <th class="column-title"><%= t('admin.users.items.control_del') %></th>
@@ -42,19 +42,19 @@
           <td><label class="label label-success"><%= user.role %></label></td>
           <td><%= user.created_at.strftime("%Y年%m月%d日 %H:%M:%S") %></td>
           <td><%= user.updated_at.strftime("%Y年%m月%d日 %H:%M:%S") %></td>
-          <% if can? :destroy, User %>
-              <td>
-                <ul class="list-group">
-                  <li class="list-group-item">
-                    　
-                    <div class="material-switch pull-right">
-                      <input id="someSwitchOptionDanger_<%= user.id %>" name="someSwitchOption001_<%= user.id %>" data-id="<%= user.id %>" type="checkbox" <%= user.blacklisted? %> />
-                      <label for="someSwitchOptionDanger_<%= user.id %>" class="label-danger"></label>
-                    </div>
-                  </li>
-                </ul>
-              </td>
-          <% end %>
+          <% #if can? :destroy, User %>
+              <!--<td>-->
+                <!--<ul class="list-group">-->
+                  <!--<li class="list-group-item">-->
+                    <!--　-->
+                    <!--<div class="material-switch pull-right">-->
+                      <!--<input id="someSwitchOptionDanger_<%= user.id %>" name="someSwitchOption001_<%= user.id %>" data-id="<%= user.id %>" type="checkbox" <%= user.blacklisted? %> />-->
+                      <!--<label for="someSwitchOptionDanger_<%= user.id %>" class="label-danger"></label>-->
+                    <!--</div>-->
+                  <!--</li>-->
+                <!--</ul>-->
+              <!--</td>-->
+          <% #end %>
 
           <td>
             <% if user.provider.blank? %>

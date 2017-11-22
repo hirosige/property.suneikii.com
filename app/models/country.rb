@@ -21,5 +21,6 @@ class Country < ActiveRecord::Base
 
   def self.init_count
     self.find_each { |country| self.reset_counters(country.id, :apartments) }
+    self.find_each { |country| self.reset_counters(country.id, :lands) }
   end
 end
