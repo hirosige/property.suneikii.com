@@ -1,1 +1,1 @@
-json.partial! "apartment_options/apartment_option", apartment_option: @apartment_option
+json.partial! "land_options/land_option", land_option: @land_option

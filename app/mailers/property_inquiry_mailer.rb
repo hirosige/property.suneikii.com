@@ -4,7 +4,8 @@ class PropertyInquiryMailer < ApplicationMailer
 
   def received_email(property_inquiry)
     @property_inquiry = property_inquiry
-    @property = @property_inquiry.get_property
+    @property = @property_inquiry.get_property(:apartment) unless property_inquiry.apartment_id.nil?
+    @property = @property_inquiry.get_property(:land) unless property_inquiry.land_id.nil?
 
     mail(
         :to      => property_inquiry.email,

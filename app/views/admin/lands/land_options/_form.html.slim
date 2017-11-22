@@ -1,9 +1,9 @@
-= form_for @apartment_option do |f|
-  - if @apartment_option.errors.any?
+= form_for @land_option do |f|
+  - if @land_option.errors.any?
     #error_explanation
-      h2 = "#{pluralize(@apartment_option.errors.count, "error")} prohibited this apartment_option from being saved:"
+      h2 = "#{pluralize(@land_option.errors.count, "error")} prohibited this land_option from being saved:"
       ul
-        - @apartment_option.errors.full_messages.each do |message|
+        - @land_option.errors.full_messages.each do |message|
           li = message
 
   .field

@@ -45,10 +45,10 @@ class Land < ActiveRecord::Base
   has_many :land_thumbnails
   has_many :favorites, dependent: :destroy
 
-  belongs_to :country
-  belongs_to :province
-  belongs_to :district
-  belongs_to :subdistrict
+  belongs_to :country, counter_cache: true
+  belongs_to :province, counter_cache: true
+  belongs_to :district, counter_cache: true
+  belongs_to :subdistrict, counter_cache: true
 
   belongs_to :provider
   belongs_to :land_category

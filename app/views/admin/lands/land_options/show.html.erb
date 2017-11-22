@@ -1,18 +1,18 @@
-<% provide(:title, t('admin.apartment_options.title')) %>
+<% provide(:title, t('admin.land_options.title')) %>
 
 <div class="right_col" role="main">
   <div class="">
 
-    <%= render :partial => 'admin/shared/page_title', :locals => {title: t('admin.apartment_options.detail_page_title'), description: t('admin.apartment_options.description')} %>
+    <%= render :partial => 'admin/shared/page_title', :locals => {title: t('admin.land_options.detail_page_title'), description: t('admin.land_options.description')} %>
 
     <div class="clearfix"></div>
     <div class="row">
       <div class="clearfix"></div>
       <div class="col-md-12 col-sm-12 col-xs-12">
-        <%= render 'layouts/admin_menus/apartments_sub_tab' %>
+        <%= render 'layouts/admin_menus/lands_sub_tab' %>
 
         <div class="x_panel">
-          <%= render :partial => 'admin/shared/table_title', :locals => {title: t('admin.apartment_options.title'), description: t('admin.apartment_options.description')} %>
+          <%= render :partial => 'admin/shared/table_title', :locals => {title: t('admin.land_options.title'), description: t('admin.land_options.description')} %>
           <div class="x_content">
             <div class="table-responsive">
               <table class="table table-striped jambo_table bulk_action">
@@ -24,15 +24,15 @@
 
                 <tbody>
                   <tr class="headings">
-                    <th class="column-title"><%= t('admin.apartment_options.items.name') %></th>
-                    <td> <%= @apartment_option.name %></td>
+                    <th class="column-title"><%= t('admin.land_options.items.name') %></th>
+                    <td> <%= @land_option.name %></td>
                   </tr>
                 </tbody>
               </table>
 
-              <%= link_to 'Edit', edit_admin_apartment_option_path(@apartment_option) %>
+              <%= link_to 'Edit', edit_admin_land_option_path(@land_option) %>
               |
-              <%= link_to 'Back', admin_apartment_options_path %>
+              <%= link_to 'Back', admin_land_options_path %>
             </div>
           </div>
         </div>
