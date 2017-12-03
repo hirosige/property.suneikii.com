@@ -1,9 +1,16 @@
 class SubDistrictSeeds
+  attr_accessor :name
+
+  include Printable
+
   def initialize
+    @name = "SubDistrict"
     Subdistrict.destroy_all
   end
 
   def exec
+    to_string
+
     Subdistrict.create(
         original_id: '1',
         name_ja: 'Phra Borom Maha Ratchawang',
@@ -69916,5 +69923,6 @@ class SubDistrictSeeds
         district_original_id: '9613'
     )
 
+    to_string(false)
   end
 end

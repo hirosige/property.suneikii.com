@@ -146,12 +146,24 @@
                     </div>
                   </div>
 
+                  <!--<div class="form-group">-->
+                    <!--<label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><% t('admin.apartments.items.photo') %></label>-->
+                    <!--<div class="col-md-6 col-sm-6 col-xs-12">-->
+                      <!--<% f.fields_for :apartment_thumbnails do |thumbnail| %>-->
+                        <!--<% thumbnail.file_field :image %>-->
+                      <!--<% end %>-->
+                    <!--</div>-->
+                  <!--</div>-->
+
                   <div class="form-group">
-                    <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.apartments.items.photo') %></label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
                       <%= f.fields_for :apartment_thumbnails do |thumbnail| %>
-                        <%= thumbnail.file_field :image %>
+                          <%= render 'apartment_thumbnail_fields', f: thumbnail %>
                       <% end %>
+                      <div id="links">
+                        <br>
+                        <%= link_to_add_association "Add into Photo List", f, :apartment_thumbnails, :class => 'btn btn-xs btn-primary' %><br/>
+                      </div>
                     </div>
                   </div>
 
@@ -540,7 +552,7 @@
                         <div class="form-group">
                           <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.apartment_info.items.pet.title') %></label>
                           <div class="col-md-6 col-sm-6 col-xs-12">
-                            <%= ai.radio_button :pet, :have_pet %> <%= t('admin.apartment_info.items.pet.true') %> &nbsp;
+                            <%= ai.radio_button :pet, :have_pet %> <%= t('admin.apartment_info.items.pet.first') %> &nbsp;
                             <%= ai.radio_button :pet, :not_have_pet %> <%= t('admin.apartment_info.items.pet.second') %>
                           </div>
                         </div>

@@ -30,7 +30,7 @@ class Admin::Providers::ProvidersController < AdminController
 
     respond_to do |format|
       if @provider.save
-        format.html { redirect_to [:admin, :providers, @provider], notice: 'Provider was successfully created.' }
+        format.html { redirect_to [:admin, @provider], notice: 'Provider was successfully created.' }
         format.json { render :show, status: :created, location: @provider }
       else
         format.html { render :new }
@@ -44,7 +44,7 @@ class Admin::Providers::ProvidersController < AdminController
   def update
     respond_to do |format|
       if @provider.update(provider_params)
-        format.html { redirect_to [:admin, :providers, @provider], notice: 'Provider was successfully updated.' }
+        format.html { redirect_to [:admin, @provider], notice: 'Provider was successfully updated.' }
         format.json { render :show, status: :ok, location: @provider }
       else
         format.html { render :edit }
@@ -58,7 +58,7 @@ class Admin::Providers::ProvidersController < AdminController
   def destroy
     @provider.destroy
     respond_to do |format|
-      format.html { redirect_to admin_providers_providers_url, notice: 'Provider was successfully destroyed.' }
+      format.html { redirect_to admin_providers_url, notice: 'Provider was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

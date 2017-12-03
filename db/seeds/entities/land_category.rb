@@ -1,9 +1,16 @@
 class LandCategorySeeds
+  attr_accessor :name
+
+  include Printable
+
   def initialize
+    @name = "Land Category"
     LandCategory.destroy_all
   end
 
   def exec
+    to_string
+
     LandCategory.create( name: 'For Rice Field' )
     LandCategory.create( name: 'For Paddy Field' )
     LandCategory.create( name: 'For Residence' )
@@ -27,5 +34,7 @@ class LandCategorySeeds
     LandCategory.create( name: 'Public Road' )
     LandCategory.create( name: 'Park' )
     LandCategory.create( name: 'Hybrid Land' )
+
+    to_string(false)
   end
 end

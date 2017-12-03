@@ -28,6 +28,8 @@
 #
 
 class Apartment < ActiveRecord::Base
+  include AreaSearchable
+
   validates :name,           :presence => true
   validates :country_id,     :presence => true
   validates :province_id,    :presence => true
@@ -56,10 +58,10 @@ class Apartment < ActiveRecord::Base
   belongs_to :provider
   belongs_to :room_type
 
-  accepts_nested_attributes_for :apartment_info
+  accepts_nested_attributes_for :apartment_info, allow_destroy: true
   accepts_nested_attributes_for :apartment_option_installations, allow_destroy: true
   accepts_nested_attributes_for :apartment_surroundings, allow_destroy: true
-  accepts_nested_attributes_for :apartment_thumbnails
+  accepts_nested_attributes_for :apartment_thumbnails, allow_destroy: true
   mount_uploader :photo, ApartmentPhotoUploader
 
   scope :published, -> { where(status: :public)}
@@ -77,17 +79,5 @@ class Apartment < ActiveRecord::Base
     event :decline do
       transition :from => [:public], :to => :secret
     end
-  end
-
-  def self.province_list(country_id)
-    where(country_id: country_id).pluck(:province_id).uniq
-  end
-
-  def self.district_list(province_id)
-    where(province_id: province_id).pluck(:district_id).uniq
-  end
-
-  def self.subdistrict_list(district_id)
-    where(district_id: district_id).pluck(:subdistrict_id).uniq
   end
 end

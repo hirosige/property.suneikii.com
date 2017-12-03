@@ -86,8 +86,7 @@ class Front::LandsController < FrontController
     @lands = Front::LandDecorator.decorate_collection(
         Land.published
             .includes(
-                :land_info,
-                :land_category
+                :land_info
             ).where(
             search_condition
         ).page(params[:page])

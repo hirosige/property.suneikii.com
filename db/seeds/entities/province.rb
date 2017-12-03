@@ -1,9 +1,16 @@
 class ProvinceSeeds
+  attr_accessor :name
+
+  include Printable
+
   def initialize
+    @name = "Province"
     Province.destroy_all
   end
 
   def exec
+    to_string
+
     Province.create(
         original_id: 'bangkok',
         name_ja: 'Bangkok',
@@ -697,6 +704,7 @@ class ProvinceSeeds
         country_original_id: 'th'
     )
 
+    to_string(false)
   end
 end
 

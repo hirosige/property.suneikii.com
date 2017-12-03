@@ -21,7 +21,7 @@
       <div class="swiper-container">
         <div class="swiper-wrapper">
           <% @land.land_thumbnails.each do |thumbnail| %>
-              <div class="swiper-slide" style="background-image:url(<%= thumbnail.image_url(:middle) %>)">
+              <div class="swiper-slide" style="background-image:url(<%= thumbnail.image_url(:large) %>)">
                 <div class="swiper-slide__title">Image</div>
                 <!--<button id="image1" class="swiper-slide__preview">-->
                 <!--<i class="fa fa-arrows" aria-hidden="true"></i>-->

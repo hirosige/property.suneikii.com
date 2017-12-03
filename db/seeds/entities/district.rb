@@ -1,9 +1,16 @@
 class DistrictSeeds
+  attr_accessor :name
+
+  include Printable
+
   def initialize
+    @name = "District"
     District.destroy_all
   end
 
   def exec
+    to_string
+
     District.create(
         original_id: '1001',
         name_ja: 'Phra Nakhon',
@@ -8356,6 +8363,7 @@ class DistrictSeeds
         province_original_id: 'narathiwat'
     )
 
+    to_string(false)
   end
 end
 

@@ -1,9 +1,16 @@
 class RoomTypeSeeds
+  attr_accessor :name
+
+  include Printable
+
   def initialize
+    @name = "RoomType"
     RoomType.destroy_all
   end
 
   def exec
+    to_string
+
     RoomType.create( name: '1R' )
     RoomType.create( name: '1K' )
     RoomType.create( name: '1DK' )
@@ -16,5 +23,7 @@ class RoomTypeSeeds
     RoomType.create( name: '4LDK' )
     RoomType.create( name: '5K/5DK' )
     RoomType.create( name: '5LDK' )
+
+    to_string(false)
   end
 end

@@ -1,8 +1,11 @@
+require('./db/seeds/entities/concerns/printable.rb')
+
 require('./db/seeds/seed_manager.rb')
 require('./db/seeds/entities/country.rb')
 require('./db/seeds/entities/province.rb')
 require('./db/seeds/entities/district.rb')
 require('./db/seeds/entities/subdistrict.rb')
+require('./db/seeds/entities/subdistrict_v2.rb')
 require('./db/seeds/entities/room_type.rb')
 require('./db/seeds/entities/provider.rb')
 require('./db/seeds/entities/apartment.rb')
@@ -17,10 +20,14 @@ class Exec
     SeedManager.exec(ProvinceSeeds.new)
     SeedManager.exec(DistrictSeeds.new)
     SeedManager.exec(SubDistrictSeeds.new)
+    SeedManager.exec(SubDistrictV2Seeds.new)
     SeedManager.exec(RoomTypeSeeds.new)
     SeedManager.exec(ProviderSeeds.new)
-    SeedManager.exec(ApartmentSeeds.new(CREATING_PTS))
     SeedManager.exec(LandCategorySeeds.new)
+
+    # if Rails.env.development?
+      SeedManager.exec(ApartmentSeeds.new(CREATING_PTS))
+    # end
 
     # land = LandSeeds.new(1000)
     # land.exec
