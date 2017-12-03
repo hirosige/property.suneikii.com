@@ -15,7 +15,7 @@ require "rails_helper"
 
 RSpec.describe Admin::Facilities::SurroundingsController, type: :routing do
   describe "routing" do
-    let(:url_request) {"/ja/admin/facilities/surroundings"}
+    let(:url_request) {"/ja/admin/surroundings"}
     let(:request)     {"admin/facilities/surroundings"}
 
     it "routes to #index" do

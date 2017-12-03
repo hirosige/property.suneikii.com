@@ -16,7 +16,7 @@ require 'rails_helper'
 RSpec.describe "Surroundings", type: :request do
   describe "GET /surroundings" do
     it "works! (now write some real specs)" do
-      get admin_facilities_surroundings_path
+      get admin_surroundings_path
       expect(response).to have_http_status(302)
     end
   end

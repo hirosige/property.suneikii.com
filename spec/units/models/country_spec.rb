@@ -14,4 +14,9 @@
 require 'rails_helper'
 
 RSpec.describe Country, type: :model do
+  it "cannot create" do
+    country = build(:country_fail)
+
+    expect(country.validate).to eq false
+  end
 end
