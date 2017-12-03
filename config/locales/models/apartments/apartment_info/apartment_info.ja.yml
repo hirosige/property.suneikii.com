@@ -15,40 +15,40 @@ ja:
           second:                 "古物件"
         more_than_2floors:
           title:               "２階以上の物件"
-          true:                "2階以上"
-          false:               "1階のみ"
+          first:                "2階以上"
+          second:               "1階のみ"
         light_on_south:
           title:               "南向き"
-          true:                "南向き"
-          false:               "南向きじゃない"
+          first:                "南向き"
+          second:               "南向きじゃない"
         parkinglot:
           title:               "駐車場"
-          true:                "あり"
-          false:               "無し"
+          first:                "あり"
+          second:               "無し"
         auto_lock:
           title:               "オートロック"
-          true:                "あり"
-          false:               "無し"
+          first:                "あり"
+          second:               "無し"
         air_con:
           title:               "エアコン"
-          true:                "あり"
-          false:               "無し"
+          first:                "あり"
+          second:               "無し"
         separate_bath_toilet:
           title:               "バス・トイレ別"
-          true:                "バス・トイレ別"
-          false:               "ユニットバス"
+          first:                "バス・トイレ別"
+          second:               "ユニットバス"
         reheating:
           title:               "追焚機能"
-          true:                "あり"
-          false:               "無し"
+          first:                "あり"
+          second:               "無し"
         wooden_floor:
           title:               "フローリング"
-          true:                "フローリング"
-          false:               "その他"
+          first:                "フローリング"
+          second:               "その他"
         pet:
           title:               "ペット可"
-          true:                "ペット可"
-          false:               "ペット不可"
+          first:                "ペット可"
+          second:               "ペット不可"
         status:
           title:               "現況"
           vacant:              "空き"

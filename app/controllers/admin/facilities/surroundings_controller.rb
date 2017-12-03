@@ -31,7 +31,7 @@ class Admin::Facilities::SurroundingsController < AdminController
     p @surrounding
     respond_to do |format|
       if @surrounding.save
-        format.html { redirect_to [:admin, :facilities, @surrounding], notice: 'Surrounding was successfully created.' }
+        format.html { redirect_to [:admin, @surrounding], notice: 'Surrounding was successfully created.' }
         format.json { render :show, status: :created, location: @surrounding }
       else
         format.html { render :new }
@@ -45,7 +45,7 @@ class Admin::Facilities::SurroundingsController < AdminController
   def update
     respond_to do |format|
       if @surrounding.update(surrounding_params)
-        format.html { redirect_to [:admin, :facilities, @surrounding], notice: 'Surrounding was successfully updated.' }
+        format.html { redirect_to [:admin, @surrounding], notice: 'Surrounding was successfully updated.' }
         format.json { render :show, status: :ok, location: @surrounding }
       else
         format.html { render :edit }
@@ -59,7 +59,7 @@ class Admin::Facilities::SurroundingsController < AdminController
   def destroy
     @surrounding.destroy
     respond_to do |format|
-      format.html { redirect_to admin_facilities_surroundings_url, notice: 'Surrounding was successfully destroyed.' }
+      format.html { redirect_to admin_surroundings_url, notice: 'Surrounding was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

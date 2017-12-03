@@ -21,10 +21,10 @@
 
             <br>
             <% if can? :create, Provider %>
-              <%= set_button_new(t('admin.providers.buttons.add'), new_admin_providers_provider_path) %>
+              <%= set_button_new(t('admin.providers.buttons.add'), new_admin_provider_path) %>
             <% end %>
 
-            <%= set_button_csv(t('admin.providers.buttons.csv_export'), admin_providers_providers_path(format: 'csv')) %>
+            <%= set_button_csv(t('admin.providers.buttons.csv_export'), admin_providers_path(format: 'csv')) %>
           </div>
         </div>
       </div>

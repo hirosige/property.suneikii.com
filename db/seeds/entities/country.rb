@@ -1,9 +1,16 @@
 class CountrySeeds
+  attr_accessor :name
+
+  include Printable
+
   def initialize
+    @name = "Country"
     Country.destroy_all
   end
 
   def exec
+    to_string
+
     Country.create(
         original_id: 'jp',
         name_ja: '日本',
@@ -31,5 +38,7 @@ class CountrySeeds
         name_th: 'ประเทศจีน',
         name_en: 'China'
     )
+
+    to_string(false)
   end
 end

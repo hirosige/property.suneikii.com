@@ -1,8 +1,15 @@
 class SubDistrictV2Seeds
   attr_accessor :delete_list
+  attr_accessor :name
+
+  include Printable
 
   def initialize
+    @name = "Subdistrict V2"
     @delete_list = Array.new
+
+    # list of no jp/en name of subdistrict contained
+    # delete and insert new data for un-named districts
     @delete_list.push(
         17,   18,   19,   20,   21,   22,   23,   24,   25,
         26,   27,   28,   29,   30,   31,   32,   33,   34,
@@ -42,6 +49,7 @@ class SubDistrictV2Seeds
   end
 
   def exec
+    to_string
 
     Subdistrict.create(
         original_id: '17',
@@ -2500,5 +2508,6 @@ class SubDistrictV2Seeds
         district_original_id: '9501'
     )
 
+    to_string(false)
   end
 end

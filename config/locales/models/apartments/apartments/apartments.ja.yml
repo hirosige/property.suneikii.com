@@ -25,6 +25,8 @@ ja:
           title:               "公開/非公開"
           public:              "公開"
           secret:              "非公開"
+        property_status:
+          title:               "満員/空き"
         provider:            "管理元"
         created_at:          "作成日"
         updated_at:          "更新日"

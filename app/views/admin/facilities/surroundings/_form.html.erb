@@ -29,7 +29,7 @@
           <div class="x_content">
 
             <br />
-            <%= form_for [:admin, :facilities, @surrounding], :html => {:class => 'form-horizontal form-label-left'}  do |f| %>
+            <%= form_for [:admin, @surrounding], :html => {:class => 'form-horizontal form-label-left'}  do |f| %>
                 <% if @surrounding.errors.any? %>
                     <div id="error_explanation">
                       <h2><%= "#{pluralize(@surrounding.errors.count, "error")} prohibited this order from being saved:" %></h2>

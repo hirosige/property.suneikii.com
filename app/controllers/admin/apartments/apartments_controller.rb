@@ -27,8 +27,19 @@ class Admin::Apartments::ApartmentsController < AdminController
     @apartment.apartment_option_installations.build
     @apartment.apartment_surroundings.build
 
-    3.times { @apartment.apartment_thumbnails.build}
+    @places = Array.new
 
+    @hash = Gmaps4rails.build_markers(@places) do |place, marker|
+      marker.lat place[:latitude]
+      marker.lng place[:longitude]
+      marker.infowindow place[:description]
+      marker.json({title: place[:title]})
+    end
+
+
+  end
+
+  def edit
     @places = Array.new
     @places.push({
                      :latitude    => 12.922723,
@@ -43,11 +54,6 @@ class Admin::Apartments::ApartmentsController < AdminController
       marker.infowindow place[:description]
       marker.json({title: place[:title]})
     end
-
-
-  end
-
-  def edit
   end
 
   def create

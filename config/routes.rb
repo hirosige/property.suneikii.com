@@ -338,7 +338,7 @@ Rails.application.routes.draw do
           resources :land_options
         end
 
-        namespace :facilities do
+        scope module: :facilities do
           resources :surroundings
         end
 
@@ -381,7 +381,7 @@ Rails.application.routes.draw do
           resources :shoppers_distributors
         end
 
-        namespace :providers do
+        scope module: :providers do
           resources :providers
         end
 

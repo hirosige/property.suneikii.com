@@ -2,13 +2,19 @@ require 'faker'
 
 class ApartmentSeeds
   attr_accessor :creating_pts
+  attr_accessor :name
+
+  include Printable
 
   def initialize(creating_pts)
+    @name = "Apartment"
     self.creating_pts = creating_pts
     Apartment.destroy_all
   end
 
   def exec
+    to_string
+
     self.creating_pts.times do
       province    = Province.where('id >= ?', rand(Province.first.id..Province.last.id)).first
       district    = District.where('id >= ? ', rand(District.where(province_original_id: province.original_id).first.id..District.where(province_original_id: province.original_id).last.id) ).first
@@ -88,6 +94,8 @@ class ApartmentSeeds
       apartment.publish
       apartment.save
     end
+
+    to_string(false)
   end
 end
 

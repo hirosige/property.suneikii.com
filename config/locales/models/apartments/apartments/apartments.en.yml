@@ -25,6 +25,8 @@ en:
           title:               "Public/Private"
           public:              "Public"
           secret:              "Private"
+        property_status:
+          title:               "Occupied/Vacant"
         provider:            "Provider"
         created_at:          "Created At"
         updated_at:          "Updated At"
