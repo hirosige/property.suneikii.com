@@ -9,6 +9,7 @@ class ApartmentSeeds
   def initialize(creating_pts)
     @name = "Apartment"
     self.creating_pts = creating_pts
+    ApartmentThumbnail.destroy_all
     Apartment.destroy_all
   end
 

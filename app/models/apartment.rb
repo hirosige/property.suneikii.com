@@ -58,10 +58,10 @@ class Apartment < ActiveRecord::Base
   belongs_to :provider
   belongs_to :room_type
 
-  accepts_nested_attributes_for :apartment_info
+  accepts_nested_attributes_for :apartment_info, allow_destroy: true
   accepts_nested_attributes_for :apartment_option_installations, allow_destroy: true
   accepts_nested_attributes_for :apartment_surroundings, allow_destroy: true
-  accepts_nested_attributes_for :apartment_thumbnails
+  accepts_nested_attributes_for :apartment_thumbnails, allow_destroy: true
   mount_uploader :photo, ApartmentPhotoUploader
 
   scope :published, -> { where(status: :public)}

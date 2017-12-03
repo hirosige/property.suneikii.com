@@ -25,9 +25,9 @@ class Exec
     SeedManager.exec(ProviderSeeds.new)
     SeedManager.exec(LandCategorySeeds.new)
 
-    if Rails.env.development?
+    # if Rails.env.development?
       SeedManager.exec(ApartmentSeeds.new(CREATING_PTS))
-    end
+    # end
 
     # land = LandSeeds.new(1000)
     # land.exec
