@@ -72,7 +72,9 @@ class Admin::Apartments::ApartmentsController < AdminController
 
   def update
     respond_to do |format|
-      if @apartment.update(apartment_params)
+      if @apartment.image_safe_update(apartment_params)
+        p "###### ここだよ #####"
+        p apartment_params
         format.html { redirect_to [:admin, @apartment], flash: { :success => "#{@apartment.name}を更新しました。" } }
         format.json { render :show, status: :ok, location: @apartment }
       else

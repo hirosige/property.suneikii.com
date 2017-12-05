@@ -126,11 +126,14 @@
                   </div>
 
                   <div class="form-group">
-                    <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.lands.items.photo') %></label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
                       <%= f.fields_for :land_thumbnails do |thumbnail| %>
-                        <%= thumbnail.file_field :image %>
+                          <%= render 'land_thumbnail_fields', f: thumbnail %>
                       <% end %>
+                      <div id="links">
+                        <br>
+                        <%= link_to_add_association "Add into Photo List", f, :land_thumbnails, :class => 'btn btn-xs btn-primary' %><br/>
+                      </div>
                     </div>
                   </div>
 

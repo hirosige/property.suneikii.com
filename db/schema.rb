@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171121145139) do
+ActiveRecord::Schema.define(version: 20171205152251) do
 
   create_table "accessories", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -304,8 +304,8 @@ ActiveRecord::Schema.define(version: 20171121145139) do
   create_table "land_infos", force: :cascade do |t|
     t.text     "remarks",                   limit: 65535
     t.string   "photo",                     limit: 255
-    t.decimal  "latitude",                                precision: 10
-    t.decimal  "longitude",                               precision: 10
+    t.decimal  "latitude",                                precision: 16, scale: 13
+    t.decimal  "longitude",                               precision: 16, scale: 13
     t.integer  "corner",                    limit: 4
     t.integer  "low_rise_residential_area", limit: 4
     t.integer  "no_condition",              limit: 4
@@ -333,8 +333,8 @@ ActiveRecord::Schema.define(version: 20171121145139) do
     t.text     "school",                    limit: 65535
     t.text     "shopping",                  limit: 65535
     t.text     "facilities",                limit: 65535
-    t.datetime "created_at",                                             null: false
-    t.datetime "updated_at",                                             null: false
+    t.datetime "created_at",                                                        null: false
+    t.datetime "updated_at",                                                        null: false
   end
 
   create_table "land_option_installations", force: :cascade do |t|

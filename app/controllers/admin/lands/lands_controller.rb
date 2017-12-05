@@ -26,8 +26,6 @@ class Admin::Lands::LandsController < AdminController
     @land.land_option_installations.build
     @land.land_surroundings.build
 
-    3.times { @land.land_thumbnails.build}
-
     @places = Array.new
     @places.push({
                      :latitude    => 12.922723,
@@ -65,7 +63,7 @@ class Admin::Lands::LandsController < AdminController
 
   def update
     respond_to do |format|
-      if @land.update(land_params)
+      if @land.image_safe_update(land_params)
         format.html { redirect_to [:admin, @land], flash: { :success => "#{@land.name}を更新しました。" } }
         format.json { render :show, status: :ok, location: @land }
       else

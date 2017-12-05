@@ -5,8 +5,8 @@
 #  id                        :integer          not null, primary key
 #  remarks                   :text(65535)
 #  photo                     :string(255)
-#  latitude                  :decimal(10, )
-#  longitude                 :decimal(10, )
+#  latitude                  :decimal(16, 13)
+#  longitude                 :decimal(16, 13)
 #  corner                    :integer
 #  low_rise_residential_area :integer
 #  no_condition              :integer

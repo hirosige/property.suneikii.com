@@ -77,4 +77,13 @@ class Land < ActiveRecord::Base
       transition :from => [:public], :to => :secret
     end
   end
+
+  def image_safe_update(land_params)
+
+    land_params['land_thumbnails_attributes'].delete_if{|key, value|
+      value.blank?
+    }
+
+    self.update(land_params)
+  end
 end

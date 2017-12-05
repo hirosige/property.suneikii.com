@@ -80,4 +80,13 @@ class Apartment < ActiveRecord::Base
       transition :from => [:public], :to => :secret
     end
   end
+
+  def image_safe_update(apartment_params)
+
+    apartment_params['apartment_thumbnails_attributes'].delete_if{|key, value|
+      value.blank?
+    }
+
+    self.update(apartment_params)
+  end
 end
