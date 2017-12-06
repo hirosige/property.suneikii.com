@@ -73,7 +73,7 @@ Devise.setup do |config|
   # ==> OmniAuth
   #               :provider    APP_ID                                              APP_SECRET
   config.omniauth :twitter,    'laGMXiz5NBv2BIDEz0prbzmbK',                        'CiCnZ6iixgYZ5t4sLYgN2sALupvsp4v41aYZaIpq47Qvt8YMMp'
-  config.omniauth :facebook,   '2042478112638208',                                 '544ff2be8430b0f70c244e5788baeebb'
+  # config.omniauth :facebook,   '2042478112638208',                                 '544ff2be8430b0f70c244e5788baeebb'
   # config.omniauth :flickr,     '4d8897eb2430d59c0490194e941eed12',                 'fcb40aed3b880ad4'
   # config.omniauth :foursquare, 'OO4HGMNX3KPMUGUKWVIMQASOCCMQU1C4PKHBQXCT52JBQDGU', 'IEFC5TWZT2VNMTMZHDUTPJ3OIQHQX23CPXIVXS3V4Y0OADPJ'
   # config.omniauth :github,
