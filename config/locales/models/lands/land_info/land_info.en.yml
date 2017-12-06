@@ -9,46 +9,22 @@ en:
         remarks:             "Remarks"
         latitude:            "Latitude"
         longitude:           "Longitude"
-        brand_new:
-          title:               "Brand New"
-          first:               "Brand New"
-          second:              "Old Property"
-        more_than_2floors:
-          title:               "2nd and more floors"
-          first:               "2nd and more floors"
-          second:              "Only one floor"
-        light_on_south:
-          title:               "Light on south"
-          first:               "South direction"
-          second:              "Not south direction"
-        parkinglot:
-          title:               "Parking"
-          first:               "Available"
-          second:              "N/A"
-        auto_lock:
-          title:               "Auto Lock"
-          first:               "Available"
-          second:              "N/A"
-        air_con:
-          title:               "Air Conditioning"
-          first:               "Available"
-          second:              "N/A"
-        separate_bath_toilet:
-          title:               "Separate bath and toilet"
-          first:               "Separate bath and toilet"
-          second:              "Bath and toilet"
-        reheating:
-          title:               "Reheating bath"
-          first:               "Available"
-          second:              "N/A"
-        wooden_floor:
-          title:               "Wooden Floor"
-          first:               "Available"
-          second:              "N/A"
-        pet:
-          title:               "Pet"
-          first:               "Available"
-          second:              "N/A"
+        corner:
+          title:               "At corner"
+          first:               "Yes"
+          second:              "No"
+        low_rise_residential_area:
+          title:               "Low Rise Residential Area"
+          first:               "Yes"
+          second:              "No"
+        no_condition:
+          title:               "No condition"
+          first:               "Yes"
+          second:              "No"
+        ownership_or_not:
+          title:               "Ownership or not"
+          first:               "Yes"
+          second:              "No"
         status:
           title:               "Status"
           vacant:              "Vacant"

@@ -9,46 +9,22 @@ ja:
         remarks:             "備考"
         latitude:            "緯度"
         longitude:           "経度"
-        brand_new:
-          title:               "新築"
-          first:                 "新築"
-          second:                 "古物件"
-        more_than_2floors:
-          title:               "２階以上の物件"
-          true:                "2階以上"
-          false:               "1階のみ"
-        light_on_south:
-          title:               "南向き"
-          true:                "南向き"
-          false:               "南向きじゃない"
-        parkinglot:
-          title:               "駐車場"
-          true:                "あり"
-          false:               "無し"
-        auto_lock:
-          title:               "オートロック"
-          true:                "あり"
-          false:               "無し"
-        air_con:
-          title:               "エアコン"
-          true:                "あり"
-          false:               "無し"
-        separate_bath_toilet:
-          title:               "バス・トイレ別"
-          true:                "バス・トイレ別"
-          false:               "ユニットバス"
-        reheating:
-          title:               "追焚機能"
-          true:                "あり"
-          false:               "無し"
-        wooden_floor:
-          title:               "フローリング"
-          true:                "フローリング"
-          false:               "その他"
-        pet:
-          title:               "ペット可"
-          true:                "ペット可"
-          false:               "ペット不可"
+        corner:
+          title:               "角地"
+          first:               "はい"
+          second:              "いいえ"
+        low_rise_residential_area:
+          title:               "低地住宅地域"
+          first:               "はい"
+          second:              "いいえ"
+        no_condition:
+          title:               "条件なし"
+          first:               "はい"
+          second:              "いいえ"
+        ownership_or_not:
+          title:               "オーナシップ"
+          first:               "あり"
+          second:              "なし"
         status:
           title:               "現況"
           vacant:              "空き"

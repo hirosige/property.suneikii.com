@@ -1,6 +1,6 @@
 <% if user_signed_in? %>
   <div class="dropdown">
-    <button class="btn btn-sm btn-primary dropdown-toggle list-header__info--signed-in-btn" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    <button class="btn btn-sm btn-primary dropdown-toggle list-header__info--signed-in-btn sign-in__btn" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
       <%= image_tag gravatar_url, :class => 'control-box__gravatar' %><span class="list-header__info--signed-in-name"><%= name %></span>
       <% if Rails.env.development? %>
           <span class="label label-success">:<%= role %></span>

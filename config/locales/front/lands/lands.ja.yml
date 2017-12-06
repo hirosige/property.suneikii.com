@@ -1,6 +1,6 @@
 ja:
   front:
-    apartments:
+    lands:
       title: '土地'
       province_title: '%{province}の土地を探す'
       province_breadcrumb: '全国の土地を探す'
@@ -26,7 +26,7 @@ ja:
             done: '登録済み'
           detail: '詳細'
       show:
-        breadcrumb: '%{apartment_name}の詳細情報'
+        breadcrumb: '%{land_name}の詳細情報'
       basic_info:
         rent_fee: '賃料（管理費用）'
         security_deposit: '敷金/礼金'

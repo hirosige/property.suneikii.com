@@ -9,7 +9,7 @@
       <div class="list-header__lang-text"><%= t('front.header.lang.caption') %></div>
       <div class="btn-group list-header__lang-btn" role="group" aria-label="...">
         <% I18n.available_locales.reject{|l| l == I18n.locale}.each do |locale| %>
-            <button type="button" class="btn btn-info" onclick='location.href="<%= i18n_url_for(params.merge(locale: locale)) %>"'>
+            <button type="button" class="btn btn-info sign-in__btn" onclick='location.href="<%= i18n_url_for(params.merge(locale: locale)) %>"'>
               <%= locale %>
             </button>
         <% end %>
@@ -31,10 +31,10 @@
         <i class="fa fa-plus-square-o"></i>
         <%= t('front.lands.title') %>
       </button>
-      <button class="control-box__btn" disabled>
-        <i class="fa fa-building-o"></i>
-        <%= t('front.condominiums.title') %>
-      </button>
+      <!--<button class="control-box__btn" disabled>-->
+        <!--<i class="fa fa-building-o"></i>-->
+        <!--<% t('front.condominiums.title') %>-->
+      <!--</button>-->
 
     </div>
 
