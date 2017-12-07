@@ -85,7 +85,7 @@ class Apartment < ActiveRecord::Base
 
     apartment_params['apartment_thumbnails_attributes'].delete_if{|key, value|
       value.blank?
-    }
+    } unless apartment_params['apartment_thumbnails_attributes'].nil?
 
     self.update(apartment_params)
   end

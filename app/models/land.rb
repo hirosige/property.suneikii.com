@@ -82,7 +82,7 @@ class Land < ActiveRecord::Base
 
     land_params['land_thumbnails_attributes'].delete_if{|key, value|
       value.blank?
-    }
+    } unless land_params['land_thumbnails_attributes'].nil?
 
     self.update(land_params)
   end
