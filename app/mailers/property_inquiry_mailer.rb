@@ -1,5 +1,5 @@
 class PropertyInquiryMailer < ApplicationMailer
-  default from: "hirosige1@gmail.com"
+  default from: "no-reply.property@suneikii.com"
   default to:   "hirosige1@gmail.com"
 
   def received_email(property_inquiry)
