@@ -61,16 +61,10 @@ en:
         title: 'Installations / Conditions'
         installations:
           title: 'Installations'
-          brandnew: 'Brand New'
-          more_than_2floors: '2 Floor and more'
-          light_on_south: 'Light on south'
-          parkinglot: 'Parking-lot'
-          auto_lock: 'Auto-lock'
-          air_con: 'Aircon installed'
-          separate_bath_toilet: 'Bath and Toilet separated'
-          reheating: 'Reheating bath'
-          wooden_floor: 'Wooden Floor'
-          pet: 'Pet Negotiable'
+          corner: "At corner"
+          low_rise_residential_area: "Low Rise Residential Area"
+          no_condition: "No condition"
+          ownership_or_not: "Ownership or not"
         kitchen_bath: 'Kitchen/Bath/Toilet'
         service: 'Services'
         etc: 'Etc'

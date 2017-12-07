@@ -61,16 +61,10 @@ ja:
         title: 'この物件のこだわり/設備・条件'
         installations:
           title: 'この物件のこだわり'
-          brandnew: '新築'
-          more_than_2floors: '2階以上の物件'
-          light_on_south: '南向き'
-          parkinglot: '駐車場あり'
-          auto_lock: 'オートロック'
-          air_con: 'エアコン'
-          separate_bath_toilet: 'バス・トイレ別'
-          reheating: '追焚機能'
-          wooden_floor: 'フローリング'
-          pet: 'ペット相談可'
+          corner: "角地"
+          low_rise_residential_area: "低地住宅地域"
+          no_condition: "条件なし"
+          ownership_or_not: "オーナーシップあり"
         kitchen_bath: 'キッチン/バス・トイレ'
         service: '設備・サービス'
         etc: 'その他'
