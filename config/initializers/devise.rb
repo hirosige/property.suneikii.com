@@ -2,7 +2,7 @@ Devise.setup do |config|
   config.secret_key = 'db5551bca3ec24d5e6d7050ec736676788cab392c73a8686b8decee08d26f67b1b094220c605c6679bb537f26fa46e75611b2ce083ea1c26003d2c62f5981892'
 
   # ==> Mailer Configuration
-  config.mailer_sender = 'hirosige1@gmail.com'
+  config.mailer_sender = 'no-reply.property@suneikii.com'
   # config.mailer = 'Devise::Mailer'
 
   # ==> ORM configuration
