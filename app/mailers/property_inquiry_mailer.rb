@@ -9,6 +9,7 @@ class PropertyInquiryMailer < ApplicationMailer
 
     mail(
         :to      => property_inquiry.email,
+        :bcc     => "property.admin@suneikii.com",
         :subject => "【#{Settings.site[:name]}】Thank you for your inquiry"
     )
   end
