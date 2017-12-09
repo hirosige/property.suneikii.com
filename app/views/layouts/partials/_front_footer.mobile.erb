@@ -1,0 +1,37 @@
+<footer>
+  <div class="container">
+    <div class="top-footer__top">
+      <div class="top-footer__detail">
+        <i class="fa fa-building-o top-footer__icon"></i>
+        <span class="top-footer__logo">
+        <%= Settings.site[:name].split(' ')[0] %> <%= Settings.site[:name].split(' ')[1] %>
+        </span>
+        <div class="top-footer__description">
+          <%= t('front.footer.description', :site_name => Settings.site[:name]) %>
+        </div>
+      </div>
+
+      <!--<div class="top-footer__link-map">-->
+        <!--<div class="content-left">left</div>-->
+        <!--<div class="content-right">right</div>-->
+      <!--</div>-->
+    </div>
+
+  </div>
+
+  <div class="snk-footer">
+    <a href="#" class="snk-footer__link"><%= t('front.footer.links.explanation', :site_name => Settings.site[:name]) %></a>
+    <!--<a href="#" class="snk-footer__link"><% t('front.footer.links.sitemap') %></a>-->
+    <!--<a href="#" class="snk-footer__link"><% t('front.footer.links.suggestions') %></a>-->
+    <a href="<%= site_inquiry_path %>" class="snk-footer__link"><%= t('front.footer.links.inquiry') %></a>
+    <!--<a href="#" class="snk-footer__link"><% t('front.footer.links.service_policy') %></a>-->
+    <br>
+    <!--<a href="#" class="snk-footer__link"><% t('front.footer.links.disclaimer') %></a>-->
+    <!--<a href="#" class="snk-footer__link"><% t('front.footer.links.privacy_policy') %></a>-->
+    <!--<a href="#" class="snk-footer__link"><% t('front.footer.links.for_provider') %></a>-->
+    <!--<a href="#" class="snk-footer__link"><% t('front.footer.links.recruit') %></a>-->
+    <!--<a href="#" class="snk-footer__link"><% t('front.footer.links.about_suneikii') %></a>-->
+    <br>
+    <div class="top-footer__copyright"><%= t('copyright', :site_name => Settings.site[:name]) %></div>
+  </div>
+</footer>

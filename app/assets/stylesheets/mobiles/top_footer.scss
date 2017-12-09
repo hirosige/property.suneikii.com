@@ -43,13 +43,15 @@ footer {
 }
 
 .top-footer__icon {
-  font-size: 3rem;
+  font-size: 1.5rem;
   border: 5px $main_light_color solid;
   border-radius: 50%;
+  width: 40px;
+  height: 40px;
   padding: 10px;
   color: $white;
   background: $main_deep_color;
-  margin: 20px 10px 20px;
+  margin: 10px 0px 10px;
   transition: transform 0.3s, background 1s;
 }
 
@@ -60,16 +62,18 @@ footer {
 
 .top-footer__logo {
   font-size: 3rem;
-  margin: 20px 10px 20px;
+  margin: 10px 10px 10px;
   line-height: 40px;
   color: $main_light_color;
-  letter-spacing: 5px;
   margin-right: 50px;
 }
 
 .top-footer__description {
   font-size: 1.2rem;
-  width: 60%;
+  width: 90%;
+  border: 1px $main_light_color solid;
+  padding: 10px;
+  border-radius: 3px;
 }
 
 .top-footer__link-map {
