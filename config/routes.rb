@@ -159,60 +159,6 @@ Rails.application.routes.draw do
       get 'omniauth_callbacks/foursquare'
    end
 
-   namespace :sample do
-
-      # Dashboards
-      root 'dashboard#dashboard'
-      get '/dashboard2'          => 'dashboard#dashboard2'
-      get '/dashboard3'          => 'dashboard#dashboard3'
-
-      # GeneralForms
-      get '/general_form'        => 'general_form#general_form'
-      get '/advanced_components' => 'general_form#advanced_components'
-      get '/form_validation'     => 'general_form#form_validation'
-      get '/form_wizard'         => 'general_form#form_wizard'
-      get '/form_upload'         => 'general_form#form_upload'
-      get '/form_buttons'        => 'general_form#form_buttons'
-      get '/login'               => 'general_form#login'
-
-      # General Elements
-      get '/general_elements' => 'ui_elements#general_elements'
-      get '/media_gallery'    => 'ui_elements#media_gallery'
-      get '/typography'       => 'ui_elements#typography'
-      get '/icons'            => 'ui_elements#icons'
-      get '/glyphicons'       => 'ui_elements#glyphicons'
-      get '/widgets'          => 'ui_elements#widgets'
-      get '/invoice'          => 'ui_elements#invoice'
-      get '/inbox'            => 'ui_elements#inbox'
-      get '/calendar'         => 'ui_elements#calendar'
-
-      # Tables
-      get '/tables' => 'tables#tables'
-      get '/table_dynamic' => 'tables#table_dynamic'
-
-      # Data Presentation
-      get '/chart_js'     => 'data_presentation#chart_js'
-      get '/chart_js2'    => 'data_presentation#chart_js2'
-      get '/moris_js'     => 'data_presentation#moris_js'
-      get '/e_charts'     => 'data_presentation#e_charts'
-      get '/other_charts' => 'data_presentation#other_charts'
-
-      # Additional Pages
-      get '/e_commerce' => 'additional_pages#e_commerce'
-      get '/projects' => 'additional_pages#projects'
-      get '/project_detail' => 'additional_pages#project_detail'
-      get '/contacts' => 'additional_pages#contacts'
-      get '/profile' => 'additional_pages#profile'
-
-      # Extra
-      get '/error_403'      => 'extras#error_403'
-      get '/error_404'      => 'extras#error_404'
-      get '/error_500'      => 'extras#error_500'
-      get '/plain_page'     => 'extras#plain_page'
-      get '/login_page'     => 'extras#login_page'
-      get '/pricing_tables' => 'extras#pricing_tables'
-   end
-
    get '/sitemap'  => redirect('https://s3-ap-southeast-1.amazonaws.com/suneikii-sitemap-dev/sitemaps/sitemap.xml.gz')
    devise_for :users, :controllers => {
        :omniauth_callbacks => 'app/omniauth_callbacks',

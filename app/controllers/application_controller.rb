@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   include ActionController::HttpAuthentication::Token::ControllerMethods
+  include Mobylette::RespondToMobileRequests
 
   protect_from_forgery with: :null_session
   # before_filter :authenticate_user!

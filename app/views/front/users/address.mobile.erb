@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="user-edit-title__base">
+    <div class="user-edit-title__caption">
+      <%= t('front.sessions.edit_address.title') %>
+    </div>
+  </div>
+
+  <div class="user-edit-top__base">
+    <div class="user-edit-top__left">
+      <%= form_tag('/user/address', :method => :put) do %>
+
+          <div class="field">
+            <%= label_tag :postal_code %><br />
+            <%= text_field_tag 'user[profile[postal_code]]', @user.profile.postal_code, {:class => 'form-control'} %>
+          </div>
+
+          <div class="field">
+            <%= label_tag :address %><br />
+            <%= text_field_tag 'user[profile[address]]', @user.profile.address, {:class => 'form-control'} %>
+          </div>
+
+          <div class="actions">
+            <%= submit_tag t('front.sessions.edit_address.button'), :class => 'form-control' %>
+          </div>
+      <% end %>
+
+    </div>
+  </div>
+
+</div>

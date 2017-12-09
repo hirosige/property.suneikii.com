@@ -1,0 +1,87 @@
+<div class="container">
+  <div class="favorites-title__base">
+    <div class="favorites-title__caption">
+      お気に入りリスト
+    </div>
+  </div>
+
+  <div class="favorites-top__base">
+    <div class="favorites-top__left">
+      <% if @favorites.blank? %>
+          <%= t('front.sessions.favorite.title') %>
+      <% else %>
+          <%= render 'pagination' %>
+
+        <table class="table table-hover table-condensed table-bordered favorites-top__tbl">
+          <thead>
+          <tr>
+            <th class="favorites-top__tbl-col1">
+              <%= t('front.sessions.watched_list.items.image') %>
+            </th>
+            <th>
+              <%= t('front.sessions.watched_list.items.rent_fee') %>
+              <br>
+              <%= t('front.sessions.watched_list.items.utility_fee') %>
+            </th>
+            <th>
+              <%= t('front.sessions.watched_list.items.transportation') %>
+              <br>
+              <%= t('front.sessions.watched_list.items.address') %>
+            </th>
+            <th>
+              <%= t('front.sessions.watched_list.items.room_type') %>
+              <br>
+              <%= t('front.sessions.watched_list.items.space') %>
+            </th>
+          </tr>
+          </thead>
+          <tbody>
+          <% @favorites.each do |favorite| %>
+            <% property = favorite.apartment.decorate if favorite.apartment? %>
+            <% property = favorite.land.decorate if favorite.land? %>
+              <tr>
+                <td rowspan="3"><%= property.photo %></td>
+                <td colspan="6" class="favorites-top__tbl-col-name">
+                  <span class="favorites-top__tbl-col-category"><%= property.category %></span>
+                  <a href="<%= property.show_url property.id %>"><%= property.name %></a>
+                  <span class="favorites-top__tbl-col-status"><%= property.availability %></span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <%= property.delimited_rent_fee %>
+                  <br>
+                  <%= property.delimited_utility_fee %>
+                </td>
+                <td width="400px">
+                  <%= property.transportation %>
+                  <br>
+                  <%= property.address %>
+                </td>
+                <td>
+                  <%= property.room_type_name %>
+                  <br>
+                  <%= property.unit_space %>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="6">
+                  <div class="favorites-top__tbl-btns">
+                    <button class="btn btn-primary favorites-top__tbl-btn" onclick='location.href="<%= property.show_url property.id %>"'>
+                      <%= t('front.sessions.watched_list.buttons.detail') %> <i class="fa fa-arrow-circle-o-right"></i>
+                    </button>
+                  </div>
+
+                </td>
+              </tr>
+
+          <% end %>
+          </tbody>
+        </table>
+          <%= render 'pagination' %>
+      <% end %>
+
+    </div>
+  </div>
+
+</div>

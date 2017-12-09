@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="user-edit-title__base">
+    <div class="user-edit-title__caption">
+      <%= t('front.sessions.edit_profile.title') %>
+    </div>
+  </div>
+
+  <div class="user-edit-top__base">
+    <div class="user-edit-top__left">
+      <table class="table table-hover user-edit__table">
+        <tr>
+          <th><%= t('front.sessions.edit_profile.items.filed.name') %></th>
+          <td><%= current_user.name %></td>
+          <td><button class="btn btn-default" onclick="location.href='<%= user_name_path %>'"><%= t('front.sessions.edit_profile.items.button.name') %></button></td>
+        </tr>
+        <tr>
+          <th><%= t('front.sessions.edit_profile.items.filed.address') %></th>
+          <td>
+            <%= current_user.profile.postal_code unless current_user.profile.nil? %><br>
+            <%= current_user.profile.address unless current_user.profile.nil? %>
+          </td>
+          <td><button class="btn btn-default" onclick="location.href='<%= user_address_path %>'"><%= t('front.sessions.edit_profile.items.button.address') %></button></td>
+        </tr>
+        <tr>
+          <th><%= t('front.sessions.edit_profile.items.filed.email') %></th>
+          <td>
+            <%= current_user.profile.reciever_email unless current_user.profile.nil? %>
+          </td>
+          <td><button class="btn btn-default" onclick="location.href='<%= user_email_path %>'"><%= t('front.sessions.edit_profile.items.button.email') %></button></td>
+        </tr>
+        <tr>
+          <th><%= t('front.sessions.edit_profile.items.filed.delete') %></th>
+          <td></td>
+          <td><button class="btn btn-danger" ><%= t('front.sessions.edit_profile.items.button.delete') %></button></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+</div>

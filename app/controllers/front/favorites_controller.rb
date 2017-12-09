@@ -1,4 +1,6 @@
 class Front::FavoritesController < FrontController
+  include Mobylette::RespondToMobileRequests
+
   before_filter :authenticate_user!
 
   def index
@@ -14,6 +16,11 @@ class Front::FavoritesController < FrontController
                        .includes(apartment: :room_type)
                        .includes(:land)
                        .page(params[:page])
+
+      respond_to do |format|
+        format.html
+        format.mobile
+      end
     end
   end
 

@@ -1,5 +1,4 @@
 class App::SessionsController < Devise::SessionsController
-# before_filter :configure_sign_in_params, only: [:create]
   layout "properties_layout"
 
   add_breadcrumb "#{Settings.site[:name]} Home", :root_path

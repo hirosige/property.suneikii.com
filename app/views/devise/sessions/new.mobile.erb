@@ -1,0 +1,45 @@
+<% provide(:title, t('front.sessions.login.title')) %>
+
+<div class="container">
+  <div class="sign-in-title__base">
+    <div class="sign-in-title__caption">
+      <%= t('front.sessions.login.title') %>
+    </div>
+  </div>
+
+  <div class="sign-in-top__base">
+
+    <div class="sign-in-top__left width-400">
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <h1><%= t('front.sessions.login.header_title') %></h1>
+          <fieldset class="form-group">
+            <%= f.email_field :email, :class => 'form-control' ,:placeholder => t('front.sessions.login.placeholder.email'), autofocus: true %>
+          </fieldset>
+          <fieldset class="form-group">
+            <%= f.password_field :password , :class => 'form-control', :placeholder => t('front.sessions.login.placeholder.password'), autocomplete: "off" %>
+          </fieldset>
+
+
+          <p>
+          <div class="actions">
+            <%= f.submit t('front.sessions.login.button'), :class => 'btn btn-default submit' %>
+          </div>
+          <% if devise_mapping.rememberable? -%>
+              <div class="checkbox">
+                <label>
+                  <%= f.check_box :remember_me %> <%= f.label :remember_me%>
+                </label>
+              </div>
+          <% end -%>
+
+      <% end %>
+    </div>
+
+    <div class="sign-in-top__right width-400">
+      <%= render 'devise/shared/provider_logins' %>
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+
+</div>
+

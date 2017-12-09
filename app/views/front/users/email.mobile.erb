@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="user-edit-title__base">
+    <div class="user-edit-title__caption">
+      <%= t('front.sessions.edit_email.title') %>
+    </div>
+  </div>
+
+  <div class="user-edit-top__base">
+    <div class="user-edit-top__left">
+      <%= form_tag('/user/email', :method => :put) do %>
+
+          <div class="field">
+            <%= label_tag :reciever_email %><br />
+            <%= email_field_tag 'user[profile[reciever_email]]', @user.profile.reciever_email, {:class => 'form-control'} %>
+          </div>
+
+          <div class="actions">
+            <%= submit_tag t('front.sessions.edit_email.button'), :class => 'form-control' %>
+          </div>
+      <% end %>
+
+    </div>
+  </div>
+
+</div>
