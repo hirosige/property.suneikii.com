@@ -1,8 +1,14 @@
 class Front::PropertyInquiryController < FrontController
+  include Mobylette::RespondToMobileRequests
 
   def index
     @property_inquiry = PropertyInquiry.new
     render :action => 'index'
+
+    respond_to do |format|
+      format.html
+      format.mobile
+    end
   end
 
   def confirm
@@ -11,6 +17,11 @@ class Front::PropertyInquiryController < FrontController
       render :action => 'confirm'
     else
       render :action => 'index'
+    end
+
+    respond_to do |format|
+      format.html
+      format.mobile
     end
   end
 
@@ -21,6 +32,11 @@ class Front::PropertyInquiryController < FrontController
     PropertyInquiryMailer.received_email(@property_inquiry).deliver
 
     render :action => 'thanks'
+
+    respond_to do |format|
+      format.html
+      format.mobile
+    end
   end
 
   private
