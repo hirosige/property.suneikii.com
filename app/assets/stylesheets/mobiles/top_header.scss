@@ -225,7 +225,7 @@ header {
   border-left: 1px rgba($main_light_color, 0.6) dotted;
   border-right: 1px rgba($main_light_color, 0.6) dotted;
   color: $main_light_color;
-  width: 100px;
+  min-width: 60px;
 }
 
 .control-box__icon {
