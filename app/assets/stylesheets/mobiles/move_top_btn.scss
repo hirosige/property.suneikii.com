@@ -1,0 +1,25 @@
+.move-top-btn {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  position: fixed;
+  margin-right: 40px;
+  right: 0;
+  bottom: 10%;
+  background: $main_deep_color;
+  color: $white;
+  border: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 2rem;
+  box-shadow: 3px 3px 3px $shadow-deep;
+  z-index: 5;
+}
+
+.move-top-btn:hover {
+  background: rgba($main_deep_color, 0.6);
+  box-shadow: 1px 1px 1px rgba($black, 0.8);
+}

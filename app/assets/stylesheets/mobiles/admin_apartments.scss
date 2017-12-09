@@ -1,0 +1,57 @@
+select {
+    margin-bottom: 10px;
+}
+
+.apartment__area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+.apartment__area__item {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background: $main_color;
+  min-height: 25px;
+  min-width: 100%;
+  white-space: nowrap;
+  color: $white;
+  font-size: 1.0rem;
+  font-weight: bold;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px $shadow-light;
+  padding: 1px;
+}
+
+.apartment__area__item + .apartment__area__item {
+}
+
+th {
+  a:link {
+    color: $not_visit_in_blue;
+  }
+
+  a:visited {
+    color: $visited_in_blue;
+  }
+
+  a:hover {
+    color: $hover_in_blue;
+  }
+
+  a.control-box__login-info:link {
+    color: $main_light_color
+  }
+
+  a.control-box__login-info:visited {
+    color: $main_light_color
+  }
+
+  a.control-box__login-info:hover {
+    color: $main_light_color
+  }
+}

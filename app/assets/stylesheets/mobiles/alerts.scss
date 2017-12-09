@@ -1,0 +1,38 @@
+.alert-success {
+  color: $color_of_text;
+  background-color: get_flex_rgba($color_of_success, 0.88);
+  border-color: get_flex_rgba($color_of_success, 0.88);
+}
+.alert-info {
+  color: $color_of_text;
+  background-color: get_flex_rgba($color_of_info, 0.88);
+  border-color: get_flex_rgba($color_of_info, 0.88);
+}
+
+.alert-notice {
+  color: $color_of_text;
+  background-color: get_flex_rgba($color_of_info, 0.88);
+  border-color: get_flex_rgba($color_of_info, 0.88);
+}
+
+.alert-alert {
+  color: $color_of_text;
+  background-color: get_flex_rgba($color_of_alert, 0.88);
+  border-color: get_flex_rgba($color_of_alert, 0.88);
+}
+
+.alert-warning {
+  color: $color_of_text;
+  background-color: get_flex_rgba($color_of_alert, 0.88);
+  border-color: get_flex_rgba($color_of_alert, 0.88);
+}
+.alert-danger, .alert-error {
+  color: $color_of_text;
+  background-color: get_flex_rgba($color_of_danger, 0.88);
+  border-color: get_flex_rgba($color_of_danger, 0.88);
+}
+.alert-dark {
+  color: $color_of_text;
+  background-color: get_flex_rgba($color_of_dark, 0.88);
+  border-color: get_flex_rgba($color_of_dark, 0.88);
+}

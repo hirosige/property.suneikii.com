@@ -2,16 +2,25 @@
   <div class="list-header">
     <div class="list-header--left">
       <div class="logo" style="display: flex">
-        <i class="fa fa-building site__logo" style="width: 50px"></i>
-        <%= Settings.site[:name].split(' ')[0] %><br>
-        <%= Settings.site[:name].split(' ')[1] %>
+        <%= Settings.site[:name].split(' ')[0] %> <%= Settings.site[:name].split(' ')[1] %>
       </div>
     </div><br>
 
     <div class="list-header--right">
-      <% I18n.available_locales.reject{|l| l == I18n.locale}.each do |locale| %>
-          <%= link_to(locale, i18n_url_for(params.merge(locale: locale)), :class => 'btn btn-sm btn-info list-header__lang-btn') %>
-      <% end %>
+      <div class="dropdown">
+        <button class="btn btn-xs btn-primary dropdown-toggle" style="margin-right: 10px;" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          <%= t('front.header.lang.caption') %>
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li class="dropdown-header">Languages</li>
+          <li role="separator" class="divider"></li>
+          <% I18n.available_locales.reject{|l| l == I18n.locale}.each do |locale| %>
+            <li><%= link_to(locale, i18n_url_for(params.merge(locale: locale))) %></li>
+          <% end %>
+        </ul>
+      </div>
+
       <%= cell("front/mobile/sessions/sign_in", current_user).(:sign_in_btn) %>
     </div>
   </div>
@@ -19,47 +28,37 @@
   <div class="control-box">
 
     <div class="control-box--left">
-      <%= image_tag("snk_logo.jpg", :style => 'width: 100px;', :alt => 'logo') %>
-      <button class="control-box__btn <%= 'control-box__btn--active' if params[:controller].split('/')[1] == 'apartments' %>" onclick="location.href='<%= apartment_province_list_path %>'">
-        <i class="fa fa-building"></i>
-        アパート
-      </button>
-      <button class="control-box__btn" disabled>
-        <i class="fa fa-plus-square-o"></i>
-        土地
-      </button>
-      <button class="control-box__btn" disabled>
-        <i class="fa fa-building-o"></i>
-        コンドミニアム - mobile
-      </button>
-
+      <%= image_tag("snk_logo.jpg", :style => 'width: 50px;', :alt => 'logo') %>
+      <span class="dropdown">
+        <button class="btn btn-default dropdown-toggle" style="margin: 0 20px 0;" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          カテゴリ選択
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li class="dropdown-header">Properties</li>
+          <li role="separator" class="divider"></li>
+          <li><a href="<%= apartment_province_list_path %>"><i class="fa fa-building"></i><%= t('front.apartments.title') %></a></li>
+          <li><a href="<%= land_province_list_path %>"><i class="fa fa-plus-square-o"></i><%= t('front.lands.title') %></a></li>
+        </ul>
+      </span>
     </div>
 
     <a href="<%= user_visited_path %>" class="control-box__login-info">
-      <p><i class="fa fa-search control-box__icon"></i></p>
-      <p class="control-box__counter">
-        <% if session[:apartments_session_list].nil? %>
-            <%= 0 %>
-        <% else %>
-            <%= session[:apartments_session_list].size unless session[:apartments_session_list].nil? %>
-        <% end %>
-
+      <p><i class="fa fa-search control-box__icon"></i>
+        <%= @count %>
       </p>
-      <p >最近見た物件</p>
     </a>
 
     <% if user_signed_in? %>
-    <a href="<%= favorites_path %>" class="control-box__login-info">
-      <p><i class="fa fa-save control-box__icon"></i></p>
-      <p id="favorite_counter" class="control-box__counter">
-        <% if current_user.favorites.nil? %>
-            <%= 0 %>
-        <% else %>
-            <%= current_user.favorites.size %>
-        <% end %>
-      </p>
-      <p>お気に入り</p>
-    </a>
+        <a href="<%= favorites_path %>" class="control-box__login-info">
+          <p><i class="fa fa-save control-box__icon"></i>
+            <% if current_user.favorites.nil? %>
+                <%= 0 %>
+            <% else %>
+                <%= current_user.favorites.size %>
+            <% end %>
+          </p>
+        </a>
     <% end %>
 
   </div>
@@ -90,7 +89,7 @@
             <%= params[:province].capitalize unless params[:province].nil? %>の<%= params[:controller].split('/')[1].capitalize %>
         <% end %>
 
-        物件一覧ページ。面積（坪数）や価格（坪単価）で絞り込み、簡単に比較・資料請求。
+        物件一覧ページ
       <% end %>
     </div>
   </div>
@@ -104,10 +103,4 @@
 
 <div id="notification" class="general__notification">
 
-</div>
-
-<div id="page-top">
-  <button class="move-top-btn">
-    <i class="fa fa-chevron-up"></i>
-  </button>
 </div>

@@ -1,0 +1,47 @@
+#error_explanation::before {
+  font-family: FontAwesome;
+  content : "\f06a  Error Messages";
+  color: $color_of_error;
+  font-size: 1.5rem;
+  background: $white;
+  border-radius: 10px;
+  padding: 5px;
+  margin: 10px;
+}
+
+#error_explanation {
+  min-height: 50px;
+  min-width: 70%;
+  background: $color_of_error;
+  border-radius: 10px;
+  padding: 5px;
+  margin-bottom: 20px;
+
+  h2 {
+    color: $color_of_error;
+    font-size: 1.5rem;
+    background: $white;
+    border: 2px $color_of_error solid;
+    margin: 20px;
+    padding: 5px;
+    border-radius: 10px;
+  }
+
+  ul li {
+    color: $white;
+  }
+}
+
+.field_with_errors {
+  color: $color_of_error;
+
+  input, input:focus {
+    box-shadow: 0 0 7px $color_of_error;
+    border: 1px solid $color_of_error;
+  }
+
+  textarea, textarea:focus {
+    box-shadow: 0 0 7px $color_of_error;
+    border: 1px solid $color_of_error;
+  }
+}

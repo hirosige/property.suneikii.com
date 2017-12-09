@@ -1,0 +1,36 @@
+.sql-info {
+  border-bottom: 1px $border-light solid;
+  background: get_flex_rgba($bg_color, 0.02);
+  font-size: 1.2rem;
+  padding-top: 20px;
+  padding-bottom: 0;
+  color: $main_light_color;
+}
+
+.sql .debug_dump {
+  color: $terminal-text-color;
+  font-size: 1.2rem;
+  margin: 0;
+  background: $terminal-bg-color;
+}
+
+.sql__caption {
+  background: $color_of_error;
+  color: $white;
+  width: 100px;
+  border-radius: 5px;
+  padding: 5px;
+  padding-left: 10px;
+  margin-top: 20px;
+}
+
+.sql__border {
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.ex-explanation {
+  margin-left: 10px;
+  text-decoration: underline;
+  color: $color_of_error
+}

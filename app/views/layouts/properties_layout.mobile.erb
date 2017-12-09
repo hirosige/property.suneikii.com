@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= content_for?(:title) ? "#{yield(:title)} | #{Settings.site[:name]}" : Settings.site[:name] %> </title>
+
+  <%= render 'layouts/partials/front_assets' %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body class="front__base">
+
+<%= render 'layouts/partials/front_header' %>
+
+<%= render 'layouts/shared/flash' %>
+
+
+<%= yield %>
+<%= render 'layouts/partials/front_footer' %>
+
+</body>
+</html>

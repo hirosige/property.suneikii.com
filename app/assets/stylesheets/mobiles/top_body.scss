@@ -1,0 +1,42 @@
+//$main_color: rgb(3, 18, 126);
+//$main_deep_color: rgb(19, 2, 85);
+//$main_light_color: rgb(1, 49, 228);
+//$white: #fff;
+
+.top-body__base {
+  background: $main_color;
+  min-height: 500px;
+  border-top: 1px $white solid;
+  border-bottom: 1px $white solid;
+}
+
+.top-body__title {
+  padding-top: 50px;
+  font-size: 4em;
+  color: $white;
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.top-body__buttons {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.top-body__categories {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  background: $white;
+  color: $main_light_color;
+  font-size: 4em;
+  margin: 10px;
+  min-width: 700px;
+}

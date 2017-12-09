@@ -1,0 +1,39 @@
+.district-map__base {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-flow: wrap;
+  box-shadow: 1px 1px 1px $shadow-light;
+  border-radius: 10px;
+  background: $white;
+  margin-bottom: 30px;
+  padding: 30px;
+  border: 1px $border-deep solid;
+}
+
+.district-map__item {
+  margin: 5px;
+  padding: 10px;
+  background: $main_light_color;
+  border: 0;
+  border-radius: 5px;
+  color: $white;
+  transition: background 0.3s;
+  height: 45px;
+}
+
+.district-map__item:hover {
+  background: rgba($main_light_color, 0.7);
+}
+
+.district-map__count {
+  background: $white;
+  color: $main_light_color;
+  border-radius: 10px;
+  padding: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 0.9rem;
+  margin-left: 5px;
+}

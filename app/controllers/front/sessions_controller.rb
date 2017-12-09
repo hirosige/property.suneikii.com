@@ -1,6 +1,13 @@
 class Front::SessionsController < FrontController
+  include Mobylette::RespondToMobileRequests
+
   def logout
     add_breadcrumb t('front.sessions.logout.title')
+
+    respond_to do |format|
+      format.html
+      format.mobile
+    end
   end
 
   def visited
@@ -11,5 +18,10 @@ class Front::SessionsController < FrontController
                 :land_sessions => session[:lands_session_list]
     )
     @foot_stamps.build_properties
+
+    respond_to do |format|
+      format.html
+      format.mobile
+    end
   end
 end
