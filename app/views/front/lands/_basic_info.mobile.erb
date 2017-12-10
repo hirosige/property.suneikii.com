@@ -1,0 +1,58 @@
+<div class="basic-info">
+  <div class="title-base">
+    <div class="basic-info__title">
+      <%= @land.name %>
+    </div>
+  </div>
+  <div class="description-body">
+    <div class="line">
+      <dl>
+        <dt class="title"><%= t('front.lands.basic_info.rent_fee') %></dt>
+        <dd class="basic-info__price"><%= @land.delimited_rent_fee %></dd>
+      </dl>
+    </div>
+    <div class="line">
+      <dl>
+        <dt class="title"><%= t('front.lands.basic_info.transportation') %></dt>
+        <dd class="basic-info__multiline">
+          <%= @land.transportation %><br>
+          <!--<a href="#">通勤・通学駅までの経路・所要時間を調べる</a>-->
+        </dd>
+      </dl>
+
+    </div>
+    <div class="line">
+      <dl>
+        <dt class="title"><%= t('front.lands.basic_info.address') %></dt>
+        <dd class="basic-info__multiline">
+          <%= @land.address %><br>
+          <!--<a href="#">地図をみる</a>-->
+        </dd>
+      </dl>
+
+    </div>
+    <div class="line">
+      <dl>
+        <dt class="title"><%= t('front.lands.basic_info.space') %></dt>
+        <dd><%= @land.unit_space %></dd>
+      </dl>
+    </div>
+    <div class="date-info">
+      <%= t('front.lands.basic_info.created_at') %> : <time><%= @land.formatted_created_at %></time>
+      <%= t('front.lands.basic_info.updated_at') %> : <time><%= @land.formatted_updated_at %></time>
+    </div>
+  </div>
+  <div class="description-inquiry">
+    <button class="btn-snk" onclick="location.href='<%= land_inquiry_path(@land.id) %>'">
+      <i class="fa fa-phone-square"></i>
+      <%= t('front.lands.inquiry') %>
+    </button>
+
+    <button class="btn-snk" style="margin-top: 10px; height: 60px;" onclick="location.href='<%= "tel:#{@land.provider.tel}" %>'">
+      <i class="fa fa-phone-square"></i>
+      <%= t('front.apartments.inquiry_call', :tel => @land.provider.tel) %>
+    </button>
+  </div>
+
+  </div>
+</div>

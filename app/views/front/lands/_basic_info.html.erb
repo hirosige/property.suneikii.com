@@ -52,6 +52,11 @@
           <i class="fa fa-phone-square"></i>
           <%= t('front.lands.inquiry') %>
         </button>
+
+        <button class="btn-snk" style="margin-top: 10px; height: 60px;" onclick="location.href='<%= "tel:#{@land.provider.tel}" %>'">
+          <i class="fa fa-phone-square"></i>
+          <%= t('front.apartments.inquiry_call', :tel => @land.provider.tel) %>
+        </button>
         <%= image_tag("snk_logo.jpg", :class => 'provider', :alt => 'logo') %>
       </div>
     </div>
