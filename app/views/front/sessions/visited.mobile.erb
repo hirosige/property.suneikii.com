@@ -17,16 +17,14 @@
               <%= t('front.sessions.watched_list.items.image') %>
             </th>
             <th>
-              <%= t('front.sessions.watched_list.items.security_deposit') %>
+              <%= t('front.sessions.watched_list.items.rent_fee') %>
               <br>
-              <%= t('front.sessions.watched_list.items.deposit') %>
-            </th>
-            <th>
+              <%= t('front.sessions.watched_list.items.utility_fee') %>
+              <br><hr style="margin-top: 0; margin-bottom: 0;">
               <%= t('front.sessions.watched_list.items.transportation') %>
               <br>
               <%= t('front.sessions.watched_list.items.address') %>
-            </th>
-            <th>
+              <br><hr style="margin-top: 0; margin-bottom: 0;">
               <%= t('front.sessions.watched_list.items.room_type') %>
               <br>
               <%= t('front.sessions.watched_list.items.space') %>
@@ -36,13 +34,10 @@
           <tbody>
           <% @foot_stamps.properties.each do |foot_stamp| %>
               <tr>
-                <td rowspan="3">
-                  <%= foot_stamp.photo %>
-                </td>
-                <td colspan="6" class="footstamp-top__tbl-col-name">
+                <td colspan="2" class="footstamp-top__tbl-col-name">
                   <span class="footstamp-top__tbl-col-category">
                     <%= foot_stamp.category %>
-                  </span>
+                  </span>&nbsp;
                   <a href="<%= foot_stamp.show_url foot_stamp.id %>">
                     <%= foot_stamp.name %>
                   </a>
@@ -52,16 +47,25 @@
                 </td>
               </tr>
               <tr>
+                <td rowspan="4">
+                  <%= foot_stamp.photo %>
+                </td>
+              </tr>
+              <tr>
                 <td>
                   <%= foot_stamp.delimited_rent_fee %>
                   <br>
                   <%= foot_stamp.delimited_utility_fee %>
                 </td>
-                <td width="400px">
+              </tr>
+              <tr>
+                <td>
                   <%= foot_stamp.transportation %>
                   <br>
                   <%= foot_stamp.address %>
                 </td>
+              </tr>
+              <tr>
                 <td>
                   <%= foot_stamp.room_type_name %>
                   <br>
