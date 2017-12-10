@@ -102,6 +102,11 @@ class Front::ApartmentsController < FrontController
   def inquiry
     @apartment = Apartment.find(params[:id])
     @property_inquiry = PropertyInquiry.new
+
+    respond_to do |format|
+      format.html
+      format.mobile
+    end
   end
 
   def confirm

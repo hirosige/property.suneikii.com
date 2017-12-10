@@ -7,6 +7,7 @@ en:
       district_title:
       district_breadcrumb: "Search for apartments in %{province}"
       inquiry: 'Contact About this'
+      inquiry_call: 'Contact by Phone: %{tel}'
       main_plane:
         title: 'Apartments in %{province}'
         items:

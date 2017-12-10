@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-1"></div>
+    <div class="col-xs-8">
+      <div class="page-header">
+        <h3>お問い合わせフォーム</h3>
+      </div>
+
+      <%= form_for @property_inquiry, :url => property_inquiry_confirm_path do |f| %>
+        <br>
+        <p>本システムに関する、ご意見、ご感想をお寄せください。</p>
+
+        <%- if @property_inquiry.errors.any? %>
+          <div class="alert.alert-danger" role="alert">
+            <strong>入力内容にエラーがあります</strong>
+            <ul>
+              <%- @property_inquiry.errors.each do |attr, msg| %>
+                <li>
+                  <%= msg %>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="form-group">
+          <label class="control-label" for="">お名前</label>
+          <div class="row">
+            <div class="col-xs-12">
+              <%= f.text_field :name, class: 'form-control' %>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label" for="">メールアドレス</label>
+          <div class="row">
+            <div class="col-xs-12">
+              <%= f.text_field :email, class: 'form-control' %>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label" for="">お問い合わせ内容</label>
+          <div class="row">
+            <div class="col-xs-12">
+              <%= f.text_area :body, rows: 5, class: 'form-control' %>
+            </div>
+          </div>
+        </div>
+
+        <%= f.submit '確認', class: 'btn btn-primary', data: { disable_with: '確認フォームへ...'} %>
+
+      <% end %>
+    </div>
+  </div>
+</div>
+<br>

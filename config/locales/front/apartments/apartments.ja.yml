@@ -7,6 +7,7 @@ ja:
       district_title:
       district_breadcrumb: "%{province}のアパートを探す"
       inquiry: 'この物件を問い合わせる'
+      inquiry_call: '電話で問い合わせる: %{tel}'
       main_plane:
         title: '%{province}のアパート一覧'
         items:
