@@ -1,4 +1,5 @@
 class App::PasswordsController < Devise::PasswordsController
+  include Mobylette::RespondToMobileRequests
   layout "properties_layout"
 
   add_breadcrumb "#{Settings.site[:name]} Home", :root_path

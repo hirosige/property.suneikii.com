@@ -1,4 +1,5 @@
 class App::UnlocksController < Devise::UnlocksController
+  include Mobylette::RespondToMobileRequests
   layout "login"
 
   # GET /resource/unlock/new

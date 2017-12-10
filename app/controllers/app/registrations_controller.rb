@@ -1,4 +1,5 @@
 class App::RegistrationsController < Devise::RegistrationsController
+  include Mobylette::RespondToMobileRequests
   before_filter :configure_sign_up_params, only: [:new, :create]
   before_filter :configure_account_update_params, only: [:update]
   layout "properties_layout"
