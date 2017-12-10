@@ -54,23 +54,23 @@ class ApartmentDecorator < Draper::Decorator
   end
 
   def delimited_rent_fee
-    "#{self.rent_fee.to_s(:delimited)} Baht"
+    "#{self.rent_fee.to_s(:delimited)} #{h.t('front.units.currency.baht')}"
   end
 
   def delimited_utility_fee
-    "#{self.utility_fee.to_s(:delimited)} Baht"
+    "#{self.utility_fee.to_s(:delimited)} #{h.t('front.units.currency.baht')}"
   end
 
   def delimited_security_deposit
-    "#{self.security_deposit.to_s(:delimited)} Baht"
+    "#{self.security_deposit.to_s(:delimited)} #{h.t('front.units.currency.baht')}"
   end
 
   def delimited_deposit
-    "#{self.deposit.to_s(:delimited)} Baht"
+    "#{self.deposit.to_s(:delimited)} #{h.t('front.units.currency.baht')}"
   end
 
   def delimited_update_fee
-    "#{self.info.update_fee.to_s(:delimited)} Baht"
+    "#{self.info.update_fee.to_s(:delimited)} #{h.t('front.units.currency.baht')}"
   end
 
   def unit_space
@@ -82,11 +82,11 @@ class ApartmentDecorator < Draper::Decorator
   end
 
   def unit_floors
-    "#{self.info.floors}階"
+    "#{self.info.floors} #{h.t('front.units.floor')}"
   end
 
   def unit_floor
-    "#{self.info.floor}階"
+    "#{self.info.floor} #{h.t('front.units.floor')}"
   end
 
   def kitchen_bath
@@ -126,7 +126,7 @@ class ApartmentDecorator < Draper::Decorator
   end
 
   def contact_span
-    "#{self.info.contact_span}戸"
+    "#{self.info.contact_span}"
   end
 
   def house_insurance

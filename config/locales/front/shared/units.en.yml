@@ -1,0 +1,6 @@
+en:
+  front:
+    units:
+      floor: 'floors'
+      currency:
+        baht: 'Baht'

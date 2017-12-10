@@ -9,7 +9,7 @@ class Front::FavoritesController < FrontController
 
       render json: { status: 'success', favorites: favorites }
     else
-      add_breadcrumb "お気に入りリスト"
+      add_breadcrumb t('front.sessions.favorite.title')
 
       @favorites = current_user.favorites
                        .includes(apartment: :apartment_info)

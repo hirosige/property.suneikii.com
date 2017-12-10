@@ -57,7 +57,7 @@
           <th><%= t('front.apartments.main_plane.items.detail') %></th>
           </thead>
           <tbody>
-          <td class="price"><%= apartment.delimited_rent_fee %></td>
+          <td class="price" style="padding-left: 10px;"><%= apartment.delimited_rent_fee %></td>
           <td><%= apartment.room_type.name %></td>
           <% if user_signed_in? %>
               <td id="favorite_apartment_<%= apartment.id %>">

@@ -78,7 +78,7 @@
 }
 
 .detailed-info {
-  height: 1400px;
+  min-height: 1400px;
 }
 
 .photos {
@@ -87,7 +87,7 @@
 
 .title-base {
   background: $main_light_color;
-  height: 50px;
+  height: 30px;
   border-radius: 10px 10px 0 0;
   border: 1px $border-deep solid;
 }
@@ -110,6 +110,26 @@
   border-radius: 2px;
 }
 
+.basic-info__title {
+  display: inline-block;
+  color: $white;
+  font-size: 1.2em;
+  padding: 3px 10px 3px;
+}
+
+.basic-info__price {
+  font-size: 1.3em;
+  color: $main_light_color;
+  font-weight: bold;
+  line-height: 10px;
+}
+
+.basic-info__multiline {
+  font-size: 1.0em;
+  color: $main_light_color;
+  margin: 10px 0 10px;
+}
+
 .title {
   display: inline-block;
   color: $white;
@@ -123,7 +143,7 @@
 }
 
 section {
-  margin: 50px;
+  margin: 10px;
 }
 
 .section-title {
@@ -137,6 +157,7 @@ section {
 
 dl {
   display: inline-block;
+  margin: 5px;
 }
 
 dt.title {
@@ -168,7 +189,7 @@ hr {
 }
 
 .line {
-  padding: 20px 30px 0;
+  padding: 10px 10px 10px;
   border-bottom: 1px $main_light_color dotted;
 }
 
@@ -187,7 +208,7 @@ hr {
 }
 
 .description-inquiry {
-  margin: 30px;
+  margin: 10px;
 }
 
 .btn-snk {
@@ -195,7 +216,7 @@ hr {
   color: $white;
   font-size: 1.2em;
   height: 40px;
-  width: 240px;
+  width: 100%;
   border: 0;
   border-radius: 5px;
   box-shadow: 1px 1px 1px $shadow-middle;
@@ -336,7 +357,7 @@ hr {
   display: inline-block;
   margin: 3px;
   padding: 3px;
-  width: 120px;
+  width: 100%;
   text-align: center;
   font-size: 0.8em;
   border: 1px $main_light_color solid;
@@ -346,7 +367,7 @@ hr {
   display: inline-block;
   margin: 3px;
   padding: 3px;
-  width: 120px;
+  width: 100%;
   text-align: center;
   font-size: 0.8em;
   border: 1px $main_light_color solid;
@@ -370,7 +391,7 @@ hr {
   border: 1px $main_light_color solid;
   margin-top: 20px;
   width: 100%;
-  height: 300px;
+  min-height: 200px;
 }
 
 .provider-info__title {
@@ -395,9 +416,8 @@ hr {
 }
 
 .provider-info__table {
-  margin: 10px;
-  margin-left: 20px;
-  width: 95%;
+  margin: 10px 10px 10px;
+  width: 90%;
 }
 
 .provider-info__table th {
@@ -420,25 +440,19 @@ hr {
 }
 
 .provider-info__inquiry {
-  margin-top: 80px;
-  position: relative;
+  margin-top: 10px;
 }
 
 .provider-info__inquiry--btn {
-  width: 500px;
-  height: 50px;
+  width: 90%;
+  height: 30px;
   background: $main_light_color;
   border: 0;
-  border-radius: 10px;
+  border-radius: 5px;
   color: $white;
-  font-size: 1.5em;
+  font-size: 1.1em;
   box-shadow: 3px 3px 3px $shadow-middle;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
+  margin: 0 10px 10px;
 }
 
 .provider-info__inquiry--btn:hover {
