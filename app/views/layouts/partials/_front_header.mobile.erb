@@ -69,30 +69,34 @@
 
 <% module_name = params[:controller].split('/')[0] %>
 <% unless params[:action] == 'render_404' or module_name == 'admin' %>
-  <div class="header-info">
-    <div class="container">
-      <% no_info_controllers = Array.new %>
-      <% no_info_controllers.push(
-             'registrations',
-             'sessions',
-             'confirmations',
-             'passwords',
-             'omniauth_callbacks',
-             'favorites',
-             'users'
-         )
-      %>
-      <% unless no_info_controllers.include?(controller.controller_name) %>
-        <% if params[:province].nil? %>
-            <%= params[:controller].split('/')[1].capitalize %> を検索
-        <% else %>
-            <%= params[:province].capitalize unless params[:province].nil? %>の<%= params[:controller].split('/')[1].capitalize %>
-        <% end %>
+    <div class="header-info">
+      <div class="container">
+        <% no_info_controllers = Array.new %>
+        <% no_info_controllers.push(
+               'registrations',
+               'sessions',
+               'confirmations',
+               'passwords',
+               'omniauth_callbacks',
+               'favorites',
+               'users'
+           )
+        %>
+        <% unless no_info_controllers.include?(controller.controller_name) %>
+            <% if params[:province].nil? %>
+                <%= t('front.header.category.caption', :name => params[:controller].split('/')[1].capitalize) %>
+            <% else %>
+                <%= t('front.header.category.breadcrumb',
+                      :category => params[:controller].split('/')[1].capitalize,
+                      :province => @params_service.visualize(params[:province])
+                    )
+                %>
+            <% end %>
 
-        物件一覧ページ
-      <% end %>
+            <%= t('front.header.sub_description') %>
+        <% end %>
+      </div>
     </div>
-  </div>
 <% end %>
 
 <div class="breadcrumb">

@@ -80,7 +80,7 @@ ja:
         inquiry: '空室状況を問い合わせる'
       inquiry_form:
         title: 'お問い合わせフォーム'
-        description: '%{apartment_name}に関する問い合わせを致します。'
+        description: '%{land_name}に関する問い合わせを致します。'
         errors:
           title: '入力内容にエラーがあります'
         items:
