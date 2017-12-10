@@ -9,8 +9,8 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :set_params_service
 
-  # rescue_from ActiveRecord::RecordNotFound, with: :render_404
-  # rescue_from ActionController::RoutingError, with: :render_404
+  rescue_from ActiveRecord::RecordNotFound, with: :render_404
+  rescue_from ActionController::RoutingError, with: :render_404
   rescue_from AccessDenied, with: :render_401
 
   def set_locale
