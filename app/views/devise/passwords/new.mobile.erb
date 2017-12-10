@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="forget-password-title__base">
+    <div class="forget-password-title__caption">
+      <%= t('front.sessions.forget_password.title') %>
+    </div>
+  </div>
+
+  <div class="forget-password-top__base">
+    <div class="forget-password-top__left">
+      <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+          <%= devise_error_messages! %>
+
+          <fieldset class="form-group">
+            <%= f.label :email %><br />
+            <%= f.email_field :email, :class => 'form-control' ,:placeholder => t('front.sessions.forget_password.items.placeholder.email'), autofocus: true %>
+          </fieldset>
+
+          <div class="forget-password-top__submit">
+            <%= f.submit t('front.sessions.forget_password.button'), :class => 'btn btn-default submit' %>
+          </div>
+      <% end %>
+
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+
+</div>

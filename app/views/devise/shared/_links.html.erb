@@ -1,19 +1,33 @@
-<%- if controller_name != 'sessions' %>
-  <%= link_to t('front.sessions.shared.links.login'), new_session_path(resource_name) %><br />
-<% end -%>
+<hr class="divider">
 
-<%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-  <%= link_to t('front.sessions.shared.links.sign_up'), new_registration_path(resource_name) %><br />
-<% end -%>
+<div class="devise-links">
+  <%- if controller_name != 'sessions' %>
+      <div class="devise-link">
+        <%= link_to t('front.sessions.shared.links.login'), new_session_path(resource_name), :class => 'devise-link__btn' %>
+      </div>
+  <% end -%>
 
-<%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-  <%= link_to t('front.sessions.shared.links.forget_pass'), new_password_path(resource_name) %><br />
-<% end -%>
+  <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+      <div class="devise-link">
+        <%= link_to t('front.sessions.shared.links.sign_up'), new_registration_path(resource_name), :class => 'devise-link__btn' %>
+      </div>
+  <% end -%>
 
-<%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
-  <%= link_to t('front.sessions.shared.links.confirm_again'), new_confirmation_path(resource_name) %><br />
-<% end -%>
+  <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+      <div class="devise-link">
+        <%= link_to t('front.sessions.shared.links.forget_pass'), new_password_path(resource_name), :class => 'devise-link__btn' %>
+      </div>
+  <% end -%>
 
-<%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
-  <%= link_to t('front.sessions.shared.links.unlock_again'), new_unlock_path(resource_name) %><br />
-<% end -%>
+  <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
+      <div class="devise-link">
+        <%= link_to t('front.sessions.shared.links.confirm_again'), new_confirmation_path(resource_name), :class => 'devise-link__btn' %>
+      </div>
+  <% end -%>
+
+  <%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
+      <div class="devise-link">
+        <%= link_to t('front.sessions.shared.links.unlock_again'), new_unlock_path(resource_name), :class => 'devise-link__btn' %>
+      </div>
+  <% end -%>
+</div>

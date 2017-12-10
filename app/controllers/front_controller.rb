@@ -7,8 +7,6 @@ class FrontController < ApplicationController
   before_action :set_locale
   before_action :count_property_session
 
-  include Mobylette::RespondToMobileRequests
-
   layout 'properties_layout'
   add_breadcrumb "#{Settings.site[:name]} Home", :root_path
 

@@ -1,0 +1,19 @@
+.devise-links {
+  margin-bottom: 5px;
+}
+
+.devise-link {
+  margin-bottom: 10px;
+}
+
+.devise-link__btn {
+  background: get_flex_rgba($main_light_color, 0.9);
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: $white;
+  border-radius: 5px;
+  border: 0;
+  font-size: 1.1em;
+  box-shadow: 1px 1px 1px $shadow-light;
+}

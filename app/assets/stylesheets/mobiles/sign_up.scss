@@ -19,7 +19,7 @@
 .sign-up-main__base {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-content: center;
   align-items: center;
   box-shadow: 1px 1px 1px $shadow-light;
@@ -31,7 +31,7 @@
 }
 
 .sign-up-main__item--width {
-  width: 500px;
+  width: 100px;
 }
 
 .sign-up-main__btn {

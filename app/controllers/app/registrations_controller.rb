@@ -1,6 +1,6 @@
 class App::RegistrationsController < Devise::RegistrationsController
-before_filter :configure_sign_up_params, only: [:new, :create]
-before_filter :configure_account_update_params, only: [:update]
+  before_filter :configure_sign_up_params, only: [:new, :create]
+  before_filter :configure_account_update_params, only: [:update]
   layout "properties_layout"
 
   add_breadcrumb "#{Settings.site[:name]} Home", :root_path
