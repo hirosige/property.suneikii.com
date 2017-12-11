@@ -67,7 +67,7 @@ Devise.setup do |config|
   # config.sign_out_all_scopes = true
 
   # ==> Navigation configuration
-  # config.navigational_formats = ['*/*', :html]
+  config.navigational_formats = [:"*/*", "*/*", :html, :mobile]
   config.sign_out_via = :delete
 
   # ==> OmniAuth
