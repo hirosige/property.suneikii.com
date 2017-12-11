@@ -27,9 +27,11 @@ class Front::UsersController < FrontController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to user_edit_path, flash: { :success => t('front.sessions.flash.update', :user_name => @user.name) } }
+          format.html { redirect_to user_edit_path, flash: { :success => t('front.sessions.flash.update', :user_name => @user.name) } }
+          format.mobile { redirect_to user_edit_path, flash: { :success => t('front.sessions.flash.update', :user_name => @user.name) } }
       else
         format.html { render :edit }
+        format.mobile { render :edit }
       end
     end
   end
@@ -43,8 +45,10 @@ class Front::UsersController < FrontController
 
       if @user.save
         format.html { redirect_to user_edit_path, flash: { :success => t('front.sessions.flash.update_profile', :user_name => @user.name) } }
+        format.mobile { redirect_to user_edit_path, flash: { :success => t('front.sessions.flash.update_profile', :user_name => @user.name) } }
       else
         format.html { render :edit }
+        format.mobile { render :edit }
       end
     end
   end
