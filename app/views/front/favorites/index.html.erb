@@ -54,6 +54,7 @@
           <% @favorites.each do |favorite| %>
             <% property = favorite.apartment.decorate if favorite.apartment? %>
             <% property = favorite.land.decorate if favorite.land? %>
+            <% property = favorite.condo.decorate if favorite.condo? %>
               <tr>
                 <td rowspan="3"><%= property.photo %></td>
                 <td colspan="6" class="favorites-top__tbl-col-name">

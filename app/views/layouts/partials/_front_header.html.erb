@@ -31,10 +31,10 @@
         <i class="fa fa-plus-square-o"></i>
         <%= t('front.lands.title') %>
       </button>
-      <!--<button class="control-box__btn" disabled>-->
-        <!--<i class="fa fa-building-o"></i>-->
-        <!--<% t('front.condominiums.title') %>-->
-      <!--</button>-->
+      <button class="control-box__btn <%= 'control-box__btn--active' if params[:controller].split('/')[1] == 'condos' %>" onclick="location.href='<%= condo_province_list_path %>'">
+        <i class="fa fa-plus-square-o"></i>
+        <%= t('front.condos.title') %>
+      </button>
 
     </div>
 

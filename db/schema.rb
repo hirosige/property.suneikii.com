@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171205152251) do
+ActiveRecord::Schema.define(version: 20171216102221) do
 
   create_table "accessories", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -140,6 +140,105 @@ ActiveRecord::Schema.define(version: 20171205152251) do
     t.datetime "updated_at",             null: false
   end
 
+  create_table "condo_infos", force: :cascade do |t|
+    t.text     "remarks",              limit: 65535
+    t.string   "photo",                limit: 255
+    t.decimal  "latitude",                           precision: 16, scale: 13
+    t.decimal  "longitude",                          precision: 16, scale: 13
+    t.integer  "floors",               limit: 4
+    t.string   "made_of",              limit: 255
+    t.integer  "reconstructed_or_not", limit: 4
+    t.integer  "renovated_or_not",     limit: 4
+    t.integer  "car_park_or_not",      limit: 4
+    t.integer  "bicycle_park_or_not",  limit: 4
+    t.integer  "bike_park_or_not",     limit: 4
+    t.integer  "can_have_pet_or_not",  limit: 4
+    t.integer  "contact_span",         limit: 4
+    t.string   "conditions",           limit: 255
+    t.integer  "update_fee",           limit: 4
+    t.date     "published_on"
+    t.date     "updating_on"
+    t.string   "property_status",      limit: 255
+    t.string   "availability",         limit: 255
+    t.string   "management_id",        limit: 255
+    t.integer  "apartment_id",         limit: 4
+    t.integer  "floor",                limit: 4
+    t.integer  "brandnew",             limit: 4
+    t.integer  "more_than_2floors",    limit: 4
+    t.integer  "light_on_south",       limit: 4
+    t.integer  "parkinglot",           limit: 4
+    t.integer  "auto_lock",            limit: 4
+    t.integer  "air_con",              limit: 4
+    t.integer  "separate_bath_toilet", limit: 4
+    t.integer  "reheating",            limit: 4
+    t.integer  "wooden_floor",         limit: 4
+    t.integer  "pet",                  limit: 4
+    t.integer  "number_of_rooms",      limit: 4
+    t.string   "house_insurance",      limit: 255
+    t.string   "deal_way",             limit: 255
+    t.text     "kitchen_bath",         limit: 65535
+    t.text     "services",             limit: 65535
+    t.text     "etc",                  limit: 65535
+    t.integer  "balcony_space",        limit: 4
+    t.string   "light_direction",      limit: 255
+    t.datetime "created_at",                                                   null: false
+    t.datetime "updated_at",                                                   null: false
+    t.integer  "condo_id",             limit: 4
+  end
+
+  create_table "condo_option_installations", force: :cascade do |t|
+    t.integer  "condo_id",        limit: 4
+    t.integer  "condo_option_id", limit: 4
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  create_table "condo_options", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "condo_surroundings", force: :cascade do |t|
+    t.integer  "condo_id",       limit: 4
+    t.integer  "surrounding_id", limit: 4
+    t.integer  "distance",       limit: 4
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  create_table "condo_thumbnails", force: :cascade do |t|
+    t.integer  "condo_id",   limit: 4
+    t.string   "image",      limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "condos", force: :cascade do |t|
+    t.string   "name",              limit: 255
+    t.integer  "rent_fee",          limit: 4
+    t.integer  "security_deposit",  limit: 4
+    t.integer  "deposit",           limit: 4
+    t.text     "transportation",    limit: 65535
+    t.integer  "utility_fee",       limit: 4
+    t.integer  "key_money",         limit: 4
+    t.text     "address",           limit: 65535
+    t.date     "since_when"
+    t.integer  "room_type_id",      limit: 4
+    t.string   "space",             limit: 255
+    t.string   "photo",             limit: 255
+    t.text     "recommendations",   limit: 65535
+    t.string   "status",            limit: 255
+    t.integer  "provider_id",       limit: 4
+    t.integer  "country_id",        limit: 4
+    t.integer  "province_id",       limit: 4
+    t.integer  "district_id",       limit: 4
+    t.integer  "subdistrict_id",    limit: 4
+    t.integer  "surety_company_id", limit: 4
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+  end
+
   create_table "countries", force: :cascade do |t|
     t.string   "name_ja",          limit: 255
     t.string   "name_th",          limit: 255
@@ -149,6 +248,7 @@ ActiveRecord::Schema.define(version: 20171205152251) do
     t.string   "original_id",      limit: 255
     t.integer  "apartments_count", limit: 4,   default: 0, null: false
     t.integer  "lands_count",      limit: 4,   default: 0, null: false
+    t.integer  "condos_count",     limit: 4,   default: 0, null: false
   end
 
   create_table "course_menus", force: :cascade do |t|
@@ -207,6 +307,7 @@ ActiveRecord::Schema.define(version: 20171205152251) do
     t.string   "url_safe",             limit: 255
     t.integer  "apartments_count",     limit: 4,   default: 0, null: false
     t.integer  "lands_count",          limit: 4,   default: 0, null: false
+    t.integer  "condos_count",         limit: 4,   default: 0, null: false
   end
 
   add_index "districts", ["province_id"], name: "index_districts_on_province_id", using: :btree
@@ -491,6 +592,7 @@ ActiveRecord::Schema.define(version: 20171205152251) do
     t.string   "url_safe",            limit: 255
     t.integer  "apartments_count",    limit: 4,   default: 0, null: false
     t.integer  "lands_count",         limit: 4,   default: 0, null: false
+    t.integer  "condos_count",        limit: 4,   default: 0, null: false
   end
 
   add_index "provinces", ["country_id"], name: "index_provinces_on_country_id", using: :btree
@@ -631,6 +733,7 @@ ActiveRecord::Schema.define(version: 20171205152251) do
     t.string   "url_safe",             limit: 255
     t.integer  "apartments_count",     limit: 4,   default: 0, null: false
     t.integer  "lands_count",          limit: 4,   default: 0, null: false
+    t.integer  "condos_count",         limit: 4,   default: 0, null: false
   end
 
   add_index "subdistricts", ["district_id"], name: "index_subdistricts_on_district_id", using: :btree

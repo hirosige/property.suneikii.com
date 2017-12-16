@@ -1,0 +1,17 @@
+en:
+  admin:
+    condo_options:
+      title:                 "Condominium Options"
+      detail_page_title:     "Condominium Options Detail"
+      modify_page_title:     "Condominium Options Add/Modify"
+      description:           ""
+      items:
+        name:                "Condominium Option Name"
+        created_at:          "Created at"
+        updated_at:          "Updated at"
+        controls:            "Controls"
+      buttons:
+        search:              "Search"
+        add:                 "Add Condominium Option"
+        exec:                "Add/Modify"
+        csv_export:          "Export Condominium Options"

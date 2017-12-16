@@ -1,0 +1,33 @@
+<section>
+  <div class="section-title">
+    <%= t('front.condos.provider_info.title') %>
+  </div>
+  <div class="provider-info">
+    <div class="provider-info__title">
+      <%= @condo.provider.name unless @condo.provider.nil? %>&nbsp;
+      <span class="provider-info__label"><%= t('front.condos.provider_info.provider.certified') %></span>&nbsp;
+      <a class="provider-info__url" href="#"><%= t('front.condos.provider_info.provider.link') %></a>
+    </div>
+    <table class="provider-info__table column2">
+      <tbody>
+      <tr>
+        <th><%= t('front.condos.provider_info.provider.address') %></th>
+        <td colspan="3"><%= @condo.provider_address %></td>
+      </tr>
+      <tr>
+        <th><%= t('front.condos.provider_info.provider.working_time') %></th>
+        <td><%= @condo.provider.working_time unless @condo.provider.nil? %></td>
+        <th><%= t('front.condos.provider_info.provider.holidays') %></th>
+        <td><%= @condo.provider.holidays unless @condo.provider.nil? %></td>
+      </tr>
+      </tbody>
+    </table>
+
+    <div class="provider-info__inquiry">
+      <button class="provider-info__inquiry--btn" onclick="location.href='<%= condo_inquiry_path(@condo.id) %>'">
+        <%= t('front.condos.provider_info.inquiry') %>
+      </button>
+    </div>
+  </div>
+
+</section>

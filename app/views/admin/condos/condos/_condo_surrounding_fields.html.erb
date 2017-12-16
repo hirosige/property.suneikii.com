@@ -1,0 +1,17 @@
+<div class="nested-fields form-inline" style="margin-bottom: 10px;">
+  <%= f.collection_select(
+          :surrounding_id,            # <= property_name
+          Surrounding.all,            # <= object_array
+          :id,                      # <= value_data
+          :name,                    # <= text_item
+          {prompt: "Select any"},   # <= default_message
+          {class: "form-control"}   # <= style_class
+      ) %>
+
+  <% del_class = set_button('danger', 'xs', true) + get_glyph_icon(:trash) %>
+  <%= link_to_remove_association(
+           "",                  # <= button_caption
+           f,                   # <= form_object
+           :class => del_class  # <= button_style_class
+       ) %>
+</div>

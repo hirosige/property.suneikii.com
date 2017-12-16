@@ -1,0 +1,85 @@
+<div class="table-responsive">
+  <table class="table table-striped jambo_table bulk_action">
+    <thead>
+    <tr class="headings">
+      <th>
+        <input type="checkbox" id="check-all" class="flat">
+      </th>
+
+      <th class="column-title"><%= t('admin.condos.items.area') %></th>
+      <th class="column-title"><%= sort_link @search, :name, t('admin.condos.items.name') %></th>
+      <th class="column-title"><%= sort_link @search, :since_when, t('admin.condos.items.since_when') %></th>
+      <th class="column-title"><%= sort_link @search, :room_type_id, t('admin.condos.items.room_type') %></th>
+      <th class="column-title"><%= t('admin.condos.items.photo') %></th>
+      <th class="column-title"><%= t('admin.condos.items.status.title') %></th>
+      <th class="column-title"><%= t('admin.condos.items.property_status.title') %></th>
+      <th class="column-title"><%= t('admin.condo_info.items.availability.title') %></th>
+      <th class="column-title"><%= sort_link @search, :provider_id, t('admin.condos.items.provider') %></th>
+      <th class="column-title"><%= sort_link @search, :created_at, t('admin.condos.items.created_at') %></th>
+      <th class="column-title"><%= sort_link @search, :updated_at, t('admin.condos.items.updated_at') %></th>
+      <th class="column-title no-link last" colspan="3"><span class="nobr"><%= t('admin.condos.items.controls') %></span></th>
+      <th class="bulk-actions" colspan="12">
+        <a class="antoo" style="color:#fff; font-weight:500;"><%= t('admin.elements.buttons.bulc_action') %> ( <span class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
+      </th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% @condos.each do |condo| %>
+        <tr class="even pointer">
+          <td class="a-center">
+            <input type="checkbox" class="flat" name="table_records">
+          </td>
+          <td>
+            <div class="condo__area">
+              <span class="condo__area__item"><%= condo.country.name_ja unless condo.country.nil? %></span>
+              <span>▼</span>
+              <span class="condo__area__item"><%= condo.province.name_ja unless condo.province.nil? %></span>
+              <span>▼</span>
+              <span class="condo__area__item"><%= condo.district.name_ja unless condo.district.nil? %></span>
+              <span>▼</span>
+              <span class="condo__area__item"><%= condo.subdistrict.name_ja unless condo.subdistrict.nil? %></span>
+            </div>
+          </td>
+          <td> <%= condo.name %></td>
+          <td> <%= condo.formatted_since_when %></td>
+          <td> <%= condo.room_type_name %></td>
+          <td> <%= image_tag condo.photo_url(:thumb), :style => 'border: 1px #ddd solid; border-radius: 10px;' %></td>
+          <td>
+            <%=
+              if condo.publish?
+                link_to t('admin.condos.buttons.seal'), decline_admin_condo_path(condo), :class => 'btn btn-danger btn-xs'
+              else
+                link_to t('admin.condos.buttons.publish'), publish_admin_condo_path(condo), :class => 'btn btn-primary btn-xs'
+              end
+            %>
+          </td>
+          <td>
+            <%=
+              if condo.condo_info.vacant?
+                link_to t('admin.condos.buttons.occupy'), occupy_admin_condo_path(condo), :class => 'btn btn-danger btn-xs'
+              else
+                link_to t('admin.condos.buttons.vacant'), clean_admin_condo_path(condo), :class => 'btn btn-primary btn-xs'
+              end
+            %>
+          </td>
+          <td>
+            <%=
+              if condo.condo_info.now_available?
+                link_to t('admin.condos.buttons.busy'), disable_admin_condo_path(condo), :class => 'btn btn-danger btn-xs'
+              else
+                link_to t('admin.condos.buttons.be_ready'), enable_admin_condo_path(condo), :class => 'btn btn-primary btn-xs'
+              end
+            %>
+          </td>
+          <td> <%= condo.provider.name unless condo.provider.nil? %></td>
+          <td> <%= condo.formatted_created_date %></td>
+          <td> <%= condo.formatted_updated_date %></td>
+          <td> <%= set_button_show('', [:admin, condo]) %></td>
+          <td> <%= set_button_edit('', edit_admin_condo_path(condo)) %></td>
+          <td> <%= set_button_delete('', [:admin, condo]) %></td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>

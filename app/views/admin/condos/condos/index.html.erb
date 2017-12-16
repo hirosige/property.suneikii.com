@@ -1,0 +1,37 @@
+<% provide(:title, t('admin.condos.title')) %>
+
+<div class="right_col" role="main">
+  <div class="">
+
+    <%= render :partial => 'admin/shared/page_title', :locals => {title: t('admin.condos.title'), description: t('admin.condos.description')} %>
+    <div class="clearfix"></div>
+    <div class="row">
+      <div class="clearfix"></div>
+      <div class="col-md-12 col-sm-12 col-xs-12">
+
+        <div class="x_panel">
+          <%= render :partial => 'admin/shared/table_title', :locals => {title: t('admin.elements.search.button'), description: ''} %>
+          <div class="x_content">
+            <%= render 'search_form' %>
+          </div>
+        </div>
+
+        <%= render 'layouts/admin_menus/condos_sub_tab' %>
+
+        <div class="x_panel">
+          <%= render :partial => 'admin/shared/table_title', :locals => {title: t('admin.condos.title'), description: t('admin.condos.description')} %>
+          <div class="x_content">
+
+            <%= render 'pagination' %>
+            <%= render :partial => 'table_contents', :locals => {condos: @condos} %>
+            <%= render 'pagination' %>
+
+            <br>
+            <%= set_button_new(t('admin.condos.buttons.add'), new_admin_condo_path) %>
+            <%= set_button_csv(t('admin.condos.buttons.csv_export'), admin_condos_path(format: 'csv')) %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -14,6 +14,7 @@
 #  url_safe            :string(255)
 #  apartments_count    :integer          default(0), not null
 #  lands_count         :integer          default(0), not null
+#  condos_count        :integer          default(0), not null
 #
 # Indexes
 #

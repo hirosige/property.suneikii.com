@@ -1,0 +1,1 @@
+json.array! @condo_options, partial: 'condo_options/condo_option', as: :condo_option

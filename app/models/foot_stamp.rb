@@ -5,10 +5,12 @@ class FootStamp
   attr_accessor :properties
   attr_accessor :apartment_sessions
   attr_accessor :land_sessions
+  attr_accessor :condo_sessions
 
   def initialize(sessions)
     self.apartment_sessions = sessions[:apartment_sessions]
-    self.land_sessions = sessions[:land_sessions]
+    self.land_sessions      = sessions[:land_sessions]
+    self.condo_sessions     = sessions[:condo_sessions]
   end
 
   def build_properties
@@ -30,6 +32,16 @@ class FootStamp
           self.properties.push(Front::LandDecorator.decorate(Land.find(land)))
         else
           Land.new(:name => 'この物件は削除されました。')
+        end
+      end
+    end
+
+    unless self.condo_sessions.nil?
+      self.condo_sessions.each do |land|
+        if Condo.exists?(land)
+          self.properties.push(Front::CondoDecorator.decorate(Condo.find(land)))
+        else
+          Condo.new(:name => 'この物件は削除されました。')
         end
       end
     end

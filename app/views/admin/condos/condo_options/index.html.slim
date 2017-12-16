@@ -1,0 +1,21 @@
+h1 Listing condo_options
+
+table
+  thead
+    tr
+      th Name
+      th
+      th
+      th
+
+  tbody
+    - @condo_options.each do |condo_option|
+      tr
+        td = condo_option.name
+        td = link_to 'Show', condo_option
+        td = link_to 'Edit', edit_condo_option_path(condo_option)
+        td = link_to 'Destroy', condo_option, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Apartment option', new_condo_option_path

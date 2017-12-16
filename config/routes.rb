@@ -232,6 +232,15 @@ Rails.application.routes.draw do
          get  'lands/:id/inquiry'                    => 'lands#inquiry',             as: 'land_inquiry'
          post 'lands/:id/confirm'                    => 'lands#confirm',             as: 'land_inquiry_confirm'
          post 'lands/thanks'                         => 'lands#thanks',              as: 'land_inquiry_thanks'
+
+         # Condominiums
+         get  'condos'                               => 'condos#province',           as: 'condo_province_list'
+         get  'condos/:id'                           => 'condos#show',               as: 'condo'
+         get  'condos/:province/city'                => 'condos#district',           as: 'condo_district_list'
+         get  'condos/:province/city/:district'      => 'condos#index',              as: 'condos'
+         get  'condos/:id/inquiry'                   => 'condos#inquiry',            as: 'condo_inquiry'
+         post 'condos/:id/confirm'                   => 'condos#confirm',            as: 'condo_inquiry_confirm'
+         post 'condos/thanks'                        => 'condos#thanks',             as: 'condo_inquiry_thanks'
       end
 
       # Administrator Pages
@@ -282,6 +291,21 @@ Rails.application.routes.draw do
           end
 
           resources :land_options
+        end
+
+        scope module: :condos do
+          resources :condos do
+            member do
+              get 'publish'
+              get 'decline'
+              get 'clean'
+              get 'occupy'
+              get 'enable'
+              get 'disable'
+            end
+          end
+
+          resources :condo_options
         end
 
         scope module: :facilities do

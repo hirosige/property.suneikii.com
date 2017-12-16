@@ -1,0 +1,1 @@
+json.partial! "condo_options/condo_option", condo_option: @condo_option

@@ -1,0 +1,12 @@
+= form_for @condo_option do |f|
+  - if @condo_option.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@condo_option.errors.count, "error")} prohibited this condo_option from being saved:"
+      ul
+        - @condo_option.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .actions = f.submit

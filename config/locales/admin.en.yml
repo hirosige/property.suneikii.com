@@ -42,6 +42,9 @@ en:
     sidemenu_13:
       title: "Lands"
 
+    sidemenu_14:
+      title: "Condominiums"
+
     elements:
       search:
         keyword:  "Search for..."

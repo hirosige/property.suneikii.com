@@ -1,0 +1,9 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @condo_option.name
+
+= link_to 'Edit', edit_condo_option_path(@condo_option)
+'|
+= link_to 'Back', condo_options_path

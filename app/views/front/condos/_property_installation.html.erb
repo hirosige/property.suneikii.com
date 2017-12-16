@@ -1,0 +1,63 @@
+<section>
+  <div class="section-title">
+    <%= t('front.condos.property_installation.title') %>
+  </div>
+  <table class="detailed-info__table column2">
+    <tbody>
+    <tr>
+      <th><%= t('front.condos.property_installation.installations.title') %></th>
+      <td>
+        <div class="detailed-info__installations-boxes">
+          <div class="detailed-info__installations-box--<%= @condo.brandnew %>">
+            <%= t('front.condos.property_installation.installations.brandnew') %>
+          </div>
+          <div class="detailed-info__installations-box--<%= @condo.more_than_2floors %>">
+            <%= t('front.condos.property_installation.installations.more_than_2floors') %>
+          </div>
+          <div class="detailed-info__installations-box--<%= @condo.light_on_south %>">
+            <%= t('front.condos.property_installation.installations.light_on_south') %>
+          </div>
+          <div class="detailed-info__installations-box--<%= @condo.parkinglot %>">
+            <%= t('front.condos.property_installation.installations.parkinglot') %>
+          </div>
+          <div class="detailed-info__installations-box--<%= @condo.auto_lock %>">
+            <%= t('front.condos.property_installation.installations.auto_lock') %>
+          </div>
+          <div class="detailed-info__installations-box--<%= @condo.air_con %>">
+            <%= t('front.condos.property_installation.installations.air_con') %>
+          </div>
+          <div class="detailed-info__installations-box--<%= @condo.separate_bath_toilet %>">
+            <%= t('front.condos.property_installation.installations.separate_bath_toilet') %>
+          </div>
+          <div class="detailed-info__installations-box--<%= @condo.reheating %>">
+            <%= t('front.condos.property_installation.installations.reheating') %>
+          </div>
+          <div class="detailed-info__installations-box--<%= @condo.wooden_floor %>">
+            <%= t('front.condos.property_installation.installations.wooden_floor') %>
+          </div>
+          <div class="detailed-info__installations-box--<%= @condo.pet %>">
+            <%= t('front.condos.property_installation.installations.pet') %>
+          </div>
+        </div>
+
+      </td>
+    </tr>
+    <tr>
+      <th><%= t('front.condos.property_installation.kitchen_bath') %></th>
+      <td><%= @condo.kitchen_bath %></td>
+    </tr>
+    <tr>
+      <th><%= t('front.condos.property_installation.service') %></th>
+      <td><%= @condo.services %></td>
+    </tr>
+    <tr>
+      <th><%= t('front.condos.property_installation.etc') %></th>
+      <td><%= @condo.etc %></td>
+    </tr>
+    <tr>
+      <th><%= t('front.condos.property_installation.remarks') %></th>
+      <td><%= @condo.remarks %></td>
+    </tr>
+    </tbody>
+  </table>
+</section>

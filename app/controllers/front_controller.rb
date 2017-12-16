@@ -27,6 +27,7 @@ class FrontController < ApplicationController
     property_list = Array.new
     property_list.push('apartments')
     property_list.push('lands')
+    property_list.push('condos')
 
     @count = 0
     property_list.map{|property_name|

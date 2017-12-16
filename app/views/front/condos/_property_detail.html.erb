@@ -1,0 +1,49 @@
+<section>
+  <div class="section-title">
+    <%= t('front.condos.property_detail.title') %>
+  </div>
+  <table class="detailed-info__table">
+    <tbody>
+    <tr>
+      <th><%= t('front.condos.property_detail.made_of') %></th>
+      <td><%= @condo.made_of %></td>
+      <th><%= t('front.condos.property_detail.floors') %></th>
+      <td><%= @condo.unit_floors %></td>
+    </tr>
+    <tr>
+      <th><%= t('front.condos.property_detail.parking') %></th>
+      <td><%= @condo.parking %></td>
+      <th><%= t('front.condos.property_detail.number_of_rooms') %></th>
+      <td><%= @condo.number_of_rooms %></td>
+    </tr>
+    <tr>
+      <th><%= t('front.condos.property_detail.contract_span') %></th>
+      <td><%= @condo.contact_span %></td>
+      <th><%= t('front.condos.property_detail.update_fee') %></th>
+      <td><%= @condo.delimited_update_fee %></td>
+    </tr>
+    <tr>
+      <th><%= t('front.condos.property_detail.utility_fee') %></th>
+      <td colspan="3"><%= @condo.delimited_utility_fee %></td>
+    </tr>
+    <tr>
+      <th><%= t('front.condos.property_detail.surety_company') %></th>
+      <td> - </td>
+      <th><%= t('front.condos.property_detail.house_insurance') %></th>
+      <td><%= @condo.house_insurance %></td>
+    </tr>
+    <tr>
+      <th><%= t('front.condos.property_detail.status') %></th>
+      <td><%= @condo.property_status %></td>
+      <th><%= t('front.condos.property_detail.availability') %></th>
+      <td><%= @condo.availability %></td>
+    </tr>
+    <tr>
+      <th><%= t('front.condos.property_detail.property_id') %></th>
+      <td><%= @condo.management_id %></td>
+      <th><%= t('front.condos.property_detail.deal_way') %></th>
+      <td><%= @condo.deal_way %></td>
+    </tr>
+    </tbody>
+  </table>
+</section>

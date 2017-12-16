@@ -1,6 +1,0 @@
-- name: install nodejs
-  yum: name=nodejs state=latest
-
-- name: npm install
-  npm:
-    path: /vagrant

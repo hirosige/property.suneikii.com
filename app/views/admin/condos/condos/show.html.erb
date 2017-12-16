@@ -1,0 +1,144 @@
+<% provide(:title, t('admin.condos.title')) %>
+
+<div class="right_col" role="main">
+  <div class="">
+
+    <%= render :partial => 'admin/shared/page_title', :locals => {title: t('admin.condos.detail_page_title'), description: t('admin.condos.description')} %>
+
+    <div class="clearfix"></div>
+    <div class="row">
+      <div class="clearfix"></div>
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <%= render 'layouts/admin_menus/condos_sub_tab' %>
+
+        <div class="x_panel">
+          <%= render :partial => 'admin/shared/table_title', :locals => {title: t('admin.condos.title'), description: t('admin.condos.description')} %>
+          <div class="x_content">
+            <div class="table-responsive">
+              <table class="table table-striped jambo_table bulk_action">
+                <thead>
+                  <tr class="headings">
+                    <th class="column-title" colspan="2">項目</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr class="headings">
+                    <th class="column-title"><%= t('admin.condos.items.area') %></th>
+                    <td> <%= @condo.country_id %></td>
+                  </tr>
+                  <tr class="headings">
+                    <th class="column-title"><%= t('admin.condos.items.name') %></th>
+                    <td> <%= @condo.name %></td>
+                  </tr>
+                  <tr class="headings">
+                    <th class="column-title"><%= t('admin.condos.items.rent_fee') %></th>
+                    <td> <%= @condo.rent_fee %></td>
+                  </tr>
+                  <tr class="headings">
+                    <th class="column-title"><%= t('admin.condos.items.security_deposit') %></th>
+                    <td> <%= @condo.security_deposit %></td>
+                  </tr>
+                  <tr class="headings">
+                    <th class="column-title"><%= t('admin.condos.items.deposit') %></th>
+                    <td> <%= @condo.deposit %></td>
+                  </tr>
+                  <tr class="headings">
+                    <th class="column-title"><%= t('admin.condos.items.transportation') %></th>
+                    <td> <%= @condo.transportation %></td>
+                  </tr>
+                  <tr class="headings">
+                    <th class="column-title"><%= t('admin.condos.items.utility_fee') %></th>
+                    <td> <%= @condo.utility_fee %></td>
+                  </tr>
+                  <tr class="headings">
+                    <th class="column-title"><%= t('admin.condos.items.key_money') %></th>
+                    <td> <%= @condo.key_money %></td>
+                  </tr>
+                  <tr class="headings">
+                    <th class="column-title"><%= t('admin.condos.items.address') %></th>
+                    <td> <%= @condo.address %></td>
+                  </tr>
+                  <tr class="headings">
+                    <th class="column-title"><%= t('admin.condos.items.since_when') %></th>
+                    <td> <%= @condo.since_when %></td>
+                  </tr>
+                  <tr class="headings">
+                    <th class="column-title"><%= t('admin.condos.items.room_type') %></th>
+                    <td> <%= @condo.room_type_id %></td>
+                  </tr>
+                  <tr class="headings">
+                    <th class="column-title"><%= t('admin.condos.items.space') %></th>
+                    <td> <%= @condo.space %></td>
+                  </tr>
+                  <tr class="headings">
+                    <th class="column-title"><%= t('admin.condos.items.photo') %></th>
+                    <td> <%= image_tag @condo.photo_url(:middle), :style => 'border: 1px #ddd solid; border-radius: 10px;' %></td>
+                  </tr>
+                  <tr class="headings">
+                    <th class="column-title"><%= t('admin.condos.items.recommendations') %></th>
+                    <td> <%= @condo.recommendations %></td>
+                  </tr>
+                  <tr class="headings">
+                    <th class="column-title"><%= t('admin.condos.items.status.title') %></th>
+                    <td> <%= @condo.decollated_status %></td>
+                  </tr>
+                  <tr class="headings">
+                    <th class="column-title"><%= t('admin.condos.items.provider') %></th>
+                    <td> <%= @condo.provider_id %></td>
+                  </tr>
+                  <tr class="headings">
+                    <th class="column-title"><%= t('admin.condos.items.created_at') %></th>
+                    <td> <%= @condo.formatted_created_date %></td>
+                  </tr>
+                  <tr class="headings">
+                    <th class="column-title"><%= t('admin.condos.items.updated_at') %></th>
+                    <td> <%= @condo.formatted_updated_date %></td>
+                  </tr>
+                  <tr class="headings">
+                    <th class="column-title">設備リスト</th>
+                    <td>
+                      <ul style="margin-left: -40px;">
+                        <% @condo.condo_options.each do |condo_option| %>
+                            <% labels = %w{primary default info success warning danger} %>
+                            <% random_color_id = Random.new.rand(0..labels.size-1) %>
+
+                          <li style="list-style: none; margin: 4px;">
+                            <span class="label label-<%= labels[random_color_id] %>">
+                              <%= condo_option.name %>
+                            </span>
+                          </li>
+                        <% end %>
+                      </ul>
+                    </td>
+                  </tr>
+                  <tr class="headings">
+                    <th class="column-title">周辺施設リスト</th>
+                    <td>
+                      <ul style="margin-left: -40px;">
+                        <% @condo.surroundings.each do |surrounding| %>
+                            <% labels = %w{primary default info success warning danger} %>
+                            <% random_color_id = Random.new.rand(0..labels.size-1) %>
+
+                            <li style="list-style: none; margin: 4px;">
+                            <span class="label label-<%= labels[random_color_id] %>">
+                              <%= surrounding.name %>
+                            </span>
+                            </li>
+                        <% end %>
+                      </ul>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <%= link_to 'Edit', edit_admin_condo_path(@condo) %>
+              |
+              <%= link_to 'Back', admin_condos_path %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

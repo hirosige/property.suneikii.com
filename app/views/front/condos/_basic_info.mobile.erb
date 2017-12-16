@@ -1,0 +1,86 @@
+<div class="basic-info">
+  <div class="title-base">
+    <span class="basic-info__title">
+      <%= @condo.name %>
+    </span>
+  </div>
+  <div class="description-body">
+      <div class="line">
+        <dl>
+          <dt class="title"><%= t('front.condos.basic_info.rent_fee') %></dt>
+          <dd class="basic-info__price"><%= @condo.delimited_rent_fee %></dd>
+        </dl>
+        <dl>
+          <dt class="title"><%= t('front.condos.basic_info.security_deposit') %></dt>
+          <dd><%= @condo.delimited_security_deposit %></dd>
+        </dl>
+        <dl>
+          <dt class="title"><%= t('front.condos.basic_info.deposit') %></dt>
+          <dd><%= @condo.delimited_deposit %></dd>
+        </dl>
+      </div>
+      <div class="line">
+        <dl>
+          <dt class="title"><%= t('front.condos.basic_info.transportation') %></dt>
+          <dd class="basic-info__multiline">
+            <%= @condo.transportation %><br>
+            <!--<a href="#">通勤・通学駅までの経路・所要時間を調べる</a>-->
+          </dd>
+        </dl>
+
+      </div>
+      <div class="line">
+        <dl>
+          <dt class="title"><%= t('front.condos.basic_info.address') %></dt>
+          <dd class="basic-info__multiline">
+            <%= @condo.address %><br>
+            <!--<a href="#">地図をみる</a>-->
+          </dd>
+        </dl>
+
+      </div>
+      <div class="line">
+        <dl>
+          <dt class="title"><%= t('front.condos.basic_info.since_when') %></dt>
+          <dd><%= @condo.formatted_since_when %></dd>
+        </dl>
+        <dl>
+          <dt class="title"><%= t('front.condos.basic_info.light_direction') %></dt>
+          <dd><%= @condo.light_direction %></dd>
+        </dl>
+        <dl>
+          <dt class="title"><%= t('front.condos.basic_info.space') %></dt>
+          <dd><%= @condo.unit_space %></dd>
+        </dl>
+        <dl>
+          <dt class="title"><%= t('front.condos.basic_info.balcony_space') %></dt>
+          <dd><%= @condo.balcony_space %></dd>
+        </dl>
+        <dl>
+          <dt class="title"><%= t('front.condos.basic_info.room_type') %></dt>
+          <dd><%= @condo.room_type.name %></dd>
+        </dl>
+      </div>
+      <div class="date-info">
+        <label class="label label-info">
+          &nbsp;<%= t('front.condos.basic_info.created_at') %> : <time><%= @condo.formatted_created_at %></time>&nbsp;
+        </label>
+        <label class="label label-info">
+          &nbsp;<%= t('front.condos.basic_info.updated_at') %> : <time><%= @condo.formatted_updated_at %></time>&nbsp;
+        </label>
+      </div>
+
+      <div class="description-inquiry">
+        <button class="btn-snk" onclick="location.href='<%= condo_inquiry_path(@condo.id) %>'">
+          <i class="fa fa-phone-square"></i>
+          <%= t('front.condos.inquiry') %>
+        </button>
+
+        <button class="btn-snk" style="margin-top: 10px;" onclick="location.href='<%= "tel:#{@condo.provider.tel}" %>'">
+          <i class="fa fa-phone-square"></i>
+          <%= t('front.condos.inquiry_call', :tel => @condo.provider.tel) %>
+        </button>
+      </div>
+
+  </div>
+</div>
