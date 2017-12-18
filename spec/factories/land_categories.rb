@@ -9,7 +9,7 @@
 #  updated_at :datetime         not null
 #
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :land_category do
     name "MyString"
     land_id 1

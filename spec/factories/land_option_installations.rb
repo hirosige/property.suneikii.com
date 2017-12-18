@@ -9,7 +9,7 @@
 #  updated_at     :datetime         not null
 #
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :land_option_installation do
     land_id 1
     land_option_id 1

@@ -8,7 +8,7 @@
 #  updated_at :datetime         not null
 #
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :condo_option do
     name "MyString"
   end

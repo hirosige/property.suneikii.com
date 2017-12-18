@@ -25,7 +25,7 @@
 #  fk_rails_...  (province_id => provinces.id)
 #
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :district_dusit, class: District do
     name_ja "Dusit"
     name_th "Dusit"

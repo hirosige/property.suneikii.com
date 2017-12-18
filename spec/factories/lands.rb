@@ -24,7 +24,7 @@
 #  floor_area_ratio  :integer
 #
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :land do
     id ""
     name ""

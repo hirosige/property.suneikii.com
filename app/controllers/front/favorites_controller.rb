@@ -12,11 +12,11 @@ class Front::FavoritesController < FrontController
       add_breadcrumb t('front.sessions.favorite.title')
 
       @favorites = current_user.favorites
-                       .includes(apartment: :apartment_info)
-                       .includes(apartment: :room_type)
-                       .includes(:land)
-                       .includes(:condo)
-                       .page(params[:page])
+         .includes(apartment: :apartment_info)
+         .includes(apartment: :room_type)
+         .includes(:land)
+         .includes(:condo)
+         .page(params[:page])
 
       respond_to do |format|
         format.html

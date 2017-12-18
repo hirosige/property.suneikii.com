@@ -25,7 +25,7 @@
 #  fk_rails_...  (country_id => countries.id)
 #
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :province_bangkok, class: Province do
     name_ja "バンコク"
     name_th "Bangkok"

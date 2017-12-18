@@ -10,7 +10,7 @@
 #  updated_at     :datetime         not null
 #
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :condo_surrounding do
     condo_id 1
     surrounding_id 1
