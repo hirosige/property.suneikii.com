@@ -10,7 +10,7 @@
 #  updated_at  :datetime         not null
 #
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :use_term do
     title "MyString"
     sub_title "MyString"

@@ -17,7 +17,7 @@
 #  fk_rails_...  (apartment_id => apartments.id)
 #
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :apartment_thumbnail do
     apartment nil
   end

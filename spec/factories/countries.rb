@@ -14,7 +14,7 @@
 #  condos_count     :integer          default(0), not null
 #
 
-FactoryGirl.define do
+FactoryBot.define do
 
   factory :country_japan, class: Country do
     name_ja "日本"

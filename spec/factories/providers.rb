@@ -17,7 +17,7 @@
 #  updated_at   :datetime         not null
 #
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :provider do
     name "MyString"
     photo "MyString"

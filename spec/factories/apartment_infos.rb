@@ -47,7 +47,7 @@
 #  light_direction      :string(255)
 #
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :apartment_info do
     remarks "MyText"
     photo "MyString"

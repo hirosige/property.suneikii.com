@@ -13,12 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20171216102221) do
 
-  create_table "accessories", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-  end
-
   create_table "apartment_infos", force: :cascade do |t|
     t.text     "remarks",              limit: 65535
     t.string   "photo",                limit: 255
@@ -117,27 +111,6 @@ ActiveRecord::Schema.define(version: 20171216102221) do
     t.integer  "district_id",       limit: 4
     t.integer  "subdistrict_id",    limit: 4
     t.integer  "surety_company_id", limit: 4
-  end
-
-  create_table "business_partners", force: :cascade do |t|
-    t.string   "first_name", limit: 255
-    t.string   "last_name",  limit: 255
-    t.date     "birthday"
-    t.boolean  "gender_id"
-    t.string   "zip_code",   limit: 255
-    t.text     "address",    limit: 65535
-    t.string   "tel1",       limit: 255
-    t.string   "tel2",       limit: 255
-    t.text     "memo",       limit: 65535
-    t.integer  "user_id",    limit: 4
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-  end
-
-  create_table "colors", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
   end
 
   create_table "condo_infos", force: :cascade do |t|
@@ -251,50 +224,6 @@ ActiveRecord::Schema.define(version: 20171216102221) do
     t.integer  "condos_count",     limit: 4,   default: 0, null: false
   end
 
-  create_table "course_menus", force: :cascade do |t|
-    t.integer  "menu_id",    limit: 4
-    t.integer  "course_id",  limit: 4
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
-  end
-
-  create_table "courses", force: :cascade do |t|
-    t.string   "title",         limit: 255
-    t.string   "photo",         limit: 255
-    t.date     "start_date"
-    t.date     "end_date"
-    t.time     "start_time"
-    t.time     "end_time"
-    t.integer  "price",         limit: 4
-    t.text     "list",          limit: 65535
-    t.integer  "restaurant_id", limit: 4
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
-  end
-
-  create_table "customers", force: :cascade do |t|
-    t.string   "first_name", limit: 255
-    t.string   "last_name",  limit: 255
-    t.date     "birthday"
-    t.integer  "gender_id",  limit: 4
-    t.string   "zip_code",   limit: 255
-    t.string   "address",    limit: 255
-    t.string   "tel1",       limit: 255
-    t.string   "tel2",       limit: 255
-    t.text     "memo",       limit: 65535
-    t.integer  "user_id",    limit: 4
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-  end
-
-  create_table "distributors", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.string   "tel",        limit: 255
-    t.string   "address",    limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-  end
-
   create_table "districts", force: :cascade do |t|
     t.string   "name_ja",              limit: 255
     t.string   "name_th",              limit: 255
@@ -335,57 +264,6 @@ ActiveRecord::Schema.define(version: 20171216102221) do
   add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", length: {"slug"=>140, "sluggable_type"=>nil}, using: :btree
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
-
-  create_table "genders", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-  end
-
-  create_table "goods", force: :cascade do |t|
-    t.string   "name",               limit: 255
-    t.integer  "size",               limit: 4
-    t.integer  "stock",              limit: 4
-    t.integer  "price",              limit: 4
-    t.string   "ingredient",         limit: 255
-    t.string   "description",        limit: 255
-    t.string   "tenant_name",        limit: 255
-    t.string   "category",           limit: 255
-    t.string   "keyword",            limit: 255
-    t.boolean  "gender"
-    t.text     "memo",               limit: 65535
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
-    t.integer  "ingredient_id",      limit: 4
-    t.integer  "gender_id",          limit: 4
-    t.integer  "goods_category_id",  limit: 4
-    t.string   "photo_file_name",    limit: 255
-    t.string   "photo_content_type", limit: 255
-    t.integer  "photo_file_size",    limit: 4
-    t.datetime "photo_updated_at"
-    t.integer  "color_id",           limit: 4
-    t.integer  "size_id",            limit: 4
-    t.integer  "shopper_id",         limit: 4
-    t.string   "status",             limit: 255
-  end
-
-  add_index "goods", ["color_id"], name: "index_goods_on_color_id", using: :btree
-  add_index "goods", ["gender_id"], name: "index_goods_on_gender_id", using: :btree
-  add_index "goods", ["goods_category_id"], name: "index_goods_on_goods_category_id", using: :btree
-  add_index "goods", ["ingredient_id"], name: "index_goods_on_ingredient_id", using: :btree
-  add_index "goods", ["size_id"], name: "index_goods_on_size_id", using: :btree
-
-  create_table "goods_categories", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-  end
-
-  create_table "ingredients", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-  end
 
   create_table "inquiries", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -488,51 +366,6 @@ ActiveRecord::Schema.define(version: 20171216102221) do
     t.integer  "floor_area_ratio",  limit: 4
   end
 
-  create_table "menus", force: :cascade do |t|
-    t.string   "title",         limit: 255
-    t.string   "name",          limit: 255
-    t.string   "photo",         limit: 255
-    t.text     "description",   limit: 65535
-    t.integer  "price",         limit: 4
-    t.integer  "restaurant_id", limit: 4
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
-  end
-
-  create_table "order_details", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-    t.integer  "order_id",   limit: 4
-    t.integer  "good_id",    limit: 4
-    t.integer  "qty",        limit: 4
-    t.float    "sub_total",  limit: 24
-  end
-
-  create_table "orders", force: :cascade do |t|
-    t.datetime "order_date"
-    t.integer  "user_id",            limit: 4
-    t.string   "payment_status",     limit: 255
-    t.string   "fulfillment_status", limit: 255
-    t.float    "total_amount",       limit: 24
-    t.float    "shipping_cost",      limit: 24
-    t.float    "tax",                limit: 24
-    t.text     "note",               limit: 65535
-    t.integer  "timeline_id",        limit: 4
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
-  end
-
-  create_table "paper_clip_tests", force: :cascade do |t|
-    t.string   "namge",              limit: 255
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
-    t.string   "photo_file_name",    limit: 255
-    t.string   "photo_content_type", limit: 255
-    t.integer  "photo_file_size",    limit: 4
-    t.datetime "photo_updated_at"
-  end
-
   create_table "policies", force: :cascade do |t|
     t.string   "title",       limit: 255
     t.string   "sub_title",   limit: 255
@@ -597,72 +430,7 @@ ActiveRecord::Schema.define(version: 20171216102221) do
 
   add_index "provinces", ["country_id"], name: "index_provinces_on_country_id", using: :btree
 
-  create_table "restaurants", force: :cascade do |t|
-    t.string   "name",         limit: 255
-    t.string   "phone_number", limit: 255
-    t.text     "description",  limit: 65535
-    t.text     "notification", limit: 65535
-    t.integer  "floor",        limit: 4
-    t.integer  "chairs",       limit: 4
-    t.integer  "private_room", limit: 4
-    t.string   "photo",        limit: 255
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
-    t.string   "slug",         limit: 255
-  end
-
-  add_index "restaurants", ["slug"], name: "index_restaurants_on_slug", unique: true, using: :btree
-
-  create_table "roles", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-  end
-
-  create_table "room_accessories", force: :cascade do |t|
-    t.integer  "room_class_id", limit: 4
-    t.integer  "accessory_id",  limit: 4
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
-  end
-
-  create_table "room_classes", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-    t.string   "image",      limit: 255
-  end
-
-  create_table "room_services", force: :cascade do |t|
-    t.integer  "room_class_id", limit: 4
-    t.integer  "service_id",    limit: 4
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
-  end
-
   create_table "room_types", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-  end
-
-  create_table "rooms", force: :cascade do |t|
-    t.string   "name",              limit: 255
-    t.integer  "room_class_id",     limit: 4
-    t.text     "description",       limit: 65535
-    t.text     "sales_description", limit: 65535
-    t.string   "area",              limit: 255
-    t.integer  "price",             limit: 4
-    t.integer  "qty",               limit: 4
-    t.string   "checkin_time",      limit: 255
-    t.string   "checkout_time",     limit: 255
-    t.integer  "how_many_ppl",      limit: 4
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
-    t.string   "room_number",       limit: 255
-  end
-
-  create_table "services", force: :cascade do |t|
     t.string   "name",       limit: 255
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
@@ -678,47 +446,12 @@ ActiveRecord::Schema.define(version: 20171216102221) do
   add_index "sessions", ["session_id"], name: "index_sessions_on_session_id", unique: true, using: :btree
   add_index "sessions", ["updated_at"], name: "index_sessions_on_updated_at", using: :btree
 
-  create_table "shop_statuses", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-  end
-
-  create_table "shoppers", force: :cascade do |t|
-    t.string   "shop_name",           limit: 255
-    t.string   "representative_name", limit: 255
-    t.string   "zip_code",            limit: 255
-    t.text     "address",             limit: 65535
-    t.string   "tel1",                limit: 255
-    t.string   "tel2",                limit: 255
-    t.string   "mail_address",        limit: 255
-    t.integer  "shop_status_id",      limit: 4
-    t.string   "account_number",      limit: 255
-    t.text     "memo",                limit: 65535
-    t.integer  "user_id",             limit: 4
-    t.datetime "created_at",                        null: false
-    t.datetime "updated_at",                        null: false
-  end
-
-  create_table "shoppers_distributors", force: :cascade do |t|
-    t.integer  "shopper_id",     limit: 4
-    t.integer  "distributor_id", limit: 4
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-  end
-
   create_table "site_inquiries", force: :cascade do |t|
     t.string   "name",       limit: 255
     t.string   "email",      limit: 255
     t.text     "body",       limit: 65535
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
-  end
-
-  create_table "sizes", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
   end
 
   create_table "subdistricts", force: :cascade do |t|
@@ -747,21 +480,6 @@ ActiveRecord::Schema.define(version: 20171216102221) do
     t.datetime "updated_at",                                       null: false
   end
 
-  create_table "system_admins", force: :cascade do |t|
-    t.string   "first_name", limit: 255
-    t.string   "last_name",  limit: 255
-    t.date     "birthday"
-    t.integer  "gender_id",  limit: 4
-    t.string   "zip_code",   limit: 255
-    t.text     "address",    limit: 65535
-    t.string   "tel1",       limit: 255
-    t.string   "tel2",       limit: 255
-    t.text     "memo",       limit: 65535
-    t.integer  "user_id",    limit: 4
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-  end
-
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id",        limit: 4
     t.integer  "taggable_id",   limit: 4
@@ -788,37 +506,6 @@ ActiveRecord::Schema.define(version: 20171216102221) do
   end
 
   add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
-
-  create_table "test_models", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-  end
-
-  create_table "time_tables", force: :cascade do |t|
-    t.string   "name",          limit: 255
-    t.time     "start_time"
-    t.time     "end_time"
-    t.integer  "restaurant_id", limit: 4
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
-  end
-
-  create_table "timeline_messages", force: :cascade do |t|
-    t.string   "message",    limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-    t.integer  "user_id",    limit: 4
-    t.datetime "posted_at"
-  end
-
-  create_table "timelines", force: :cascade do |t|
-    t.integer  "order_id",            limit: 4
-    t.integer  "user_id",             limit: 4
-    t.integer  "timeline_message_id", limit: 4
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
-  end
 
   create_table "use_term_article_details", force: :cascade do |t|
     t.text     "description",         limit: 65535

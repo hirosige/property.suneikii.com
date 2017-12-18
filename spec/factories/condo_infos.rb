@@ -48,7 +48,7 @@
 #  condo_id             :integer
 #
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :condo_info do
     remarks "MyText"
     photo "MyString"

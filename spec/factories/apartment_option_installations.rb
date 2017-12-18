@@ -9,7 +9,7 @@
 #  updated_at          :datetime         not null
 #
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :apartment_option_installation do
     apartment_id 1
     apartment_option_id 1

@@ -9,7 +9,7 @@
 #  updated_at          :datetime         not null
 #
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :use_term_article_detail do
     description "MyText"
     use_term_article_id 1

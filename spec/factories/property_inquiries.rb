@@ -15,7 +15,7 @@
 #  tel            :string(255)
 #
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :property_inquiry do
     name "MyString"
     email "MyString"

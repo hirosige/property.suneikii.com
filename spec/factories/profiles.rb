@@ -12,7 +12,7 @@
 #  updated_at     :datetime         not null
 #
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :profile do
     postal_code "MyString"
     address "MyText"

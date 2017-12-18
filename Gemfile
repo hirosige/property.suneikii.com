@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.2.5.1'
+gem 'rake'
 gem 'mysql2', '>= 0.3.13', '< 0.5'
 gem 'sass-rails', '~> 5.0'
 gem "font-awesome-rails"
@@ -76,7 +77,7 @@ group :development, :test do
 
   gem "rspec-rails"
   gem "shoulda-matchers"
-  gem "factory_girl_rails"
+  gem 'factory_bot_rails'
 
   gem "capybara"
   gem 'capybara-webkit'

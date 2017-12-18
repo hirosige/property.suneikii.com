@@ -27,7 +27,7 @@
 #  surety_company_id :integer
 #
 
-FactoryGirl.define do
+FactoryBot.define do
 
   factory :apartment_th, class: Apartment do
     name              "test"
