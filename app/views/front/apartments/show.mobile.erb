@@ -1,3 +1,15 @@
+<style>
+  .map-style {
+    background: #221455;
+    color: #fff;
+    padding: 10px;
+    border-radius: 3px;
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+  }
+</style>
+
 <div class="container">
 
   <%= render 'basic_info' %>
@@ -6,8 +18,12 @@
 
   <div class="contents-gap"></div>
 
-  <div class="thumbnail">
+  <div class="thumbnail" style="position: relative;">
     <div id="map" style='width: 100%; height: 400px;'></div>
+
+    <a href="http://maps.google.com/maps?q=<%= @hash[0][:lat] %>,<%= @hash[0][:lng] %>" class="map-style">
+      Open Gmap App
+    </a>
 
     <script type="text/javascript">
       handler = Gmaps.build('Google');
