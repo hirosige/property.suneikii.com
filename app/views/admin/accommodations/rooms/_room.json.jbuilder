@@ -1,2 +1,0 @@
-json.extract! room, :id, :name, :room_class_id, :description, :sales_description, :area, :price, :qty, :checkin_time, :checkout_time, :how_many_ppl, :created_at, :updated_at
-json.url room_url(room, format: :json)

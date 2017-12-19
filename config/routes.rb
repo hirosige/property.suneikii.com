@@ -176,20 +176,7 @@ Rails.application.routes.draw do
    end
 
    scope "(:locale)", :locale => /#{I18n.available_locales.map(&:to_s).join('|')}/ do
-
-      # Front Pages
       scope module: 'front' do
-         resources :products, shallow: true, :only => [:index, :show] do
-           member do
-             get 'add_cart'
-           end
-
-           collection do
-             get 'cart'
-             get 'kill'
-           end
-         end
-
          get 'user/profile'       => 'users#profile'
          get 'user/name'          => 'users#name'
          put 'user/name'          => 'users#update'
@@ -256,13 +243,6 @@ Rails.application.routes.draw do
           resources :districts, shallow: true, :only => [:index, :show]
         end
 
-        namespace :accommodations do
-          resources :room_classes
-          resources :rooms
-          resources :services
-          resources :accessories
-        end
-
         scope module: :apartments do
           resources :apartments do
             member do
@@ -312,21 +292,6 @@ Rails.application.routes.draw do
           resources :surroundings
         end
 
-        namespace :foods do
-          resources :restaurants do
-            resources :menus
-            resources :courses
-          end
-        end
-
-        namespace :products do
-          resources :colors
-          resources :goods_categories
-          resources :goods
-          resources :ingredients
-          resources :sizes
-        end
-
         scope module: :members do
           resources :users, shallow: true, :only => [:index, :show, :destroy] do
              member do
@@ -344,27 +309,10 @@ Rails.application.routes.draw do
           get '/roles' => 'roles#index'
         end
 
-        namespace :tenants do
-          resources :shoppers
-          resources :shop_statuses
-          resources :distributors
-          resources :shoppers_distributors
-        end
-
         scope module: :providers do
           resources :providers
         end
 
-        namespace :dealings do
-          resources :orders do
-            member do
-              get 'pay'
-              get 'refund'
-
-              post 'post' => 'timeline_messages#post'
-            end
-          end
-        end
       end
 
       # Front Pages
