@@ -1,0 +1,54 @@
+- name: install postgresql
+  yum: name={{item}} state=latest
+  with_items: pgsql_packages
+  ignore_errors: True
+
+- name: initialize postgresql
+  command: /usr/pgsql-9.4/bin/postgresql94-setup initdb
+  ignore_errors: True
+
+- name: initialize postgresql
+  service: name=postgresql-9.4 state=started enabled=yes
+  ignore_errors: True
+
+- name: initialize postgresql
+  copy: src=sarms.dump dest=/tmp
+  ignore_errors: True
+
+- name: copy schema.sql
+  copy: src=schema.sql dest=/tmp
+  ignore_errors: True
+
+- name: copy seed.sql
+  copy: src=seed.sql dest=/tmp
+  ignore_errors: True
+
+- name: create test_db
+  command: sudo -u postgres psql -f /tmp/sarms.dump
+
+- name: exec schema.sql
+  command: sudo -u postgres psql sarms_db -f /tmp/schema.sql
+
+- name: exec seed.sql
+  command: sudo -u postgres psql sarms_db -f /tmp/seed.sql
+
+# execute sub_sqls Start
+
+- name: copy sqls
+  copy: src=sub_sqls/{{item}} dest=/tmp
+  with_items: sub_sqls
+  ignore_errors: True
+
+- name: exec sqls
+  command: sudo -u postgres psql sarms_db -f /tmp/{{item}}
+  with_items: sub_sqls
+
+# execute sub_sqls End
+
+- name: configure pg_hba.conf
+  template: src=pg_hba.conf dest=/var/lib/pgsql/9.4/data/pg_hba.conf
+  notify: restart pgsql
+
+- name: configure postgresql.conf
+  template: src=postgresql.conf dest=/var/lib/pgsql/9.4/data/postgresql.conf
+  notify: restart pgsql

@@ -30,6 +30,7 @@ guard 'livereload' do
   end
 
   watch(%r{app/views/.+\.(#{rails_view_exts * '|'})$})
+  watch(%r{app/views/front/apartments/.+\.(#{rails_view_exts * '|'})$})
   watch(%r{app/helpers/.+\.rb})
   watch(%r{config/locales/.+\.yml})
 end
