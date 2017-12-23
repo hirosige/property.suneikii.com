@@ -13,7 +13,7 @@
 - name: downlaod and execute oh-my-zsh
   shell: sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
   ignore_errors: True
-  sudo: no
+  become: no
 
 - name: downlaod and execute oh-my-zsh for root
   shell: sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"

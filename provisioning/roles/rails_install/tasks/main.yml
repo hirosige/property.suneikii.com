@@ -3,18 +3,18 @@
 
 - name: globalize ruby version
   shell: bash -lc "gem update --system"
-  sudo: no
+  become: no
 
 - name: install rails
   shell: bash -lc "gem install rails --version='4.2.7'"
 
 - name: install rails
   shell: bash -lc "gem install rails --version='4.2.7'"
-  sudo: no
+  become: no
 
 - name: fix rails on rbenv
   shell: bash -lc "rbenv rehash"
 
 - name: fix rails on rbenv
   shell: bash -lc "rbenv rehash"
-  sudo: no
+  become: no

@@ -14,5 +14,9 @@
       "ImageMagick",
       "ImageMagick-devel",
       "java-1.8.0-openjdk",
-      "GConf2"
+      "GConf2",
+      "ibus-kkc",
+      "vlgothic-fonts",
+      "vlgothic-p-fonts",
+      "google-noto-sans-thai-fonts"
  ]
