@@ -1,0 +1,13 @@
+INSERT INTO pc_placement_control VALUES ('C001', '業務開始', 0, 1, 'アクション名', 10, 1, 1, 'Memo1', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO pc_placement_control VALUES ('C002', 'PC移管メッセージ表示', 1, 0, 'アクション名', 20, 1, 0, 'Memo2', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO pc_placement_control VALUES ('C003', 'ハードウェア関連申請停止', 1, 0, 'アクション名', 30, 1, 0, 'Memo3', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO pc_placement_control VALUES ('C004', 'PC配置情報入力メニュー表示', 1, 0, 'アクション名', 40, 1, 0, 'Memo4', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO pc_placement_control VALUES ('C005', 'PC配置情報入力メニュー非表示', 1, 0, 'アクション名', 50, 1, 0, 'Memo5', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO pc_placement_control VALUES ('C006', '自動振分', 1, 0, 'アクション名', 60, 1, 0, 'Memo6', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO pc_placement_control VALUES ('C007', '振分実施', 1, 0, 'アクション名', 70, 0, 0, 'Memo7', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO pc_placement_control VALUES ('C008', 'PC配置情報確認メニュー表示', 1, 0, 'アクション名', 80, 1, 0, 'Memo8', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO pc_placement_control VALUES ('C009', 'PC配置情報確認メニュー非表示', 1, 0, 'アクション名', 90, 1, 0, 'Memo9', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO pc_placement_control VALUES ('C010', '反映処理(配置情報 → HW台帳)', 1, 0, 'アクション名', 100, 1, 0, 'Memo10', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO pc_placement_control VALUES ('C011', 'ハードウェア関連申請開始', 1, 0, 'アクション名', 110, 0, 0, 'Memo11', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO pc_placement_control VALUES ('C012', 'PC移管メッセージ非表示', 1, 0, 'アクション名', 120, 1, 0, 'Memo12', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO pc_placement_control VALUES ('C013', '業務終了', 1, 0, 'アクション名', 130, 1, 0, 'Memo13', NULL, NULL, NULL, NULL, NULL, NULL);

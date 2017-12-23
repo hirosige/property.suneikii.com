@@ -1,0 +1,23 @@
+---
+ pgsql_packages: ["postgresql94", "postgresql94-server", "postgresql94-contrib"]
+ sub_sqls: [
+               "01.CodeDelete.sql",
+               "02.AdminUserNameUpdate.sql",
+               "03.MenuUpdate.sql",
+               "04.AdministratorUpdate.sql",
+               "05.AlterWorkflowLanConnectApply.sql",
+               "06.AlterWorkflowCommonSoft.sql",
+               "07.InsertPcTable.sql",
+               "08.ModifyLinkPC.sql",
+               "09.PcDeploymentColumnsUpdate.sql",
+               "10.PcPlacementControlDummy.sql",
+               "11.AddPrimaryKey.sql",
+               "12.WorkflowList.sql",
+               "13.SoftwareBatchErrmsg.sql",
+               "14.PcDeploymentColumnsUpdate_v2.sql",
+               "15.PcPlacementControlDummy_v2.sql",
+               "16.LicencelistRelated.sql",
+               "17.ViewRecreate.sql",
+               "18.PcDeploymentColumnsUpdate_v3.sql",
+               "19.AddApplicationNote.sql"
+           ]

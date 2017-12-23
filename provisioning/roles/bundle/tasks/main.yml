@@ -1,0 +1,8 @@
+- name: add env variable for qt
+  shell: QMAKE=/opt/rh/qt48/root/usr/lib64/qt4/bin/qmake
+
+- name: bundle install
+  bundler:
+    state: present
+    executable: ~/.rbenv/shims/bundle
+    gemfile: /vagrant/Gemfile

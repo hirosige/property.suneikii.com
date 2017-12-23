@@ -93,9 +93,6 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    capybara-webkit (1.1.0)
-      capybara (~> 2.0, >= 2.0.2)
-      json
     carrierwave (1.2.1)
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
@@ -111,8 +108,9 @@ GEM
     cells-rails (0.0.8)
       actionpack (>= 3.0)
       cells (>= 4.1.6, < 5.0.0)
+    childprocess (0.7.0)
+      ffi (~> 1.0, >= 1.0.11)
     climate_control (0.2.0)
-    cliver (0.3.2)
     cocaine (0.5.8)
       climate_control (>= 0.0.3, < 1.0)
     cocoon (1.2.11)
@@ -503,10 +501,6 @@ GEM
     parser (2.4.0.2)
       ast (~> 2.3)
     pg (0.21.0)
-    poltergeist (1.17.0)
-      capybara (~> 2.1)
-      cliver (~> 0.3.1)
-      websocket-driver (>= 0.2.0)
     polyamorous (1.3.1)
       activerecord (>= 3.0)
     powerpack (0.1.1)
@@ -648,6 +642,7 @@ GEM
       rake (>= 0.8.1)
     ruby-progressbar (1.9.0)
     ruby_dep (1.5.0)
+    rubyzip (1.2.1)
     sass (3.5.4)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -662,6 +657,9 @@ GEM
     sdoc (0.4.2)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    selenium-webdriver (3.4.3)
+      childprocess (~> 0.5)
+      rubyzip (~> 1.0)
     shellany (0.0.1)
     shoulda-matchers (3.1.2)
       activesupport (>= 4.0.0)
@@ -730,9 +728,6 @@ GEM
       binding_of_caller (>= 0.7.2)
       railties (>= 4.0)
       sprockets-rails (>= 2.0, < 4.0)
-    websocket-driver (0.7.0)
-      websocket-extensions (>= 0.1.0)
-    websocket-extensions (0.1.3)
     xml-simple (1.1.5)
     xpath (2.1.0)
       nokogiri (~> 1.3)
@@ -756,7 +751,6 @@ DEPENDENCIES
   byebug
   cancancan
   capybara
-  capybara-webkit
   carrierwave
   cells
   cells-erb
@@ -804,7 +798,6 @@ DEPENDENCIES
   omniauth-twitter
   paperclip
   pg
-  poltergeist
   pry-byebug
   pry-doc
   pry-rails
@@ -826,6 +819,7 @@ DEPENDENCIES
   ruby-debug-ide
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
+  selenium-webdriver
   shoulda-matchers
   sitemap_generator
   slim-rails (= 3.1.1)

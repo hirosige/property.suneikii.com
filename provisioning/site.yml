@@ -1,0 +1,16 @@
+---
+- hosts: all
+  become: true
+  user: vagrant
+
+  roles:
+   - { role: initial_install        }
+   - { role: init                   }
+   - { role: figlet                 }
+   - { role: rbenv                  }
+   - { role: ruby_install           }
+   - { role: rails_install          }
+   - { role: mysql                  }
+   - { role: zsh                    }
+   - { role: redis                  }
+   - { role: npm                    }

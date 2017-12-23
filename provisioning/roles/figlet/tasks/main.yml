@@ -1,0 +1,11 @@
+- name: name host
+  shell: hostnamectl set-hostname property-suneikii.dev
+
+- name: install bc
+  yum: name=bc state=latest
+
+- name: install figlet
+  yum: name=figlet state=latest
+
+- name: setting up figlet template
+  copy: src=update_motd_for_figlet.sh dest=/usr/local/bin/

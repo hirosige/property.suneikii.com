@@ -1,0 +1,18 @@
+---
+ prerequisites: [
+      "gcc",
+      "gcc-c++",
+      "openssl-devel",
+      "readline-devel",
+      "zlib-devel",
+      "sqlite-devel",
+      "mysql-devel",
+      "postgresql-devel",
+      "MySQL-python",
+      "libjpeg-devel",
+      "libpng-devel",
+      "ImageMagick",
+      "ImageMagick-devel",
+      "java-1.8.0-openjdk",
+      "GConf2"
+ ]

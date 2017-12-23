@@ -79,9 +79,8 @@ group :development, :test do
   gem "shoulda-matchers"
   gem 'factory_bot_rails'
 
-  gem "capybara"
-  gem 'capybara-webkit'
-  gem 'poltergeist'
+  gem 'capybara', require: false
+  gem 'selenium-webdriver', require: false
   gem 'database_cleaner'
 end
 

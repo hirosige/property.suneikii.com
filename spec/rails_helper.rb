@@ -7,22 +7,9 @@ require 'spec_helper'
 require 'rspec/rails'
 require 'capybara/rails'
 require 'capybara/rspec'
-require 'capybara/poltergeist'
-require 'capybara-webkit'
 require 'capybara/dsl'
 require 'shoulda-matchers'
 require 'devise'
-
-Capybara.javascript_driver = :poltergeist
-Capybara.register_driver :poltergeist do |app|
-  Capybara::Poltergeist::Driver.new(app, :js_errors => true, :timeout => 60)
-end
-
-Capybara.configure do |config|
-  config.run_server = false
-  config.default_driver = :poltergeist
-  config.app_host = 'http://localhost:3000'
-end
 
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 

@@ -1,0 +1,6 @@
+- name: install redis
+  yum: name={{ item }} state=latest
+  with_items: "{{redis_dependancies}}"
+
+- name: stop firewalld
+  service: name=redis state=started enabled=yes
