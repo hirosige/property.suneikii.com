@@ -5,7 +5,7 @@
 - name: install ruby
   shell: bash -lc "rbenv install {{ ruby_version }}"
   ignore_errors: True
-  sudo: no
+  become: no
 
 - name: check version
   shell: bash -lc "rbenv versions"
@@ -15,4 +15,4 @@
 
 - name: globalize ruby version
   shell: bash -lc "rbenv global {{ ruby_version }}"
-  sudo: no
+  become: no

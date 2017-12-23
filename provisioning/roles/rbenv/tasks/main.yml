@@ -3,14 +3,14 @@
 
 - name: git clone rbenv
   git: repo=https://github.com/sstephenson/rbenv.git dest=~/.rbenv
-  sudo: no
+  become: no
 
 - name: git clone ruby-build for root
   git: repo=https://github.com/sstephenson/ruby-build.git dest=~/.rbenv/plugins/ruby-build
 
 - name: git clone ruby-build
   git: repo=https://github.com/sstephenson/ruby-build.git dest=~/.rbenv/plugins/ruby-build
-  sudo: no
+  become: no
 
 #- name: add ENV_VAR to bash_profile
 #  command: echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile
@@ -26,11 +26,11 @@
 
 - name: Set rbenv config
   copy: src=.bashrc dest=~/.bashrc
-  sudo: no
+  become: no
 
 - name: activate bashrc
   shell: source ~/.bashrc
 
 - name: activate bashrc
   shell: source ~/.bashrc
-  sudo: no
+  become: no
