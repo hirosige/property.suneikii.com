@@ -34,4 +34,13 @@ FactoryBot.define do
     province_original_id 'bangkok'
     url_safe 'dusit'
   end
+
+  factory :district_bangna, class: District do
+    name_ja "bangna"
+    name_th "Bangna"
+    name_en "Bangna"
+    original_id 'bangna'
+    province_original_id 'bangna'
+    url_safe 'bangna'
+  end
 end

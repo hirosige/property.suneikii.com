@@ -29,24 +29,54 @@
 
 FactoryBot.define do
 
-  factory :apartment_th, class: Apartment do
-    name              "test"
-    rent_fee          4000
-    security_deposit  4000
-    deposit           4000
-    transportation    "test"
-    utility_fee       4000
-    key_money         4000
-    address           "test"
-    since_when        "2017-09-09"
-    room_type_id      1
-    space             40
-    recommendations   "test"
-    provider_id       1
-    country_id        1
-    province_id       1
-    district_id       1
-    subdistrict_id    1
-    surety_company_id 1
+  factory :apartment, class: Apartment do |apartment|
+    apartment.rent_fee          4000
+    apartment.security_deposit  4000
+    apartment.deposit           4000
+    apartment.transportation    "test"
+    apartment.utility_fee       4000
+    apartment.key_money         4000
+    apartment.address           "test"
+    apartment.since_when        "2017-09-09"
+    apartment.room_type_id      1
+    apartment.space             40
+    apartment.recommendations   "test"
+    apartment.provider_id       1
+    apartment.country_id        1
+    apartment.province_id       1
+    apartment.district_id       1
+    apartment.subdistrict_id    1
+    apartment.surety_company_id 1
+
+    apartment.trait :a do |item|
+      item.name              "a"
+    end
+
+    apartment.trait :b do |item|
+      item.name              "b"
+    end
+  end
+
+  factory :apartment_country, class: Apartment do |apartment|
+    apartment.name              "test"
+    apartment.rent_fee          4000
+    apartment.security_deposit  4000
+    apartment.deposit           4000
+    apartment.transportation    "test"
+    apartment.utility_fee       4000
+    apartment.key_money         4000
+    apartment.address           "test"
+    apartment.since_when        "2017-09-09"
+    apartment.room_type_id      1
+    apartment.space             40
+    apartment.recommendations   "test"
+    apartment.provider_id       1
+    apartment.province_id       1
+    apartment.district_id       1
+    apartment.subdistrict_id    1
+    apartment.surety_company_id 1
+    apartment.country do
+      FactoryBot.create(:country, :japan)
+    end
   end
 end

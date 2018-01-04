@@ -31,10 +31,15 @@ require 'rails_helper'
 RSpec.describe Apartment, type: :model do
 
   it "can create" do
-    create(:country_thai)
+    create(:country, :thailand)
 
     apartment = Apartment.new
     expect(apartment.class.to_s).to eq('Apartment')
+  end
+
+  it "can count" do
+    create(:apartment_country)
+    expect(Country.last.apartments_count).to eq 1
   end
 
 end

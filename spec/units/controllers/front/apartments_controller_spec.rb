@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Front::ApartmentsController, type: :controller do
   let(:user) { create(:user) }
-  let!(:province_bangkok) { create(:province_bangkok) }
+  let!(:province_bangkok) { create(:province, :bangkok) }
   let!(:district_dusit) { create(:district_dusit) }
 
   describe "GET #index" do
@@ -20,7 +20,7 @@ RSpec.describe Front::ApartmentsController, type: :controller do
 
   describe "GET #show" do
     it "returns http success" do
-      create(:apartment_th)
+      create(:apartment, :a)
       apartment = Apartment.first
 
       get :show, id: apartment.id
