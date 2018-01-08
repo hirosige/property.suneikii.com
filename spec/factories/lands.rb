@@ -25,26 +25,83 @@
 #
 
 FactoryBot.define do
-  factory :land do
-    id ""
-    name ""
-    rent_fee ""
-    transportation ""
-    address ""
-    land_category_id ""
-    space ""
-    photo ""
-    recommendations ""
-    status ""
-    provider_id ""
-    created_at ""
-    updated_at ""
-    country_id ""
-    province_id ""
-    district_id ""
-    subdistrict_id ""
-    surety_company_id ""
-    building_coverage ""
-    floor_area_ratio 1
+
+  # valid data
+  factory :land, class: Land do |land|
+    land.rent_fee 40000
+    land.transportation "Test Transportation"
+    land.address "Bangkok"
+    land.land_category_id 1
+    land.space 40
+    land.photo "test"
+    land.recommendations "test"
+    land.provider_id 1
+    land.country_id 1
+    land.province_id 1
+    land.district_id 1
+    land.subdistrict_id 1
+    land.surety_company_id "test"
+    land.building_coverage "test"
+    land.floor_area_ratio 1
+
+    land.trait :a do |item|
+      item.name "q"
+    end
+
+    land.trait :b do |item|
+      item.name "b"
+    end
+  end
+
+  # data has many children
+  factory :land_has_many, class: Land do |land|
+    land.name "has many"
+    land.rent_fee 40000
+    land.transportation "Test Transportation"
+    land.address "Bangkok"
+    land.land_category_id 1
+    land.space 40
+    land.photo "test"
+    land.recommendations "test"
+    land.provider_id 1
+    land.country_id 1
+    land.province_id 1
+    land.district_id 1
+    land.subdistrict_id 1
+    land.surety_company_id "test"
+    land.building_coverage "test"
+    land.floor_area_ratio 1
+
+    land.trait :apartments do |item|
+      item.apartments do
+        [
+            FactoryBot.create(:apartment, :a),
+            FactoryBot.create(:apartment, :b)
+        ]
+      end
+    end
+  end
+
+  # data has empty data
+  factory :land_empty, class: Land do |land|
+
+    land.trait :name do |emp_item|
+      emp_item.name "has many"
+      emp_item.rent_fee 40000
+      emp_item.transportation "Test Transportation"
+      emp_item.address "Bangkok"
+      emp_item.land_category_id 1
+      emp_item.space 40
+      emp_item.photo "test"
+      emp_item.recommendations "test"
+      emp_item.provider_id 1
+      emp_item.country_id 1
+      emp_item.province_id 1
+      emp_item.district_id 1
+      emp_item.subdistrict_id 1
+      emp_item.surety_company_id "test"
+      emp_item.building_coverage "test"
+      emp_item.floor_area_ratio 1
+    end
   end
 end

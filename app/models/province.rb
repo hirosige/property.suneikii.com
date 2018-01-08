@@ -26,13 +26,6 @@
 #
 
 class Province < ActiveRecord::Base
-  validates :name_ja,             :presence => true
-  validates :name_en,             :presence => true
-  validates :name_th,             :presence => true
-  validates :original_id,         :presence => true
-  validates :country_original_id, :presence => true
-  validates :url_safe,            :presence => true
-
   has_many :apartments
   has_many :lands
   has_many :districts,

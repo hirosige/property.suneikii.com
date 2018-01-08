@@ -14,6 +14,9 @@
 require 'rails_helper'
 
 RSpec.describe Country, type: :model do
+  before do
+    @form = CountryForm.new(Country.new)
+  end
 
   it "can create" do
     country = build(:country, :japan)
@@ -25,24 +28,59 @@ RSpec.describe Country, type: :model do
     expect(country.provinces.size).to eq 2
   end
 
+  it "has many apartments" do
+    country = build(:country_has_many, :apartments)
+    expect(country.apartments.size).to eq 2
+  end
+
+  it "has many lands" do
+    country = build(:country_has_many, :lands)
+    expect(country.lands.size).to eq 2
+  end
+
+  it "has many condos" do
+    country = build(:country_has_many, :condos)
+    expect(country.condos.size).to eq 2
+  end
+
   it "name_ja is required" do
     country = build(:country_empty, :name_ja)
-    expect(country.validate).to eq false
+    expect(@form.validate(country.attributes)).to eq false
   end
 
   it "name_th is required" do
     country = build(:country_empty, :name_en)
-    expect(country.validate).to eq false
+    expect(@form.validate(country.attributes)).to eq false
   end
 
   it "name_en is required" do
     country = build(:country_empty, :name_th)
-    expect(country.validate).to eq false
+    expect(@form.validate(country.attributes)).to eq false
   end
 
   it "original_id is required" do
     country = build(:country_empty, :original_id)
-    expect(country.validate).to eq false
+    expect(@form.validate(country.attributes)).to eq false
+  end
+
+  it "name_ja is lower than 255" do
+    country = build(:country_lower, :name_ja)
+    expect(@form.validate(country.attributes)).to eq false
+  end
+
+  it "name_en is lower than 255" do
+    country = build(:country_lower, :name_en)
+    expect(@form.validate(country.attributes)).to eq false
+  end
+
+  it "name_th is lower than 255" do
+    country = build(:country_lower, :name_th)
+    expect(@form.validate(country.attributes)).to eq false
+  end
+
+  it "original_id is lower than 255" do
+    country = build(:country_lower, :original_id)
+    expect(@form.validate(country.attributes)).to eq false
   end
 
   it "can init_count" do

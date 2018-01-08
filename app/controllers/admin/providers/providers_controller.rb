@@ -26,12 +26,13 @@ class Admin::Providers::ProvidersController < AdminController
   # POST /providers
   # POST /providers.json
   def create
-    @provider = Provider.new(provider_params)
+    @form = ProviderForm.new(Provider.new)
 
     respond_to do |format|
-      if @provider.save
-        format.html { redirect_to [:admin, @provider], notice: 'Provider was successfully created.' }
-        format.json { render :show, status: :created, location: @provider }
+      if @form.validate(provider_params)
+        @form.save
+        format.html { redirect_to [:admin, @form], notice: 'Provider was successfully created.' }
+        format.json { render :show, status: :created, location: @form }
       else
         format.html { render :new }
         format.json { render json: @provider.errors, status: :unprocessable_entity }

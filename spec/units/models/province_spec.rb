@@ -25,6 +25,9 @@
 require 'rails_helper'
 
 RSpec.describe Province, type: :model do
+  before do
+    @form = ProvinceForm.new(Province.new)
+  end
 
   it "can create" do
     province = build(:province, :bangkok)
@@ -43,32 +46,32 @@ RSpec.describe Province, type: :model do
 
   it "name_ja is required" do
     province = build(:province_empty, :name_ja)
-    expect(province.validate).to eq false
+    expect(@form.validate(province.attributes)).to eq false
   end
 
   it "name_th is required" do
     province = build(:province_empty, :name_th)
-    expect(province.validate).to eq false
+    expect(@form.validate(province.attributes)).to eq false
   end
 
   it "name_en is required" do
     province = build(:province_empty, :name_en)
-    expect(province.validate).to eq false
+    expect(@form.validate(province.attributes)).to eq false
   end
 
   it "original_id is required" do
     province = build(:province_empty, :original_id)
-    expect(province.validate).to eq false
+    expect(@form.validate(province.attributes)).to eq false
   end
 
   it "country_original_id is required" do
     province = build(:province_empty, :country_original_id)
-    expect(province.validate).to eq false
+    expect(@form.validate(province.attributes)).to eq false
   end
 
   it "url_safe is required" do
     province = build(:province_empty, :url_safe)
-    expect(province.validate).to eq false
+    expect(@form.validate(province.attributes)).to eq false
   end
 
   it "can init_count" do

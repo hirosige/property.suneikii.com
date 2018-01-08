@@ -15,13 +15,9 @@
 #
 
 class Country < ActiveRecord::Base
-  validates :name_ja,     :presence => true
-  validates :name_th,     :presence => true
-  validates :name_en,     :presence => true
-  validates :original_id, :presence => true
-
   has_many :apartments
   has_many :lands
+  has_many :condos
 
   has_many :provinces,
            foreign_key: "country_original_id",
