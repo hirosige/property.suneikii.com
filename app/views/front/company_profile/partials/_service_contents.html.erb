@@ -1,0 +1,43 @@
+<div id="service">
+  <div class="service-title">
+    <div class="ui one column grid container">
+      <div class="column">
+        <h1 class="ui header"><%= t('front.company_profile.service_contents.lease_with_us') %></h1>
+        <div class="title-underline" style="margin-left: auto; margin-right: auto;"></div>
+        <p><%= t('front.company_profile.service_contents.caption_1') %>
+          <br>
+          <%= t('front.company_profile.service_contents.caption_2') %></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="ui stackable three column grid" style="margin: 0;">
+    <div class="column service-image-link">
+      <div class="service-link">
+        <span><%= t('front.company_profile.service_contents.apartments') %></span>
+        <a href="http://property.suneikii.com/apartments"
+           class="ui primary basic button large btn-explore-service"><%= t('front.company_profile.service_contents.explore') %></a>
+      </div>
+      <%= image_tag("landing/services/apartments.jpg", :alt => "Apartment", :class => "service-img") %>
+      <div class="dark-box"></div>
+    </div>
+    <div class="column service-image-link">
+      <div class="service-link">
+        <span><%= t('front.company_profile.service_contents.lands') %></span>
+        <a href="http://property.suneikii.com/lands"
+           class="ui primary basic button large btn-explore-service"><%= t('front.company_profile.service_contents.explore') %></a>
+      </div>
+      <%= image_tag("landing/services/land.jpg", :alt => "Land", :class => "service-img") %>
+      <div class="dark-box"></div>
+    </div>
+    <div class="column service-image-link">
+      <div class="service-link">
+        <span><%= t('front.company_profile.service_contents.condominiums') %></span>
+        <a href="http://property.suneikii.com/condos"
+           class="ui primary basic button large btn-explore-service"><%= t('front.company_profile.service_contents.explore') %></a>
+      </div>
+      <%= image_tag("landing/services/condominium.jpg", :alt => "Condominium", :class => "service-img") %>
+      <div class="dark-box"></div>
+    </div>
+  </div>
+</div>

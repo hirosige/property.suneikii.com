@@ -1,0 +1,46 @@
+<div id="hero" class="glide">
+  <div class="glide__arrows">
+    <button class="glide__arrow prev" data-glide-dir="<"><i class="fa fa-caret-left" aria-hidden="true"></i>
+    </button>
+    <button class="glide__arrow next" data-glide-dir=">"><i class="fa fa-caret-right" aria-hidden="true"></i>
+    </button>
+  </div>
+
+  <div class="glide__wrapper">
+    <ul class="glide__track" style="margin: 0">
+      <li class="glide__slide">
+        <div class="hero-image-container darker">
+          <%= image_tag('landing/hero/slide-01.jpg') %>
+        </div>
+      </li>
+      <li class="glide__slide">
+        <div class="hero-image-container darker">
+          <%= image_tag('landing/hero/slide-02.jpg') %>
+        </div>
+      </li>
+      <li class="glide__slide">
+        <div class="hero-image-container darker">
+          <%= image_tag('landing/hero/slide-03.jpg') %>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="hero-text">
+    <p class="message-01"><%= t('front.company_profile.hero_contents.msg_1') %></p>
+    <p class="message-02"><%= t('front.company_profile.hero_contents.msg_2') %></p>
+    <p class="message-03"><%= t('front.company_profile.hero_contents.msg_3') %></p>
+    <p class="message-03"><%= t('front.company_profile.hero_contents.msg_4') %></p>
+    <a href="http://property.suneikii.com" class="ui primary basic button large btn-find-properties"><%= t('front.company_profile.hero_contents.find_properties') %></a>
+    <div class="dark-box"></div>
+  </div>
+
+  <div class="btn-explore">
+    <a href="#stories" class="animated infinite pulse smooth-scroll">
+      <div>
+        <small><%= t('front.company_profile.hero_contents.explore') %></small>
+      </div>
+      <div><i class="fa fa-angle-double-down" aria-hidden="true"></i></div>
+    </a>
+  </div>
+</div>
