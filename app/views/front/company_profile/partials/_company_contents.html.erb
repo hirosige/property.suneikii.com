@@ -1,0 +1,53 @@
+<div id="stories">
+  <div class="ui vertical stripe">
+    <div class="ui aligned stackable grid container">
+      <div class="row">
+        <div class="eight wide column">
+          <h1 class="ui header stories-title"><%= t('front.company_profile.company_contents.stories') %></h1>
+          <div class="title-underline"></div>
+          <p>
+            <%= t('front.company_profile.company_contents.description') %>
+          </p>
+        </div>
+        <div class="six wide right floated column">
+          <%= image_tag('landing/profile/image-01.jpg', :class => "ui fluid bordered image") %>
+        </div>
+      </div>
+    </div>
+
+    <div class="ui aligned grid container stories-gallery">
+      <div class="row">
+        <div class="four wide column">
+          <%= image_tag('landing/profile/image-02.jpg', :class => "ui fluid image") %>
+        </div>
+        <div class="four wide column">
+          <%= image_tag('landing/profile/image-09.jpg', :class => "ui fluid image") %>
+        </div>
+        <div class="four wide column">
+          <%= image_tag('landing/profile/image-04.jpg', :class => "ui fluid image") %>
+        </div>
+        <div class="four wide column">
+          <%= image_tag('landing/profile/image-05.jpg', :class => "ui fluid image") %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="five wide column">
+          <%= image_tag('landing/profile/image-06.jpg', :class => "ui fluid image") %>
+        </div>
+        <div class="six wide column">
+          <%= image_tag('landing/profile/logo.jpg', :class => "ui fluid image") %>
+        </div>
+        <div class="five wide column">
+          <%= image_tag('landing/profile/image-03.jpg', :class => "ui fluid image") %>
+        </div>
+      </div>
+      <div class="row">
+        <% ["image-08.jpg", "image-11.jpg", "image-10.jpg", "image-07.jpg"].each do |image| %>
+            <div class="four wide column">
+              <%= image_tag("landing/profile/#{image}", :class => "ui fluid image") %>
+            </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

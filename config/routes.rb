@@ -278,6 +278,9 @@ Rails.application.routes.draw do
            end
          end
 
+         # Company Profile
+         get  'about/concept'            => 'company_profile#home'
+
          # Inquiry
          get  'site_inquiry'             => 'site_inquiry#index'
          post 'site_inquiry/confirm'     => 'site_inquiry#confirm'

@@ -1,0 +1,114 @@
+<div id="contact-us">
+
+  <div class="ui container">
+    <h1 class="ui header contact-us-title"><%= t('front.company_profile.contact_contents.get_in_touch') %></h1>
+    <div class="title-underline"></div>
+  </div>
+
+  <div class="ui vertical stripe">
+    <div class="ui aligned stackable grid container">
+      <div class="row">
+        <div class="ten wide column contact-map">
+          <%= image_tag("landing/contact/map.jpg", :alt => "Condominium", :class => "contact-map-image") %>
+          <div class="contact-map-direction">
+            <h1>
+              <i class="fa fa-map-marker" aria-hidden="true"></i>
+              <br>
+              <span><%= t('front.company_profile.contact_contents.corporate_office') %></span>
+            </h1>
+            <p>
+              <strong><%= t('front.company_profile.contact_contents.pornpailin_business_point') %></strong>
+              <br>
+              <%= t('front.company_profile.contact_contents.address_1') %>
+              <br>
+              <%= t('front.company_profile.contact_contents.address_2') %>
+              <br>
+              <%= t('front.company_profile.contact_contents.address_3') %>
+            </p>
+            <a class="ui primary basic button large" tabindex="0"
+               href="https://goo.gl/maps/VBPryK98BJk">
+              <%= t('front.company_profile.contact_contents.get_direction') %>
+            </a>
+
+          </div>
+
+        </div>
+        <div class="six wide right floated column">
+          <h1><%= t('front.company_profile.contact_contents.corporate_office') %></h1>
+          <p>
+            <%= t('front.company_profile.contact_contents.pornpailin_business_point') %>
+            <br>
+            <%= t('front.company_profile.contact_contents.address_1') %>
+            <br>
+            Khwaeng <%= t('front.company_profile.contact_contents.address_2') %>,
+            <br>
+            Khet <%= t('front.company_profile.contact_contents.address_2') %>,
+            <br>
+            <%= t('front.company_profile.contact_contents.address_3') %>
+          </p>
+
+          <h1><%= t('front.company_profile.contact_contents.direct_contact') %></h1>
+          <p>
+            <%= t('front.company_profile.contact_contents.phone_caption') %> <a href="tel:123-456-7890">123-456-7890</a>
+            <br>
+            <%= t('front.company_profile.contact_contents.email_caption') %> <a href="mailto:property@suneikii.com">support@suneikii.com</a>
+          </p>
+
+          <h1><%= t('front.company_profile.contact_contents.departments') %></h1>
+          <p>
+            <a href="mailto:property@suneikii.com">customerservice@suneikii.com</a>
+            <br>
+            <a href="mailto:property@suneikii.com">sales@suneikii.com</a>
+            <br>
+            <a href="mailto:property@suneikii.com">disputes@suneikii.com</a>
+            <br>
+            <a href="mailto:property@suneikii.com">compliance@suneikii.com</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ui container" style="margin-top: 20px">
+    <h1 class="ui header contact-us-title"><%= t('front.company_profile.contact_contents.message_to_us') %></h1>
+    <div class="title-underline"></div>
+  </div>
+
+  <div class="ui one column grid stackable container">
+    <div class="column">
+      <div>
+        <form class="ui form">
+          <div class="three fields">
+            <div class="field">
+              <label><%= t('front.company_profile.contact_contents.first_name') %></label>
+              <input type="text" placeholder="Peter">
+            </div>
+            <div class="field">
+              <label><%= t('front.company_profile.contact_contents.middle_name') %></label>
+              <input type="text" placeholder="CK">
+            </div>
+            <div class="field">
+              <label><%= t('front.company_profile.contact_contents.last_name') %></label>
+              <input type="text" placeholder="King">
+            </div>
+          </div>
+          <div class="two fields">
+            <div class="field">
+              <label><%= t('front.company_profile.contact_contents.email') %></label>
+              <input type="email" placeholder="peterking@example.com">
+            </div>
+            <div class="field">
+              <label><%= t('front.company_profile.contact_contents.phone_number') %></label>
+              <input type="tel" placeholder="123-456-7890">
+            </div>
+          </div>
+          <div class="field">
+            <label><%= t('front.company_profile.contact_contents.message') %></label>
+            <textarea></textarea>
+          </div>
+          <button class="ui primary basic button large" tabindex="0"><%= t('front.company_profile.contact_contents.submit') %></button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

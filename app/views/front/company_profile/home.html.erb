@@ -1,0 +1,36 @@
+<% provide(:title, "S.N.K Properties and Development") %>
+
+<!-- Page Contents -->
+<div class="wrapper">
+  <div id="main-logo">
+    <a href="/">
+      <%= image_tag('landing/logo.png') %>
+    </a>
+  </div>
+
+  <div id="hamburger">
+    <i class="fa fa-bars" aria-hidden="true"></i>
+  </div>
+
+  <%= render 'front/company_profile/partials/main_menu' %>
+
+  <a href="#" id="go-to-top">
+    <i class="fa fa-angle-up" aria-hidden="true"></i>
+  </a>
+
+  <!-- Hero Contents -->
+  <%= render 'front/company_profile/partials/hero_contents' %>
+
+  <!-- Company Profile Contents -->
+  <%= render 'front/company_profile/partials/company_contents' %>
+
+  <!-- Service Contents -->
+  <%= render 'front/company_profile/partials/service_contents' %>
+
+  <!-- Contact Contents -->
+  <%= render 'front/company_profile/partials/contact_contents' %>
+
+  <!-- Footer Contents -->
+  <%= render 'front/company_profile/partials/footer_contents' %>
+
+</div>

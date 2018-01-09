@@ -1,0 +1,66 @@
+en:
+  front:
+    company_profile:
+      main_menu:
+        stories: 'Stories'
+        services: 'Services'
+        about_us: 'About us'
+        contact_us: 'Contact us'
+      hero_contents:
+        msg_1: 'Find the Best'
+        msg_2: 'Property Insights'
+        msg_3: 'Search over million properties and discover free'
+        msg_4: 'estimated market values, sold prices, rateable valuations and more.'
+        find_properties: 'Find
+                          Properties'
+        explore: 'EXPLORE'
+      company_contents:
+        stories: '​STORIES'
+        description: 'S.N.K Properties and Development Co.,Ltd.is a real estate development company,
+                      including leasing, buying and selling of mortgages, consignment of land,
+                      condominiums, apartments,hotels, resorts, real estate, redemption, refinancing, credit
+                      services.
+                      We also agency of renting service, we provide houses, condominiums, townhomes, lands for
+                      rent with value and fair.
+                      The intent is to open this company to ensure fairness and clarity both the buyer and the
+                      seller. Care and consultation services and advice with honesty and sincerity.'
+      service_contents:
+        lease_with_us: 'LEASE WITH US'
+        caption_1: 'Find your best residences with us. we provide not only Houses, Apartments, Condos, Lands, etc,'
+        caption_2: 'but also we provide information about properties necessary for you.'
+        apartments: 'Apartments'
+        lands: 'Lands'
+        condominiums: 'Condominiums'
+        explore: 'Explore'
+      contact_contents:
+        get_in_touch: 'GET IN TOUCH'
+        corporate_office: 'Corporate Office'
+        pornpailin_business_point: 'Pornpailin Business Point'
+        address_1: '355/1 On Nut Rd,'
+        address_2: 'Suan Luang'
+        address_3: 'Bangkok 10250'
+        get_direction: 'Get Directions'
+        direct_contact: ''
+        phone_caption: 'Phone:'
+        email_caption: 'Email:'
+        departments: 'Departments'
+        message_to_us: 'MESSAGE TO US'
+        first_name: 'First name'
+        middle_name: 'Middle name'
+        last_name: 'Last name'
+        email: 'E-mail'
+        phone_number: 'Phone Number'
+        message: 'Message'
+        submit: 'Submit'
+      footer_contents:
+        about: 'About'
+        stories: 'Stories'
+        services: 'Services'
+        about_us: 'About Us'
+        contact_us: 'Contact Us'
+        apartments: 'Apartments'
+        lands: 'Lands'
+        condominiums: 'Condominiums'
+        cp_name: 'S.N.K Properties and Development'
+        copyright: '© 2017 S.N.K Properties and Development Powered by Suneikii.com'
+        all_rights_reserved: 'All Rights Reserved.'
