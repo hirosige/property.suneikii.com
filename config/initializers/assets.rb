@@ -15,3 +15,4 @@ Rails.application.config.assets.precompile += %w( gentelella/production/index.ht
 Rails.application.config.assets.precompile += %w( front.css )
 Rails.application.config.assets.precompile += %w( mobile.css )
 Rails.application.config.assets.precompile += %w( landing.css )
+Rails.application.config.assets.precompile += %w( landing.js )
