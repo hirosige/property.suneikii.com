@@ -24,6 +24,7 @@ class Front::LandDecorator < Draper::Decorator
   end
 
   def delimited_rent_fee
+    return "" if self.rent_fee.nil?
     "#{self.rent_fee.to_s(:delimited)} Baht"
   end
 

@@ -6,10 +6,10 @@
   become: no
 
 - name: install rails
-  shell: bash -lc "gem install rails --version='4.2.7'"
+  shell: bash -lc "gem install rails --version='4.2.5.1'"
 
 - name: install rails
-  shell: bash -lc "gem install rails --version='4.2.7'"
+  shell: bash -lc "gem install rails --version='4.2.5.1'"
   become: no
 
 - name: fix rails on rbenv

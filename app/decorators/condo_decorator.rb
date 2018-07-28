@@ -58,6 +58,7 @@ class CondoDecorator < Draper::Decorator
   end
 
   def delimited_utility_fee
+    return "" if self.utility_fee.nil?
     "#{self.utility_fee.to_s(:delimited)} #{h.t('front.units.currency.baht')}"
   end
 

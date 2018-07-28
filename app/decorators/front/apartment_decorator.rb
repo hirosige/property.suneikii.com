@@ -20,22 +20,27 @@ class Front::ApartmentDecorator < Draper::Decorator
   end
 
   def delimited_rent_fee
+    return "" if self.rent_fee.nil?
     "#{self.rent_fee.to_s(:delimited)} #{h.t('front.units.currency.baht')}"
   end
 
   def delimited_utility_fee
+    return "" if self.utility_fee.nil?
     "#{self.utility_fee.to_s(:delimited)} #{h.t('front.units.currency.baht')}"
   end
 
   def delimited_security_deposit
+    return "" if self.security_deposit.nil?
     "#{self.security_deposit.to_s(:delimited)} #{h.t('front.units.currency.baht')}"
   end
 
   def delimited_deposit
+    return "" if self.deposit.nil?
     "#{self.deposit.to_s(:delimited)} #{h.t('front.units.currency.baht')}"
   end
 
   def delimited_update_fee
+    return "" if self.info.update_fee.nil?
     "#{self.info.update_fee.to_s(:delimited)} #{h.t('front.units.currency.baht')}"
   end
 
