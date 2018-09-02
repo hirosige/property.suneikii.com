@@ -62,12 +62,8 @@ class CondoDecorator < Draper::Decorator
     "#{self.utility_fee.to_s(:delimited)} #{h.t('front.units.currency.baht')}"
   end
 
-  def delimited_security_deposit
-    "#{self.security_deposit.to_s(:delimited)} #{h.t('front.units.currency.baht')}"
-  end
-
   def delimited_deposit
-    "#{self.deposit.to_s(:delimited)} #{h.t('front.units.currency.baht')}"
+    "#{self.deposit.to_s(:delimited)} #{h.t('front.units.currency.baht')}" unless self.deposit.nil?
   end
 
   def delimited_update_fee

@@ -37,9 +37,9 @@
           <% @favorites.each do |favorite| %>
             <% property = favorite.apartment.decorate if favorite.apartment? %>
             <% property = favorite.land.decorate if favorite.land? %>
+            <% property = favorite.condo.decorate if favorite.condo? %>
               <tr>
                 <td colspan="2" class="favorites-top__tbl-col-name">
-                  <span class="favorites-top__tbl-col-category"><%= property.category %></span>
                   <a href="<%= property.show_url property.id %>"><%= property.name %></a>
                   <span class="favorites-top__tbl-col-status"><%= property.availability %></span>
                 </td>

@@ -24,8 +24,6 @@
               <%= t('front.sessions.watched_list.items.utility_fee') %>
             </th>
             <th>
-              <%= t('front.sessions.watched_list.items.security_deposit') %>
-              <br>
               <%= t('front.sessions.watched_list.items.deposit') %>
             </th>
             <th>
@@ -39,14 +37,7 @@
               <%= t('front.sessions.watched_list.items.space') %>
             </th>
             <th>
-              <%= t('front.sessions.watched_list.items.made_of') %>
-              <br>
-              <%= t('front.sessions.watched_list.items.floors') %>
-            </th>
-            <th>
               <%= t('front.sessions.watched_list.items.since_when') %>
-              <br>
-              <%= t('front.sessions.watched_list.items.light_on') %>
             </th>
           </tr>
           </thead>
@@ -70,8 +61,6 @@
                   <%= property.delimited_utility_fee %>
                 </td>
                 <td>
-                  <%= property.delimited_security_deposit %>
-                  <br>
                   <%= property.delimited_deposit %>
                 </td>
                 <td width="400px">
@@ -85,14 +74,7 @@
                   <%= property.unit_space %>
                 </td>
                 <td>
-                  <%= property.made_of %>
-                  <br>
-                  <%= property.unit_floors %>
-                </td>
-                <td>
                   <%= property.formatted_since_when %>
-                  <br>
-                  <%= property.light_direction %>
                 </td>
               </tr>
               <tr>
