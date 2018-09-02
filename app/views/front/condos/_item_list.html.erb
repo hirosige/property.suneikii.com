@@ -29,7 +29,7 @@
                 <%= t('front.condos.main_plane.items.transportation') %>
               </th>
               <td>
-                <%= condo.transportation %>
+                <%= simple_format condo.transportation %>
               </td>
             </tr>
             <tr>
@@ -45,13 +45,13 @@
           <%= t('front.condos.main_plane.items.recommendations') %>
         </div>
         <div class="mainplane__sub-info__body">
-          <%= condo.recommendations %>
+          <%= simple_format condo.recommendations %>
         </div>
         <div class="mainplane__sub-info__title">
           <%= t('front.condos.property_installation.remarks') %>
         </div>
         <div class="mainplane__sub-info__body">
-          <%= condo.remarks %>
+          <%= simple_format condo.remarks %>
         </div>
         <table class="mainplane__sub-info__table">
           <thead>
