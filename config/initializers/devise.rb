@@ -71,19 +71,7 @@ Devise.setup do |config|
   config.sign_out_via = :delete
 
   # ==> OmniAuth
-  #               :provider    APP_ID                                              APP_SECRET
-  config.omniauth :twitter,    '5mCu8LvCM4dZKm70LFFm92w61',                        'Z3Vkj28G9aMQfFtu5Y1MLQwHFuJN0SCJ5GoV6FjPtFa5EpNGeL'
-  # config.omniauth :facebook,   '2042478112638208',                                 '544ff2be8430b0f70c244e5788baeebb'
-  # config.omniauth :flickr,     '4d8897eb2430d59c0490194e941eed12',                 'fcb40aed3b880ad4'
-  # config.omniauth :foursquare, 'OO4HGMNX3KPMUGUKWVIMQASOCCMQU1C4PKHBQXCT52JBQDGU', 'IEFC5TWZT2VNMTMZHDUTPJ3OIQHQX23CPXIVXS3V4Y0OADPJ'
-  # config.omniauth :github,
-  #   Settings.provider.github[:api_key],
-  #   Settings.provider.github[:secret_key],
-  #   scope: Settings.provider.github[:scope]
-  #
-  # config.omniauth :instagram,
-  #   Settings.provider.instagram[:api_key],
-  #   Settings.provider.instagram[:secret_key]
+  config.omniauth :twitter, ENV['TWITTER_OAUTH_API_KEY'], ENV['TWITTER_OAUTH_SECRET_KEY']
 
   # ==> Warden configuration
   # config.warden do |manager|
