@@ -15,10 +15,6 @@
           <dd class="price"><%= @condo.delimited_rent_fee %></dd>
         </dl>
         <dl>
-          <dt class="title"><%= t('front.condos.basic_info.security_deposit') %></dt>
-          <dd><%= @condo.delimited_security_deposit %></dd>
-        </dl>
-        <dl>
           <dt class="title"><%= t('front.condos.basic_info.deposit') %></dt>
           <dd><%= @condo.delimited_deposit %></dd>
         </dl>
@@ -47,14 +43,10 @@
         <dl>
           <dt class="title"><%= t('front.condos.basic_info.since_when') %></dt>
           <dd><%= @condo.formatted_since_when %></dd>
-          <dt class="title"><%= t('front.condos.basic_info.light_direction') %></dt>
-          <dd><%= @condo.light_direction %></dd>
           <dt class="title"><%= t('front.condos.basic_info.space') %></dt>
           <dd><%= @condo.unit_space %></dd>
         </dl>
         <dl>
-          <dt class="title"><%= t('front.condos.basic_info.balcony_space') %></dt>
-          <dd><%= @condo.balcony_space %></dd>
           <dt class="title"><%= t('front.condos.basic_info.room_type') %></dt>
           <dd><%= @condo.room_type.name %></dd>
         </dl>

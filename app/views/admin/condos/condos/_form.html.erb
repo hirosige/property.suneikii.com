@@ -197,23 +197,9 @@
                   </div>
 
                   <div class="form-group">
-                    <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.condos.items.security_deposit') %></label>
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                      <%= f.text_field :security_deposit, :class => 'form-control col-md-7 col-xs-12' %>
-                    </div>
-                  </div>
-
-                  <div class="form-group">
                     <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.condos.items.transportation') %></label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
                       <%= f.text_field :transportation, :class => 'form-control col-md-7 col-xs-12' %>
-                    </div>
-                  </div>
-
-                  <div class="form-group">
-                    <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.condos.items.key_money') %></label>
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                      <%= f.text_field :key_money, :class => 'form-control col-md-7 col-xs-12' %>
                     </div>
                   </div>
 
@@ -233,13 +219,10 @@
 
                   <div class="form-group">
                     <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.condos.items.recommendations') %></label>
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                      <%= f.text_field :recommendations, :class => 'form-control col-md-7 col-xs-12' %>
+                    <div class="col-md-8 col-sm-8 col-xs-12">
+                      <%= f.text_area :recommendations, :class => 'form-control col-md-7 col-xs-12', :style => "height: 200px;" %>
                     </div>
                   </div>
-
-
-
                 </div>
 
                 <script>
@@ -409,8 +392,8 @@
                       <div style="float: left; width: 50%;">
                         <div class="form-group">
                           <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.condo_info.items.remarks') %></label>
-                          <div class="col-md-6 col-sm-6 col-xs-12">
-                            <%= ai.text_field :remarks, :class => 'form-control col-md-7 col-xs-12' %>
+                          <div class="col-md-8 col-sm-8 col-xs-12">
+                            <%= ai.text_area :remarks, :class => 'form-control col-md-7 col-xs-12', :style => "height: 200px;" %>
                           </div>
                         </div>
 
@@ -469,74 +452,10 @@
                         </div>
 
                         <div class="form-group">
-                          <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.condo_info.items.brand_new.title') %></label>
-                          <div class="col-md-6 col-sm-6 col-xs-12">
-                            <%= ai.radio_button :brandnew, :brandnew %> <%= t('admin.condo_info.items.brand_new.first') %>&nbsp;
-                            <%= ai.radio_button :brandnew, :old %> <%= t('admin.condo_info.items.brand_new.second') %>
-                          </div>
-                        </div>
-
-                        <div class="form-group">
-                          <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.condo_info.items.more_than_2floors.title') %></label>
-                          <div class="col-md-6 col-sm-6 col-xs-12">
-                            <%= ai.radio_button :more_than_2floors, :more %> <%= t('admin.condo_info.items.more_than_2floors.first') %> &nbsp;
-                            <%= ai.radio_button :more_than_2floors, :only_one %> <%= t('admin.condo_info.items.more_than_2floors.second') %>
-                          </div>
-                        </div>
-
-                        <div class="form-group">
-                          <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.condo_info.items.light_on_south.title') %></label>
-                          <div class="col-md-6 col-sm-6 col-xs-12">
-                            <%= ai.radio_button :light_on_south, :south %> <%= t('admin.condo_info.items.light_on_south.first') %> &nbsp;
-                            <%= ai.radio_button :light_on_south, :other %> <%= t('admin.condo_info.items.light_on_south.second') %>
-                          </div>
-                        </div>
-
-                        <div class="form-group">
                           <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.condo_info.items.parkinglot.title') %></label>
                           <div class="col-md-6 col-sm-6 col-xs-12">
                             <%= ai.radio_button :parkinglot, :have_park %> <%= t('admin.condo_info.items.parkinglot.first') %> &nbsp;
                             <%= ai.radio_button :parkinglot, :not_have_park %> <%= t('admin.condo_info.items.parkinglot.second') %>
-                          </div>
-                        </div>
-
-                        <div class="form-group">
-                          <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.condo_info.items.auto_lock.title') %></label>
-                          <div class="col-md-6 col-sm-6 col-xs-12">
-                            <%= ai.radio_button :auto_lock, :have_auto_lock %> <%= t('admin.condo_info.items.auto_lock.first') %> &nbsp;
-                            <%= ai.radio_button :auto_lock, :not_have_auto_lock %> <%= t('admin.condo_info.items.auto_lock.second') %>
-                          </div>
-                        </div>
-
-                        <div class="form-group">
-                          <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.condo_info.items.air_con.title') %></label>
-                          <div class="col-md-6 col-sm-6 col-xs-12">
-                            <%= ai.radio_button :air_con, :have_air_con %> <%= t('admin.condo_info.items.air_con.first') %> &nbsp;
-                            <%= ai.radio_button :air_con, :not_have_air_con %> <%= t('admin.condo_info.items.air_con.second') %>
-                          </div>
-                        </div>
-
-                        <div class="form-group">
-                          <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.condo_info.items.separate_bath_toilet.title') %></label>
-                          <div class="col-md-6 col-sm-6 col-xs-12">
-                            <%= ai.radio_button :separate_bath_toilet, :separated_bath_toilet %> <%= t('admin.condo_info.items.separate_bath_toilet.first') %> &nbsp;
-                            <%= ai.radio_button :separate_bath_toilet, :united_bath_toilet %> <%= t('admin.condo_info.items.separate_bath_toilet.second') %>
-                          </div>
-                        </div>
-
-                        <div class="form-group">
-                          <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.condo_info.items.reheating.title') %></label>
-                          <div class="col-md-6 col-sm-6 col-xs-12">
-                            <%= ai.radio_button :reheating, :have_reheating %> <%= t('admin.condo_info.items.reheating.first') %> &nbsp;
-                            <%= ai.radio_button :reheating, :not_have_reheating %> <%= t('admin.condo_info.items.reheating.second') %>
-                          </div>
-                        </div>
-
-                        <div class="form-group">
-                          <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.condo_info.items.wooden_floor.title') %></label>
-                          <div class="col-md-6 col-sm-6 col-xs-12">
-                            <%= ai.radio_button :wooden_floor, :have_wooden_floor %> <%= t('admin.condo_info.items.wooden_floor.first') %> &nbsp;
-                            <%= ai.radio_button :wooden_floor, :not_have_wooden_floor %> <%= t('admin.condo_info.items.wooden_floor.second') %>
                           </div>
                         </div>
 
@@ -550,108 +469,6 @@
                       </div>
                       <div style="float: right; width: 50%;">
                         <div class="form-group">
-                          <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.condo_info.items.floor') %></label>
-                          <div class="col-md-2 col-sm-2 col-xs-12">
-                            <%= ai.number_field :floor, :class => 'form-control col-md-2 col-xs-12' %>
-                          </div>
-
-                          <div class="col-md-2 col-sm-2 col-xs-12">
-                            <%= ai.number_field :floors, :class => 'form-control col-md-2 col-xs-12' %>
-                          </div>
-                        </div>
-
-                        <div class="form-group">
-                          <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.condo_info.items.balcony_space') %></label>
-                          <div class="col-md-2 col-sm-2 col-xs-12">
-                            <%= ai.number_field :balcony_space, :class => 'form-control col-md-2 col-xs-12' %>
-                          </div>
-                        </div>
-
-                        <div class="form-group">
-                          <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.condo_info.items.light_direction') %></label>
-                          <div class="col-md-2 col-sm-2 col-xs-12">
-                            <%= ai.text_field :light_direction, :class => 'form-control col-md-2 col-xs-12' %>
-                          </div>
-                        </div>
-
-                        <div class="form-group">
-                          <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.condo_info.items.made_of') %></label>
-                          <div class="col-md-6 col-sm-6 col-xs-12">
-                            <%= ai.text_field :made_of, :class => 'form-control col-md-7 col-xs-12' %>
-                          </div>
-                        </div>
-
-                        <div class="form-group">
-                          <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.condo_info.items.contact_span') %></label>
-                          <div class="col-md-6 col-sm-6 col-xs-12">
-                            <%= ai.number_field :contact_span, :class => 'form-control col-md-7 col-xs-12' %>
-                          </div>
-                        </div>
-
-                        <div class="form-group">
-                          <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.condo_info.items.conditions') %></label>
-                          <div class="col-md-6 col-sm-6 col-xs-12">
-                            <%= ai.text_field :conditions, :class => 'form-control col-md-7 col-xs-12' %>
-                          </div>
-                        </div>
-
-                        <div class="form-group">
-                          <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.condo_info.items.update_fee') %></label>
-                          <div class="col-md-6 col-sm-6 col-xs-12">
-                            <%= ai.text_field :update_fee, :class => 'form-control col-md-7 col-xs-12' %>
-                          </div>
-                        </div>
-
-                        <div class="form-group">
-                          <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.condo_info.items.updating_on') %></label>
-                          <div class="col-md-6 col-sm-6 col-xs-12">
-                            <%= ai.text_field :updating_on, :class => 'form-control col-md-7 col-xs-12' %>
-                          </div>
-                        </div>
-
-                        <div class="form-group">
-                          <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.condo_info.items.number_of_rooms') %></label>
-                          <div class="col-md-2 col-sm-2 col-xs-12">
-                            <%= ai.number_field :number_of_rooms, :class => 'form-control col-md-7 col-xs-12' %>
-                          </div>
-                        </div>
-
-                        <div class="form-group">
-                          <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.condo_info.items.house_insurance') %></label>
-                          <div class="col-md-6 col-sm-6 col-xs-12">
-                            <%= ai.text_field :house_insurance, :class => 'form-control col-md-7 col-xs-12' %>
-                          </div>
-                        </div>
-
-                        <div class="form-group">
-                          <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.condo_info.items.deal_way') %></label>
-                          <div class="col-md-6 col-sm-6 col-xs-12">
-                            <%= ai.text_field :deal_way, :class => 'form-control col-md-7 col-xs-12' %>
-                          </div>
-                        </div>
-
-                        <div class="form-group">
-                          <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.condo_info.items.kitchen_bath') %></label>
-                          <div class="col-md-6 col-sm-6 col-xs-12">
-                            <%= ai.text_area :kitchen_bath, :class => 'form-control col-md-7 col-xs-12' %>
-                          </div>
-                        </div>
-
-                        <div class="form-group">
-                          <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.condo_info.items.services') %></label>
-                          <div class="col-md-6 col-sm-6 col-xs-12">
-                            <%= ai.text_area :services, :class => 'form-control col-md-7 col-xs-12' %>
-                          </div>
-                        </div>
-
-                        <div class="form-group">
-                          <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.condo_info.items.etc') %></label>
-                          <div class="col-md-6 col-sm-6 col-xs-12">
-                            <%= ai.text_area :etc, :class => 'form-control col-md-7 col-xs-12' %>
-                          </div>
-                        </div>
-
-                        <div class="form-group">
                           <label for="name" class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.condo_info.items.management_id') %></label>
                           <div class="col-md-6 col-sm-6 col-xs-12">
                             <%= ai.text_field :management_id, :class => 'form-control col-md-7 col-xs-12' %>
@@ -663,41 +480,6 @@
                       </div>
                       
                 <%  end %>
-
-                  <hr>
-
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <div id="ingredients" class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.condo_info.items.options.title') %></label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <%= f.fields_for :condo_option_installations do |builder| %>
-                              <%= render 'condo_option_installation_fields', f: builder %>
-                          <% end %>
-                          <div id="links">
-                            <br>
-                            <%= link_to_add_association "Add Accessories", f, :condo_option_installations, :class => 'btn btn-xs btn-primary' %><br/>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <div id="ingredients" class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12"><%= t('admin.condo_info.items.surroundings.title') %></label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <%= f.fields_for :condo_surroundings do |builder| %>
-                              <%= render 'condo_surrounding_fields', f: builder %>
-                          <% end %>
-                          <div id="links">
-                            <br>
-                            <%= link_to_add_association "Add Surroundings", f, :condo_surroundings, :class => 'btn btn-xs btn-primary' %><br/>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
 
                   <div class="form-group">
                     <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
@@ -715,9 +497,7 @@
                       }
                   </script>
                 </div>
-
             <% end %>
-
 
           </div>
         </div>

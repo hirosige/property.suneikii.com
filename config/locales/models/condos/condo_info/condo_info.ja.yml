@@ -6,7 +6,7 @@ ja:
       modify_page_title:     "コンドミニアム情報 追加/修正画面"
       description:           ""
       items:
-        remarks:             "備考"
+        remarks:             "設備"
         latitude:            "緯度"
         longitude:           "経度"
         brand_new:

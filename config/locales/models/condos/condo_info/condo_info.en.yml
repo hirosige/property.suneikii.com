@@ -6,7 +6,7 @@ en:
       modify_page_title:     "Condominium Info Add/Modify"
       description:           ""
       items:
-        remarks:             "Remarks"
+        remarks:             "Appliances"
         latitude:            "Latitude"
         longitude:           "Longitude"
         brand_new:
@@ -22,9 +22,9 @@ en:
           first:               "South direction"
           second:              "Not south direction"
         parkinglot:
-          title:               "Parking"
-          first:               "Available"
-          second:              "N/A"
+          title:               "Car"
+          first:               "Yes"
+          second:              "No"
         auto_lock:
           title:               "Auto Lock"
           first:               "Available"
@@ -47,8 +47,8 @@ en:
           second:              "N/A"
         pet:
           title:               "Pet"
-          first:               "Available"
-          second:              "N/A"
+          first:               "Yes"
+          second:              "No"
         status:
           title:               "Status"
           vacant:              "Vacant"

@@ -34,7 +34,7 @@
             </tr>
             <tr>
               <th><%= t('front.condos.main_plane.items.since_when_floors') %></th>
-              <td><%= condo.formatted_since_when %> / <%= condo.unit_floors %></td>
+              <td><%= condo.formatted_since_when %></td>
             </tr>
             </tbody>
           </table>
@@ -47,9 +47,14 @@
         <div class="mainplane__sub-info__body">
           <%= condo.recommendations %>
         </div>
+        <div class="mainplane__sub-info__title">
+          <%= t('front.condos.property_installation.remarks') %>
+        </div>
+        <div class="mainplane__sub-info__body">
+          <%= condo.remarks %>
+        </div>
         <table class="mainplane__sub-info__table">
           <thead>
-          <th sytle="width: 50px;"><%= t('front.condos.main_plane.items.floor') %></th>
           <th><%= t('front.condos.main_plane.items.price') %></th>
           <th><%= t('front.condos.main_plane.items.utility_fee') %></th>
           <th><%= t('front.condos.main_plane.items.deposits') %></th>
@@ -61,7 +66,6 @@
           <th><%= t('front.condos.main_plane.items.detail') %></th>
           </thead>
           <tbody>
-          <td><%= condo.unit_floor %></td>
           <td class="price"><%= condo.delimited_rent_fee %></td>
           <td><%= condo.delimited_utility_fee %></td>
           <td><%= condo.delimited_deposit %></td>

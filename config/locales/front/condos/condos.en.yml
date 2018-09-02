@@ -14,7 +14,7 @@ en:
           transportation: 'Transportation'
           address: 'Address'
           since_when_floors: 'Since When/Floors'
-          recommendations: 'Recommendations'
+          recommendations: 'Description'
           floor: 'Floor'
           price: 'Price'
           utility_fee: 'Utility Fee'
@@ -75,7 +75,7 @@ en:
         kitchen_bath: 'Kitchen/Bath/Toilet'
         service: 'Services'
         etc: 'Etc'
-        remarks: 'Remarks'
+        remarks: 'Appliances'
       provider_info:
         title: 'Provider Info'
         provider:

@@ -20,7 +20,7 @@ en:
         space:               "Space"
         photo:               "Photo"
         uploaded_photo:      "Uploaded Image"
-        recommendations:     "Sales Talk"
+        recommendations:     "Description"
         status:
           title:               "Public/Private"
           public:              "Public"

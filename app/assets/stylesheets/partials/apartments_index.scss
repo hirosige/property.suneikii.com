@@ -228,20 +228,7 @@
 .mainplane__sub-info__body {
   padding: 10px;
   padding-left: 30px;
-  border-bottom: 1px $main_light_color solid;
   position: relative;
-}
-
-.mainplane__sub-info__body::before {
-  content: "";
-  background: $main_light_color;
-  height: 10px;
-  width: 10px;
-  left: 15px;
-  top: 15px;
-  border-radius: 50%;
-  line-height: normal;
-  position: absolute;
 }
 
 table.mainplane__sub-info__table {
