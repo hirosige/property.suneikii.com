@@ -60,6 +60,7 @@ class Admin::Condos::CondosController < AdminController
     @condo = Condo.new(condo_params)
 
     respond_to do |format|
+      p @condo
       if @condo.save
         format.html { redirect_to [:admin, @condo], flash: { :success => "#{@condo.name}を作成しました。" } }
         format.json { render :show, status: :created, location: @condo }
